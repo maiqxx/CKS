@@ -12,6 +12,20 @@ namespace Carinderia_Kiosk_System.Proprietor
 {
     public partial class ucStaff : UserControl
     {
+        private static ucStaff instance;
+
+        public static ucStaff Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ucStaff();
+                }
+                return instance;
+            }
+        }
+
         public ucStaff()
         {
             InitializeComponent();

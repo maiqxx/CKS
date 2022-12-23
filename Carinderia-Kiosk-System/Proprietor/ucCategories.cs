@@ -12,9 +12,28 @@ namespace Carinderia_Kiosk_System.Proprietor
 {
     public partial class ucCategories : UserControl
     {
+        private static ucCategories instance;
+
+        string emailAddress = AdminInfo.EmailAddress;
+        int ID = 0; //variable for menu_type_id
+
+        public static ucCategories Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ucCategories();
+                }
+                return instance;
+            }
+        }
+
         public ucCategories()
         {
             InitializeComponent();
         }
+
+
     }
 }

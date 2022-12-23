@@ -12,6 +12,21 @@ namespace Carinderia_Kiosk_System.Proprietor
 {
     public partial class ucOrders : UserControl
     {
+        private static ucOrders instance;
+
+        public static ucOrders Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ucOrders();
+
+                }
+                return instance;
+            }
+        }
+
         public ucOrders()
         {
             InitializeComponent();

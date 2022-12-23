@@ -35,7 +35,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(271, 49);
+            this.label1.Location = new System.Drawing.Point(560, 278);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 0;
