@@ -67,7 +67,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 

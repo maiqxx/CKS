@@ -140,9 +140,9 @@ namespace Carinderia_Kiosk_System.Proprietor
                     MessageBox.Show("Please select category to update.");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -159,25 +159,36 @@ namespace Carinderia_Kiosk_System.Proprietor
             {
                 if (ID != 0)
                 {
-                    //deletes selected category
-                    MySqlCommand cmd = new MySqlCommand();
-                    cmd = new MySqlCommand("DELETE FROM MENU_TYPE WHERE MENU_TYPE_ID = @ID", conn);
-                    conn.Open();
-                    cmd.Parameters.AddWithValue("@id", ID);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Category removed successfully!");
-                    PopulateData();
-                    ClearData();
+                    string message = "Do you want to remove this category?";
+                    string title = "Remove Category";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        //deletes selected category
+                        MySqlCommand cmd = new MySqlCommand();
+                        cmd = new MySqlCommand("DELETE FROM MENU_TYPE WHERE MENU_TYPE_ID = @ID", conn);
+                        conn.Open();
+                        cmd.Parameters.AddWithValue("@id", ID);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Category removed successfully!");
+                        PopulateData();
+                        ClearData();
+                    }
+                    else
+                    {
+                        //...
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Select category to remove.");
                 }
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -210,7 +221,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
