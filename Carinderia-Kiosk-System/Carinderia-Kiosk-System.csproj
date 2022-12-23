@@ -103,6 +103,42 @@
     <Compile Include="Proprietor\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proprietor\ucAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucAccount.Designer.cs">
+      <DependentUpon>ucAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ucInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucInventory.Designer.cs">
+      <DependentUpon>ucInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ucOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucOrders.Designer.cs">
+      <DependentUpon>ucOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ucCategories.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucCategories.Designer.cs">
+      <DependentUpon>ucCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ucDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucDashboard.Designer.cs">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ucStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucStaff.Designer.cs">
+      <DependentUpon>ucStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +165,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucAccount.resx">
+      <DependentUpon>ucAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucCategories.resx">
+      <DependentUpon>ucCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucInventory.resx">
+      <DependentUpon>ucInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucOrders.resx">
+      <DependentUpon>ucOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucDashboard.resx">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucStaff.resx">
+      <DependentUpon>ucStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartUp.resx">
       <DependentUpon>StartUp.cs</DependentUpon>
@@ -162,6 +216,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Back icon White 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialcosta Light 200 x 100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orders 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categories 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff m. 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings gear 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user icon 20 x 20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
