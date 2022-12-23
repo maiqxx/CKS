@@ -232,7 +232,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pnlUserControlContainer.Controls.Add(this.ucCategories1);
             this.pnlUserControlContainer.Controls.Add(this.ucOrders1);
             this.pnlUserControlContainer.Controls.Add(this.ucDashboard1);
-            this.pnlUserControlContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlUserControlContainer.Location = new System.Drawing.Point(227, 48);
             this.pnlUserControlContainer.Name = "pnlUserControlContainer";
             this.pnlUserControlContainer.Size = new System.Drawing.Size(1264, 965);
