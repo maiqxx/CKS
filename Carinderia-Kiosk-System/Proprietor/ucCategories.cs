@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Carinderia_Kiosk_System.Proprietor
 {
@@ -34,6 +35,34 @@ namespace Carinderia_Kiosk_System.Proprietor
             InitializeComponent();
         }
 
+        //Add new category button
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        //Update category button
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Remove or delete category button
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Search category button
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Refresh categories button
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
