@@ -1,0 +1,41 @@
+﻿using Carinderia_Kiosk_System.Proprietor;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Carinderia_Kiosk_System
+{
+    public partial class StartUp : Form
+    {
+        public StartUp()
+        {
+            InitializeComponent();
+        }
+
+        //Admin Button
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            CreateAccount createAccount = new CreateAccount();
+            createAccount.Show();
+            this.Hide();
+        }
+
+        //Staff Button
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Customer Button
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

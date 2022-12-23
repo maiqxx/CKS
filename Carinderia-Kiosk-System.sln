@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33027.164
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carinderia-Kiosk-System", "Carinderia-Kiosk-System\Carinderia-Kiosk-System.csproj", "{12783300-FC8E-41D0-A8C0-564500D4DA5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12783300-FC8E-41D0-A8C0-564500D4DA5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12783300-FC8E-41D0-A8C0-564500D4DA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12783300-FC8E-41D0-A8C0-564500D4DA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12783300-FC8E-41D0-A8C0-564500D4DA5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D438C05-04CF-4F52-B229-3893DE3CA0ED}
+	EndGlobalSection
+EndGlobal
