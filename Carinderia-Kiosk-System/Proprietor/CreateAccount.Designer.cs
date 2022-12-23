@@ -82,7 +82,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Carinderia_Kiosk_System.Properties.Resources.arrow_back_20x20;
+            this.pictureBox2.Image = global::Carinderia_Kiosk_System.Properties.Resources.Back_icon_White_20_x_20;
             this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";

@@ -73,6 +73,16 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Back_icon_White_20_x_20 {
+            get {
+                object obj = ResourceManager.GetObject("Back icon White 20 x 20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_Simple_Restaurant_Logo_v1_1 {
             get {
                 object obj = ResourceManager.GetObject("Blue Simple Restaurant Logo v1.1", resourceCulture);

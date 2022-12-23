@@ -84,6 +84,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminInfo.cs" />
+    <Compile Include="Proprietor\AdminBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proprietor\AdminBoard.Designer.cs">
+      <DependentUpon>AdminBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,8 +121,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Proprietor\AdminBoard.resx">
+      <DependentUpon>AdminBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\CreateAccount.resx">
       <DependentUpon>CreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartUp.resx">
       <DependentUpon>StartUp.cs</DependentUpon>
@@ -146,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow back 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back icon White 20 x 20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
