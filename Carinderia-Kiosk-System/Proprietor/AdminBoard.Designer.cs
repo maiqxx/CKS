@@ -86,9 +86,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDashboard.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDashboard.Image = global::Carinderia_Kiosk_System.Properties.Resources.dashboard_20_x_20;
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Location = new System.Drawing.Point(4, 114);
@@ -99,14 +99,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnDashboard.TabIndex = 2;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.BackColorChanged += new System.EventHandler(this.btnDashboard_Click);
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnOrders
             // 
             this.btnOrders.BackColor = System.Drawing.Color.Transparent;
-            this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrders.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnOrders.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOrders.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnOrders.Image = global::Carinderia_Kiosk_System.Properties.Resources.orders_20x20;
             this.btnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrders.Location = new System.Drawing.Point(4, 182);
@@ -122,9 +123,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnCategories
             // 
             this.btnCategories.BackColor = System.Drawing.Color.Transparent;
-            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategories.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCategories.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategories.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCategories.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCategories.Image = global::Carinderia_Kiosk_System.Properties.Resources.categories_20x20;
             this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategories.Location = new System.Drawing.Point(4, 250);
@@ -140,9 +141,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnInventory
             // 
             this.btnInventory.BackColor = System.Drawing.Color.Transparent;
-            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventory.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnInventory.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInventory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnInventory.Image = global::Carinderia_Kiosk_System.Properties.Resources.inventory_20_x_20;
             this.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventory.Location = new System.Drawing.Point(4, 318);
@@ -158,9 +159,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnStaff
             // 
             this.btnStaff.BackColor = System.Drawing.Color.Transparent;
-            this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStaff.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnStaff.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStaff.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnStaff.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnStaff.Image = global::Carinderia_Kiosk_System.Properties.Resources.staff_m__20_x_20;
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStaff.Location = new System.Drawing.Point(4, 386);
@@ -176,9 +177,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnAccount
             // 
             this.btnAccount.BackColor = System.Drawing.Color.Transparent;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnAccount.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAccount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAccount.Image = global::Carinderia_Kiosk_System.Properties.Resources.settings_gear_20_x_20;
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccount.Location = new System.Drawing.Point(4, 454);
