@@ -34,25 +34,26 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblStockCode = new System.Windows.Forms.Label();
-            this.txtStockCode = new System.Windows.Forms.TextBox();
-            this.lblFoodName = new System.Windows.Forms.Label();
-            this.txtFoodName = new System.Windows.Forms.TextBox();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.lblCategory = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblUnitPrice = new System.Windows.Forms.Label();
-            this.txtUnitPrice = new System.Windows.Forms.TextBox();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.lblUnitPrice = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtFoodName = new System.Windows.Forms.TextBox();
+            this.lblFoodName = new System.Windows.Forms.Label();
+            this.txtStockCode = new System.Windows.Forms.TextBox();
+            this.lblStockCode = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvInventory = new System.Windows.Forms.DataGridView();
+            this.lblImage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -95,6 +96,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.lblImage);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.btnDelete);
@@ -117,43 +119,91 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.Size = new System.Drawing.Size(855, 343);
             this.panel1.TabIndex = 5;
             // 
-            // lblStockCode
+            // btnClear
             // 
-            this.lblStockCode.AutoSize = true;
-            this.lblStockCode.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStockCode.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblStockCode.Location = new System.Drawing.Point(49, 41);
-            this.lblStockCode.Name = "lblStockCode";
-            this.lblStockCode.Size = new System.Drawing.Size(114, 21);
-            this.lblStockCode.TabIndex = 0;
-            this.lblStockCode.Text = "Stock Code:";
+            this.btnClear.Location = new System.Drawing.Point(588, 280);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(99, 34);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // txtStockCode
+            // comboBox2
             // 
-            this.txtStockCode.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStockCode.Location = new System.Drawing.Point(169, 34);
-            this.txtStockCode.Name = "txtStockCode";
-            this.txtStockCode.Size = new System.Drawing.Size(257, 28);
-            this.txtStockCode.TabIndex = 1;
+            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(724, 158);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(101, 29);
+            this.comboBox2.TabIndex = 12;
             // 
-            // lblFoodName
+            // textBox1
             // 
-            this.lblFoodName.AutoSize = true;
-            this.lblFoodName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFoodName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblFoodName.Location = new System.Drawing.Point(49, 83);
-            this.lblFoodName.Name = "lblFoodName";
-            this.lblFoodName.Size = new System.Drawing.Size(113, 21);
-            this.lblFoodName.TabIndex = 2;
-            this.lblFoodName.Text = "Food Name:";
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(568, 158);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(150, 28);
+            this.textBox1.TabIndex = 11;
             // 
-            // txtFoodName
+            // lblQuantity
             // 
-            this.txtFoodName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFoodName.Location = new System.Drawing.Point(169, 76);
-            this.txtFoodName.Name = "txtFoodName";
-            this.txtFoodName.Size = new System.Drawing.Size(257, 28);
-            this.txtFoodName.TabIndex = 3;
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblQuantity.Location = new System.Drawing.Point(468, 165);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(87, 21);
+            this.lblQuantity.TabIndex = 10;
+            this.lblQuantity.Text = "Quantity:";
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnitPrice.Location = new System.Drawing.Point(568, 118);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(257, 28);
+            this.txtUnitPrice.TabIndex = 9;
+            // 
+            // lblUnitPrice
+            // 
+            this.lblUnitPrice.AutoSize = true;
+            this.lblUnitPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnitPrice.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblUnitPrice.Location = new System.Drawing.Point(468, 125);
+            this.lblUnitPrice.Name = "lblUnitPrice";
+            this.lblUnitPrice.Size = new System.Drawing.Size(92, 21);
+            this.lblUnitPrice.TabIndex = 8;
+            this.lblUnitPrice.Text = "Unit Price:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(568, 75);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(257, 29);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCategory.Location = new System.Drawing.Point(468, 83);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(94, 21);
+            this.lblCategory.TabIndex = 6;
+            this.lblCategory.Text = "Category:";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(169, 122);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(257, 127);
+            this.txtDescription.TabIndex = 5;
             // 
             // lblDescription
             // 
@@ -166,109 +216,72 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblDescription.TabIndex = 4;
             this.lblDescription.Text = "Description:";
             // 
-            // txtDescription
+            // txtFoodName
             // 
-            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(169, 122);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(257, 127);
-            this.txtDescription.TabIndex = 5;
+            this.txtFoodName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFoodName.Location = new System.Drawing.Point(169, 76);
+            this.txtFoodName.Name = "txtFoodName";
+            this.txtFoodName.Size = new System.Drawing.Size(257, 28);
+            this.txtFoodName.TabIndex = 3;
             // 
-            // lblCategory
+            // lblFoodName
             // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCategory.Location = new System.Drawing.Point(473, 41);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(94, 21);
-            this.lblCategory.TabIndex = 6;
-            this.lblCategory.Text = "Category:";
+            this.lblFoodName.AutoSize = true;
+            this.lblFoodName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoodName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblFoodName.Location = new System.Drawing.Point(49, 83);
+            this.lblFoodName.Name = "lblFoodName";
+            this.lblFoodName.Size = new System.Drawing.Size(113, 21);
+            this.lblFoodName.TabIndex = 2;
+            this.lblFoodName.Text = "Food Name:";
             // 
-            // comboBox1
+            // txtStockCode
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(573, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(257, 29);
-            this.comboBox1.TabIndex = 7;
+            this.txtStockCode.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStockCode.Location = new System.Drawing.Point(169, 34);
+            this.txtStockCode.Name = "txtStockCode";
+            this.txtStockCode.Size = new System.Drawing.Size(257, 28);
+            this.txtStockCode.TabIndex = 1;
             // 
-            // lblUnitPrice
+            // lblStockCode
             // 
-            this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitPrice.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUnitPrice.Location = new System.Drawing.Point(473, 83);
-            this.lblUnitPrice.Name = "lblUnitPrice";
-            this.lblUnitPrice.Size = new System.Drawing.Size(92, 21);
-            this.lblUnitPrice.TabIndex = 8;
-            this.lblUnitPrice.Text = "Unit Price:";
-            // 
-            // txtUnitPrice
-            // 
-            this.txtUnitPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnitPrice.Location = new System.Drawing.Point(573, 76);
-            this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(257, 28);
-            this.txtUnitPrice.TabIndex = 9;
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblQuantity.Location = new System.Drawing.Point(473, 123);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(87, 21);
-            this.lblQuantity.TabIndex = 10;
-            this.lblQuantity.Text = "Quantity:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(573, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 28);
-            this.textBox1.TabIndex = 11;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(729, 116);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(101, 29);
-            this.comboBox2.TabIndex = 12;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(588, 280);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(99, 34);
-            this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.lblStockCode.AutoSize = true;
+            this.lblStockCode.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStockCode.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStockCode.Location = new System.Drawing.Point(49, 41);
+            this.lblStockCode.Name = "lblStockCode";
+            this.lblStockCode.Size = new System.Drawing.Size(114, 21);
+            this.lblStockCode.TabIndex = 0;
+            this.lblStockCode.Text = "Stock Code:";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvInventory);
             this.panel2.Location = new System.Drawing.Point(18, 452);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1176, 467);
             this.panel2.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvInventory
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 264);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventory.Location = new System.Drawing.Point(38, 50);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.RowHeadersWidth = 51;
+            this.dgvInventory.RowTemplate.Height = 24;
+            this.dgvInventory.Size = new System.Drawing.Size(588, 264);
+            this.dgvInventory.TabIndex = 2;
+            // 
+            // lblImage
+            // 
+            this.lblImage.AutoSize = true;
+            this.lblImage.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblImage.Location = new System.Drawing.Point(468, 41);
+            this.lblImage.Name = "lblImage";
+            this.lblImage.Size = new System.Drawing.Size(69, 21);
+            this.lblImage.TabIndex = 14;
+            this.lblImage.Text = "Image:";
             // 
             // ucInventory
             // 
@@ -279,10 +292,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Controls.Add(this.label1);
             this.Name = "ucInventory";
             this.Size = new System.Drawing.Size(1264, 965);
+            this.Load += new System.EventHandler(this.ucInventory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,6 +324,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Label lblStockCode;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvInventory;
+        private System.Windows.Forms.Label lblImage;
     }
 }

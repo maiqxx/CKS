@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Data;
 
 namespace Carinderia_Kiosk_System.Proprietor
 {
@@ -30,6 +32,16 @@ namespace Carinderia_Kiosk_System.Proprietor
         public ucInventory()
         {
             InitializeComponent();
+        }
+
+        private void ucInventory_Load(object sender, EventArgs e)
+        {
+            //Set AutoGenerateColumns False.
+            dgvInventory.AutoGenerateColumns = false;
+
+            //Set Columns Count.
+            dgvInventory.ColumnCount = 10;
+
         }
     }
 }
