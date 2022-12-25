@@ -36,7 +36,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         }
 
         //Populate Data Method - Populates data grid view
-        private void PopulateData()
+        public void PopulateData()
         {
             //Database connection
             string connectionString = null;

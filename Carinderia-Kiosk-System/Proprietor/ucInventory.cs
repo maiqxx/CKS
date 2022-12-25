@@ -15,7 +15,12 @@ namespace Carinderia_Kiosk_System.Proprietor
 {
     public partial class ucInventory : UserControl
     {
+        //MySqlConnection conn = new MySqlConnection(@"server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=""");
+
+
         private static ucInventory instance;
+
+        int codeNum = 0;
 
         public static ucInventory Instance
         {
@@ -37,6 +42,9 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void ucInventory_Load(object sender, EventArgs e)
         {
+            //Bind data for the combobox category
+            SelectCategory();
+
             //Set AutoGenerateColumns False.
             dgvInventory.AutoGenerateColumns = false;
 
@@ -48,14 +56,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Add button - Add new stock
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string numCode = "";
-            int num;
-
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
+            string code = "STK0000000";
 
             try
             {
@@ -65,11 +66,41 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             }
 
-            conn.Open();
 
 
         }
 
+        void SelectCategory()
+        {
+            //Database connection
+            string connectionString = null;
+            MySqlConnection conn;
+            connectionString = "server=localhost; database=cks_db; uid=root; pwd=\"\";";
+            conn = new MySqlConnection(connectionString);
+
+            string selectCategory = "SELECT TYPE_NAME FROM cks_db.MENU_TYPE";
+            MySqlCommand cmd = new MySqlCommand(selectCategory, conn);
+            MySqlDataReader reader;
+
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string category = reader.GetString("TYPE_NAME");
+                    cbCategory.Items.Add(category);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //pbFoodImage_Click Event
         private void pbFoodImage_Click(object sender, EventArgs e)
         {
             try
@@ -88,6 +119,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //txtImagePath_Click Event
         private void txtImagePath_Click(object sender, EventArgs e)
         {
             try
@@ -107,6 +139,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
