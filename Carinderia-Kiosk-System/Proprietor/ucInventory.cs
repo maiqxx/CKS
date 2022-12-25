@@ -17,7 +17,6 @@ namespace Carinderia_Kiosk_System.Proprietor
     {
         //MySqlConnection conn = new MySqlConnection(@"server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=""");
 
-
         private static ucInventory instance;
 
         int codeNum = 0;
@@ -42,7 +41,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void ucInventory_Load(object sender, EventArgs e)
         {
-            //Bind data for the combobox category
+            //Binds data for the combobox category
             SelectCategory();
 
             //Set AutoGenerateColumns False.
@@ -51,6 +50,29 @@ namespace Carinderia_Kiosk_System.Proprietor
             //Set Columns Count.
             dgvInventory.ColumnCount = 10;
 
+
+
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearData();
         }
 
         //Add button - Add new stock
@@ -70,12 +92,24 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        void ClearData()
+        {
+            txtFoodName.Text = "";
+            txtDescription.Text = "";
+            cbCategory.Text = "";
+            txtUnitPrice.Text = "";
+            txtQuantity.Text = "";
+            txtUnit.Text = "";
+            txtImagePath.Text = "";
+            pbFoodImage.Image = null;
+        }
+
         void SelectCategory()
         {
             //Database connection
             string connectionString = null;
             MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; pwd=\"\";";
+            connectionString = "server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=\"\";";
             conn = new MySqlConnection(connectionString);
 
             string selectCategory = "SELECT TYPE_NAME FROM cks_db.MENU_TYPE";
@@ -139,9 +173,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
