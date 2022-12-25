@@ -55,26 +55,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ClearData();
-        }
-
         //Add button - Add new stock
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -92,6 +72,25 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        //Edit button
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Delete button
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Clear button
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearData();
+        }
+
+        //Clears data in textboxes
         void ClearData()
         {
             txtFoodName.Text = "";
@@ -104,6 +103,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             pbFoodImage.Image = null;
         }
 
+        //Getting category values for combobox
         void SelectCategory()
         {
             //Database connection
