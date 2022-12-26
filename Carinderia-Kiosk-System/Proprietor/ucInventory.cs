@@ -148,6 +148,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             pbFoodImage.Image = null;
         }
 
+        //Get Stock code
+        void getStockCode()
+        {
+            //Database connection
+            string connectionString = null;
+            MySqlConnection conn;
+            connectionString = "server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=\"\";";
+            conn = new MySqlConnection(connectionString);
+        }
+
         //Getting category values for combobox
         void SelectCategory()
         {

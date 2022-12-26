@@ -85,7 +85,13 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                     MySqlCommand cmd = new MySqlCommand(addCategory, conn);
                     var ctr = cmd.ExecuteNonQuery();
-                    MessageBox.Show("Added New Menu Category!");
+                    if(ctr > 0)
+                    {
+                        MessageBox.Show("Added New Menu Category!");
+                    }
+                    conn.Close();
+                    PopulateData();
+                    ClearData();
                 }
                 else
                 {
