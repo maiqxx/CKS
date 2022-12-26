@@ -20,6 +20,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         private static ucInventory instance;
 
         int codeNum = 0;
+        int id = AdminInfo.ID;
 
         public static ucInventory Instance
         {
@@ -44,15 +45,48 @@ namespace Carinderia_Kiosk_System.Proprietor
             //Binds data for the combobox category
             SelectCategory();
 
+            //Calls method that populates data
+            PopulateData();
+
             //Set AutoGenerateColumns False.
-            dgvInventory.AutoGenerateColumns = false;
+            //dgvInventory.AutoGenerateColumns = false;
 
             //Set Columns Count.
-            dgvInventory.ColumnCount = 10;
+            //dgvInventory.ColumnCount = 10;
 
 
 
 
+        }
+
+        void PopulateData()
+        {
+            //Database connection
+            string connectionString = null;
+            MySqlConnection conn;
+            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
+            conn = new MySqlConnection(connectionString);
+
+            conn.Open();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_ID, FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT FROM INVENTORY WHERE PROPRIETOR_ID = '" + id + "'", conn);
+            adapter.Fill(dt);
+            dgvInventory.DataSource = dt;
+
+            //Column header names
+            dgvInventory.Columns[0].HeaderText = "Stock No.";
+            dgvInventory.Columns[1].HeaderText = "Food Name";
+            dgvInventory.Columns[2].HeaderText = "Description";
+            dgvInventory.Columns[3].HeaderText = "Image";
+            dgvInventory.Columns[4].HeaderText = "Stock Quantity";
+            dgvInventory.Columns[5].HeaderText = "Unit Price";
+            dgvInventory.Columns[6].HeaderText = "Category";
+            dgvInventory.Columns[7].HeaderText = "Unit";
+            dgvInventory.Columns[8].HeaderText = "Inventory Value";
+            dgvInventory.Columns[9].HeaderText = "Created At";
+            dgvInventory.Columns[5].HeaderText = "Updated At";
+
+            conn.Close();
         }
 
         //Add button - Add new stock
@@ -86,8 +120,8 @@ namespace Carinderia_Kiosk_System.Proprietor
                     fs.Close();
 
                     //adds new food item
-                    string addStock = "INSERT INTO INVENTORY(FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE) " +
-                    "VALUES(@foodName, @desc, @image, @quantity, @unitPrice, @category, @unit, @invValue)";
+                    string addStock = "INSERT INTO INVENTORY(FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, PROPRIETOR _ID) " +
+                    "VALUES(@foodName, @desc, @image, @quantity, @unitPrice, @category, @unit, @invValue, @id)";
                     MySqlCommand cmd = new MySqlCommand(addStock, conn);
 
                     cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
@@ -98,6 +132,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     cmd.Parameters.AddWithValue("@category", cbCategory.Text);
                     cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
                     cmd.Parameters.AddWithValue("@invValue", inventoryValue);
+                    cmd.Parameters.AddWithValue("@id", id);
 
                     int ctr = cmd.ExecuteNonQuery();
                     if(ctr > 0)

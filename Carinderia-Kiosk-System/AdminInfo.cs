@@ -8,24 +8,24 @@ namespace Carinderia_Kiosk_System
 {
     public class AdminInfo
     {
-        public int ID { get; set; }
+        public static int ID { get; set; }
 
-        public string Firstname { get; set; }
+        public static string Firstname { get; set; }
 
-        public string Lastname { get; set; }
+        public static string Lastname { get; set; }
 
-        public string StoreName { get; set; }
+        public static string StoreName { get; set; }
 
-        public string Location { get; set; }
+        public static string Location { get; set; }
 
-        public string ContactNum { get; set; }
+        public static string ContactNum { get; set; }
 
         public static string EmailAddress { get; set; }
 
-        public string Password { get; set; }
+        public static string Password { get; set; }
 
-        public string CreatedAt { get; set; }
+        public static string CreatedAt { get; set; }
 
-        public string UpdatedAt { get; set; }
+        public static string UpdatedAt { get; set; }
     }
 }
