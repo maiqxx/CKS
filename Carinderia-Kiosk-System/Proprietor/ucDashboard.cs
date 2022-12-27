@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,5 +29,42 @@ namespace Carinderia_Kiosk_System.Proprietor
                 return _instance;
             }
         }
+
+        private void ucDashboard_Load(object sender, EventArgs e)
+        {
+            string emailAddress;
+            emailAddress = AdminInfo.EmailAddress.Trim();
+
+            try
+            {
+                //Database connection
+                string connectionString = null;
+                MySqlConnection conn;
+                connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
+                conn = new MySqlConnection(connectionString);
+                conn.Open();
+
+                string query = "SELECT * FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + emailAddress + "'";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    lblStoreName.Text = reader["STORE_NAME"].ToString();
+                    lblLocation.Text = reader["LOCATION"].ToString();
+                    lblEmailAddress.Text = reader["EMAIL_ADDRESS"].ToString();
+                    lblContactNum.Text = reader["CONTACT_NUMBER"].ToString();
+                    lblOpeningTime.Text = reader["OPENING_TIME"].ToString();
+                    lblClosingTime.Text = reader["CLOSING_TIME"].ToString();
+                }
+                conn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
     }
 }
