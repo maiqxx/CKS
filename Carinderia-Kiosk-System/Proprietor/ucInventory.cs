@@ -20,7 +20,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         private static ucInventory instance;
 
         int codeNum = 0;
-        int id = AdminInfo.ID;
+        //int id = AdminInfo.ID;
 
         public static ucInventory Instance
         {
@@ -54,9 +54,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             //Set Columns Count.
             //dgvInventory.ColumnCount = 10;
 
-
-
-
         }
 
         void PopulateData()
@@ -69,7 +66,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             conn.Open();
             DataTable dt = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_ID, FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT FROM INVENTORY WHERE PROPRIETOR_ID = '" + id + "'", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_ID, FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT FROM INVENTORY", conn);
             adapter.Fill(dt);
             dgvInventory.DataSource = dt;
 
@@ -84,7 +81,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             dgvInventory.Columns[7].HeaderText = "Unit";
             dgvInventory.Columns[8].HeaderText = "Inventory Value";
             dgvInventory.Columns[9].HeaderText = "Created At";
-            dgvInventory.Columns[5].HeaderText = "Updated At";
+            dgvInventory.Columns[10].HeaderText = "Updated At";
 
             conn.Close();
         }
@@ -119,8 +116,14 @@ namespace Carinderia_Kiosk_System.Proprietor
                     br.Close();
                     fs.Close();
 
+                    //STUCK HERE
+                    //THE PROBLEM HERE IS I STILL DON'T HAVE THE IDEA HOW TO GET THE PROPRIETOR'S ID TO INSERT HERE IN INVENTORY'S TABLE IN ITS PROPRIETOR_ID FIELD
+                    //I TRIED THE INNER JOIN BU I THINK IT'LL ONLY WORKS WHEN YOU WANT TO DISPLAY DATA FROM TWO TABLES
+                    //WILL FIND WAY HOW WE CAN DYNAMICALLY INSERT THE PROPRIETOR'S ID ON THE INVENTORY TABLE
+                    //BE BACK ON THIS, I'LL JUST BE DESIGNING THE DASHBOARD
+
                     //adds new food item
-                    string addStock = "INSERT INTO INVENTORY(FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, PROPRIETOR _ID) " +
+                    string addStock = "INSERT INTO INVENTORY(FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, PROPRIETOR_ID) " +
                     "VALUES(@foodName, @desc, @image, @quantity, @unitPrice, @category, @unit, @invValue, @id)";
                     MySqlCommand cmd = new MySqlCommand(addStock, conn);
 
@@ -132,10 +135,10 @@ namespace Carinderia_Kiosk_System.Proprietor
                     cmd.Parameters.AddWithValue("@category", cbCategory.Text);
                     cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
                     cmd.Parameters.AddWithValue("@invValue", inventoryValue);
-                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@id", AdminInfo.ID);
 
                     int ctr = cmd.ExecuteNonQuery();
-                    if(ctr > 0)
+                    if (ctr > 0)
                     {
                         MessageBox.Show("Food item added successfully!");
                     }
@@ -145,6 +148,8 @@ namespace Carinderia_Kiosk_System.Proprietor
                 {
                     MessageBox.Show("Incomplete data!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                conn.Close();
+
             }
             catch (Exception ex)
             {
