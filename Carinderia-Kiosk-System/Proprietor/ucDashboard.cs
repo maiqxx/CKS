@@ -33,9 +33,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void ucDashboard_Load(object sender, EventArgs e)
         {
-            string emailAddress;
-            emailAddress = AdminInfo.EmailAddress.Trim();
-
             try
             {
                 //Database connection
@@ -45,7 +42,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 conn = new MySqlConnection(connectionString);
                 conn.Open();
 
-                string query = "SELECT * FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + emailAddress + "'";
+                string query = "SELECT * FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "'";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
 

@@ -103,11 +103,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             FileStream fs;
             BinaryReader br;
 
+
+
             try
             {
+                conn.Open();
+
                 if (txtFoodName.Text.Length > 0 && txtImagePath.Text.Length > 0)
                 {
-                    conn.Open();
+
                     string FileName = txtImagePath.Text;
                     byte[] ImageData;
                     fs = new FileStream(FileName, FileMode.Open, FileAccess.Read);
@@ -123,21 +127,21 @@ namespace Carinderia_Kiosk_System.Proprietor
                     //BE BACK ON THIS, I'LL JUST BE DESIGNING THE DASHBOARD
 
                     //adds new food item
-                    string addStock = "INSERT INTO INVENTORY(FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, PROPRIETOR_ID) " +
-                    "VALUES(@foodName, @desc, @image, @quantity, @unitPrice, @category, @unit, @invValue, @id)";
-                    MySqlCommand cmd = new MySqlCommand(addStock, conn);
+                    string addStock = "INSERT INTO INVENTORY(FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE) " +
+                    "VALUES(@foodName, @desc, @image, @quantity, @unitPrice, @category, @unit, @invValue)";
+                    MySqlCommand cmd1 = new MySqlCommand(addStock, conn);
 
-                    cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
-                    cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@image", ImageData);
-                    cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
-                    cmd.Parameters.AddWithValue("@unitPrice", txtUnitPrice.Text);
-                    cmd.Parameters.AddWithValue("@category", cbCategory.Text);
-                    cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
-                    cmd.Parameters.AddWithValue("@invValue", inventoryValue);
-                    cmd.Parameters.AddWithValue("@id", AdminInfo.ID);
+                    cmd1.Parameters.AddWithValue("@foodName", txtFoodName.Text);
+                    cmd1.Parameters.AddWithValue("@desc", txtDescription.Text);
+                    cmd1.Parameters.AddWithValue("@image", ImageData);
+                    cmd1.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+                    cmd1.Parameters.AddWithValue("@unitPrice", txtUnitPrice.Text);
+                    cmd1.Parameters.AddWithValue("@category", cbCategory.Text);
+                    cmd1.Parameters.AddWithValue("@unit", txtUnit.Text);
+                    cmd1.Parameters.AddWithValue("@invValue", inventoryValue);
+                    //cmd1.Parameters.AddWithValue("@id", AdminInfo.ID);
 
-                    int ctr = cmd.ExecuteNonQuery();
+                    int ctr = cmd1.ExecuteNonQuery();
                     if (ctr > 0)
                     {
                         MessageBox.Show("Food item added successfully!");
@@ -148,6 +152,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 {
                     MessageBox.Show("Incomplete data!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 conn.Close();
 
             }
@@ -173,6 +178,38 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearData();
+        }
+
+        void getID()
+        {
+            //Database connection
+            string connectionString = null;
+            MySqlConnection conn;
+            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
+            conn = new MySqlConnection(connectionString);
+            FileStream fs;
+            BinaryReader br;
+
+            try
+            {
+                conn.Open();
+
+                string query = "SELECT PROPRIETOR_ID AS ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "'";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    //Get's PROPRIETOR_ID, and stores in AdminInfo.ID
+                    AdminInfo.ID = (int)reader["ID"];
+                    
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Clears data in textboxes

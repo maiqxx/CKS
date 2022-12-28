@@ -207,9 +207,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Carinderia_Kiosk_System.Properties.Resources.user_icon_20_x_20;
-            this.pictureBox3.Location = new System.Drawing.Point(1190, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(1185, 9);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(31, 33);
+            this.pictureBox3.Size = new System.Drawing.Size(36, 33);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;

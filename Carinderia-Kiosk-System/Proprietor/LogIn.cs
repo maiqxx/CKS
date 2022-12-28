@@ -48,7 +48,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     conn.Open();
 
                     //This query checks if the user credentials
-                    string check = "SELECT * FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + emailAddress + "' AND PASSWORD = '" + password + "'";
+                    string check = "SELECT * FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "' AND PASSWORD = '" + password + "'";
                     MySqlCommand cmd1 = new MySqlCommand(check, conn);
                     MySqlDataReader reader = cmd1.ExecuteReader();
 
@@ -81,70 +81,33 @@ namespace Carinderia_Kiosk_System.Proprietor
             createAccount.Show();
         }
 
-        //Not sure for this method, but trying to set the AdminInfo [might remove this stuff]
-        void setAdminInfo()
+       void setAdminInfo()
         {
-            //int id = 0;
-            //string firstname = "";
-            //string lastname = "";
-            //string storeName = "";
-            //string location = "";
-            //string contactNum = "";
-            //string emailAddress = "";
-            //string password = "";
-            //string createdAt = "";
-            //string updatedAt = "";
-
-            //AdminInfo.ID = id;
-            //AdminInfo.Firstname = firstname;
-            //AdminInfo.Lastname = lastname;
-            //AdminInfo.StoreName = storeName;
-            //AdminInfo.Location = location;
-            //AdminInfo.ContactNum = contactNum;
-            //AdminInfo.EmailAddress = emailAddress;
-            //AdminInfo.Password = password;
-            //AdminInfo.CreatedAt = createdAt;
-            //AdminInfo.UpdatedAt = updatedAt;
-
             //Database connection
             string connectionString = null;
             MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; pwd=\"\";";
+            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
             conn = new MySqlConnection(connectionString);
 
             try
             {
                 conn.Open();
 
-                //This query checks if the user credentials
-                string getAdminInfo = "SELECT * FROM PROPRIETOR";
-                MySqlCommand cmd1 = new MySqlCommand(getAdminInfo, conn);
-                MySqlDataReader reader = cmd1.ExecuteReader();
+                string query = "SELECT PROPRIETOR_ID AS ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "'";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    AdminInfo.ID = (int)reader["PROPRIETOR_ID"];
-                    AdminInfo.Firstname = reader["FIRSTNAME"].ToString();
-                    AdminInfo.Lastname = reader["LASTNAME"].ToString();
-                    AdminInfo.StoreName = reader["STORE_NAME"].ToString();
-                    AdminInfo.Location = reader["LOCATION"].ToString();
-                    AdminInfo.ContactNum = reader["CONTACT_NUMBER"].ToString();
-                    AdminInfo.Password = reader["PASSWORD"].ToString();
-                    AdminInfo.CreatedAt = reader["CREATED_AT"].ToString();
-                    AdminInfo.UpdatedAt = reader["UPDATED_AT"].ToString();
+                    //Get's PROPRIETOR_ID, and stores in AdminInfo.ID
+                    AdminInfo.ID = (int)reader["ID"];
                 }
-                else
-                {
-                    MessageBox.Show("Invalid Credentials");
-                }
-
-                conn.Close();
-
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+        
     }
 }
