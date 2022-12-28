@@ -18,6 +18,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         public ucDashboard()
         {
             InitializeComponent();
+            timerCurrTime.Start();
         }
 
         public static ucDashboard Instance
@@ -65,6 +66,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        private void timerCurrTime_Tick(object sender, EventArgs e)
+        {
+            DateTime dateTime = DateTime.Now;
+            this.lblTime.Text = dateTime.ToString("hh:mm:ss tt");
+        }
 
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
