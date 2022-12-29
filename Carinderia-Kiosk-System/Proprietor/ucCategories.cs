@@ -98,9 +98,9 @@ namespace Carinderia_Kiosk_System.Proprietor
                     MessageBox.Show("Please provide category details!");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Oops! Cannot add category...");
+                MessageBox.Show(ex.Message);
             }
         }
 
