@@ -65,7 +65,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.txtDescription);
             this.panel2.Controls.Add(this.btnRemove);
@@ -73,9 +73,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.lblDescription);
             this.panel2.Controls.Add(this.txtCategoryName);
-            this.panel2.Location = new System.Drawing.Point(187, 61);
+            this.panel2.Location = new System.Drawing.Point(187, 59);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(859, 245);
+            this.panel2.Size = new System.Drawing.Size(859, 231);
             this.panel2.TabIndex = 7;
             // 
             // btnEdit
@@ -96,7 +96,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(278, 112);
+            this.txtDescription.Location = new System.Drawing.Point(277, 95);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(275, 96);
@@ -120,7 +120,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblCategoryName.AutoSize = true;
             this.lblCategoryName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoryName.Location = new System.Drawing.Point(109, 65);
+            this.lblCategoryName.Location = new System.Drawing.Point(108, 46);
             this.lblCategoryName.Name = "lblCategoryName";
             this.lblCategoryName.Size = new System.Drawing.Size(150, 21);
             this.lblCategoryName.TabIndex = 0;
@@ -144,7 +144,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(151, 112);
+            this.lblDescription.Location = new System.Drawing.Point(150, 95);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(108, 21);
             this.lblDescription.TabIndex = 1;
@@ -153,10 +153,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // txtCategoryName
             // 
             this.txtCategoryName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryName.Location = new System.Drawing.Point(278, 46);
-            this.txtCategoryName.Multiline = true;
+            this.txtCategoryName.Location = new System.Drawing.Point(277, 46);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(276, 40);
+            this.txtCategoryName.Size = new System.Drawing.Size(276, 28);
             this.txtCategoryName.TabIndex = 2;
             // 
             // dgvMenuCategories
@@ -218,7 +217,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // txtSearchCategory
             // 
             this.txtSearchCategory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCategory.Location = new System.Drawing.Point(841, 341);
+            this.txtSearchCategory.Location = new System.Drawing.Point(865, 342);
             this.txtSearchCategory.Multiline = true;
             this.txtSearchCategory.Name = "txtSearchCategory";
             this.txtSearchCategory.Size = new System.Drawing.Size(299, 35);
@@ -237,10 +236,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Image = global::Carinderia_Kiosk_System.Properties.Resources.search_blck_20_x_20;
-            this.btnSearch.Location = new System.Drawing.Point(1160, 339);
+            this.btnSearch.Location = new System.Drawing.Point(1170, 343);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(61, 39);
+            this.btnSearch.Size = new System.Drawing.Size(51, 35);
             this.btnSearch.TabIndex = 18;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
