@@ -265,5 +265,14 @@
   <ItemGroup>
     <None Include="Resources\clock 20 x 20.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userEmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password 28 x 26.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

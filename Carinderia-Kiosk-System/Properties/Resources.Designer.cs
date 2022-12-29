@@ -183,6 +183,26 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap password {
+            get {
+                object obj = ResourceManager.GetObject("password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap password_28_x_26 {
+            get {
+                object obj = ResourceManager.GetObject("password 28 x 26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap refresh_20_x_20 {
             get {
                 object obj = ResourceManager.GetObject("refresh 20 x 20", resourceCulture);
@@ -256,6 +276,16 @@ namespace Carinderia_Kiosk_System.Properties {
         internal static System.Drawing.Bitmap user_icon_20_x_20 {
             get {
                 object obj = ResourceManager.GetObject("user icon 20 x 20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userEmail {
+            get {
+                object obj = ResourceManager.GetObject("userEmail", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
