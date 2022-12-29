@@ -83,5 +83,10 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
 
         }
+
+        private void lblEmailAddress_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
