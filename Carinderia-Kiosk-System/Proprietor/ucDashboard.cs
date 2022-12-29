@@ -66,10 +66,15 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void timerCurrTime_Tick(object sender, EventArgs e)
         {
             DateTime dateTime = DateTime.Now;
-            this.lblTime.Text = dateTime.ToString("hh:mm:ss tt");
+            this.lblTime.Text = dateTime.ToString("hh:mm tt");
         }
 
         private void lblTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
 
         }

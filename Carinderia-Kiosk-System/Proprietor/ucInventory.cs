@@ -19,9 +19,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private static ucInventory instance;
 
-        int codeNum = 0;
-        //int id = AdminInfo.ID;
-
         public static ucInventory Instance
         {
             get
@@ -175,6 +172,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearData();
+        }
+
+        void DisplayStockCode()
+        {
+
         }
 
         //Clears data in textboxes

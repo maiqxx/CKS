@@ -56,6 +56,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblManageMenuCat.AutoSize = true;
             this.lblManageMenuCat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageMenuCat.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblManageMenuCat.Location = new System.Drawing.Point(21, 20);
             this.lblManageMenuCat.Name = "lblManageMenuCat";
             this.lblManageMenuCat.Size = new System.Drawing.Size(266, 23);
