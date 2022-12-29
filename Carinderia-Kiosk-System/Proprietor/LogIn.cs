@@ -54,7 +54,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                     if (reader.Read())
                     {
-                        setAdminInfo();
                         AdminBoard board = new AdminBoard(emailAddress);
                         this.Hide();
                         board.Show();
@@ -63,7 +62,6 @@ namespace Carinderia_Kiosk_System.Proprietor
                     {
                         MessageBox.Show("Invalid Credentials");
                     }
-
                     conn.Close();
                 }
             }
@@ -80,34 +78,5 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Hide();
             createAccount.Show();
         }
-
-       void setAdminInfo()
-        {
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
-
-            try
-            {
-                conn.Open();
-
-                string query = "SELECT PROPRIETOR_ID AS ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "'";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    //Get's PROPRIETOR_ID, and stores in AdminInfo.ID
-                    AdminInfo.ID = (int)reader["ID"];
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        
     }
 }

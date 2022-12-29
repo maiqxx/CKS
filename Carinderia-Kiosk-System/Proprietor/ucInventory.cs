@@ -93,7 +93,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             double unitPrice = double.Parse(txtUnitPrice.Text);
             int quantity = int.Parse(txtQuantity.Text);
             double inventoryValue = unitPrice * quantity;
-            
 
             //Database connection
             string connectionString = null;
@@ -103,15 +102,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             FileStream fs;
             BinaryReader br;
 
-
-
             try
             {
                 conn.Open();
 
                 if (txtFoodName.Text.Length > 0 && txtImagePath.Text.Length > 0)
                 {
-
                     string FileName = txtImagePath.Text;
                     byte[] ImageData;
                     fs = new FileStream(FileName, FileMode.Open, FileAccess.Read);
@@ -120,41 +116,42 @@ namespace Carinderia_Kiosk_System.Proprietor
                     br.Close();
                     fs.Close();
 
-                    //STUCK HERE
-                    //THE PROBLEM HERE IS I STILL DON'T HAVE THE IDEA HOW TO GET THE PROPRIETOR'S ID TO INSERT HERE IN INVENTORY'S TABLE IN ITS PROPRIETOR_ID FIELD
-                    //I TRIED THE INNER JOIN BU I THINK IT'LL ONLY WORKS WHEN YOU WANT TO DISPLAY DATA FROM TWO TABLES
-                    //WILL FIND WAY HOW WE CAN DYNAMICALLY INSERT THE PROPRIETOR'S ID ON THE INVENTORY TABLE
-                    //BE BACK ON THIS, I'LL JUST BE DESIGNING THE DASHBOARD
-
                     //adds new food item
-                    string addStock = "INSERT INTO INVENTORY(FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE) " +
-                    "VALUES(@foodName, @desc, @image, @quantity, @unitPrice, @category, @unit, @invValue)";
-                    MySqlCommand cmd1 = new MySqlCommand(addStock, conn);
+                    string addStock = "INSERT INTO INVENTORY " +
+                                        "SET FOOD_NAME = @foodName, " +
+                                        "DESCRIPTION = @desc, " +
+                                        "IMAGE = @image, " +
+                                        "STOCK_QUANTITY = @quantity, " +
+                                        "PRICE = @unitPrice, " +
+                                        "CATEGORY = @category, " +
+                                        "UNIT = @unit, " +
+                                        "INV_VALUE = @invValue, " +
+                                        "PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')";
+                    MySqlCommand cmd = new MySqlCommand(addStock, conn);
 
-                    cmd1.Parameters.AddWithValue("@foodName", txtFoodName.Text);
-                    cmd1.Parameters.AddWithValue("@desc", txtDescription.Text);
-                    cmd1.Parameters.AddWithValue("@image", ImageData);
-                    cmd1.Parameters.AddWithValue("@quantity", txtQuantity.Text);
-                    cmd1.Parameters.AddWithValue("@unitPrice", txtUnitPrice.Text);
-                    cmd1.Parameters.AddWithValue("@category", cbCategory.Text);
-                    cmd1.Parameters.AddWithValue("@unit", txtUnit.Text);
-                    cmd1.Parameters.AddWithValue("@invValue", inventoryValue);
-                    //cmd1.Parameters.AddWithValue("@id", AdminInfo.ID);
+                    cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
+                    cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
+                    cmd.Parameters.AddWithValue("@image", ImageData);
+                    cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+                    cmd.Parameters.AddWithValue("@unitPrice", txtUnitPrice.Text);
+                    cmd.Parameters.AddWithValue("@category", cbCategory.Text);
+                    cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
+                    cmd.Parameters.AddWithValue("@invValue", inventoryValue);
 
-                    int ctr = cmd1.ExecuteNonQuery();
+                    int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
                     {
                         MessageBox.Show("Food item added successfully!");
                     }
                     conn.Close();
+                    PopulateData();
+                    ClearData();
                 }
                 else
                 {
                     MessageBox.Show("Incomplete data!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
                 conn.Close();
-
             }
             catch (Exception ex)
             {
@@ -178,38 +175,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearData();
-        }
-
-        void getID()
-        {
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
-            FileStream fs;
-            BinaryReader br;
-
-            try
-            {
-                conn.Open();
-
-                string query = "SELECT PROPRIETOR_ID AS ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "'";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    //Get's PROPRIETOR_ID, and stores in AdminInfo.ID
-                    AdminInfo.ID = (int)reader["ID"];
-                    
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         //Clears data in textboxes
