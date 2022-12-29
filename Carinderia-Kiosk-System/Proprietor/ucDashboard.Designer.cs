@@ -43,16 +43,24 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblLocation = new System.Windows.Forms.Label();
             this.lblLoc = new System.Windows.Forms.Label();
             this.lblStoreName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.lblStoreDesc = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timerCurrTime = new System.Windows.Forms.Timer(this.components);
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelMenuCategories = new System.Windows.Forms.Panel();
+            this.lblMenuCategories = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pbClock = new System.Windows.Forms.PictureBox();
+            this.pbMenuCategoriesIcon = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlStoreDesc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenuCategoriesIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDashboard
@@ -94,7 +102,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblClosingTime.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblClosingTime.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClosingTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblClosingTime.Location = new System.Drawing.Point(746, 171);
+            this.lblClosingTime.Location = new System.Drawing.Point(745, 170);
             this.lblClosingTime.Name = "lblClosingTime";
             this.lblClosingTime.Size = new System.Drawing.Size(108, 19);
             this.lblClosingTime.TabIndex = 14;
@@ -106,7 +114,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCT.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblCT.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCT.Location = new System.Drawing.Point(629, 169);
+            this.lblCT.Location = new System.Drawing.Point(628, 171);
             this.lblCT.Name = "lblCT";
             this.lblCT.Size = new System.Drawing.Size(116, 21);
             this.lblCT.TabIndex = 13;
@@ -118,7 +126,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblOpeningTime.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblOpeningTime.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOpeningTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblOpeningTime.Location = new System.Drawing.Point(240, 169);
+            this.lblOpeningTime.Location = new System.Drawing.Point(238, 171);
             this.lblOpeningTime.Name = "lblOpeningTime";
             this.lblOpeningTime.Size = new System.Drawing.Size(118, 19);
             this.lblOpeningTime.TabIndex = 12;
@@ -130,7 +138,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblOT.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblOT.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblOT.Location = new System.Drawing.Point(114, 167);
+            this.lblOT.Location = new System.Drawing.Point(114, 169);
             this.lblOT.Name = "lblOT";
             this.lblOT.Size = new System.Drawing.Size(129, 21);
             this.lblOT.TabIndex = 11;
@@ -141,7 +149,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblContactNum.AutoSize = true;
             this.lblContactNum.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactNum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblContactNum.Location = new System.Drawing.Point(746, 110);
+            this.lblContactNum.Location = new System.Drawing.Point(745, 105);
             this.lblContactNum.Name = "lblContactNum";
             this.lblContactNum.Size = new System.Drawing.Size(139, 19);
             this.lblContactNum.TabIndex = 10;
@@ -152,7 +160,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblContact.AutoSize = true;
             this.lblContact.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContact.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblContact.Location = new System.Drawing.Point(629, 107);
+            this.lblContact.Location = new System.Drawing.Point(628, 102);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(121, 21);
             this.lblContact.TabIndex = 9;
@@ -163,7 +171,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblEmailAddress.AutoSize = true;
             this.lblEmailAddress.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailAddress.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEmailAddress.Location = new System.Drawing.Point(473, 110);
+            this.lblEmailAddress.Location = new System.Drawing.Point(472, 105);
             this.lblEmailAddress.Name = "lblEmailAddress";
             this.lblEmailAddress.Size = new System.Drawing.Size(53, 19);
             this.lblEmailAddress.TabIndex = 8;
@@ -174,7 +182,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEmail.Location = new System.Drawing.Point(354, 108);
+            this.lblEmail.Location = new System.Drawing.Point(353, 103);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(129, 21);
             this.lblEmail.TabIndex = 7;
@@ -185,7 +193,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblLocation.AutoSize = true;
             this.lblLocation.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblLocation.Location = new System.Drawing.Point(194, 111);
+            this.lblLocation.Location = new System.Drawing.Point(193, 106);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(78, 19);
             this.lblLocation.TabIndex = 6;
@@ -196,7 +204,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblLoc.AutoSize = true;
             this.lblLoc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblLoc.Location = new System.Drawing.Point(114, 110);
+            this.lblLoc.Location = new System.Drawing.Point(113, 105);
             this.lblLoc.Name = "lblLoc";
             this.lblLoc.Size = new System.Drawing.Size(88, 21);
             this.lblLoc.TabIndex = 5;
@@ -207,29 +215,19 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblStoreName.AutoSize = true;
             this.lblStoreName.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStoreName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblStoreName.Location = new System.Drawing.Point(114, 84);
+            this.lblStoreName.Location = new System.Drawing.Point(113, 79);
             this.lblStoreName.Name = "lblStoreName";
             this.lblStoreName.Size = new System.Drawing.Size(148, 28);
             this.lblStoreName.TabIndex = 4;
             this.lblStoreName.Text = "Store Name";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.store_white_40_x_40;
-            this.pictureBox1.Location = new System.Drawing.Point(53, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 148);
+            this.splitter1.Location = new System.Drawing.Point(0, 151);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(952, 62);
+            this.splitter1.Size = new System.Drawing.Size(952, 59);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
@@ -247,11 +245,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTime.Location = new System.Drawing.Point(1079, 52);
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblTime.Location = new System.Drawing.Point(90, 19);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(66, 28);
+            this.lblTime.Size = new System.Drawing.Size(47, 19);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "Time";
             this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
@@ -273,16 +271,77 @@ namespace Carinderia_Kiosk_System.Proprietor
             // panel2
             // 
             this.panel2.Controls.Add(this.monthCalendar1);
-            this.panel2.Location = new System.Drawing.Point(1002, 89);
+            this.panel2.Location = new System.Drawing.Point(999, 106);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(262, 207);
             this.panel2.TabIndex = 5;
+            // 
+            // panelMenuCategories
+            // 
+            this.panelMenuCategories.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelMenuCategories.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelMenuCategories.Location = new System.Drawing.Point(24, 342);
+            this.panelMenuCategories.Name = "panelMenuCategories";
+            this.panelMenuCategories.Size = new System.Drawing.Size(403, 398);
+            this.panelMenuCategories.TabIndex = 6;
+            // 
+            // lblMenuCategories
+            // 
+            this.lblMenuCategories.AutoSize = true;
+            this.lblMenuCategories.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuCategories.Location = new System.Drawing.Point(66, 313);
+            this.lblMenuCategories.Name = "lblMenuCategories";
+            this.lblMenuCategories.Size = new System.Drawing.Size(178, 23);
+            this.lblMenuCategories.TabIndex = 9;
+            this.lblMenuCategories.Text = "Menu Categories";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pbClock);
+            this.panel1.Controls.Add(this.lblTime);
+            this.panel1.Location = new System.Drawing.Point(999, 49);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(262, 51);
+            this.panel1.TabIndex = 10;
+            // 
+            // pbClock
+            // 
+            this.pbClock.Image = global::Carinderia_Kiosk_System.Properties.Resources.clock_20_x_20;
+            this.pbClock.Location = new System.Drawing.Point(45, 12);
+            this.pbClock.Name = "pbClock";
+            this.pbClock.Size = new System.Drawing.Size(39, 33);
+            this.pbClock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbClock.TabIndex = 11;
+            this.pbClock.TabStop = false;
+            // 
+            // pbMenuCategoriesIcon
+            // 
+            this.pbMenuCategoriesIcon.Image = global::Carinderia_Kiosk_System.Properties.Resources.categories_blue_20_x_20;
+            this.pbMenuCategoriesIcon.Location = new System.Drawing.Point(24, 303);
+            this.pbMenuCategoriesIcon.Name = "pbMenuCategoriesIcon";
+            this.pbMenuCategoriesIcon.Size = new System.Drawing.Size(36, 33);
+            this.pbMenuCategoriesIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbMenuCategoriesIcon.TabIndex = 8;
+            this.pbMenuCategoriesIcon.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.store_white_40_x_40;
+            this.pictureBox1.Location = new System.Drawing.Point(52, 79);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblMenuCategories);
+            this.Controls.Add(this.pbMenuCategoriesIcon);
+            this.Controls.Add(this.panelMenuCategories);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlStoreDesc);
             this.Controls.Add(this.lblDashboard);
@@ -292,8 +351,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Load += new System.EventHandler(this.ucDashboard_Load);
             this.pnlStoreDesc.ResumeLayout(false);
             this.pnlStoreDesc.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenuCategoriesIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,5 +384,10 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Timer timerCurrTime;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelMenuCategories;
+        private System.Windows.Forms.PictureBox pbMenuCategoriesIcon;
+        private System.Windows.Forms.Label lblMenuCategories;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pbClock;
     }
 }
