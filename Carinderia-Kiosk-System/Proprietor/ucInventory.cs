@@ -15,7 +15,8 @@ namespace Carinderia_Kiosk_System.Proprietor
 {
     public partial class ucInventory : UserControl
     {
-        //MySqlConnection conn = new MySqlConnection(@"server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=""");
+        //Database connection
+        MySqlConnection conn = new MySqlConnection("server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";");
 
         private static ucInventory instance;
 
@@ -58,12 +59,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         void PopulateData()
         {
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
-
             conn.Open();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_ID, FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT FROM INVENTORY", conn);
@@ -90,13 +85,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         void GetStockID()
         {
             string stockID;
-
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
-
             try
             {
                 conn.Open();
@@ -137,11 +125,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             int quantity = int.Parse(txtQuantity.Text);
             double inventoryValue = unitPrice * quantity;
 
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
             FileStream fs;
             BinaryReader br;
 
@@ -205,12 +188,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Edit button
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
-
             try
             {
 
@@ -254,11 +231,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Get Stock code
         void getStockCode()
         {
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
 
             try
             {
@@ -275,12 +247,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Getting category values for combobox
         void SelectCategory()
         {
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
-
             try
             {
                 conn.Open();
