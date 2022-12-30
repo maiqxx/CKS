@@ -86,6 +86,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             conn.Close();
         }
 
+        //Display a generated code in txtStockCode textbox
         void GetStockID()
         {
             string stockID;
@@ -123,12 +124,10 @@ namespace Carinderia_Kiosk_System.Proprietor
                 txtStockCode.Text = stockID.ToString();
 
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
-
-            
         }
 
         //Add button - Add new stock
