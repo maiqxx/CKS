@@ -159,7 +159,20 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Edit button
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            //Database connection
+            string connectionString = null;
+            MySqlConnection conn;
+            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
+            conn = new MySqlConnection(connectionString);
 
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Delete button
@@ -200,6 +213,17 @@ namespace Carinderia_Kiosk_System.Proprietor
             MySqlConnection conn;
             connectionString = "server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=\"\";";
             conn = new MySqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Getting category values for combobox
@@ -211,13 +235,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             connectionString = "server=localhost; database=cks_db; uid=root;  Convert Zero Datetime=True; pwd=\"\";";
             conn = new MySqlConnection(connectionString);
 
-            string selectCategory = "SELECT TYPE_NAME FROM cks_db.MENU_TYPE";
-            MySqlCommand cmd = new MySqlCommand(selectCategory, conn);
-            MySqlDataReader reader;
-
             try
             {
                 conn.Open();
+                string selectCategory = "SELECT TYPE_NAME FROM cks_db.MENU_TYPE";
+                MySqlCommand cmd = new MySqlCommand(selectCategory, conn);
+                MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -274,6 +297,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             PopulateData();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
