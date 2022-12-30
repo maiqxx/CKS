@@ -210,11 +210,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             ClearData();
         }
 
-        void DisplayStockCode()
-        {
-
-        }
-
         //Clears data in textboxes
         void ClearData()
         {
