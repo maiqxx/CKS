@@ -29,15 +29,17 @@ namespace Carinderia_Kiosk_System.Proprietor
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblInventory = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.txtUnit = new System.Windows.Forms.TextBox();
             this.lblUnit = new System.Windows.Forms.Label();
             this.pbFoodImage = new System.Windows.Forms.PictureBox();
@@ -56,27 +58,26 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblFoodName = new System.Windows.Forms.Label();
             this.txtStockCode = new System.Windows.Forms.TextBox();
             this.lblStockCode = new System.Windows.Forms.Label();
-            this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInventory
             // 
             this.lblInventory.AutoSize = true;
-            this.lblInventory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventory.Location = new System.Drawing.Point(14, 20);
+            this.lblInventory.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInventory.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblInventory.Location = new System.Drawing.Point(13, 9);
             this.lblInventory.Name = "lblInventory";
-            this.lblInventory.Size = new System.Drawing.Size(101, 23);
+            this.lblInventory.Size = new System.Drawing.Size(119, 28);
             this.lblInventory.TabIndex = 0;
             this.lblInventory.Text = "Inventory";
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(107, 334);
+            this.btnAdd.Location = new System.Drawing.Point(383, 335);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(99, 34);
             this.btnAdd.TabIndex = 2;
@@ -87,7 +88,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(244, 334);
+            this.btnEdit.Location = new System.Drawing.Point(520, 335);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 34);
             this.btnEdit.TabIndex = 3;
@@ -98,7 +99,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(381, 334);
+            this.btnDelete.Location = new System.Drawing.Point(657, 335);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 34);
             this.btnDelete.TabIndex = 4;
@@ -136,6 +137,59 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1227, 901);
             this.panel1.TabIndex = 5;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
+            this.btnRefresh.Location = new System.Drawing.Point(323, 336);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(32, 34);
+            this.btnRefresh.TabIndex = 19;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // dgvInventory
+            // 
+            this.dgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInventory.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvInventory.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvInventory.Location = new System.Drawing.Point(19, 391);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvInventory.RowHeadersWidth = 55;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvInventory.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvInventory.RowTemplate.Height = 24;
+            this.dgvInventory.Size = new System.Drawing.Size(1188, 494);
+            this.dgvInventory.TabIndex = 2;
             // 
             // txtUnit
             // 
@@ -190,7 +244,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(515, 334);
+            this.btnClear.Location = new System.Drawing.Point(791, 335);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(99, 34);
             this.btnClear.TabIndex = 13;
@@ -315,58 +369,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblStockCode.TabIndex = 0;
             this.lblStockCode.Text = "Stock Code:";
             // 
-            // dgvInventory
-            // 
-            this.dgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInventory.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvInventory.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvInventory.Location = new System.Drawing.Point(19, 391);
-            this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvInventory.RowHeadersWidth = 55;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvInventory.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvInventory.RowTemplate.Height = 24;
-            this.dgvInventory.Size = new System.Drawing.Size(1188, 494);
-            this.dgvInventory.TabIndex = 2;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
-            this.btnRefresh.Location = new System.Drawing.Point(47, 335);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(32, 34);
-            this.btnRefresh.TabIndex = 19;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
             // ucInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -378,8 +380,8 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Load += new System.EventHandler(this.ucInventory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
