@@ -61,7 +61,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             conn.Open();
             DataTable dt = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_ID, FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT FROM INVENTORY", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_CODE, FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT FROM INVENTORY", conn);
             adapter.Fill(dt);
             dgvInventory.DataSource = dt;
 
@@ -144,7 +144,8 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                     //adds new food item
                     string addStock = "INSERT INTO INVENTORY " +
-                                        "SET FOOD_NAME = @foodName, " +
+                                        "SET STOCK_CODE = @stockCode, " +
+                                        "FOOD_NAME = @foodName, " +
                                         "DESCRIPTION = @desc, " +
                                         "IMAGE = @image, " +
                                         "STOCK_QUANTITY = @quantity, " +
@@ -155,6 +156,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                                         "PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')";
                     MySqlCommand cmd = new MySqlCommand(addStock, conn);
 
+                    cmd.Parameters.AddWithValue("@stockCode", txtStockCode.Text);
                     cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
                     cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
                     cmd.Parameters.AddWithValue("@image", ImageData);
