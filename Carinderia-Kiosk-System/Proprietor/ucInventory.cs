@@ -228,22 +228,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             pbFoodImage.Image = null;
         }
 
-        //Get Stock code
-        void getStockCode()
-        {
-
-            try
-            {
-                conn.Open();
-
-                
-
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         //Getting category values for combobox
         void SelectCategory()
         {
