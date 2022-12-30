@@ -39,6 +39,9 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void ucInventory_Load(object sender, EventArgs e)
         {
+            //generated stock ID
+            GetStockID();
+
             //Binds data for the combobox category
             SelectCategory();
 
@@ -68,7 +71,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             dgvInventory.DataSource = dt;
 
             //Column header names
-            dgvInventory.Columns[0].HeaderText = "Stock No.";
+            dgvInventory.Columns[0].HeaderText = "Stock Code";
             dgvInventory.Columns[1].HeaderText = "Food Name";
             dgvInventory.Columns[2].HeaderText = "Description";
             dgvInventory.Columns[3].HeaderText = "Image";
@@ -83,10 +86,54 @@ namespace Carinderia_Kiosk_System.Proprietor
             conn.Close();
         }
 
+        void GetStockID()
+        {
+            string stockID;
+
+            //Database connection
+            string connectionString = null;
+            MySqlConnection conn;
+            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
+            conn = new MySqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+                string query = "SELECT STOCK_ID " +
+                                "FROM INVENTORY " +
+                                "ORDER BY STOCK_ID DESC";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    int id = int.Parse(dr[0].ToString()) + 1;
+                    stockID = id.ToString("STK00000");
+                }
+                else if (Convert.IsDBNull(dr))
+                {
+                    stockID = ("STK00001");
+                }
+                else
+                {
+                    stockID = ("STK00001");
+                }
+
+                conn.Close();
+                txtStockCode.Text = stockID.ToString();
+
+            }
+            catch
+            {
+
+            }
+
+            
+        }
+
         //Add button - Add new stock
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string code = "STK0000000";
             double unitPrice = double.Parse(txtUnitPrice.Text);
             int quantity = int.Parse(txtQuantity.Text);
             double inventoryValue = unitPrice * quantity;
