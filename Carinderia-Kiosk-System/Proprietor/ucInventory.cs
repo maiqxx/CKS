@@ -174,6 +174,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     conn.Close();
                     PopulateData();
                     ClearData();
+                    GetStockID();
                 }
                 else
                 {
