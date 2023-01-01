@@ -191,8 +191,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Edit/Update button
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //Issue: txtQuantity cannot get the value when it's row is selected
-
             try
             {
                 if(txtStockCode.Text != "" && txtFoodName.Text != "" && txtDescription.Text != "" && cbCategory.Text != "" && txtUnitPrice.Text != "" && txtQuantity.Text != "" && txtUnit.Text != "" && pbFoodImage.Image != null)
