@@ -206,7 +206,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 {
                     //updates stock item
                     MySqlCommand cmd = new MySqlCommand();
-                    cmd = new MySqlCommand("UPDATE INVENTORY SET FOOD_NAME = @foodName, DESCRIPTION = @description, IMAGE = @image, STOCK_QUANTITY = @quantity, PRICE = @price, CATEGORY = @category, UNIT = @unit WHERE STOCK_CODE = @stockCode", conn);
+                    cmd = new MySqlCommand("UPDATE INVENTORY SET FOOD_NAME = @foodName, DESCRIPTION = @description, IMAGE = @image, STOCK_QUANTITY = @quantity, PRICE = @price, CATEGORY = @category, UNIT = @unit WHERE STOCK_CODE = (SELECT STOCK_ID FROM INVENTORY WHERE STOCK_CODE = '" + this.txtStockCode + "')", conn);
                     conn.Open();
                     cmd.Parameters.AddWithValue("@stockCode", txtStockCode.Text);
                     cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
