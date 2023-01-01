@@ -85,6 +85,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminInfo.cs" />
+    <Compile Include="cks_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cks_dbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\AdminBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +192,17 @@
     <EmbeddedResource Include="StartUp.resx">
       <DependentUpon>StartUp.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="cks_dbDataSet.xsc">
+      <DependentUpon>cks_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="cks_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cks_dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cks_dbDataSet.xss">
+      <DependentUpon>cks_dbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

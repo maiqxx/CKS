@@ -65,19 +65,26 @@ namespace Carinderia_Kiosk_System.Proprietor
             MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_CODE, FOOD_NAME, DESCRIPTION, IMAGE, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT FROM INVENTORY", conn);
             adapter.Fill(dt);
             dgvInventory.DataSource = dt;
+            //dt.Columns.Add("FOOD IMAGE", Type.GetType("System.Byte[]"));
+
+            //foreach (DataRow row in dt.Rows)
+            //{
+            //    row["IMAGE"] = File.ReadAllBytes(Application.StartupPath + @"\Image\" + Path.GetFileName(row["IMAGE"].ToString()));
+            //}
+
 
             //Column header names
-            dgvInventory.Columns[0].HeaderText = "Stock Code";
-            dgvInventory.Columns[1].HeaderText = "Food Name";
-            dgvInventory.Columns[2].HeaderText = "Description";
-            dgvInventory.Columns[3].HeaderText = "Image";
-            dgvInventory.Columns[4].HeaderText = "Stock Quantity";
-            dgvInventory.Columns[5].HeaderText = "Unit Price";
-            dgvInventory.Columns[6].HeaderText = "Category";
-            dgvInventory.Columns[7].HeaderText = "Unit";
-            dgvInventory.Columns[8].HeaderText = "Inventory Value";
-            dgvInventory.Columns[9].HeaderText = "Created At";
-            dgvInventory.Columns[10].HeaderText = "Updated At";
+            //dgvInventory.Columns[0].HeaderText = "Stock Code";
+            //dgvInventory.Columns[1].HeaderText = "Food Name";
+            //dgvInventory.Columns[2].HeaderText = "Description";
+            //dgvInventory.Columns[3].HeaderText = "Image";
+            //dgvInventory.Columns[4].HeaderText = "Stock Quantity";
+            //dgvInventory.Columns[5].HeaderText = "Unit Price";
+            //dgvInventory.Columns[6].HeaderText = "Category";
+            //dgvInventory.Columns[7].HeaderText = "Unit";
+            //dgvInventory.Columns[8].HeaderText = "Inventory Value";
+            //dgvInventory.Columns[9].HeaderText = "Created At";
+            //dgvInventory.Columns[10].HeaderText = "Updated At";
 
             conn.Close();
         }
@@ -173,6 +180,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                         MessageBox.Show("Food item added successfully!");
                     }
                     conn.Close();
+                    File.Copy(txtImagePath.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pbFoodImage.ImageLocation));
                     PopulateData();
                     ClearData();
                     GetStockID();
@@ -287,12 +295,14 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             try
             {
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.Filter = "Image files | *.*";
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                OpenFileDialog openfd = new OpenFileDialog();
+                openfd.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif;) | *.jpg; *.jpeg; *.png; *.gif;";
+                if (openfd.ShowDialog() == DialogResult.OK)
                 {
-                    txtImagePath.Text = openFileDialog1.FileName;
-                    pbFoodImage.Image = Image.FromFile(openFileDialog1.FileName);
+                    txtImagePath.Text = openfd.FileName;
+                    pbFoodImage.Image = new Bitmap(openfd.FileName);
+                    pbFoodImage.ImageLocation = openfd.FileName;
+                    pbFoodImage.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
             catch (Exception ex)
@@ -306,12 +316,14 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             try
             {
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.Filter = "Image files | *.*";
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                OpenFileDialog openfd = new OpenFileDialog();
+                openfd.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif;) | *.jpg; *.jpeg; *.png; *.gif;";
+                if (openfd.ShowDialog() == DialogResult.OK)
                 {
-                    txtImagePath.Text = openFileDialog1.FileName;
-                    pbFoodImage.Image = Image.FromFile(openFileDialog1.FileName);
+                    txtImagePath.Text = openfd.FileName;
+                    pbFoodImage.Image = new Bitmap(openfd.FileName);
+                    pbFoodImage.ImageLocation = openfd.FileName;
+                    pbFoodImage.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
             catch (Exception ex)
