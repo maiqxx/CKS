@@ -346,6 +346,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             txtUnit.Text = dgvInventory.Rows[e.RowIndex].Cells[7].Value.ToString();
         }
 
-
+        //dgvInventory_CellClick event
+        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string picpath = @"D:\BSIT III\Carinderia Kiosk System Project\Food Images";
+            //"emp_Lname" or the column index that you want to use               
+            picpath = picpath + dgvInventory["IMAGE", dgvInventory.CurrentCell.RowIndex].Value.ToString() + ".jpg";
+            pbFoodImage.ImageLocation = picpath;
+        }
     }
 }
