@@ -36,6 +36,30 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        //Save Button
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Update Button
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Delete Button
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Clear Button
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pnlForm_Paint(object sender, PaintEventArgs e)
         {
 
