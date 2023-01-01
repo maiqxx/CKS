@@ -337,8 +337,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             txtStockCode.Text = dgvInventory.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtFoodName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtDescription.Text = dgvInventory.Rows[e.RowIndex].Cells[2].Value.ToString();
-            byte[] data = (byte[])(dgvInventory.Rows[e.RowIndex].Cells[3].Value);
-            MemoryStream ms = new MemoryStream(data);
+            MemoryStream ms = new MemoryStream((byte[])dgvInventory.CurrentRow.Cells[3].Value);
             pbFoodImage.Image = Image.FromStream(ms);
             txtQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
             txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
