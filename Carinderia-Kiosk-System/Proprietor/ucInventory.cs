@@ -17,7 +17,7 @@ namespace Carinderia_Kiosk_System.Proprietor
     {
         //Database connection
         MySqlConnection conn = new MySqlConnection("server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";");
-        int stockID = 0;
+        int ID = 0;
 
         private static ucInventory instance;
 
@@ -194,7 +194,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             try
             {
-                if(txtStockCode.Text != "" && txtFoodName.Text != "" && txtDescription.Text != "" && cbCategory.Text != "" && txtUnitPrice.Text != "" && txtQuantity.Text != "" && txtUnit.Text != "" && pbFoodImage.Image != null)
+                if(txtStockCode.Text != "" && txtFoodName.Text != "" && txtDescription.Text != "" && cbCategory.Text != "" && txtUnitPrice.Text != "" && txtQuantity.Text != "" && txtUnit.Text != "")
                 {
                     //updates stock item
                     MySqlCommand cmd = new MySqlCommand();
