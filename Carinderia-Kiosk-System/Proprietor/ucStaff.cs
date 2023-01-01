@@ -35,5 +35,10 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
 
         }
+
+        private void pnlForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
