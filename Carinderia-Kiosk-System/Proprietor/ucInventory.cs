@@ -193,7 +193,10 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             try
             {
+                if(txtStockCode.Text != "" && txtFoodName.Text != "" && txtDescription.Text != "" && cbCategory.Text != "" && txtUnitPrice.Text != "" && txtQuantity.Text != "" && txtUnit.Text != "" && txtImagePath.Text != "" && pbFoodImage.Image != null)
+                {
 
+                }
             }
             catch (Exception ex)
             {
@@ -297,5 +300,20 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
 
         }
+
+        //dgvInventory RowHeaderMouseClick Event
+        private void dgvInventory_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //when row is clicked, values are filled on textboxes
+            txtStockCode.Text = dgvInventory.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtFoodName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtDescription.Text = dgvInventory.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
+            cbCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtUnit.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
+        }
+
+
     }
 }
