@@ -188,14 +188,44 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
-        //Edit button
+        //Edit/Update button
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            //Issue: txtQuantity cannot get the value when it's row is selected
+
             try
             {
-                if(txtStockCode.Text != "" && txtFoodName.Text != "" && txtDescription.Text != "" && cbCategory.Text != "" && txtUnitPrice.Text != "" && txtQuantity.Text != "" && txtUnit.Text != "" && txtImagePath.Text != "" && pbFoodImage.Image != null)
+                if(txtStockCode.Text != "" && txtFoodName.Text != "" && txtDescription.Text != "" && cbCategory.Text != "" && txtUnitPrice.Text != "" && txtQuantity.Text != "" && txtUnit.Text != "" && pbFoodImage.Image != null)
                 {
+                    //updates stock item
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd = new MySqlCommand("UPDATE INVENTORY SET FOOD_NAME = @foodName, DESCRIPTION = @description, IMAGE = @image, STOCK_QUANTITY = @quantity, PRICE = @price, CATEGORY = @category, UNIT = @unit WHERE STOCK_CODE = @stockCode", conn);
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@stockCode", txtStockCode.Text);
+                    cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
+                    cmd.Parameters.AddWithValue("@description", txtDescription.Text);
+                    cmd.Parameters.AddWithValue("@image", pbFoodImage.Image);
+                    cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+                    cmd.Parameters.AddWithValue("@price", txtUnitPrice.Text);
+                    cmd.Parameters.AddWithValue("@category", cbCategory.Text);
+                    cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
 
+                    var ctr = cmd.ExecuteNonQuery();
+                    if (ctr > 0)
+                    {
+                        MessageBox.Show("Food item updated successfully!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot update the selected food item.");
+                    }
+                    conn.Close();
+                    PopulateData();
+                    ClearData();
+                }
+                else
+                {
+                    MessageBox.Show("Please select a food item to update.");
                 }
             }
             catch (Exception ex)
@@ -308,10 +338,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             txtStockCode.Text = dgvInventory.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtFoodName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtDescription.Text = dgvInventory.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
-            cbCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtUnit.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
+            byte[] data = (byte[])(dgvInventory.Rows[e.RowIndex].Cells[3].Value);
+            MemoryStream ms = new MemoryStream(data);
+            pbFoodImage.Image = Image.FromStream(ms);
+            txtQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
+            cbCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtUnit.Text = dgvInventory.Rows[e.RowIndex].Cells[7].Value.ToString();
         }
 
 
