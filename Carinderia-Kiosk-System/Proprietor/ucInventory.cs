@@ -17,6 +17,7 @@ namespace Carinderia_Kiosk_System.Proprietor
     {
         //Database connection
         MySqlConnection conn = new MySqlConnection("server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";");
+        int stockID = 0;
 
         private static ucInventory instance;
 
