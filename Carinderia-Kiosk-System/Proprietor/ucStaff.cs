@@ -46,10 +46,47 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             conn.Open();
             DataTable dt = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STAFF_CODE, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, UNIT, HIRE_DATE, UPDATED_AT FROM STAFF", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, UNIT, HIRE_DATE, UPDATED_AT FROM STAFF", conn);
             adapter.Fill(dt);
             dgvStaff.DataSource = dt;
             conn.Close();
+        }
+
+        //Displays a generated code in txtStaffIDNum textbox for staff code/ID
+        void GetStaffID()
+        {
+            string staffID;
+            try
+            {
+                conn.Open();
+                string query = "SELECT STAFF_NUM " +
+                                "FROM STAFF " +
+                                "ORDER BY STAFF_NUM DESC";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    int id = int.Parse(dr[0].ToString()) + 1;
+                    staffID = id.ToString("STF000");
+                }
+                else if (Convert.IsDBNull(dr))
+                {
+                    staffID = ("STF001");
+                }
+                else
+                {
+                    staffID = ("STF001");
+                }
+
+                conn.Close();
+                txtStaffIDNum.Text = staffID.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Save Button
