@@ -92,7 +92,32 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Save Button
         private void btnSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                conn.Open();
 
+                //saves new staff member
+                string addStaff = "INSERT INTO STAFF(STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, HIRE_DATE) " +
+                "VALUES('" + txtStaffIDNum.Text + "', '" + txtFirstname.Text + "', '" + txtLastname.Text + ", '" + txtContactNum.Text + "', '" + txtEmail.Text + "', '" + txtAddress.Text + "', '" + txtRole.Text + "', '" + txtHireDate.Text + "')";
+
+                MySqlCommand cmd = new MySqlCommand(addStaff, conn);
+                var ctr = cmd.ExecuteNonQuery();
+                if (ctr > 0)
+                {
+                    MessageBox.Show("Staff added successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add a staff member.");
+                }
+                conn.Close();
+                PopulateData();
+                //ClearData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Update Button
