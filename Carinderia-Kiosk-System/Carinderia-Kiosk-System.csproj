@@ -90,6 +90,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>cks_dbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="cks_dbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cks_dbDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\AdminBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +207,17 @@
     </None>
     <None Include="cks_dbDataSet.xss">
       <DependentUpon>cks_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="cks_dbDataSet1.xsc">
+      <DependentUpon>cks_dbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="cks_dbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cks_dbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cks_dbDataSet1.xss">
+      <DependentUpon>cks_dbDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

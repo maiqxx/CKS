@@ -29,6 +29,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblStaff = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblHireDate = new System.Windows.Forms.Label();
-            this.txtHireDate = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +67,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cks_dbDataSet1 = new Carinderia_Kiosk_System.cks_dbDataSet1();
+            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.staffTableAdapter = new Carinderia_Kiosk_System.cks_dbDataSet1TableAdapters.staffTableAdapter();
+            this.lblListOfStaff = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.pnlForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cks_dbDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStaff
@@ -84,6 +92,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // pnlForm
             // 
             this.pnlForm.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlForm.Controls.Add(this.dateTimePicker1);
             this.pnlForm.Controls.Add(this.lblStaffInfo);
             this.pnlForm.Controls.Add(this.lblRole);
             this.pnlForm.Controls.Add(this.txtRole);
@@ -92,7 +101,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pnlForm.Controls.Add(this.btnUpdate);
             this.pnlForm.Controls.Add(this.btnSave);
             this.pnlForm.Controls.Add(this.lblHireDate);
-            this.pnlForm.Controls.Add(this.txtHireDate);
             this.pnlForm.Controls.Add(this.lblAddress);
             this.pnlForm.Controls.Add(this.txtAddress);
             this.pnlForm.Controls.Add(this.lblEmail);
@@ -198,15 +206,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblHireDate.Size = new System.Drawing.Size(90, 18);
             this.lblHireDate.TabIndex = 13;
             this.lblHireDate.Text = "Date Hired:";
-            // 
-            // txtHireDate
-            // 
-            this.txtHireDate.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHireDate.Location = new System.Drawing.Point(141, 284);
-            this.txtHireDate.Multiline = true;
-            this.txtHireDate.Name = "txtHireDate";
-            this.txtHireDate.Size = new System.Drawing.Size(214, 25);
-            this.txtHireDate.TabIndex = 12;
             // 
             // lblAddress
             // 
@@ -330,6 +329,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // dgvStaff
             // 
+            this.dgvStaff.AutoGenerateColumns = false;
             this.dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStaff.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -351,6 +351,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Column7,
             this.Column8,
             this.Column9});
+            this.dgvStaff.DataSource = this.staffBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -383,64 +384,116 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnSearch.TabIndex = 4;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(137, 288);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(218, 26);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "STAFF_ID";
             this.Column1.HeaderText = "STAFF ID";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "FIRSTNAME";
             this.Column2.HeaderText = "FIRST NAME";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "LASTNAME";
             this.Column3.HeaderText = "LAST NAME";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "CONTACT_NUMBER";
             this.Column4.HeaderText = "CONTACT NO.";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "EMAIL_ADDRESS";
             this.Column5.HeaderText = "EMAIL ADDRESS";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             // 
             // Column6
             // 
+            this.Column6.DataPropertyName = "ADDRESS";
             this.Column6.HeaderText = "ADDRESS";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             // 
             // Column7
             // 
+            this.Column7.DataPropertyName = "ROLE";
             this.Column7.HeaderText = "ROLE";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             // 
             // Column8
             // 
+            this.Column8.DataPropertyName = "HIRE_DATE";
             this.Column8.HeaderText = "DATE HIRED";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             // 
             // Column9
             // 
+            this.Column9.DataPropertyName = "UPDATED_AT";
             this.Column9.HeaderText = "UPDATED AT";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
+            // 
+            // cks_dbDataSet1
+            // 
+            this.cks_dbDataSet1.DataSetName = "cks_dbDataSet1";
+            this.cks_dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // staffBindingSource
+            // 
+            this.staffBindingSource.DataMember = "staff";
+            this.staffBindingSource.DataSource = this.cks_dbDataSet1;
+            // 
+            // staffTableAdapter
+            // 
+            this.staffTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblListOfStaff
+            // 
+            this.lblListOfStaff.AutoSize = true;
+            this.lblListOfStaff.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListOfStaff.Location = new System.Drawing.Point(409, 62);
+            this.lblListOfStaff.Name = "lblListOfStaff";
+            this.lblListOfStaff.Size = new System.Drawing.Size(98, 21);
+            this.lblListOfStaff.TabIndex = 5;
+            this.lblListOfStaff.Text = "List of Staff";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
+            this.btnRefresh.Location = new System.Drawing.Point(513, 62);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(27, 25);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // ucStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.lblListOfStaff);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvStaff);
@@ -452,6 +505,8 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pnlForm.ResumeLayout(false);
             this.pnlForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cks_dbDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,7 +523,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblHireDate;
-        private System.Windows.Forms.TextBox txtHireDate;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblEmail;
@@ -485,6 +539,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Label lblStaffInfo;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.TextBox txtRole;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -494,5 +549,10 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.BindingSource staffBindingSource;
+        private cks_dbDataSet1 cks_dbDataSet1;
+        private cks_dbDataSet1TableAdapters.staffTableAdapter staffTableAdapter;
+        private System.Windows.Forms.Label lblListOfStaff;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

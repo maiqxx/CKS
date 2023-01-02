@@ -38,7 +38,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void ucStaff_Load(object sender, EventArgs e)
         {
-
+            GetStaffID();
         }
 
         //Populates dgvStaff
@@ -46,7 +46,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             conn.Open();
             DataTable dt = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, UNIT, HIRE_DATE, UPDATED_AT FROM STAFF", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, HIRE_DATE, UPDATED_AT FROM STAFF", conn);
             adapter.Fill(dt);
             dgvStaff.DataSource = dt;
             conn.Close();
@@ -92,15 +92,34 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Save Button
         private void btnSave_Click(object sender, EventArgs e)
         {
+            var hireDate = DateTime.Parse(dateTimePicker1.Value.ToString("dd/MM/yyyy"));
+
             try
             {
                 conn.Open();
 
                 //saves new staff member
-                string addStaff = "INSERT INTO STAFF(STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, HIRE_DATE) " +
-                "VALUES('" + txtStaffIDNum.Text + "', '" + txtFirstname.Text + "', '" + txtLastname.Text + ", '" + txtContactNum.Text + "', '" + txtEmail.Text + "', '" + txtAddress.Text + "', '" + txtRole.Text + "', '" + txtHireDate.Text + "')";
-
+                string addStaff = "INSERT INTO STAFF " +
+                                        "SET STAFF_ID = @staffID, " +
+                                        "FIRSTNAME = @firstname, " +
+                                        "LASTNAME = @lastname, " +
+                                        "CONTACT_NUMBER = @conNum, " +
+                                        "EMAIL_ADDRESS = @email, " +
+                                        "ADDRESS = @address, " +
+                                        "ROLE = @role, " +
+                                        "HIRE_DATE = @hireDate, " +
+                                        "PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')";
                 MySqlCommand cmd = new MySqlCommand(addStaff, conn);
+
+                cmd.Parameters.AddWithValue("@staffID", txtStaffIDNum.Text);
+                cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
+                cmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
+                cmd.Parameters.AddWithValue("@conNum", txtContactNum);
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+                cmd.Parameters.AddWithValue("@role", txtRole.Text);
+                cmd.Parameters.AddWithValue("@hireDate", hireDate);
+
                 var ctr = cmd.ExecuteNonQuery();
                 if (ctr > 0)
                 {
@@ -138,9 +157,16 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pnlForm_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        
     }
 }

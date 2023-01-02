@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="cks_dbDataSet1" targetNamespace="http://tempuri.org/cks_dbDataSet1.xsd" xmlns:mstns="http://tempuri.org/cks_dbDataSet1.xsd" xmlns="http://tempuri.org/cks_dbDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cks_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cks_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Carinderia_Kiosk_System.Properties.Settings.GlobalReference.Default.cks_dbConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="staffTableAdapter" GeneratorDataComponentClassName="staffTableAdapter" Name="staff" UserDataComponentName="staffTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cks_dbConnectionString (Settings)" DbObjectName="cks_db.staff" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `STAFF_NUM`, `STAFF_ID`, `FIRSTNAME`, `LASTNAME`, `CONTACT_NUMBER`, `EMAIL_ADDRESS`, `ADDRESS`, `ROLE`, `HIRE_DATE`, `UPDATED_AT`, `PROPRIETOR_ID` FROM `staff`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="cks_dbDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="cks_dbDataSet1" msprop:Generator_UserDSName="cks_dbDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="staff" msprop:Generator_TableClassName="staffDataTable" msprop:Generator_TableVarName="tablestaff" msprop:Generator_TablePropName="staff" msprop:Generator_RowDeletingName="staffRowDeleting" msprop:Generator_RowChangingName="staffRowChanging" msprop:Generator_RowEvHandlerName="staffRowChangeEventHandler" msprop:Generator_RowDeletedName="staffRowDeleted" msprop:Generator_UserTableName="staff" msprop:Generator_RowChangedName="staffRowChanged" msprop:Generator_RowEvArgName="staffRowChangeEvent" msprop:Generator_RowClassName="staffRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
