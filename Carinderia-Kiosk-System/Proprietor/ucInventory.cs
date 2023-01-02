@@ -58,6 +58,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        //Populates data gridview
         void PopulateData()
         {
             conn.Open();

@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Carinderia_Kiosk_System.Proprietor
 {
     public partial class ucStaff : UserControl
     {
         private static ucStaff instance;
+
+        //Database connection
+        MySqlConnection conn = new MySqlConnection("server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";");
 
         public static ucStaff Instance
         {
@@ -34,6 +39,17 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void ucStaff_Load(object sender, EventArgs e)
         {
 
+        }
+
+        //Populates dgvStaff
+        void PopulateData()
+        {
+            conn.Open();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STAFF_CODE, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, UNIT, HIRE_DATE, UPDATED_AT FROM STAFF", conn);
+            adapter.Fill(dt);
+            dgvStaff.DataSource = dt;
+            conn.Close();
         }
 
         //Save Button
