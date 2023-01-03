@@ -168,6 +168,21 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Clear Button
         private void btnClear_Click(object sender, EventArgs e)
         {
+            ClearData();
+        }
+
+        //Refresh button
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            PopulateData();
+        }
+
+
+
+
+        //Clears text in textboxes
+        void ClearData()
+        {
             txtFirstname.Text = "";
             txtLastname.Text = "";
             txtContactNum.Text = "";
@@ -177,16 +192,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             dateTimePicker1.Text = "";
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            PopulateData();
-        }
-
         private void pnlForm_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        
     }
 }

@@ -434,6 +434,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dgvStaff.RowTemplate.Height = 24;
             this.dgvStaff.Size = new System.Drawing.Size(836, 809);
             this.dgvStaff.TabIndex = 18;
+            this.dgvStaff.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStaff_RowHeaderMouseClick);
             // 
             // ucStaff
             // 
