@@ -41,6 +41,8 @@ namespace Carinderia_Kiosk_System.Proprietor
             GetStaffID();
 
             PopulateData();
+
+            
         }
 
         //Populates dgvStaff
@@ -156,7 +158,46 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Update Button
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //updates staff info
+                MySqlCommand cmd = new MySqlCommand();
+                cmd = new MySqlCommand("UPDATE STAFF " +
+                    "SET FIRSTNAME = @fname, " +
+                    "LASTNAME = @lname, " +
+                    "CONTACT_NUMBER = @conNum, " +
+                    "EMAIL_ADDRESS = @email, " +
+                    "ADDRESS = @address, " +
+                    "ROLE = @role, " +
+                    "HIRE_DATE = @hireDate " +
+                    "WHERE STAFF_ID = @ID", conn);
+                conn.Open();
+                cmd.Parameters.AddWithValue("@ID", txtStaffIDNum);
+                cmd.Parameters.AddWithValue("@fname", txtFirstname.Text);
+                cmd.Parameters.AddWithValue("@lname", txtLastname.Text);
+                cmd.Parameters.AddWithValue("@conNum", txtContactNum.Text);
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+                cmd.Parameters.AddWithValue("@role", txtRole.Text);
+                cmd.Parameters.AddWithValue("@hireDate", dateTimePicker1.Text);
 
+                var ctr = cmd.ExecuteNonQuery();
+                if (ctr > 0)
+                {
+                    MessageBox.Show("Staff information updated successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot update selected staff information.");
+                }
+                conn.Close();
+                PopulateData();
+                ClearData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Delete Button
@@ -180,14 +221,24 @@ namespace Carinderia_Kiosk_System.Proprietor
         //dgvStaff RowHeaderMouseClick Event 
         private void dgvStaff_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtStaffIDNum.Text = dgvStaff.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtFirstname.Text = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtLastname.Text = dgvStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtContactNum.Text = dgvStaff.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtEmail.Text = dgvStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtAddress.Text = dgvStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtRole.Text = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
-            dateTimePicker1.Text = dgvStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
+            //txtStaffIDNum.Text = dgvStaff.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //txtFirstname.Text = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //txtLastname.Text = dgvStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
+            //txtContactNum.Text = dgvStaff.Rows[e.RowIndex].Cells[3].Value.ToString();
+            //txtEmail.Text = dgvStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
+            //txtAddress.Text = dgvStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
+            //txtRole.Text = dgvStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            DataGridViewRow dr = dgvStaff.SelectedRows[0];
+
+            txtStaffIDNum.Text = dr.Cells[0].Value.ToString();
+            txtFirstname.Text = dr.Cells[1].Value.ToString();
+            txtLastname.Text = dr.Cells[2].Value.ToString();
+            txtContactNum.Text = dr.Cells[3].Value.ToString();
+            txtEmail.Text = dr.Cells[4].Value.ToString();
+            txtAddress.Text = dr.Cells[5].Value.ToString();
+            txtRole.Text = dr.Cells[6].Value.ToString();
+            dateTimePicker1.Text = dr.Cells[7].Value.ToString();
         }
 
         //Clears text in textboxes
@@ -205,6 +256,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void pnlForm_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dgvStaff.CurrentCell.Value = dateTimePicker1.Text.ToString();
         }
     }
 }
