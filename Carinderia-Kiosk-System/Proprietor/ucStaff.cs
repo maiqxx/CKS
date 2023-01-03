@@ -168,7 +168,13 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Clear Button
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            txtFirstname.Text = "";
+            txtLastname.Text = "";
+            txtContactNum.Text = "";
+            txtEmail.Text = "";
+            txtAddress.Text = "";
+            txtRole.Text = "";
+            dateTimePicker1.Text = "";
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
