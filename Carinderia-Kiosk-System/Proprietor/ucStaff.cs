@@ -177,8 +177,18 @@ namespace Carinderia_Kiosk_System.Proprietor
             PopulateData();
         }
 
-
-
+        //dgvStaff RowHeaderMouseClick Event 
+        private void dgvStaff_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txtStaffIDNum.Text = dgvStaff.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtFirstname.Text = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtLastname.Text = dgvStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtContactNum.Text = dgvStaff.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtEmail.Text = dgvStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtAddress.Text = dgvStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtRole.Text = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
+            dateTimePicker1.Text = dgvStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
+        }
 
         //Clears text in textboxes
         void ClearData()
