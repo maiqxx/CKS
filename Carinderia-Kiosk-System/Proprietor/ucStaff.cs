@@ -39,6 +39,8 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void ucStaff_Load(object sender, EventArgs e)
         {
             GetStaffID();
+
+            PopulateData();
         }
 
         //Populates dgvStaff
@@ -49,6 +51,18 @@ namespace Carinderia_Kiosk_System.Proprietor
             MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, HIRE_DATE, UPDATED_AT FROM STAFF", conn);
             adapter.Fill(dt);
             dgvStaff.DataSource = dt;
+
+            //Column header names
+            dgvStaff.Columns[0].HeaderText = "Staff ID";
+            dgvStaff.Columns[1].HeaderText = "First Name";
+            dgvStaff.Columns[2].HeaderText = "Last Name";
+            dgvStaff.Columns[3].HeaderText = "Contact No.";
+            dgvStaff.Columns[4].HeaderText = "Email Address";
+            dgvStaff.Columns[5].HeaderText = "Address";
+            dgvStaff.Columns[6].HeaderText = "Role";
+            dgvStaff.Columns[7].HeaderText = "Date Hired";
+            dgvStaff.Columns[8].HeaderText = "Last Update";
+
             conn.Close();
         }
 
@@ -159,7 +173,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            PopulateData();
         }
 
         private void pnlForm_Paint(object sender, PaintEventArgs e)

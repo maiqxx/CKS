@@ -55,7 +55,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             dgvMenuCategories.Columns[1].HeaderText = "Category Name";
             dgvMenuCategories.Columns[2].HeaderText = "Description";
             dgvMenuCategories.Columns[3].HeaderText = "Created At";
-            dgvMenuCategories.Columns[4].HeaderText = "Updated At";
+            dgvMenuCategories.Columns[4].HeaderText = "Last Update";
 
             conn.Close();
         }
