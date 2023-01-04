@@ -221,24 +221,25 @@ namespace Carinderia_Kiosk_System.Proprietor
         //dgvStaff RowHeaderMouseClick Event 
         private void dgvStaff_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //txtStaffIDNum.Text = dgvStaff.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //txtFirstname.Text = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
-            //txtLastname.Text = dgvStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //txtContactNum.Text = dgvStaff.Rows[e.RowIndex].Cells[3].Value.ToString();
-            //txtEmail.Text = dgvStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
-            //txtAddress.Text = dgvStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
-            //txtRole.Text = dgvStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtStaffIDNum.Text = dgvStaff.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtFirstname.Text = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtLastname.Text = dgvStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtContactNum.Text = dgvStaff.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtEmail.Text = dgvStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtAddress.Text = dgvStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtRole.Text = dgvStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
+            dateTimePicker1.Text = dgvStaff.Rows[e.RowIndex].Cells[7].Value.ToString();
 
-            DataGridViewRow dr = dgvStaff.SelectedRows[0];
+            //DataGridViewRow dr = dgvStaff.SelectedRows[0];
 
-            txtStaffIDNum.Text = dr.Cells[0].Value.ToString();
-            txtFirstname.Text = dr.Cells[1].Value.ToString();
-            txtLastname.Text = dr.Cells[2].Value.ToString();
-            txtContactNum.Text = dr.Cells[3].Value.ToString();
-            txtEmail.Text = dr.Cells[4].Value.ToString();
-            txtAddress.Text = dr.Cells[5].Value.ToString();
-            txtRole.Text = dr.Cells[6].Value.ToString();
-            dateTimePicker1.Text = dr.Cells[7].Value.ToString();
+            //txtStaffIDNum.Text = dr.Cells[0].Value.ToString();
+            //txtFirstname.Text = dr.Cells[1].Value.ToString();
+            //txtLastname.Text = dr.Cells[2].Value.ToString();
+            //txtContactNum.Text = dr.Cells[3].Value.ToString();
+            //txtEmail.Text = dr.Cells[4].Value.ToString();
+            //txtAddress.Text = dr.Cells[5].Value.ToString();
+            //txtRole.Text = dr.Cells[6].Value.ToString();
+            //dateTimePicker1.Text = dr.Cells[7].Value.ToString();
         }
 
         //Clears text in textboxes
