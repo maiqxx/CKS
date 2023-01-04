@@ -236,6 +236,40 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //Search button
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                conn.Open();
+
+                //Search category
+                string searchCategory = "SELECT STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, HIRE_DATE FROM STAFF " +
+                    "WHERE STAFF_ID ='" + txtSearch.Text + "' ";
+                MySqlCommand cmd = new MySqlCommand(searchCategory, conn);
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+
+                txtStaffIDNum.Text = dt.ToString();
+                txtFirstname.Text = dt.ToString();
+                txtLastname.Text = dt.ToString();
+                txtContactNum.Text = dt.ToString();
+                txtEmail.Text = dt.ToString();
+                txtAddress.Text = dt.ToString();
+                txtRole.Text = dt.ToString();
+                dateTimePicker1.Text = dt.ToString();
+                dgvStaff.DataSource = dt;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         //Clear Button
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -291,7 +325,9 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            dgvStaff.CurrentCell.Value = dateTimePicker1.Text.ToString();
+           //dgvStaff.CurrentCell.Value = dateTimePicker1.Text.ToString();
         }
+
+
     }
 }
