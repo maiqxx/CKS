@@ -341,7 +341,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblAccountCreated.AutoSize = true;
             this.lblAccountCreated.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountCreated.Location = new System.Drawing.Point(402, 918);
+            this.lblAccountCreated.Location = new System.Drawing.Point(392, 847);
             this.lblAccountCreated.Name = "lblAccountCreated";
             this.lblAccountCreated.Size = new System.Drawing.Size(122, 17);
             this.lblAccountCreated.TabIndex = 17;
@@ -351,7 +351,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblCreatedAt.AutoSize = true;
             this.lblCreatedAt.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedAt.Location = new System.Drawing.Point(515, 918);
+            this.lblCreatedAt.Location = new System.Drawing.Point(505, 847);
             this.lblCreatedAt.Name = "lblCreatedAt";
             this.lblCreatedAt.Size = new System.Drawing.Size(80, 17);
             this.lblCreatedAt.TabIndex = 18;
@@ -361,7 +361,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblUpdatedAt.AutoSize = true;
             this.lblUpdatedAt.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdatedAt.Location = new System.Drawing.Point(872, 918);
+            this.lblUpdatedAt.Location = new System.Drawing.Point(862, 847);
             this.lblUpdatedAt.Name = "lblUpdatedAt";
             this.lblUpdatedAt.Size = new System.Drawing.Size(83, 17);
             this.lblUpdatedAt.TabIndex = 20;
@@ -371,7 +371,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblLastUpdate.AutoSize = true;
             this.lblLastUpdate.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastUpdate.Location = new System.Drawing.Point(792, 918);
+            this.lblLastUpdate.Location = new System.Drawing.Point(782, 847);
             this.lblLastUpdate.Name = "lblLastUpdate";
             this.lblLastUpdate.Size = new System.Drawing.Size(89, 17);
             this.lblLastUpdate.TabIndex = 19;
