@@ -273,14 +273,14 @@ namespace Carinderia_Kiosk_System.Proprietor
             try
             {
                 conn.Open();
-                string selectCategory = "SELECT TYPE_NAME FROM cks_db.MENU_TYPE";
+                string selectCategory = "SELECT CATEGORY FROM cks_db.CATEGORY_TBL";
                 MySqlCommand cmd = new MySqlCommand(selectCategory, conn);
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    string category = reader.GetString("TYPE_NAME");
+                    string category = reader.GetString("CATEGORY");
                     cbCategory.Items.Add(category);
                 }
                 conn.Close();

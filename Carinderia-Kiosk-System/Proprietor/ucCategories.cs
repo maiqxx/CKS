@@ -46,7 +46,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             conn.Open();
             DataTable dt = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT MENU_TYPE_ID, TYPE_NAME, DESCRIPTION, CREATED_AT, UPDATED_AT FROM MENU_TYPE WHERE EMAIL_ADDRESS = '" + emailAddress + "'", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT CATEGORY_ID, CATEGORY, DESCRIPTION, CREATED_AT, UPDATED_AT FROM CATEGORY_TBL WHERE EMAIL_ADDRESS = '" + emailAddress + "'", conn);
             adapter.Fill(dt);
             dgvMenuCategories.DataSource = dt;
 
@@ -80,7 +80,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     conn.Open();
 
                     //adds new menu category
-                    string addCategory = "INSERT INTO MENU_TYPE(TYPE_NAME, DESCRIPTION, EMAIL_ADDRESS) " +
+                    string addCategory = "INSERT INTO CATEGORY_TBL(CATEGORY, DESCRIPTION, EMAIL_ADDRESS) " +
                     "VALUES('" + categoryName + "', '" + description + "', '" + emailAddress + "')";
 
                     MySqlCommand cmd = new MySqlCommand(addCategory, conn);
@@ -122,7 +122,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 {
                     //updates category
                     MySqlCommand cmd = new MySqlCommand();
-                    cmd = new MySqlCommand("UPDATE MENU_TYPE SET TYPE_NAME = @cName, DESCRIPTION = @cDesc WHERE MENU_TYPE_ID = @ID", conn);
+                    cmd = new MySqlCommand("UPDATE CATEGORY_TBL SET CATEGORY = @cName, DESCRIPTION = @cDesc WHERE CATEGORY_ID = @ID", conn);
                     conn.Open();
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.Parameters.AddWithValue("@cName", txtCategoryName.Text);
@@ -173,7 +173,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     {
                         //deletes selected category
                         MySqlCommand cmd = new MySqlCommand();
-                        cmd = new MySqlCommand("DELETE FROM MENU_TYPE WHERE MENU_TYPE_ID = @ID", conn);
+                        cmd = new MySqlCommand("DELETE FROM CATEGORY_TBL WHERE CATEGORY_ID = @ID", conn);
                         conn.Open();
                         cmd.Parameters.AddWithValue("@id", ID);
                         cmd.ExecuteNonQuery();
@@ -212,7 +212,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 conn.Open();
 
                 //Search category
-                string searchCategory = "SELECT MENU_TYPE_ID, TYPE_NAME, DESCRIPTION, CREATED_AT, UPDATED_AT FROM MENU_TYPE WHERE TYPE_NAME = '" + txtSearchCategory.Text + "' AND EMAIL_ADDRESS = '" + emailAddress + "' ";
+                string searchCategory = "SELECT CATEGORY_ID, CATEGORY, DESCRIPTION, CREATED_AT, UPDATED_AT FROM CATEGORY_TBL WHERE CATEGORY = '" + txtSearchCategory.Text + "' AND EMAIL_ADDRESS = '" + emailAddress + "' ";
                 MySqlCommand cmd = new MySqlCommand(searchCategory, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
