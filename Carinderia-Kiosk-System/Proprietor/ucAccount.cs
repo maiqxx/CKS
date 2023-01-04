@@ -21,7 +21,6 @@ namespace Carinderia_Kiosk_System.Proprietor
                 if (instance == null)
                 {
                     instance = new ucAccount();
-
                 }
                 return instance;
             }
@@ -30,6 +29,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         public ucAccount()
         {
             InitializeComponent();
+        }
+
+        private void lblStoreDescription_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
