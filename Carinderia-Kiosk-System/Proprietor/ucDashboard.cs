@@ -70,6 +70,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //Loads menu categories with number of stocks available
         void LoadMenuStocks()
         {
             try
@@ -118,5 +119,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
 
         }
+
     }
 }

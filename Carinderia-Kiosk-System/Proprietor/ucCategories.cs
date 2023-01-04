@@ -15,6 +15,9 @@ namespace Carinderia_Kiosk_System.Proprietor
     {
         private static ucCategories instance;
 
+        //Database connection
+        MySqlConnection conn = new MySqlConnection("server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";");
+
         string emailAddress = AdminInfo.EmailAddress;
         int ID = 0; //variable for menu_type_id
 
@@ -35,15 +38,18 @@ namespace Carinderia_Kiosk_System.Proprietor
             InitializeComponent();
         }
 
+        private void ucCategories_Load(object sender, EventArgs e)
+        {
+            //Loads category list
+            PopulateData();
+
+            //Loads menu categories with number of stocks available
+            LoadMenuStocks();
+        }
+
         //Populate Data Method - Populates data grid view
         public void PopulateData()
         {
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
-
             conn.Open();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT CATEGORY_ID, CATEGORY, DESCRIPTION, CREATED_AT, UPDATED_AT FROM CATEGORY_TBL WHERE EMAIL_ADDRESS = '" + emailAddress + "'", conn);
@@ -66,12 +72,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             var emailAddress = AdminInfo.EmailAddress;
             var categoryName = txtCategoryName.Text;
             var description = txtDescription.Text;
-
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
 
             try
             {
@@ -112,12 +112,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             try
             {
-                //Database connection
-                string connectionString = null;
-                MySqlConnection conn;
-                connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-                conn = new MySqlConnection(connectionString);
-
                 if (categoryName != "" && description != "")
                 {
                     //updates category
@@ -155,12 +149,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Remove or delete category button
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
-
             try
             {
                 if (ID != 0)
@@ -201,12 +189,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Search category button
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //Database connection
-            string connectionString = null;
-            MySqlConnection conn;
-            connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-            conn = new MySqlConnection(connectionString);
-
             try
             {
                 conn.Open();
@@ -265,5 +247,30 @@ namespace Carinderia_Kiosk_System.Proprietor
             txtCategoryName.Text = "";
             txtDescription.Text = "";
         }
+
+        //Loads menu categories with number of stocks available
+        void LoadMenuStocks()
+        {
+            try
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT CATEGORY, COUNT(STOCK_ID) FROM INVENTORY GROUP BY CATEGORY", conn);
+                adapter.Fill(dt);
+                dgvMenuStocks.DataSource = dt;
+
+                //Column names
+                dgvMenuStocks.Columns[0].HeaderText = "Category";
+                dgvMenuStocks.Columns[1].HeaderText = "No. Of Stocks";
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
     }
 }
