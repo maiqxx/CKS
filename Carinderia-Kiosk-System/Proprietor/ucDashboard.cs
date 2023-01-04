@@ -15,6 +15,9 @@ namespace Carinderia_Kiosk_System.Proprietor
     {
         private static ucDashboard _instance;
 
+        //Database connection
+        MySqlConnection conn = new MySqlConnection("server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";");
+
         public ucDashboard()
         {
             InitializeComponent();
@@ -33,15 +36,19 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void ucDashboard_Load(object sender, EventArgs e)
         {
+            //Loads data for store description
+            LoadStoreDescription();
+
+            //Loads menu categories with number of stocks available
+            LoadMenuStocks();
+
+        }
+
+        void LoadStoreDescription()
+        {
             try
             {
-                //Database connection
-                string connectionString = null;
-                MySqlConnection conn;
-                connectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
-                conn = new MySqlConnection(connectionString);
                 conn.Open();
-
                 string query = "SELECT * FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "'";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -57,12 +64,35 @@ namespace Carinderia_Kiosk_System.Proprietor
                 }
                 conn.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
+        void LoadMenuStocks()
+        {
+            try
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT CATEGORY, COUNT(STOCK_ID) FROM INVENTORY GROUP BY CATEGORY", conn);
+                adapter.Fill(dt);
+                dgvMenuStocks.DataSource = dt;
+
+                //Column names
+                dgvMenuStocks.Columns[0].HeaderText = "Category";
+                dgvMenuStocks.Columns[1].HeaderText = "No. Of Stocks";
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Displays current time
         private void timerCurrTime_Tick(object sender, EventArgs e)
         {
             DateTime dateTime = DateTime.Now;
