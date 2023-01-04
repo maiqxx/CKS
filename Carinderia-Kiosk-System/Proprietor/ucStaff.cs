@@ -160,6 +160,8 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             try
             {
+                conn.Open();
+
                 //updates staff info
                 MySqlCommand cmd = new MySqlCommand();
                 cmd = new MySqlCommand("UPDATE STAFF " +
@@ -171,7 +173,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     "ROLE = @role, " +
                     "HIRE_DATE = @hireDate " +
                     "WHERE STAFF_ID = @ID", conn);
-                conn.Open();
+                
                 cmd.Parameters.AddWithValue("@ID", txtStaffIDNum);
                 cmd.Parameters.AddWithValue("@fname", txtFirstname.Text);
                 cmd.Parameters.AddWithValue("@lname", txtLastname.Text);
@@ -203,7 +205,35 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Delete Button
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string message = "Do you want to remove this staff member?";
+                string title = "Remove Staff";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    //deletes selected category
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd = new MySqlCommand("DELETE FROM STAFF WHERE STAFF_ID = @ID", conn);
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@ID", txtStaffIDNum.Text);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Staff member removed successfully!");
+                    PopulateData();
+                    ClearData();
+                }
+                else
+                {
+                    //...
+                }
 
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Clear Button
