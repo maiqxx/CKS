@@ -183,15 +183,17 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnSearch.Size = new System.Drawing.Size(34, 29);
             this.btnSearch.TabIndex = 21;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(823, 338);
+            this.txtSearch.Location = new System.Drawing.Point(838, 338);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(269, 28);
             this.txtSearch.TabIndex = 20;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnRefresh
             // 
