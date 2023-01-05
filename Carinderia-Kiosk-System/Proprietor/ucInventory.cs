@@ -253,7 +253,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
-        //Edit/Update button
+        //Edit or Update button - updates food item
         private void btnEdit_Click(object sender, EventArgs e)
         {
             try
@@ -313,7 +313,36 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Delete button
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string message = "Do you want to remove this food item?";
+                string title = "Remove Stock";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    //deletes selected food item
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd = new MySqlCommand("DELETE FROM INVENTORY WHERE STOCK_CODE = @stockCode", conn);
 
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@stockCode", txtStockCode.Text);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Food item removed successfully!");
+                }
+                else
+                {
+                    //...
+                }
+                PopulateData();
+                ClearData();
+                GetStockID();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Clear button
