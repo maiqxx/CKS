@@ -60,10 +60,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_CODE, FOOD_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE FROM INVENTORY WHERE PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')", conn);
             adapter.Fill(dt);
 
+            //dgvInventory properties
             dgvInventory.RowTemplate.Height = 60;
             dgvInventory.AllowUserToAddRows = false;
 
             dgvInventory.DataSource = dt;
+
+            //dgvInventory column "Image" properties
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
             imgCol = (DataGridViewImageColumn)dgvInventory.Columns[10];
             imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;

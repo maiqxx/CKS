@@ -392,6 +392,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.RowHeadersWidth = 51;
             this.dgvInventory.RowTemplate.Height = 24;
+            this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventory.Size = new System.Drawing.Size(1166, 483);
             this.dgvInventory.TabIndex = 23;
             // 
