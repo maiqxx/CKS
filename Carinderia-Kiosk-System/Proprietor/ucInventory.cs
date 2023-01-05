@@ -363,7 +363,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             MySqlDataAdapter adapter;
             DataTable table;
             conn.Open();
-            adapter = new MySqlDataAdapter("SELECT * FROM INVENTORY WHERE FOOD_NAME LIKE '" + this.txtSearch.Text + "%' ", conn);
+            adapter = new MySqlDataAdapter("SELECT STOCK_CODE, FOOD_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE FROM INVENTORY WHERE FOOD_NAME LIKE '%" + this.txtSearch.Text + "%' ", conn);
             table = new DataTable();
             adapter.Fill(table);
             dgvInventory.DataSource = table;
