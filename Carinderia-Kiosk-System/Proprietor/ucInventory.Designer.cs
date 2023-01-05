@@ -187,7 +187,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(838, 338);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
