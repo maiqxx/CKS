@@ -453,18 +453,18 @@ namespace Carinderia_Kiosk_System.Proprietor
             //cbCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
             //txtUnit.Text = dgvInventory.Rows[e.RowIndex].Cells[7].Value.ToString();
 
-            //Byte[] img = (Byte[])dgvInventory.CurrentRow.Cells[3].Value;
-            //MemoryStream ms = new MemoryStream();
-            ////img.Save(ms, ImageFormat.Jpeg);
+            Byte[] img = (Byte[])dgvInventory.CurrentRow.Cells[10].Value;
+            MemoryStream ms = new MemoryStream(img);
+            //img.Save(ms, ImageFormat.Jpeg);
 
-            //pbFoodImage.Image = Image.FromStream(ms);
-            //txtStockCode.Text = dgvInventory.CurrentRow.Cells[0].Value.ToString();
-            //txtFoodName.Text = dgvInventory.CurrentRow.Cells[1].Value.ToString();
-            //txtDescription.Text = dgvInventory.CurrentRow.Cells[2].Value.ToString();
-            //txtQuantity.Text = dgvInventory.CurrentRow.Cells[3].Value.ToString();
-            //txtUnitPrice.Text = dgvInventory.CurrentRow.Cells[4].Value.ToString();
-            //cbCategory.Text = dgvInventory.CurrentRow.Cells[5].Value.ToString();
-            //txtUnit.Text = dgvInventory.CurrentRow.Cells[6].Value.ToString();
+            pbFoodImage.Image = Image.FromStream(ms);
+            txtStockCode.Text = dgvInventory.CurrentRow.Cells[0].Value.ToString();
+            txtFoodName.Text = dgvInventory.CurrentRow.Cells[1].Value.ToString();
+            txtDescription.Text = dgvInventory.CurrentRow.Cells[2].Value.ToString();
+            txtQuantity.Text = dgvInventory.CurrentRow.Cells[3].Value.ToString();
+            txtUnitPrice.Text = dgvInventory.CurrentRow.Cells[4].Value.ToString();
+            cbCategory.Text = dgvInventory.CurrentRow.Cells[5].Value.ToString();
+            txtUnit.Text = dgvInventory.CurrentRow.Cells[6].Value.ToString();
         }
 
         //dgvInventory_CellClick event

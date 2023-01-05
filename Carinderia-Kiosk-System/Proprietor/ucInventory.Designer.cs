@@ -229,7 +229,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pbFoodImage.Location = new System.Drawing.Point(713, 193);
             this.pbFoodImage.Name = "pbFoodImage";
             this.pbFoodImage.Size = new System.Drawing.Size(195, 105);
-            this.pbFoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoodImage.TabIndex = 16;
             this.pbFoodImage.TabStop = false;
             this.pbFoodImage.Click += new System.EventHandler(this.pbFoodImage_Click);
