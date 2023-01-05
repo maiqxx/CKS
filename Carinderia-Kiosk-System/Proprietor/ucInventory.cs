@@ -442,18 +442,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         //dgvInventory RowHeaderMouseClick Event
         private void dgvInventory_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //when row is clicked, values are filled on textboxes
-            //txtStockCode.Text = dgvInventory.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //txtFoodName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
-            //txtDescription.Text = dgvInventory.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //MemoryStream ms = new MemoryStream((byte[])dgvInventory.CurrentRow.Cells[3].Value);
-            //pbFoodImage.Image = Image.FromStream(ms);
-            //txtQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
-            //txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
-            //cbCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
-            //txtUnit.Text = dgvInventory.Rows[e.RowIndex].Cells[7].Value.ToString();
-
-            Byte[] img = (Byte[])dgvInventory.CurrentRow.Cells[10].Value;
+            byte[] img = (byte[])dgvInventory.CurrentRow.Cells[10].Value;
             MemoryStream ms = new MemoryStream(img);
             //img.Save(ms, ImageFormat.Jpeg);
 
