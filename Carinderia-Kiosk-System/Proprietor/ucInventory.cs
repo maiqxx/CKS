@@ -194,19 +194,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             int quantity = int.Parse(txtQuantity.Text);
             double inventoryValue = unitPrice * quantity;
 
-            //FileStream fs;
-            //BinaryReader br;
-
             try
             {
                 if (txtFoodName.Text.Length > 0 && txtImagePath.Text.Length > 0)
                 {
                     conn.Open();
 
-                    byte[] img = null;
-                    FileStream fs = new FileStream(txtImagePath.Text, FileMode.Open, FileAccess.Read);
-                    BinaryReader br = new BinaryReader(fs);
-                    img = br.ReadBytes((int)fs.Length);
+                    MemoryStream ms = new MemoryStream();
+                    pbFoodImage.Image.Save(ms, pbFoodImage.Image.RawFormat);
+                    byte[] img = ms.ToArray();
+
 
                     string addStock = "INSERT INTO INVENTORY " +
                                         "SET STOCK_CODE = @stockCode, " +
@@ -236,56 +233,14 @@ namespace Carinderia_Kiosk_System.Proprietor
                     {
                         MessageBox.Show("Food item added successfully!");
                     }
+                    else
+                    {
+                        MessageBox.Show("Failed to add food item.");
+                    }
                     conn.Close();
-                    File.Copy(txtImagePath.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pbFoodImage.ImageLocation));
                     PopulateData();
                     ClearData();
                     GetStockID();
-
-
-
-                    //string FileName = txtImagePath.Text;
-                    //byte[] ImageData;
-                    //fs = new FileStream(FileName, FileMode.Open, FileAccess.Read);
-                    //br = new BinaryReader(fs);
-                    //ImageData = br.ReadBytes((int)fs.Length);
-                    //br.Close();
-                    //fs.Close();
-
-                    ////adds new food item
-                    //string addStock = "INSERT INTO INVENTORY " +
-                    //                    "SET STOCK_CODE = @stockCode, " +
-                    //                    "FOOD_NAME = @foodName, " +
-                    //                    "DESCRIPTION = @desc, " +
-                    //                    "IMAGE = @image, " +
-                    //                    "STOCK_QUANTITY = @quantity, " +
-                    //                    "PRICE = @unitPrice, " +
-                    //                    "CATEGORY = @category, " +
-                    //                    "UNIT = @unit, " +
-                    //                    "INV_VALUE = @invValue, " +
-                    //                    "PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')";
-                    //MySqlCommand cmd = new MySqlCommand(addStock, conn);
-
-                    //cmd.Parameters.AddWithValue("@stockCode", txtStockCode.Text);
-                    //cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
-                    //cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
-                    //cmd.Parameters.AddWithValue("@image", ImageData);
-                    //cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
-                    //cmd.Parameters.AddWithValue("@unitPrice", txtUnitPrice.Text);
-                    //cmd.Parameters.AddWithValue("@category", cbCategory.Text);
-                    //cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
-                    //cmd.Parameters.AddWithValue("@invValue", inventoryValue);
-
-                    //int ctr = cmd.ExecuteNonQuery();
-                    //if (ctr > 0)
-                    //{
-                    //    MessageBox.Show("Food item added successfully!");
-                    //}
-                    //conn.Close();
-                    //File.Copy(txtImagePath.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pbFoodImage.ImageLocation));
-                    //PopulateData();
-                    //ClearData();
-                    //GetStockID();
                 }
                 else
                 {
@@ -400,9 +355,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             pbFoodImage.Image = null;
         }
 
-
-
-        //Getting category values for combobox
+        //Gets category values for combobox
         void SelectCategory()
         {
             try
@@ -425,18 +378,11 @@ namespace Carinderia_Kiosk_System.Proprietor
                 MessageBox.Show(ex.Message);
             }
         }
-
-        
-
-
+   
+        //Refresh button
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             PopulateData();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         //dgvInventory RowHeaderMouseClick Event
@@ -456,13 +402,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             txtUnit.Text = dgvInventory.CurrentRow.Cells[6].Value.ToString();
         }
 
-        //dgvInventory_CellClick event
-        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
-
         //dgvInventory_Click event to select all cells 
         private void dgvInventory_Click(object sender, EventArgs e)
         {
@@ -478,6 +417,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             txtUnitPrice.Text = dgvInventory.CurrentRow.Cells[4].Value.ToString();
             cbCategory.Text = dgvInventory.CurrentRow.Cells[5].Value.ToString();
             txtUnit.Text = dgvInventory.CurrentRow.Cells[6].Value.ToString();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 
