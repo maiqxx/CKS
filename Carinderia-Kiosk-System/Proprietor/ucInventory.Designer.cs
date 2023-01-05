@@ -166,10 +166,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(864, 152);
+            this.btnBrowse.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.Location = new System.Drawing.Point(864, 154);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(89, 30);
+            this.btnBrowse.Size = new System.Drawing.Size(89, 28);
             this.btnBrowse.TabIndex = 22;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -238,8 +238,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.txtImagePath.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImagePath.Location = new System.Drawing.Point(696, 154);
+            this.txtImagePath.Multiline = true;
             this.txtImagePath.Name = "txtImagePath";
-            this.txtImagePath.Size = new System.Drawing.Size(161, 28);
+            this.txtImagePath.Size = new System.Drawing.Size(161, 25);
             this.txtImagePath.TabIndex = 15;
             this.txtImagePath.Click += new System.EventHandler(this.txtImagePath_Click);
             // 
@@ -248,7 +249,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblImage.AutoSize = true;
             this.lblImage.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblImage.Location = new System.Drawing.Point(616, 161);
+            this.lblImage.Location = new System.Drawing.Point(616, 152);
             this.lblImage.Name = "lblImage";
             this.lblImage.Size = new System.Drawing.Size(68, 19);
             this.lblImage.TabIndex = 14;

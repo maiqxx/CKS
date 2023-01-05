@@ -109,7 +109,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         //pbFoodImage_Click Event - opens computer files
@@ -259,27 +258,34 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             try
             {
-                if(txtStockCode.Text != "" && txtFoodName.Text != "" && txtDescription.Text != "" && cbCategory.Text != "" && txtUnitPrice.Text != "" && txtQuantity.Text != "" && txtUnit.Text != "")
+                if(txtStockCode.Text != "" && txtFoodName.Text != "")
                 {
-                    byte[] img = null;
-                    FileStream fs = new FileStream(txtImagePath.Text, FileMode.Open, FileAccess.Read);
-                    BinaryReader br = new BinaryReader(fs);
-                    img = br.ReadBytes((int)fs.Length);
-
-                    MySqlCommand cmd = new MySqlCommand();
-                    string Query = "update test set name=@name,image=@img where id=@id ";
-                    cmd = new MySqlCommand("UPDATE INVENTORY SET FOOD_NAME = @foodName, DESCRIPTION = @description, IMAGE = @image, STOCK_QUANTITY = @quantity, PRICE = @price, CATEGORY = @category, UNIT = @unit WHERE STOCK_CODE = (SELECT STOCK_ID FROM INVENTORY WHERE STOCK_CODE = '" + this.txtStockCode + "')", conn);
-
                     conn.Open();
-                    cmd.Parameters.AddWithValue("@stockCode", txtStockCode.Text);
+
+                    MemoryStream ms = new MemoryStream();
+                    pbFoodImage.Image.Save(ms, pbFoodImage.Image.RawFormat);
+                    byte[] img = ms.ToArray();
+
+                    string updateStock = "UPDATE INVENTORY " +
+                                            "SET FOOD_NAME = @foodName, " +
+                                            "DESCRIPTION = @description, " +
+                                            "STOCK_QUANTITY = @quantity, " +
+                                            "PRICE = @price, " +
+                                            "CATEGORY = @category, " +
+                                            "UNIT = @unit, " +
+                                            "IMAGE = @image " +
+                                            "WHERE STOCK_CODE = '"+ txtStockCode.Text + "'";
+                    
+                    MySqlCommand cmd = new MySqlCommand(updateStock, conn);
                     cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
                     cmd.Parameters.AddWithValue("@description", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@image", img);
                     cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
                     cmd.Parameters.AddWithValue("@price", txtUnitPrice.Text);
                     cmd.Parameters.AddWithValue("@category", cbCategory.Text);
                     cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
-                    var ctr = cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@image", img);
+
+                    int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
                     {
                         MessageBox.Show("Food item updated successfully!");
@@ -291,33 +297,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     conn.Close();
                     PopulateData();
                     ClearData();
-
-
-                    ////updates stock item
-                    //MySqlCommand cmd = new MySqlCommand();
-                    //cmd = new MySqlCommand("UPDATE INVENTORY SET FOOD_NAME = @foodName, DESCRIPTION = @description, IMAGE = @image, STOCK_QUANTITY = @quantity, PRICE = @price, CATEGORY = @category, UNIT = @unit WHERE STOCK_CODE = (SELECT STOCK_ID FROM INVENTORY WHERE STOCK_CODE = '" + this.txtStockCode + "')", conn);
-                    //conn.Open();
-                    //cmd.Parameters.AddWithValue("@stockCode", txtStockCode.Text);
-                    //cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
-                    //cmd.Parameters.AddWithValue("@description", txtDescription.Text);
-                    //cmd.Parameters.AddWithValue("@image", pbFoodImage.Image);
-                    //cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
-                    //cmd.Parameters.AddWithValue("@price", txtUnitPrice.Text);
-                    //cmd.Parameters.AddWithValue("@category", cbCategory.Text);
-                    //cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
-
-                    //var ctr = cmd.ExecuteNonQuery();
-                    //if (ctr > 0)
-                    //{
-                    //    MessageBox.Show("Food item updated successfully!");
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Cannot update the selected food item.");
-                    //}
-                    //conn.Close();
-                    //PopulateData();
-                    //ClearData();
+                    GetStockID();
                 }
                 else
                 {
