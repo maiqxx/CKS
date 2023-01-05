@@ -443,33 +443,61 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void dgvInventory_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //when row is clicked, values are filled on textboxes
-            txtStockCode.Text = dgvInventory.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtFoodName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtDescription.Text = dgvInventory.Rows[e.RowIndex].Cells[2].Value.ToString();
-            MemoryStream ms = new MemoryStream((byte[])dgvInventory.CurrentRow.Cells[3].Value);
-            pbFoodImage.Image = Image.FromStream(ms);
-            txtQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
-            cbCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtUnit.Text = dgvInventory.Rows[e.RowIndex].Cells[7].Value.ToString();
+            //txtStockCode.Text = dgvInventory.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //txtFoodName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //txtDescription.Text = dgvInventory.Rows[e.RowIndex].Cells[2].Value.ToString();
+            //MemoryStream ms = new MemoryStream((byte[])dgvInventory.CurrentRow.Cells[3].Value);
+            //pbFoodImage.Image = Image.FromStream(ms);
+            //txtQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
+            //txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
+            //cbCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
+            //txtUnit.Text = dgvInventory.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+            //Byte[] img = (Byte[])dgvInventory.CurrentRow.Cells[3].Value;
+            //MemoryStream ms = new MemoryStream();
+            ////img.Save(ms, ImageFormat.Jpeg);
+
+            //pbFoodImage.Image = Image.FromStream(ms);
+            //txtStockCode.Text = dgvInventory.CurrentRow.Cells[0].Value.ToString();
+            //txtFoodName.Text = dgvInventory.CurrentRow.Cells[1].Value.ToString();
+            //txtDescription.Text = dgvInventory.CurrentRow.Cells[2].Value.ToString();
+            //txtQuantity.Text = dgvInventory.CurrentRow.Cells[3].Value.ToString();
+            //txtUnitPrice.Text = dgvInventory.CurrentRow.Cells[4].Value.ToString();
+            //cbCategory.Text = dgvInventory.CurrentRow.Cells[5].Value.ToString();
+            //txtUnit.Text = dgvInventory.CurrentRow.Cells[6].Value.ToString();
         }
 
         //dgvInventory_CellClick event
         private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //string picpath = @"D:\BSIT III\Carinderia Kiosk System Project\Food Images";
-            //"emp_Lname" or the column index that you want to use
-            //picpath = picpath + dgvInventory["IMAGE", dgvInventory.CurrentCell.RowIndex].Value.ToString() + ".jpg";
-            //pbFoodImage.ImageLocation = picpath;
 
-            txtStockCode.Text = dgvInventory.CurrentRow.Cells[0].Value.ToString();
-            byte[] imgdata = (byte[])dgvInventory.CurrentRow.Cells[1].Value;
-            MemoryStream ms = new MemoryStream(imgdata);
+
+        }
+
+        //dgvInventory_Click event to select all cells 
+        private void dgvInventory_Click(object sender, EventArgs e)
+        {
+            byte[] img = (byte[])dgvInventory.CurrentRow.Cells[10].Value;
+            MemoryStream ms = new MemoryStream(img);
+            //img.Save(ms, ImageFormat.Jpeg);
+
             pbFoodImage.Image = Image.FromStream(ms);
+            txtStockCode.Text = dgvInventory.CurrentRow.Cells[0].Value.ToString();
+            txtFoodName.Text = dgvInventory.CurrentRow.Cells[1].Value.ToString();
+            txtDescription.Text = dgvInventory.CurrentRow.Cells[2].Value.ToString();
+            txtQuantity.Text = dgvInventory.CurrentRow.Cells[3].Value.ToString();
+            txtUnitPrice.Text = dgvInventory.CurrentRow.Cells[4].Value.ToString();
+            cbCategory.Text = dgvInventory.CurrentRow.Cells[5].Value.ToString();
+            txtUnit.Text = dgvInventory.CurrentRow.Cells[6].Value.ToString();
 
         }
 
         private void dgvInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvInventory_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

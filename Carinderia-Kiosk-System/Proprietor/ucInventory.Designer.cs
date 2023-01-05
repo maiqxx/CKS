@@ -35,12 +35,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cks_dbDataSet = new Carinderia_Kiosk_System.cks_dbDataSet();
             this.txtUnit = new System.Windows.Forms.TextBox();
             this.lblUnit = new System.Windows.Forms.Label();
             this.pbFoodImage = new System.Windows.Forms.PictureBox();
@@ -59,13 +58,14 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblFoodName = new System.Windows.Forms.Label();
             this.txtStockCode = new System.Windows.Forms.TextBox();
             this.lblStockCode = new System.Windows.Forms.Label();
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cks_dbDataSet = new Carinderia_Kiosk_System.cks_dbDataSet();
             this.inventoryTableAdapter = new Carinderia_Kiosk_System.cks_dbDataSetTableAdapters.inventoryTableAdapter();
-            this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cks_dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInventory
@@ -149,6 +149,21 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // dgvInventory
+            // 
+            this.dgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventory.Location = new System.Drawing.Point(31, 398);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.RowHeadersWidth = 51;
+            this.dgvInventory.RowTemplate.Height = 24;
+            this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInventory.Size = new System.Drawing.Size(1166, 483);
+            this.dgvInventory.TabIndex = 23;
+            this.dgvInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellContentClick_1);
+            this.dgvInventory.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvInventory_RowHeaderMouseClick);
+            this.dgvInventory.Click += new System.EventHandler(this.dgvInventory_Click);
+            // 
             // btnBrowse
             // 
             this.btnBrowse.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,16 +202,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnRefresh.TabIndex = 19;
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // inventoryBindingSource
-            // 
-            this.inventoryBindingSource.DataMember = "inventory";
-            this.inventoryBindingSource.DataSource = this.cks_dbDataSet;
-            // 
-            // cks_dbDataSet
-            // 
-            this.cks_dbDataSet.DataSetName = "cks_dbDataSet";
-            this.cks_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtUnit
             // 
@@ -380,21 +385,19 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblStockCode.TabIndex = 0;
             this.lblStockCode.Text = "Stock Code:";
             // 
+            // inventoryBindingSource
+            // 
+            this.inventoryBindingSource.DataMember = "inventory";
+            this.inventoryBindingSource.DataSource = this.cks_dbDataSet;
+            // 
+            // cks_dbDataSet
+            // 
+            this.cks_dbDataSet.DataSetName = "cks_dbDataSet";
+            this.cks_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // inventoryTableAdapter
             // 
             this.inventoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // dgvInventory
-            // 
-            this.dgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Location = new System.Drawing.Point(31, 398);
-            this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.RowHeadersWidth = 51;
-            this.dgvInventory.RowTemplate.Height = 24;
-            this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventory.Size = new System.Drawing.Size(1166, 483);
-            this.dgvInventory.TabIndex = 23;
             // 
             // ucInventory
             // 
@@ -407,10 +410,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Load += new System.EventHandler(this.ucInventory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cks_dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
