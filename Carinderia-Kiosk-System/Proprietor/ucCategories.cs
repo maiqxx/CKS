@@ -54,6 +54,8 @@ namespace Carinderia_Kiosk_System.Proprietor
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT CATEGORY_ID, CATEGORY, DESCRIPTION, CREATED_AT, UPDATED_AT FROM CATEGORY_TBL WHERE EMAIL_ADDRESS = '" + emailAddress + "'", conn);
             adapter.Fill(dt);
+
+            dgvMenuCategories.RowTemplate.Height = 60;
             dgvMenuCategories.DataSource = dt;
 
             //Column header names
@@ -194,7 +196,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 conn.Open();
 
                 //Search category
-                string searchCategory = "SELECT CATEGORY_ID, CATEGORY, DESCRIPTION, CREATED_AT, UPDATED_AT FROM CATEGORY_TBL WHERE CATEGORY = '" + txtSearchCategory.Text + "' AND EMAIL_ADDRESS = '" + emailAddress + "' ";
+                string searchCategory = "SELECT CATEGORY_ID, CATEGORY, DESCRIPTION, CREATED_AT, UPDATED_AT FROM CATEGORY_TBL WHERE CATEGORY LIKE '%" + txtSearchCategory.Text + "%' AND EMAIL_ADDRESS = '" + emailAddress + "' ";
                 MySqlCommand cmd = new MySqlCommand(searchCategory, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
@@ -219,6 +221,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             try
             {
                 PopulateData();
+                LoadMenuStocks();
             }
             catch (MySqlException ex)
             {
@@ -271,6 +274,18 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
-
+        //txtSearchCategory Live Search
+        private void txtSearchCategory_TextChanged(object sender, EventArgs e)
+        {
+            MySqlDataAdapter adapter;
+            DataTable table;
+            conn.Open();
+            adapter = new MySqlDataAdapter("SELECT CATEGORY_ID, CATEGORY, DESCRIPTION, CREATED_AT, UPDATED_AT FROM CATEGORY_TBL WHERE CATEGORY LIKE '%" + this.txtSearchCategory.Text + "%' ", conn);
+            table = new DataTable();
+            adapter.Fill(table);
+            dgvMenuCategories.RowTemplate.Height = 60;
+            dgvMenuCategories.DataSource = table;
+            conn.Close();
+        }
     }
 }

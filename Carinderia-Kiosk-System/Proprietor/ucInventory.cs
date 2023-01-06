@@ -382,6 +382,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearData();
+            GetStockID();
         }
 
         //Clears data in textboxes

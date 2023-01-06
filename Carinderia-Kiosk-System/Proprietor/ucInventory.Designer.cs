@@ -167,7 +167,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnBrowse
             // 
             this.btnBrowse.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(864, 154);
+            this.btnBrowse.Location = new System.Drawing.Point(864, 149);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(89, 28);
             this.btnBrowse.TabIndex = 22;
@@ -330,7 +330,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // txtDescription
             // 
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(289, 119);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";

@@ -100,6 +100,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblTime.Text = dateTime.ToString("hh:mm tt");
         }
 
+        //Refresh dashboard button
+        private void btnRefreshDashboard_Click(object sender, EventArgs e)
+        {
+            LoadStoreDescription();
+            LoadMenuStocks();
+        }
+
         private void lblTime_Click(object sender, EventArgs e)
         {
 
@@ -119,6 +126,17 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
 
         }
+
+        private void lblLocation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

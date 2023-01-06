@@ -229,6 +229,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.txtSearchCategory.Name = "txtSearchCategory";
             this.txtSearchCategory.Size = new System.Drawing.Size(299, 35);
             this.txtSearchCategory.TabIndex = 15;
+            this.txtSearchCategory.TextChanged += new System.EventHandler(this.txtSearchCategory_TextChanged);
             // 
             // lblMenuCategories
             // 
