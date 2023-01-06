@@ -31,5 +31,10 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
