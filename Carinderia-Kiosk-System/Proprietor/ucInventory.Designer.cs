@@ -82,6 +82,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnAdd.Location = new System.Drawing.Point(139, 338);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(99, 34);
@@ -94,6 +95,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Gold;
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnEdit.Location = new System.Drawing.Point(276, 338);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 34);
@@ -106,6 +108,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDelete.Location = new System.Drawing.Point(413, 338);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 34);
@@ -261,6 +264,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.btnClear.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Teal;
             this.btnClear.Location = new System.Drawing.Point(547, 338);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(99, 34);

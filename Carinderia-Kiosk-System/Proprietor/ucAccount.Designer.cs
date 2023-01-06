@@ -340,6 +340,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnSaveChanges.TabIndex = 4;
             this.btnSaveChanges.Text = "Save Changes";
             this.btnSaveChanges.UseVisualStyleBackColor = false;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // lblAccountCreated
             // 

@@ -62,6 +62,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             dtpClosingTime.ShowUpDown = true;
         }
 
+        //Updates proprietor's information
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //Loads proprietor's data
         void LoadInfo()
         {
@@ -102,5 +108,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
 
         }
+
+
     }
 }
