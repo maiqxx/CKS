@@ -33,8 +33,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.txtContactNum = new System.Windows.Forms.TextBox();
             this.lblContactNum = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
@@ -81,8 +79,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.lblPassword);
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.txtContactNum);
             this.panel1.Controls.Add(this.lblContactNum);
             this.panel1.Controls.Add(this.txtLastName);
@@ -94,13 +90,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.Controls.Add(this.pbProfile);
             this.panel1.Location = new System.Drawing.Point(132, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(987, 378);
+            this.panel1.Size = new System.Drawing.Size(987, 328);
             this.panel1.TabIndex = 1;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(412, 302);
+            this.txtPassword.Location = new System.Drawing.Point(412, 259);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(278, 30);
@@ -112,31 +108,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(310, 311);
+            this.lblPassword.Location = new System.Drawing.Point(310, 268);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(93, 21);
             this.lblPassword.TabIndex = 11;
             this.lblPassword.Text = "Password:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.Location = new System.Drawing.Point(412, 257);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(278, 30);
-            this.txtEmail.TabIndex = 10;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(274, 266);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(129, 21);
-            this.lblEmail.TabIndex = 9;
-            this.lblEmail.Text = "Email Address:";
-            this.lblEmail.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtContactNum
             // 
@@ -253,7 +229,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel2.Controls.Add(this.txtStoreName);
             this.panel2.Controls.Add(this.lblStoreName);
             this.panel2.Controls.Add(this.lblStoreDescription);
-            this.panel2.Location = new System.Drawing.Point(132, 459);
+            this.panel2.Location = new System.Drawing.Point(132, 417);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(994, 236);
             this.panel2.TabIndex = 3;
@@ -334,7 +310,8 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.btnSaveChanges.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSaveChanges.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveChanges.Location = new System.Drawing.Point(439, 713);
+            this.btnSaveChanges.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnSaveChanges.Location = new System.Drawing.Point(439, 671);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(148, 40);
             this.btnSaveChanges.TabIndex = 4;
@@ -346,7 +323,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblAccountCreated.AutoSize = true;
             this.lblAccountCreated.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountCreated.Location = new System.Drawing.Point(392, 847);
+            this.lblAccountCreated.Location = new System.Drawing.Point(392, 805);
             this.lblAccountCreated.Name = "lblAccountCreated";
             this.lblAccountCreated.Size = new System.Drawing.Size(115, 17);
             this.lblAccountCreated.TabIndex = 17;
@@ -356,7 +333,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblCreatedAt.AutoSize = true;
             this.lblCreatedAt.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedAt.Location = new System.Drawing.Point(501, 847);
+            this.lblCreatedAt.Location = new System.Drawing.Point(501, 805);
             this.lblCreatedAt.Name = "lblCreatedAt";
             this.lblCreatedAt.Size = new System.Drawing.Size(75, 17);
             this.lblCreatedAt.TabIndex = 18;
@@ -366,7 +343,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblUpdatedAt.AutoSize = true;
             this.lblUpdatedAt.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdatedAt.Location = new System.Drawing.Point(853, 847);
+            this.lblUpdatedAt.Location = new System.Drawing.Point(853, 805);
             this.lblUpdatedAt.Name = "lblUpdatedAt";
             this.lblUpdatedAt.Size = new System.Drawing.Size(78, 17);
             this.lblUpdatedAt.TabIndex = 20;
@@ -376,7 +353,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblLastUpdate.AutoSize = true;
             this.lblLastUpdate.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastUpdate.Location = new System.Drawing.Point(782, 847);
+            this.lblLastUpdate.Location = new System.Drawing.Point(782, 805);
             this.lblLastUpdate.Name = "lblLastUpdate";
             this.lblLastUpdate.Size = new System.Drawing.Size(82, 17);
             this.lblLastUpdate.TabIndex = 19;
@@ -413,8 +390,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblStoreDescription;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtContactNum;
         private System.Windows.Forms.Label lblContactNum;
         private System.Windows.Forms.TextBox txtLastName;

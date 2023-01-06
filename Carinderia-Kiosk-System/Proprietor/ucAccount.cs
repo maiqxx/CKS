@@ -65,7 +65,64 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Updates proprietor's information
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
+            try
+            {
+                conn.Open();
 
+                //MemoryStream ms = new MemoryStream();
+                //pbFoodImage.Image.Save(ms, pbFoodImage.Image.RawFormat);
+                //byte[] img = ms.ToArray();
+
+                string message = "Are you sure you want to save changes??";
+                string title = "Save Changes";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    InitializeTimePicker();
+
+                    string updateStock = "UPDATE PROPRIETOR " +
+                                            "SET FIRSTNAME = @fname, " +
+                                            "LASTNAME = @lname, " +
+                                            "STORE_NAME = @storeName, " +
+                                            "LOCATION = @location, " +
+                                            "OPENING_TIME = @opening, " +
+                                            "CLOSING_TIME = @closing, " +
+                                            "CONTACT_NUMBER = @contactNum, " +
+                                            "PASSWORD = @password " +
+                                            "WHERE EMAIL_ADDRESS  = '" + AdminInfo.EmailAddress + "'";
+
+                    MySqlCommand cmd = new MySqlCommand(updateStock, conn);
+                    cmd.Parameters.AddWithValue("@fname", txtFirstname.Text);
+                    cmd.Parameters.AddWithValue("@lname", txtLastName.Text);
+                    cmd.Parameters.AddWithValue("@storeName", txtLastName.Text);
+                    cmd.Parameters.AddWithValue("@location", txtLocation.Text);
+                    cmd.Parameters.AddWithValue("@opening", dtpOpeningTime.Text);
+                    cmd.Parameters.AddWithValue("@closing", dtpClosingTime.Text);
+                    cmd.Parameters.AddWithValue("@contactNum", txtContactNum.Text);
+                    cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+
+                    int ctr = cmd.ExecuteNonQuery();
+                    if (ctr > 0)
+                    {
+                        MessageBox.Show("Food item updated successfully!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot update the selected food item.");
+                    }
+                    conn.Close();
+                }
+                else
+                {
+                    //...
+                }   
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Loads proprietor's data
@@ -81,7 +138,6 @@ namespace Carinderia_Kiosk_System.Proprietor
                 txtFirstname.Text = reader["FIRSTNAME"].ToString();
                 txtLastName.Text = reader["LASTNAME"].ToString();
                 txtContactNum.Text = reader["CONTACT_NUMBER"].ToString();
-                txtEmail.Text = reader["EMAIL_ADDRESS"].ToString();
                 txtPassword.Text = reader["PASSWORD"].ToString();
                 txtPassword.UseSystemPasswordChar = true;
                 txtStoreName.Text = reader["STORE_NAME"].ToString();

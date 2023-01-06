@@ -38,7 +38,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbProfile = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlUserControlContainer = new System.Windows.Forms.Panel();
             this.ucAccount1 = new Carinderia_Kiosk_System.Proprietor.ucAccount();
@@ -50,7 +50,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlUserControlContainer.SuspendLayout();
             this.SuspendLayout();
@@ -201,7 +201,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pbProfile);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(227, 0);
@@ -210,15 +210,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.Size = new System.Drawing.Size(1264, 45);
             this.panel1.TabIndex = 1;
             // 
-            // pictureBox3
+            // pbProfile
             // 
-            this.pictureBox3.Image = global::Carinderia_Kiosk_System.Properties.Resources.user_icon_20_x_20;
-            this.pictureBox3.Location = new System.Drawing.Point(1177, 9);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 33);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.pbProfile.Image = global::Carinderia_Kiosk_System.Properties.Resources.user_icon_20_x_20;
+            this.pbProfile.Location = new System.Drawing.Point(1177, 9);
+            this.pbProfile.Name = "pbProfile";
+            this.pbProfile.Size = new System.Drawing.Size(44, 33);
+            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfile.TabIndex = 1;
+            this.pbProfile.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -310,7 +310,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlUserControlContainer.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -330,7 +330,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnlUserControlContainer;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pbProfile;
         private ucDashboard ucDashboard1;
         private ucAccount ucAccount1;
         private ucStaff ucStaff1;
