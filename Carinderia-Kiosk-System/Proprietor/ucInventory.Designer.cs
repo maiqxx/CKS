@@ -73,7 +73,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblInventory.AutoSize = true;
             this.lblInventory.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInventory.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblInventory.Location = new System.Drawing.Point(13, 9);
+            this.lblInventory.Location = new System.Drawing.Point(19, 14);
             this.lblInventory.Name = "lblInventory";
             this.lblInventory.Size = new System.Drawing.Size(119, 28);
             this.lblInventory.TabIndex = 0;

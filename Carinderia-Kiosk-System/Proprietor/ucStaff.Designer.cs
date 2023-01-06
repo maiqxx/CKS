@@ -77,11 +77,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblStaff.AutoSize = true;
             this.lblStaff.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStaff.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblStaff.Location = new System.Drawing.Point(12, 12);
+            this.lblStaff.Location = new System.Drawing.Point(19, 14);
             this.lblStaff.Name = "lblStaff";
-            this.lblStaff.Size = new System.Drawing.Size(226, 28);
+            this.lblStaff.Size = new System.Drawing.Size(167, 28);
             this.lblStaff.TabIndex = 0;
-            this.lblStaff.Text = "Staff Management";
+            this.lblStaff.Text = "Manage Staff";
             // 
             // pnlForm
             // 

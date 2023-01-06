@@ -42,7 +42,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblManageOrders.AutoSize = true;
             this.lblManageOrders.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.lblManageOrders.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblManageOrders.Location = new System.Drawing.Point(14, 10);
+            this.lblManageOrders.Location = new System.Drawing.Point(19, 14);
             this.lblManageOrders.Name = "lblManageOrders";
             this.lblManageOrders.Size = new System.Drawing.Size(196, 28);
             this.lblManageOrders.TabIndex = 0;

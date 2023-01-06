@@ -68,11 +68,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblAccountSettings.AutoSize = true;
             this.lblAccountSettings.BackColor = System.Drawing.SystemColors.Control;
-            this.lblAccountSettings.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccountSettings.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.lblAccountSettings.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblAccountSettings.Location = new System.Drawing.Point(12, 11);
+            this.lblAccountSettings.Location = new System.Drawing.Point(19, 14);
             this.lblAccountSettings.Name = "lblAccountSettings";
-            this.lblAccountSettings.Size = new System.Drawing.Size(174, 23);
+            this.lblAccountSettings.Size = new System.Drawing.Size(205, 28);
             this.lblAccountSettings.TabIndex = 0;
             this.lblAccountSettings.Text = "Account Settings";
             // 
