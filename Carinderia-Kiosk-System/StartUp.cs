@@ -1,4 +1,5 @@
 ﻿using Carinderia_Kiosk_System.Proprietor;
+using Carinderia_Kiosk_System.Customer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +36,9 @@ namespace Carinderia_Kiosk_System
         //Customer Button
         private void button1_Click(object sender, EventArgs e)
         {
-
+            StartScreen startScreen = new StartScreen();
+            startScreen.Show();
+            this.Hide();
         }
     }
 }

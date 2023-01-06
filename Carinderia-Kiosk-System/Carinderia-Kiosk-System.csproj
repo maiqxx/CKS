@@ -320,5 +320,20 @@
   <ItemGroup>
     <None Include="Resources\inventory summary.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diacosta Green 200 x 100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diacosta Green 600 x 300px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right arrow white 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leaves 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green wooden BG 1182 x 683.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
