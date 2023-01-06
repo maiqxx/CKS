@@ -95,6 +95,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>cks_dbDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Customer\StartScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\StartScreen.Designer.cs">
+      <DependentUpon>StartScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\AdminBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Customer\StartScreen.resx">
+      <DependentUpon>StartScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -234,7 +243,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Customer\" />
     <Folder Include="Staff\" />
   </ItemGroup>
   <ItemGroup>
