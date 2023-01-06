@@ -260,6 +260,8 @@ namespace Carinderia_Kiosk_System.Proprietor
                 DataTable dt = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT CATEGORY, COUNT(STOCK_ID) FROM INVENTORY GROUP BY CATEGORY", conn);
                 adapter.Fill(dt);
+
+                dgvMenuStocks.RowTemplate.Height = 50;
                 dgvMenuStocks.DataSource = dt;
 
                 //Column names

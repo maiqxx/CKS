@@ -52,6 +52,8 @@ namespace Carinderia_Kiosk_System.Proprietor
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, HIRE_DATE, UPDATED_AT FROM STAFF", conn);
             adapter.Fill(dt);
+
+            dgvStaff.RowTemplate.Height = 50;
             dgvStaff.DataSource = dt;
 
             //Column header names

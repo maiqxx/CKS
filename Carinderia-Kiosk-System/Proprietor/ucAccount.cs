@@ -98,6 +98,9 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
