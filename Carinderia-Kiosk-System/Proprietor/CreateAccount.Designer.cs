@@ -342,6 +342,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.panelCreateAccount);
             this.Controls.Add(this.panelContainer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";

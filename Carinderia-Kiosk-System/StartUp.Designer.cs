@@ -143,6 +143,7 @@ namespace Carinderia_Kiosk_System
             this.Controls.Add(this.lblSelectMode);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.pnlLeftLogo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StartUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlRole.ResumeLayout(false);

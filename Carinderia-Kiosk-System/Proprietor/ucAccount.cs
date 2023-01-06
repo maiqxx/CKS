@@ -105,11 +105,11 @@ namespace Carinderia_Kiosk_System.Proprietor
                     int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
                     {
-                        MessageBox.Show("Food item updated successfully!");
+                        MessageBox.Show("Changes Saved.");
                     }
                     else
                     {
-                        MessageBox.Show("Cannot update the selected food item.");
+                        MessageBox.Show("Cannot save changes.");
                     }
                     conn.Close();
                 }
