@@ -65,7 +65,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // lblAccountSettings
             // 
             this.lblAccountSettings.AutoSize = true;
-            this.lblAccountSettings.BackColor = System.Drawing.SystemColors.Control;
+            this.lblAccountSettings.BackColor = System.Drawing.Color.AliceBlue;
             this.lblAccountSettings.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.lblAccountSettings.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblAccountSettings.Location = new System.Drawing.Point(19, 14);
@@ -76,7 +76,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.lblPassword);
             this.panel1.Controls.Add(this.txtContactNum);
@@ -174,7 +174,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDelete.Location = new System.Drawing.Point(596, 55);
             this.btnDelete.Name = "btnDelete";
@@ -186,7 +186,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnUploadNew
             // 
             this.btnUploadNew.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnUploadNew.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadNew.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUploadNew.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnUploadNew.Location = new System.Drawing.Point(412, 55);
             this.btnUploadNew.Name = "btnUploadNew";
@@ -219,7 +219,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Controls.Add(this.dtpClosingTime);
             this.panel2.Controls.Add(this.dtpOpeningTime);
             this.panel2.Controls.Add(this.lblClosingTime);
@@ -363,6 +363,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.lblUpdatedAt);
             this.Controls.Add(this.lblLastUpdate);
             this.Controls.Add(this.lblCreatedAt);

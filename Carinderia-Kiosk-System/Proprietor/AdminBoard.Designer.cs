@@ -75,10 +75,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.Dialcosta_Light_200_x_100;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(25, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(177, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -92,7 +92,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnDashboard.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDashboard.Image = global::Carinderia_Kiosk_System.Properties.Resources.dashboard_20_x_20;
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(4, 114);
+            this.btnDashboard.Location = new System.Drawing.Point(4, 87);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -112,7 +112,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnOrders.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnOrders.Image = global::Carinderia_Kiosk_System.Properties.Resources.orders_20x20;
             this.btnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrders.Location = new System.Drawing.Point(4, 182);
+            this.btnOrders.Location = new System.Drawing.Point(4, 155);
             this.btnOrders.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -131,7 +131,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnCategories.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCategories.Image = global::Carinderia_Kiosk_System.Properties.Resources.categories_20x20;
             this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategories.Location = new System.Drawing.Point(4, 250);
+            this.btnCategories.Location = new System.Drawing.Point(4, 223);
             this.btnCategories.Margin = new System.Windows.Forms.Padding(4);
             this.btnCategories.Name = "btnCategories";
             this.btnCategories.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -150,7 +150,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnInventory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnInventory.Image = global::Carinderia_Kiosk_System.Properties.Resources.inventory_20_x_20;
             this.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventory.Location = new System.Drawing.Point(4, 318);
+            this.btnInventory.Location = new System.Drawing.Point(4, 291);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -169,7 +169,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnStaff.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnStaff.Image = global::Carinderia_Kiosk_System.Properties.Resources.staff_m__20_x_20;
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStaff.Location = new System.Drawing.Point(4, 386);
+            this.btnStaff.Location = new System.Drawing.Point(4, 359);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(4);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -188,7 +188,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnAccount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAccount.Image = global::Carinderia_Kiosk_System.Properties.Resources.settings_gear_20_x_20;
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.Location = new System.Drawing.Point(4, 454);
+            this.btnAccount.Location = new System.Drawing.Point(4, 427);
             this.btnAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -303,7 +303,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

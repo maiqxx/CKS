@@ -90,6 +90,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.lblOrderList);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dgvOrders);

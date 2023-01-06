@@ -84,7 +84,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.BackColor = System.Drawing.Color.AliceBlue;
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.buttonSignIn);
@@ -175,6 +175,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(582, 537);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

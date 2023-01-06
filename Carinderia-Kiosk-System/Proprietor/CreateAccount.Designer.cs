@@ -117,7 +117,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // panelCreateAccount
             // 
-            this.panelCreateAccount.BackColor = System.Drawing.Color.White;
+            this.panelCreateAccount.BackColor = System.Drawing.Color.AliceBlue;
             this.panelCreateAccount.Controls.Add(this.groupBoxContactNum);
             this.panelCreateAccount.Controls.Add(this.buttonCreateAccount);
             this.panelCreateAccount.Controls.Add(this.groupBoxPassword);
