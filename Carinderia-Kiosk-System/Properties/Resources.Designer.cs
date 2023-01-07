@@ -223,6 +223,16 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Diacosta_white_25_x_25 {
+            get {
+                object obj = ResourceManager.GetObject("Diacosta white 25 x 25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dialcosta_Light_200_x_100 {
             get {
                 object obj = ResourceManager.GetObject("Dialcosta Light 200 x 100", resourceCulture);

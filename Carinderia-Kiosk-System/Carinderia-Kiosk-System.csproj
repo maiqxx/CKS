@@ -101,6 +101,12 @@
     <Compile Include="Customer\DineOption.Designer.cs">
       <DependentUpon>DineOption.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\MenuBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\MenuBoard.Designer.cs">
+      <DependentUpon>MenuBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\StartScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Customer\DineOption.resx">
       <DependentUpon>DineOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\MenuBoard.resx">
+      <DependentUpon>MenuBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\StartScreen.resx">
       <DependentUpon>StartScreen.cs</DependentUpon>
@@ -373,6 +382,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Take Out 100 x 150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diacosta white 25 x 25.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
