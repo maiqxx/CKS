@@ -44,7 +44,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             var lastName = txtLastname.Text;
             var storeName = txtStorename.Text;
             var location = txtlocation.Text;
-            var contactNum = txtContactNum.Text;
+            var contactNum = mTxtContactNum.Text;
             var emailAddress = txtEmailAddress.Text;
             var password = txtPassword.Text;
             var updatedAt = "";

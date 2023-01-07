@@ -29,13 +29,8 @@ namespace Carinderia_Kiosk_System.Proprietor
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelContainer = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCreateAccount = new System.Windows.Forms.Panel();
             this.groupBoxContactNum = new System.Windows.Forms.GroupBox();
-            this.txtContactNum = new System.Windows.Forms.TextBox();
             this.buttonCreateAccount = new System.Windows.Forms.Button();
             this.groupBoxPassword = new System.Windows.Forms.GroupBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -51,9 +46,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.labelGetStarted = new System.Windows.Forms.Label();
             this.buttonSignIn = new System.Windows.Forms.Button();
-            this.panelContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mTxtContactNum = new System.Windows.Forms.MaskedTextBox();
             this.panelCreateAccount.SuspendLayout();
             this.groupBoxContactNum.SuspendLayout();
             this.groupBoxPassword.SuspendLayout();
@@ -62,58 +59,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.groupBoxStorename.SuspendLayout();
             this.groupBoxLastname.SuspendLayout();
             this.groupBoxFirstname.SuspendLayout();
+            this.panelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.BackColor = System.Drawing.Color.Transparent;
-            this.panelContainer.BackgroundImage = global::Carinderia_Kiosk_System.Properties.Resources.blue_wooden_bg;
-            this.panelContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelContainer.Controls.Add(this.pictureBox2);
-            this.panelContainer.Controls.Add(this.label1);
-            this.panelContainer.Controls.Add(this.pictureBox1);
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelContainer.Location = new System.Drawing.Point(0, 0);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(0);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Padding = new System.Windows.Forms.Padding(5, 5, 6, 5);
-            this.panelContainer.Size = new System.Drawing.Size(554, 753);
-            this.panelContainer.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Carinderia_Kiosk_System.Properties.Resources.Back_icon_White_20_x_20;
-            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(42, 700);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(434, 18);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Copyright © 2022 Technocrats Solutions. All rights reserved.";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.Blue_Simple_Restaurant_Logo_v1_1;
-            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(93, 224);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(355, 269);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // panelCreateAccount
             // 
@@ -136,7 +85,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // groupBoxContactNum
             // 
-            this.groupBoxContactNum.Controls.Add(this.txtContactNum);
+            this.groupBoxContactNum.Controls.Add(this.mTxtContactNum);
             this.groupBoxContactNum.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBoxContactNum.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.groupBoxContactNum.Location = new System.Drawing.Point(167, 387);
@@ -146,15 +95,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.groupBoxContactNum.TabIndex = 12;
             this.groupBoxContactNum.TabStop = false;
             this.groupBoxContactNum.Text = "Contact Number *";
-            // 
-            // txtContactNum
-            // 
-            this.txtContactNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContactNum.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.txtContactNum.Location = new System.Drawing.Point(13, 24);
-            this.txtContactNum.Name = "txtContactNum";
-            this.txtContactNum.Size = new System.Drawing.Size(300, 30);
-            this.txtContactNum.TabIndex = 0;
             // 
             // buttonCreateAccount
             // 
@@ -335,6 +275,65 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.buttonSignIn.UseVisualStyleBackColor = false;
             this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
             // 
+            // panelContainer
+            // 
+            this.panelContainer.BackColor = System.Drawing.Color.Transparent;
+            this.panelContainer.BackgroundImage = global::Carinderia_Kiosk_System.Properties.Resources.blue_wooden_bg;
+            this.panelContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelContainer.Controls.Add(this.pictureBox2);
+            this.panelContainer.Controls.Add(this.label1);
+            this.panelContainer.Controls.Add(this.pictureBox1);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Padding = new System.Windows.Forms.Padding(5, 5, 6, 5);
+            this.panelContainer.Size = new System.Drawing.Size(554, 753);
+            this.panelContainer.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Carinderia_Kiosk_System.Properties.Resources.Back_icon_White_20_x_20;
+            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(42, 700);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(434, 18);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Copyright © 2022 Technocrats Solutions. All rights reserved.";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.Blue_Simple_Restaurant_Logo_v1_1;
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(93, 224);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(355, 269);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // mTxtContactNum
+            // 
+            this.mTxtContactNum.Location = new System.Drawing.Point(13, 26);
+            this.mTxtContactNum.Mask = "(+63)000-000-0000";
+            this.mTxtContactNum.Name = "mTxtContactNum";
+            this.mTxtContactNum.Size = new System.Drawing.Size(300, 28);
+            this.mTxtContactNum.TabIndex = 0;
+            // 
             // CreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -346,10 +345,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Name = "CreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
-            this.panelContainer.ResumeLayout(false);
-            this.panelContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelCreateAccount.ResumeLayout(false);
             this.panelCreateAccount.PerformLayout();
             this.groupBoxContactNum.ResumeLayout(false);
@@ -366,6 +361,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.groupBoxLastname.PerformLayout();
             this.groupBoxFirstname.ResumeLayout(false);
             this.groupBoxFirstname.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,7 +377,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelCreateAccount;
         private System.Windows.Forms.GroupBox groupBoxContactNum;
-        private System.Windows.Forms.TextBox txtContactNum;
         private System.Windows.Forms.Button buttonCreateAccount;
         private System.Windows.Forms.GroupBox groupBoxPassword;
         private System.Windows.Forms.TextBox txtPassword;
@@ -394,5 +392,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.TextBox txtFirstname;
         private System.Windows.Forms.Label labelGetStarted;
         private System.Windows.Forms.Button buttonSignIn;
+        private System.Windows.Forms.MaskedTextBox mTxtContactNum;
     }
 }
