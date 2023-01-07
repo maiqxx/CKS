@@ -347,5 +347,17 @@
   <ItemGroup>
     <None Include="Resources\clear format 20 x 20.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin icon 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin icon 40 x 40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff icon 40 x 40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers icon 40 x 40.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
