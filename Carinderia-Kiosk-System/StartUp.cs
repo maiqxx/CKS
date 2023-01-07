@@ -34,7 +34,7 @@ namespace Carinderia_Kiosk_System
         }
 
         //Customer Button
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCustomer_Click(object sender, EventArgs e)
         {
             StartScreen startScreen = new StartScreen();
             startScreen.Show();

@@ -31,11 +31,11 @@ namespace Carinderia_Kiosk_System
         {
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlRole = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.pnlLeftLogo = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnCustomer = new System.Windows.Forms.Button();
             this.pnlRole.SuspendLayout();
             this.pnlLeftLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -53,26 +53,13 @@ namespace Carinderia_Kiosk_System
             // 
             // pnlRole
             // 
-            this.pnlRole.Controls.Add(this.button1);
+            this.pnlRole.Controls.Add(this.btnCustomer);
             this.pnlRole.Controls.Add(this.btnStaff);
             this.pnlRole.Controls.Add(this.btnAdmin);
             this.pnlRole.Location = new System.Drawing.Point(695, 281);
             this.pnlRole.Name = "pnlRole";
             this.pnlRole.Size = new System.Drawing.Size(391, 244);
             this.pnlRole.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(110, 161);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 50);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "CUSTOMER";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnStaff
             // 
@@ -122,6 +109,19 @@ namespace Carinderia_Kiosk_System
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
             // 
+            // btnCustomer
+            // 
+            this.btnCustomer.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnCustomer.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnCustomer.Location = new System.Drawing.Point(110, 163);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(180, 50);
+            this.btnCustomer.TabIndex = 3;
+            this.btnCustomer.Text = "CUSTOMER";
+            this.btnCustomer.UseVisualStyleBackColor = false;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
             // StartUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,9 +148,9 @@ namespace Carinderia_Kiosk_System
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Panel pnlRole;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnStaff;
         private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btnCustomer;
     }
 }
 

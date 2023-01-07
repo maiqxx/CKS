@@ -335,5 +335,17 @@
   <ItemGroup>
     <None Include="Resources\green wooden BG 1182 x 683.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear format 20 x 20.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

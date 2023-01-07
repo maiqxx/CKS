@@ -121,6 +121,9 @@
   <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="refresh 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,11 +139,14 @@
   <data name="Diacosta Green 600 x 300px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Diacosta Green 600 x 300px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dialcosta Light 200 x 100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dialcosta Light 200 x 100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="update 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="live orders" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\live orders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +154,8 @@
   <data name="user icon 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user icon 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="categories blue 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\categories blue 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inventory summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory summary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,6 +184,9 @@
   <data name="right arrow white 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\right arrow white 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="green wooden BG 1182 x 683" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green wooden BG 1182 x 683.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="store white 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\store white 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,13 +208,16 @@
   <data name="settings gear 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings gear 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="categories blue 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\categories blue 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="leaves 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\leaves 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="store40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\store40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green wooden BG 1182 x 683" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green wooden BG 1182 x 683.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clear format 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clear format 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
