@@ -10,19 +10,23 @@ using System.Windows.Forms;
 
 namespace Carinderia_Kiosk_System.Customer
 {
-    public partial class StartScreen : Form
+    public partial class DineOption : Form
     {
-        public StartScreen()
+        public DineOption()
         {
             InitializeComponent();
         }
 
-        //Order redirect button
-        private void btnOrder_Click(object sender, EventArgs e)
+        //Dine In button
+        private void btnDineIn_Click(object sender, EventArgs e)
         {
-            DineOption dineOption = new DineOption();
-            dineOption.Show();
-            this.Hide();
+
+        }
+
+        //Take Out button
+        private void btnTakeOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
