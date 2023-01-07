@@ -30,10 +30,10 @@ namespace Carinderia_Kiosk_System.Customer
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -45,30 +45,31 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel1.Size = new System.Drawing.Size(213, 800);
             this.panel1.TabIndex = 2;
             // 
-            // button1
+            // btnOrder
             // 
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = global::Carinderia_Kiosk_System.Properties.Resources.right_arrow_white_20_x_20;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(595, 622);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.button1.Size = new System.Drawing.Size(215, 71);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ORDER";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnOrder.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnOrder.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOrder.Image = global::Carinderia_Kiosk_System.Properties.Resources.right_arrow_white_20_x_20;
+            this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOrder.Location = new System.Drawing.Point(595, 622);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnOrder.Size = new System.Drawing.Size(215, 71);
+            this.btnOrder.TabIndex = 1;
+            this.btnOrder.Text = "ORDER";
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.Diacosta_Green_600_x_300px;
-            this.pictureBox1.Location = new System.Drawing.Point(463, 158);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(499, 263);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbLogo.Image = global::Carinderia_Kiosk_System.Properties.Resources.Diacosta_Green_600_x_300px;
+            this.pbLogo.Location = new System.Drawing.Point(463, 158);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(499, 263);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // panel2
             // 
@@ -87,21 +88,21 @@ namespace Carinderia_Kiosk_System.Customer
             this.ClientSize = new System.Drawing.Size(1400, 800);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnOrder);
+            this.Controls.Add(this.pbLogo);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StartScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
     }

@@ -16,5 +16,11 @@ namespace Carinderia_Kiosk_System.Customer
         {
             InitializeComponent();
         }
+
+        //Order redirect button
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

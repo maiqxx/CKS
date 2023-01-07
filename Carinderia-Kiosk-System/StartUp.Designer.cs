@@ -30,7 +30,6 @@ namespace Carinderia_Kiosk_System
         private void InitializeComponent()
         {
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblSelectMode = new System.Windows.Forms.Label();
             this.pnlRole = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
@@ -46,37 +45,25 @@ namespace Carinderia_Kiosk_System
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(816, 121);
+            this.lblWelcome.Location = new System.Drawing.Point(813, 175);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(172, 37);
             this.lblWelcome.TabIndex = 4;
             this.lblWelcome.Text = "WELCOME!";
-            // 
-            // lblSelectMode
-            // 
-            this.lblSelectMode.AutoSize = true;
-            this.lblSelectMode.BackColor = System.Drawing.Color.Transparent;
-            this.lblSelectMode.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectMode.ForeColor = System.Drawing.Color.Black;
-            this.lblSelectMode.Location = new System.Drawing.Point(833, 258);
-            this.lblSelectMode.Name = "lblSelectMode";
-            this.lblSelectMode.Size = new System.Drawing.Size(126, 23);
-            this.lblSelectMode.TabIndex = 5;
-            this.lblSelectMode.Text = "SELECT ROLE:";
             // 
             // pnlRole
             // 
             this.pnlRole.Controls.Add(this.button1);
             this.pnlRole.Controls.Add(this.btnStaff);
             this.pnlRole.Controls.Add(this.btnAdmin);
-            this.pnlRole.Location = new System.Drawing.Point(698, 284);
+            this.pnlRole.Location = new System.Drawing.Point(695, 281);
             this.pnlRole.Name = "pnlRole";
             this.pnlRole.Size = new System.Drawing.Size(391, 244);
             this.pnlRole.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackColor = System.Drawing.Color.ForestGreen;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(110, 161);
@@ -102,7 +89,8 @@ namespace Carinderia_Kiosk_System
             // 
             // btnAdmin
             // 
-            this.btnAdmin.BackColor = System.Drawing.Color.Black;
+            this.btnAdmin.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
             this.btnAdmin.Location = new System.Drawing.Point(110, 26);
@@ -141,7 +129,6 @@ namespace Carinderia_Kiosk_System
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1164, 706);
             this.Controls.Add(this.pnlRole);
-            this.Controls.Add(this.lblSelectMode);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.pnlLeftLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -160,7 +147,6 @@ namespace Carinderia_Kiosk_System
         private System.Windows.Forms.Panel pnlLeftLogo;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.Label lblSelectMode;
         private System.Windows.Forms.Panel pnlRole;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnStaff;
