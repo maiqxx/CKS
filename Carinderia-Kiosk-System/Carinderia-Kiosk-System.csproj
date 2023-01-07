@@ -386,5 +386,8 @@
   <ItemGroup>
     <None Include="Resources\Diacosta white 25 x 25.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new category blue icon 20 x 20.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
