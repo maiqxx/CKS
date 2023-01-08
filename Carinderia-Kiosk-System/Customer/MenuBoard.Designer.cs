@@ -41,12 +41,22 @@ namespace Carinderia_Kiosk_System.Customer
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ucFoodItemDetails1 = new Carinderia_Kiosk_System.Customer.ucFoodItemDetails();
+            this.btnAddToCart = new System.Windows.Forms.Button();
+            this.NUPTxtQuantity = new System.Windows.Forms.NumericUpDown();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblUnit = new System.Windows.Forms.Label();
+            this.lblPer = new System.Windows.Forms.Label();
+            this.lblUnitPrice = new System.Windows.Forms.Label();
+            this.lblFoodName = new System.Windows.Forms.Label();
+            this.pbFoodImage = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlFooditemDetailsContainer.SuspendLayout();
             this.pnlUserControlFoodItemHolder.SuspendLayout();
             this.pnlTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUPTxtQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -123,6 +133,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             // pnlFooditemDetailsContainer
             // 
+            this.pnlFooditemDetailsContainer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnlFooditemDetailsContainer.Controls.Add(this.pnlUserControlFoodItemHolder);
             this.pnlFooditemDetailsContainer.Controls.Add(this.pnlTitle);
             this.pnlFooditemDetailsContainer.Location = new System.Drawing.Point(849, 66);
@@ -132,7 +143,16 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             // pnlUserControlFoodItemHolder
             // 
-            this.pnlUserControlFoodItemHolder.Controls.Add(this.ucFoodItemDetails1);
+            this.pnlUserControlFoodItemHolder.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.btnAddToCart);
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.NUPTxtQuantity);
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.lblDesc);
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.lblDescription);
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.lblUnit);
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.lblPer);
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.lblUnitPrice);
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.lblFoodName);
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.pbFoodImage);
             this.pnlUserControlFoodItemHolder.Location = new System.Drawing.Point(3, 55);
             this.pnlUserControlFoodItemHolder.Name = "pnlUserControlFoodItemHolder";
             this.pnlUserControlFoodItemHolder.Size = new System.Drawing.Size(533, 252);
@@ -165,14 +185,91 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel3.Size = new System.Drawing.Size(539, 324);
             this.panel3.TabIndex = 9;
             // 
-            // ucFoodItemDetails1
+            // btnAddToCart
             // 
-            this.ucFoodItemDetails1.AutoScroll = true;
-            this.ucFoodItemDetails1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucFoodItemDetails1.Location = new System.Drawing.Point(1, 0);
-            this.ucFoodItemDetails1.Name = "ucFoodItemDetails1";
-            this.ucFoodItemDetails1.Size = new System.Drawing.Size(532, 252);
-            this.ucFoodItemDetails1.TabIndex = 0;
+            this.btnAddToCart.Location = new System.Drawing.Point(387, 113);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.Size = new System.Drawing.Size(122, 30);
+            this.btnAddToCart.TabIndex = 17;
+            this.btnAddToCart.Text = "Add To Cart";
+            this.btnAddToCart.UseVisualStyleBackColor = true;
+            // 
+            // NUPTxtQuantity
+            // 
+            this.NUPTxtQuantity.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NUPTxtQuantity.Location = new System.Drawing.Point(181, 113);
+            this.NUPTxtQuantity.Name = "NUPTxtQuantity";
+            this.NUPTxtQuantity.Size = new System.Drawing.Size(188, 30);
+            this.NUPTxtQuantity.TabIndex = 16;
+            this.NUPTxtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Location = new System.Drawing.Point(44, 196);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(322, 19);
+            this.lblDesc.TabIndex = 15;
+            this.lblDesc.Text = "Some text here that describes the food item...";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(23, 166);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(95, 18);
+            this.lblDescription.TabIndex = 14;
+            this.lblDescription.Text = "Description:";
+            // 
+            // lblUnit
+            // 
+            this.lblUnit.AutoSize = true;
+            this.lblUnit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnit.Location = new System.Drawing.Point(374, 54);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(40, 21);
+            this.lblUnit.TabIndex = 13;
+            this.lblUnit.Text = "unit";
+            // 
+            // lblPer
+            // 
+            this.lblPer.AutoSize = true;
+            this.lblPer.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPer.Location = new System.Drawing.Point(339, 54);
+            this.lblPer.Name = "lblPer";
+            this.lblPer.Size = new System.Drawing.Size(38, 21);
+            this.lblPer.TabIndex = 12;
+            this.lblPer.Text = "per";
+            // 
+            // lblUnitPrice
+            // 
+            this.lblUnitPrice.AutoSize = true;
+            this.lblUnitPrice.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnitPrice.Location = new System.Drawing.Point(177, 53);
+            this.lblUnitPrice.Name = "lblUnitPrice";
+            this.lblUnitPrice.Size = new System.Drawing.Size(54, 22);
+            this.lblUnitPrice.TabIndex = 11;
+            this.lblUnitPrice.Text = "Price";
+            // 
+            // lblFoodName
+            // 
+            this.lblFoodName.AutoSize = true;
+            this.lblFoodName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoodName.Location = new System.Drawing.Point(177, 25);
+            this.lblFoodName.Name = "lblFoodName";
+            this.lblFoodName.Size = new System.Drawing.Size(101, 19);
+            this.lblFoodName.TabIndex = 10;
+            this.lblFoodName.Text = "FoodName";
+            // 
+            // pbFoodImage
+            // 
+            this.pbFoodImage.Location = new System.Drawing.Point(26, 25);
+            this.pbFoodImage.Name = "pbFoodImage";
+            this.pbFoodImage.Size = new System.Drawing.Size(130, 130);
+            this.pbFoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFoodImage.TabIndex = 9;
+            this.pbFoodImage.TabStop = false;
             // 
             // MenuBoard
             // 
@@ -197,8 +294,11 @@ namespace Carinderia_Kiosk_System.Customer
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlFooditemDetailsContainer.ResumeLayout(false);
             this.pnlUserControlFoodItemHolder.ResumeLayout(false);
+            this.pnlUserControlFoodItemHolder.PerformLayout();
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUPTxtQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +318,14 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.Panel pnlUserControlFoodItemHolder;
         private System.Windows.Forms.Label label1;
-        private ucFoodItemDetails ucFoodItemDetails1;
+        private System.Windows.Forms.Button btnAddToCart;
+        private System.Windows.Forms.NumericUpDown NUPTxtQuantity;
+        private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label lblUnit;
+        private System.Windows.Forms.Label lblPer;
+        private System.Windows.Forms.Label lblUnitPrice;
+        private System.Windows.Forms.Label lblFoodName;
+        private System.Windows.Forms.PictureBox pbFoodImage;
     }
 }

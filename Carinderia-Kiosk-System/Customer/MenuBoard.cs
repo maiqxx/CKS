@@ -23,6 +23,7 @@ namespace Carinderia_Kiosk_System.Customer
         MySqlCommand cmd;
         MySqlDataReader dr;
 
+        double _total;
         private PictureBox item;
         private Label price;
         private Label foodName;
@@ -41,6 +42,8 @@ namespace Carinderia_Kiosk_System.Customer
         private void MenuBoard_Load(object sender, EventArgs e)
         {
             GetData();
+
+            pnlUserControlFoodItemHolder.Visible = false;
 
             //displays category items to menu strip
             //LoadCategoryItems();
@@ -68,7 +71,7 @@ namespace Carinderia_Kiosk_System.Customer
 
                 //displays price
                 price = new Label();
-                price.Text = "₱ " + dr["PRICE"].ToString();
+                price.Text = "₱ " + double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
                 price.BackColor = Color.FromArgb(39, 174, 96);
                 price.ForeColor = Color.FromArgb(236, 240, 241);
                 price.Font = MediumFont;
@@ -113,6 +116,33 @@ namespace Carinderia_Kiosk_System.Customer
         public void OnClick(object sender, EventArgs e)
         {
             //MessageBox.Show(((PictureBox)sender).Tag.ToString()); //test get stock ID
+
+            pnlUserControlFoodItemHolder.Visible = true;
+
+            String tag = ((PictureBox)sender).Tag.ToString();
+
+            conn.Open();
+            cmd = new MySqlCommand("SELECT * FROM INVENTORY WHERE STOCK_ID LIKE '" + tag + "' ", conn);
+            dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                //_total += double.Parse(dr["PRICE"].ToString());
+                //dataGridview1.Rows.Add(dataGridView1.Rows.Count + 1, dr["FOOD_NAME"].ToString(), double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00"));
+
+                //gets image from database
+                byte[] array = (byte[])dr["IMAGE"];
+                MemoryStream ms = new MemoryStream(array);
+                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+                pbFoodImage.BackgroundImageLayout = ImageLayout.Stretch;
+                pbFoodImage.BackgroundImage = bitmap;
+
+                lblFoodName.Text = dr["FOOD_NAME"].ToString();
+                lblUnitPrice.Text = "₱ " + double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
+                lblUnit.Text = dr["UNIT"].ToString();
+                lblDesc.Text = dr["DESCRIPTION"].ToString();
+            }
+            conn.Close();
 
 
         }
