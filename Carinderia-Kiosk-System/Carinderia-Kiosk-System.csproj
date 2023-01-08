@@ -158,6 +158,12 @@
     <Compile Include="Customer\ucFoodItemDetails.Designer.cs">
       <DependentUpon>ucFoodItemDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\ucOrderListTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\ucOrderListTemplate.Designer.cs">
+      <DependentUpon>ucOrderListTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\AdminBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\ucFoodItemDetails.resx">
       <DependentUpon>ucFoodItemDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ucOrderListTemplate.resx">
+      <DependentUpon>ucOrderListTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

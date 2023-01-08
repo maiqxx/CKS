@@ -27,6 +27,7 @@ namespace Carinderia_Kiosk_System.Customer
         private PictureBox item;
         private Label price;
         private Label foodName;
+        private Panel orderList;
 
         Font SmallFont = new Font("Century Gothic", 8, FontStyle.Bold);
         Font MediumFont = new Font("Century Gothic", 10, FontStyle.Bold);

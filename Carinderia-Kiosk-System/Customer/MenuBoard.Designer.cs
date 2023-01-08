@@ -58,8 +58,9 @@ namespace Carinderia_Kiosk_System.Customer
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.pblCurrentOrderList = new System.Windows.Forms.Panel();
             this.lblPesoSign = new System.Windows.Forms.Label();
+            this.flpOrderListContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pnlFooditemDetailsContainer.SuspendLayout();
             this.pnlUserControlFoodItemHolder.SuspendLayout();
@@ -71,6 +72,7 @@ namespace Carinderia_Kiosk_System.Customer
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel2.SuspendLayout();
+            this.flpOrderListContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -189,7 +191,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.pblCurrentOrderList);
+            this.panel3.Controls.Add(this.flpOrderListContainer);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.pnlCurentOrder);
             this.panel3.Location = new System.Drawing.Point(849, 367);
@@ -390,15 +392,6 @@ namespace Carinderia_Kiosk_System.Customer
             this.lblTotalPrice.TabIndex = 4;
             this.lblTotalPrice.Text = "0.00";
             // 
-            // pblCurrentOrderList
-            // 
-            this.pblCurrentOrderList.AutoScroll = true;
-            this.pblCurrentOrderList.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.pblCurrentOrderList.Location = new System.Drawing.Point(4, 51);
-            this.pblCurrentOrderList.Name = "pblCurrentOrderList";
-            this.pblCurrentOrderList.Size = new System.Drawing.Size(532, 276);
-            this.pblCurrentOrderList.TabIndex = 4;
-            // 
             // lblPesoSign
             // 
             this.lblPesoSign.AutoSize = true;
@@ -408,6 +401,24 @@ namespace Carinderia_Kiosk_System.Customer
             this.lblPesoSign.Size = new System.Drawing.Size(21, 22);
             this.lblPesoSign.TabIndex = 18;
             this.lblPesoSign.Text = "₱";
+            // 
+            // flpOrderListContainer
+            // 
+            this.flpOrderListContainer.AutoScroll = true;
+            this.flpOrderListContainer.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.flpOrderListContainer.Controls.Add(this.panel4);
+            this.flpOrderListContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpOrderListContainer.Location = new System.Drawing.Point(0, 44);
+            this.flpOrderListContainer.Name = "flpOrderListContainer";
+            this.flpOrderListContainer.Size = new System.Drawing.Size(539, 289);
+            this.flpOrderListContainer.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(536, 80);
+            this.panel4.TabIndex = 0;
             // 
             // MenuBoard
             // 
@@ -445,6 +456,7 @@ namespace Carinderia_Kiosk_System.Customer
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.flpOrderListContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,10 +490,11 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Button btnGoToCart;
-        private System.Windows.Forms.Panel pblCurrentOrderList;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblPesoSign;
+        private System.Windows.Forms.FlowLayoutPanel flpOrderListContainer;
+        private System.Windows.Forms.Panel panel4;
     }
 }
