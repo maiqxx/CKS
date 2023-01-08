@@ -12,6 +12,7 @@ using System.Drawing.Imaging;
 using MySql.Data.MySqlClient;
 using System.Data;
 
+
 namespace Carinderia_Kiosk_System.Proprietor
 {
     public partial class ucInventory : UserControl

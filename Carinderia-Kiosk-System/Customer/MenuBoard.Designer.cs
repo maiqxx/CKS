@@ -34,6 +34,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbMenuCategoriesFilter = new Nevron.Nov.WinFormControls.NComboBoxControl();
+            this.flpMenuItems = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +75,7 @@ namespace Carinderia_Kiosk_System.Customer
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(46, 88);
+            this.textBox1.Location = new System.Drawing.Point(12, 88);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(495, 30);
@@ -85,10 +86,18 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.cbMenuCategoriesFilter.AutoSize = false;
             this.cbMenuCategoriesFilter.DesignTimeState = null;
-            this.cbMenuCategoriesFilter.Location = new System.Drawing.Point(547, 88);
+            this.cbMenuCategoriesFilter.Location = new System.Drawing.Point(513, 88);
             this.cbMenuCategoriesFilter.Name = "cbMenuCategoriesFilter";
             this.cbMenuCategoriesFilter.Size = new System.Drawing.Size(173, 30);
             this.cbMenuCategoriesFilter.TabIndex = 5;
+            // 
+            // flpMenuItems
+            // 
+            this.flpMenuItems.AutoScroll = true;
+            this.flpMenuItems.Location = new System.Drawing.Point(12, 124);
+            this.flpMenuItems.Name = "flpMenuItems";
+            this.flpMenuItems.Size = new System.Drawing.Size(831, 673);
+            this.flpMenuItems.TabIndex = 6;
             // 
             // MenuBoard
             // 
@@ -96,6 +105,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(1400, 800);
+            this.Controls.Add(this.flpMenuItems);
             this.Controls.Add(this.cbMenuCategoriesFilter);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
@@ -119,5 +129,6 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.Label lblMenu;
         private System.Windows.Forms.TextBox textBox1;
         private Nevron.Nov.WinFormControls.NComboBoxControl cbMenuCategoriesFilter;
+        private System.Windows.Forms.FlowLayoutPanel flpMenuItems;
     }
 }
