@@ -121,31 +121,36 @@ namespace Carinderia_Kiosk_System.Customer
 
             String tag = ((PictureBox)sender).Tag.ToString();
 
-            conn.Open();
-            cmd = new MySqlCommand("SELECT * FROM INVENTORY WHERE STOCK_ID LIKE '" + tag + "' ", conn);
-            dr = cmd.ExecuteReader();
-
-            if (dr.Read())
+            try
             {
-                //_total += double.Parse(dr["PRICE"].ToString());
-                //dataGridview1.Rows.Add(dataGridView1.Rows.Count + 1, dr["FOOD_NAME"].ToString(), double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00"));
+                conn.Open();
+                cmd = new MySqlCommand("SELECT * FROM INVENTORY WHERE STOCK_ID LIKE '" + tag + "' ", conn);
+                dr = cmd.ExecuteReader();
 
-                //gets image from database
-                byte[] array = (byte[])dr["IMAGE"];
-                MemoryStream ms = new MemoryStream(array);
-                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
-                pbFoodImage.BackgroundImageLayout = ImageLayout.Stretch;
-                pbFoodImage.BackgroundImage = bitmap;
+                if (dr.Read())
+                {
+                    //_total += double.Parse(dr["PRICE"].ToString());
+                    //dataGridview1.Rows.Add(dataGridView1.Rows.Count + 1, dr["FOOD_NAME"].ToString(), double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00"));
 
-                lblFoodName.Text = dr["FOOD_NAME"].ToString();
-                lblUnitPrice.Text = double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
-                lblUnit.Text = dr["UNIT"].ToString();
-                lblDesc.Text = dr["DESCRIPTION"].ToString();
+                    //gets image from database
+                    byte[] array = (byte[])dr["IMAGE"];
+                    MemoryStream ms = new MemoryStream(array);
+                    System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+                    pbFoodImage.BackgroundImageLayout = ImageLayout.Stretch;
+                    pbFoodImage.BackgroundImage = bitmap;
+
+                    lblFoodName.Text = dr["FOOD_NAME"].ToString();
+                    lblUnitPrice.Text = double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
+                    lblUnit.Text = dr["UNIT"].ToString();
+                    lblDesc.Text = dr["DESCRIPTION"].ToString();
+                }
+                dr.Close();
+                conn.Close();
             }
-            dr.Close();
-            conn.Close();
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Add To Cart button
@@ -187,6 +192,12 @@ namespace Carinderia_Kiosk_System.Customer
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        //Gets current orders in the cart
+        void GetOrderList()
+        {
+
         }
 
 
