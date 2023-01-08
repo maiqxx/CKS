@@ -152,6 +152,12 @@
     <Compile Include="Customer\StartScreen.Designer.cs">
       <DependentUpon>StartScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\ucFoodItemDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\ucFoodItemDetails.Designer.cs">
+      <DependentUpon>ucFoodItemDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\AdminBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\StartScreen.resx">
       <DependentUpon>StartScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ucFoodItemDetails.resx">
+      <DependentUpon>ucFoodItemDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
