@@ -147,7 +147,25 @@ namespace Carinderia_Kiosk_System.Customer
 
         }
 
+        //Add To Cart button
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
 
+                cmd = new MySqlCommand("INSERT INTO CUSTOMER  ", conn);
+
+
+
+
+                conn.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
 
 
 
@@ -179,10 +197,6 @@ namespace Carinderia_Kiosk_System.Customer
             this.Hide();
         }
 
-        //Add to cart button
-        private void btnAddToCart_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
