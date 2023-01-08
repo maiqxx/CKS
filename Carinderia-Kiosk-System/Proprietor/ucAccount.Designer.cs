@@ -343,7 +343,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.lblUpdatedAt.AutoSize = true;
             this.lblUpdatedAt.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdatedAt.Location = new System.Drawing.Point(853, 805);
+            this.lblUpdatedAt.Location = new System.Drawing.Point(865, 805);
             this.lblUpdatedAt.Name = "lblUpdatedAt";
             this.lblUpdatedAt.Size = new System.Drawing.Size(78, 17);
             this.lblUpdatedAt.TabIndex = 20;
@@ -355,9 +355,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblLastUpdate.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastUpdate.Location = new System.Drawing.Point(782, 805);
             this.lblLastUpdate.Name = "lblLastUpdate";
-            this.lblLastUpdate.Size = new System.Drawing.Size(82, 17);
+            this.lblLastUpdate.Size = new System.Drawing.Size(90, 17);
             this.lblLastUpdate.TabIndex = 19;
-            this.lblLastUpdate.Text = "Last update:";
+            this.lblLastUpdate.Text = "Last updated:";
             // 
             // ucAccount
             // 
