@@ -59,6 +59,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.pblCurrentOrderList = new System.Windows.Forms.Panel();
+            this.lblPesoSign = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlFooditemDetailsContainer.SuspendLayout();
             this.pnlUserControlFoodItemHolder.SuspendLayout();
@@ -149,6 +150,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.pnlUserControlFoodItemHolder.AutoScroll = true;
             this.pnlUserControlFoodItemHolder.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnlUserControlFoodItemHolder.Controls.Add(this.lblPesoSign);
             this.pnlUserControlFoodItemHolder.Controls.Add(this.btnAddToCart);
             this.pnlUserControlFoodItemHolder.Controls.Add(this.NUPTxtQuantity);
             this.pnlUserControlFoodItemHolder.Controls.Add(this.lblDesc);
@@ -248,7 +250,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.lblUnitPrice.AutoSize = true;
             this.lblUnitPrice.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitPrice.Location = new System.Drawing.Point(169, 43);
+            this.lblUnitPrice.Location = new System.Drawing.Point(185, 44);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(54, 22);
             this.lblUnitPrice.TabIndex = 11;
@@ -397,6 +399,16 @@ namespace Carinderia_Kiosk_System.Customer
             this.pblCurrentOrderList.Size = new System.Drawing.Size(532, 276);
             this.pblCurrentOrderList.TabIndex = 4;
             // 
+            // lblPesoSign
+            // 
+            this.lblPesoSign.AutoSize = true;
+            this.lblPesoSign.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoSign.Location = new System.Drawing.Point(169, 44);
+            this.lblPesoSign.Name = "lblPesoSign";
+            this.lblPesoSign.Size = new System.Drawing.Size(21, 22);
+            this.lblPesoSign.TabIndex = 18;
+            this.lblPesoSign.Text = "₱";
+            // 
             // MenuBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -470,5 +482,6 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblPesoSign;
     }
 }

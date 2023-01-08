@@ -138,10 +138,11 @@ namespace Carinderia_Kiosk_System.Customer
                 pbFoodImage.BackgroundImage = bitmap;
 
                 lblFoodName.Text = dr["FOOD_NAME"].ToString();
-                lblUnitPrice.Text = "₱ " + double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
+                lblUnitPrice.Text = double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
                 lblUnit.Text = dr["UNIT"].ToString();
                 lblDesc.Text = dr["DESCRIPTION"].ToString();
             }
+            dr.Close();
             conn.Close();
 
 
@@ -150,20 +151,41 @@ namespace Carinderia_Kiosk_System.Customer
         //Add To Cart button
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
+            string foodname = lblFoodName.Text;
+            double unitPrice = double.Parse(lblUnitPrice.Text);
+            int quantity = Convert.ToInt32(Math.Round(NUPTxtQuantity.Value, 0));
+
             try
             {
                 conn.Open();
 
-                cmd = new MySqlCommand("INSERT INTO CUSTOMER  ", conn);
+                cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE FOOD_NAME = '" + foodname + "' ", conn);
+                dr = cmd.ExecuteReader();
 
+                if (dr.HasRows)
+                {
+                    MessageBox.Show("Food item is already in order list.");
+                    dr.Close();
+                    conn.Open();
+                }
+                else
+                {
+                    dr.Close();
+                    cmd = new MySqlCommand("INSERT INTO CUSTOMER(FOOD_NAME, UNIT_PRICE, QUANTITY) VALUES('" + foodname + "', '" + unitPrice + "', '" + quantity + "') ", conn);
+                    int ctr = cmd.ExecuteNonQuery();
 
-
-
+                    if (ctr > 0)
+                    {
+                        MessageBox.Show("Added successfully!");
+                    }
+                }
                 conn.Close();
+
+                //add here the function that gets the customers' current order
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
