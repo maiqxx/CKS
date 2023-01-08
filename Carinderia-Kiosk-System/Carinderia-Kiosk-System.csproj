@@ -440,5 +440,8 @@
   <ItemGroup>
     <None Include="Resources\shopping cart white 25 x 25.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add to cart green 25 x 25.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

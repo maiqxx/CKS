@@ -178,5 +178,11 @@ namespace Carinderia_Kiosk_System.Customer
             startUp.Show();
             this.Hide();
         }
+
+        //Add to cart button
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
