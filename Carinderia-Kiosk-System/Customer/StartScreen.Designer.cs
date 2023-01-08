@@ -52,12 +52,12 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnOrder.Image = global::Carinderia_Kiosk_System.Properties.Resources.right_arrow_white_20_x_20;
             this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOrder.Location = new System.Drawing.Point(595, 622);
+            this.btnOrder.Location = new System.Drawing.Point(539, 622);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.btnOrder.Size = new System.Drawing.Size(215, 71);
+            this.btnOrder.Size = new System.Drawing.Size(271, 71);
             this.btnOrder.TabIndex = 1;
-            this.btnOrder.Text = "ORDER";
+            this.btnOrder.Text = "ORDER NOW";
             this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
