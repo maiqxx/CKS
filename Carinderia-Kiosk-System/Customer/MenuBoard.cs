@@ -27,6 +27,9 @@ namespace Carinderia_Kiosk_System.Customer
         private PictureBox item;
         private Label price;
         private Label foodName;
+
+        private Label foodItem;
+        private Label unitPrice;
         private Panel orderList;
 
         Font SmallFont = new Font("Century Gothic", 8, FontStyle.Bold);
@@ -43,6 +46,7 @@ namespace Carinderia_Kiosk_System.Customer
         private void MenuBoard_Load(object sender, EventArgs e)
         {
             GetData();
+            GetOrderList();
 
             pnlUserControlFoodItemHolder.Visible = false;
 
@@ -145,6 +149,8 @@ namespace Carinderia_Kiosk_System.Customer
                     lblUnit.Text = dr["UNIT"].ToString();
                     lblDesc.Text = dr["DESCRIPTION"].ToString();
                 }
+
+
                 dr.Close();
                 conn.Close();
             }
@@ -161,6 +167,11 @@ namespace Carinderia_Kiosk_System.Customer
             double unitPrice = double.Parse(lblUnitPrice.Text);
             int quantity = Convert.ToInt32(Math.Round(NUPTxtQuantity.Value, 0));
 
+
+            //MemoryStream ms = new MemoryStream();
+            //pbFoodImage.Image.Save(ms, pbFoodImage.Image.RawFormat);
+            //byte[] img = ms.ToArray();
+
             try
             {
                 conn.Open();
@@ -170,14 +181,19 @@ namespace Carinderia_Kiosk_System.Customer
 
                 if (dr.HasRows)
                 {
-                    MessageBox.Show("Food item is already in order list.");
+                    MessageBox.Show("Food item is already in order list. Check your cart!");
                     dr.Close();
                     conn.Open();
                 }
                 else
                 {
                     dr.Close();
-                    cmd = new MySqlCommand("INSERT INTO CUSTOMER(FOOD_NAME, UNIT_PRICE, QUANTITY) VALUES('" + foodname + "', '" + unitPrice + "', '" + quantity + "') ", conn);
+
+                    cmd = new MySqlCommand("INSERT INTO CUSTOMER(FOOD_NAME, UNIT_PRICE, QUANTITY) VALUES(@foodName, @unitPrice, @quantity) ", conn);
+                    cmd.Parameters.AddWithValue("@foodName", foodname);
+                    cmd.Parameters.AddWithValue("@unitPrice", unitPrice);
+                    cmd.Parameters.AddWithValue("@quantity", quantity);
+
                     int ctr = cmd.ExecuteNonQuery();
 
                     if (ctr > 0)
@@ -188,6 +204,7 @@ namespace Carinderia_Kiosk_System.Customer
                 conn.Close();
 
                 //add here the function that gets the customers' current order
+                //GetOrderList();
             }
             catch(Exception ex)
             {
@@ -195,10 +212,11 @@ namespace Carinderia_Kiosk_System.Customer
             }
         }
 
-        //Gets current orders in the cart
+
+         //Gets current orders in the cart
         void GetOrderList()
         {
-
+            
         }
 
 

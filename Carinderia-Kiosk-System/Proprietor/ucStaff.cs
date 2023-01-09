@@ -132,7 +132,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 cmd.Parameters.AddWithValue("@staffID", txtStaffIDNum.Text);
                 cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
                 cmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
-                cmd.Parameters.AddWithValue("@conNum", txtContactNum);
+                cmd.Parameters.AddWithValue("@conNum", txtContactNum.Text);
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@address", txtAddress.Text);
                 cmd.Parameters.AddWithValue("@role", txtRole.Text);
@@ -149,6 +149,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 }
                 conn.Close();
                 PopulateData();
+                GetStaffID();
                 //ClearData();
             }
             catch (Exception ex)

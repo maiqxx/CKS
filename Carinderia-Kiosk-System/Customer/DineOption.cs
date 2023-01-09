@@ -20,13 +20,21 @@ namespace Carinderia_Kiosk_System.Customer
         //Dine In button
         private void btnDineIn_Click(object sender, EventArgs e)
         {
+            MenuBoard menuBoard = new MenuBoard();
+            menuBoard.Show();
+            this.Hide();
 
+            lblDineIn.Text = CutomerDineInOption.DineInOption;
         }
 
         //Take Out button
         private void btnTakeOut_Click(object sender, EventArgs e)
         {
+            MenuBoard menuBoard = new MenuBoard();
+            menuBoard.Show();
+            this.Hide();
 
+            lblTakeOut.Text = CutomerDineInOption.DineInOption;
         }
     }
 }

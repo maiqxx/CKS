@@ -33,6 +33,8 @@ namespace Carinderia_Kiosk_System.Customer
             this.label2 = new System.Windows.Forms.Label();
             this.btnTakeOut = new System.Windows.Forms.Button();
             this.btnDineIn = new System.Windows.Forms.Button();
+            this.lblDineIn = new System.Windows.Forms.Label();
+            this.lblTakeOut = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -88,6 +90,26 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnDineIn.UseVisualStyleBackColor = false;
             this.btnDineIn.Click += new System.EventHandler(this.btnDineIn_Click);
             // 
+            // lblDineIn
+            // 
+            this.lblDineIn.AutoSize = true;
+            this.lblDineIn.Location = new System.Drawing.Point(556, 386);
+            this.lblDineIn.Name = "lblDineIn";
+            this.lblDineIn.Size = new System.Drawing.Size(56, 19);
+            this.lblDineIn.TabIndex = 4;
+            this.lblDineIn.Text = "Dine In";
+            this.lblDineIn.Visible = false;
+            // 
+            // lblTakeOut
+            // 
+            this.lblTakeOut.AutoSize = true;
+            this.lblTakeOut.Location = new System.Drawing.Point(808, 386);
+            this.lblTakeOut.Name = "lblTakeOut";
+            this.lblTakeOut.Size = new System.Drawing.Size(70, 19);
+            this.lblTakeOut.TabIndex = 5;
+            this.lblTakeOut.Text = "Take Out";
+            this.lblTakeOut.Visible = false;
+            // 
             // DineOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -98,6 +120,8 @@ namespace Carinderia_Kiosk_System.Customer
             this.Controls.Add(this.btnDineIn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDineIn);
+            this.Controls.Add(this.lblTakeOut);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DineOption";
@@ -113,5 +137,7 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDineIn;
         private System.Windows.Forms.Button btnTakeOut;
+        private System.Windows.Forms.Label lblDineIn;
+        private System.Windows.Forms.Label lblTakeOut;
     }
 }

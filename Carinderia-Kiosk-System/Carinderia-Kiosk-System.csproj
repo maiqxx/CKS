@@ -134,6 +134,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>cks_dbDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CutomerDineInOption.cs" />
     <Compile Include="Customer\DineOption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +233,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Customer\Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\DineOption.resx">
       <DependentUpon>DineOption.cs</DependentUpon>
     </EmbeddedResource>
