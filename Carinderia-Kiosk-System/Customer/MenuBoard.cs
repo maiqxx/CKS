@@ -24,13 +24,7 @@ namespace Carinderia_Kiosk_System.Customer
         MySqlDataReader dr;
 
         double _total;
-        private PictureBox item;
-        private Label price;
-        private Label foodName;
 
-        private Label foodItem;
-        private Label unitPrice;
-        private Panel orderList;
 
         Font SmallFont = new Font("Century Gothic", 8, FontStyle.Bold);
         Font MediumFont = new Font("Century Gothic", 10, FontStyle.Bold);
@@ -47,6 +41,7 @@ namespace Carinderia_Kiosk_System.Customer
         {
             GetData();
             GetOrderList();
+            TotalAmount();
 
             pnlUserControlFoodItemHolder.Visible = false;
 
@@ -54,6 +49,10 @@ namespace Carinderia_Kiosk_System.Customer
             //LoadCategoryItems();
 
         }
+
+        private PictureBox item;
+        private Label price;
+        private Label foodName;
 
         //gets data from database to be displayed on flowlayoutpanel
         private void GetData()
@@ -113,7 +112,6 @@ namespace Carinderia_Kiosk_System.Customer
             }
             dr.Close();
             conn.Close();
-
         }
 
 
@@ -166,6 +164,7 @@ namespace Carinderia_Kiosk_System.Customer
             string foodname = lblFoodName.Text;
             double unitPrice = double.Parse(lblUnitPrice.Text);
             int quantity = Convert.ToInt32(Math.Round(NUPTxtQuantity.Value, 0));
+            double totalAmount = unitPrice * quantity;
 
 
             //MemoryStream ms = new MemoryStream();
@@ -183,16 +182,16 @@ namespace Carinderia_Kiosk_System.Customer
                 {
                     MessageBox.Show("Food item is already in order list. Check your cart!");
                     dr.Close();
-                    conn.Open();
                 }
                 else
                 {
                     dr.Close();
 
-                    cmd = new MySqlCommand("INSERT INTO CUSTOMER(FOOD_NAME, UNIT_PRICE, QUANTITY) VALUES(@foodName, @unitPrice, @quantity) ", conn);
+                    cmd = new MySqlCommand("INSERT INTO CUSTOMER(FOOD_NAME, UNIT_PRICE, QUANTITY, TOTAL_AMOUNT) VALUES(@foodName, @unitPrice, @quantity, @total) ", conn);
                     cmd.Parameters.AddWithValue("@foodName", foodname);
                     cmd.Parameters.AddWithValue("@unitPrice", unitPrice);
                     cmd.Parameters.AddWithValue("@quantity", quantity);
+                    cmd.Parameters.AddWithValue("@total", totalAmount);
 
                     int ctr = cmd.ExecuteNonQuery();
 
@@ -202,9 +201,10 @@ namespace Carinderia_Kiosk_System.Customer
                     }
                 }
                 conn.Close();
+                TotalAmount();
 
                 //add here the function that gets the customers' current order
-                //GetOrderList();
+                GetOrderList();
             }
             catch(Exception ex)
             {
@@ -212,11 +212,138 @@ namespace Carinderia_Kiosk_System.Customer
             }
         }
 
+        void TotalAmount()
+        {
+            conn.Open();
+            cmd = new MySqlCommand("SELECT SUM(TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER", conn);
+            dr = cmd.ExecuteReader();
+            dr.Read();
 
-         //Gets current orders in the cart
+            if (dr.HasRows)
+            {
+                _total += double.Parse(dr["TOTAL"].ToString());
+                lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
+            }
+            conn.Close();
+
+        }
+
+        private Panel orderPanel;
+        private Label foodItemName;
+        private Label cost;
+        private NumericUpDown qty;
+        private Button remove;
+
+        //Gets current orders in the cart
         void GetOrderList()
         {
+            conn.Open();
+            cmd = new MySqlCommand("SELECT CUST_ID, FOOD_NAME, QUANTITY, UNIT_PRICE, TOTAL_AMOUNT FROM CUSTOMER", conn);
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+
+                orderPanel = new Panel();
+                orderPanel.Width = 523;
+                orderPanel.Height = 87;
+                orderPanel.BackColor = Color.White;
+
+                //displays price
+                price = new Label();
+                price.Text = "₱ " + double.Parse(dr["UNIT_PRICE"].ToString()).ToString("#, ##0.00");
+                price.Font = SmallFont;
+                price.Location = new Point(33, 48);
+                price.Tag = dr["CUST_ID"].ToString(); 
+
+                //displays food name
+                foodItemName = new Label();
+                foodItemName.Text = dr["FOOD_NAME"].ToString();
+                foodItemName.ForeColor = Color.Black;
+                foodItemName.Location = new Point(33, 20);
+                foodItemName.Font = MediumFont;
+                foodItemName.Tag = dr["CUST_ID"].ToString(); 
+
+                //displays food quantity
+                qty = new NumericUpDown();
+                qty.Value = Convert.ToInt32(dr["QUANTITY"].ToString());
+                qty.Location = new Point(186, 29);
+                qty.Font = MediumFont;
+                qty.TextAlign = HorizontalAlignment.Center;
+                qty.Tag = dr["CUST_ID"].ToString();
+
+                //remove button
+                remove = new Button();
+                remove.Text = "Remove";
+                remove.Width = 80;
+                remove.Height = 30;
+                remove.Location = new Point(391, 29);
+                remove.ForeColor = Color.Maroon;
+                remove.BackColor = Color.FromArgb(255, 192, 192);
+                remove.Font = SmallFont;
+                remove.Tag = dr["CUST_ID"].ToString();
+
+
+                //add to display controls
+                orderPanel.Controls.Add(price);
+                orderPanel.Controls.Add(foodItemName);
+                orderPanel.Controls.Add(qty);
+                orderPanel.Controls.Add(remove);
+
+               
+                flpOrderListContainer.Controls.Add(orderPanel);
+
+                //item.Cursor = Cursors.Hand;
+                remove.Click += new EventHandler(Remove_OnClick);
+
+
+            }
+            dr.Close();
+            conn.Close();
             
+        }
+
+        //numericUpDown Value Changed Event
+        public void Quantity_ValueChanged(object sender, EventArgs e)
+        {
+            String tag = ((Button)sender).Tag.ToString();
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("UPDATE CUSTOMER SET QUANTITY = @qty WHERE CUST_ID = '" + tag + "' ", conn);
+                dr = cmd.ExecuteReader();
+                //cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+
+                dr.Close();
+                conn.Close();
+                MessageBox.Show("Food item removed successfully!");
+                GetOrderList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Remove button
+        public void Remove_OnClick(object sender, EventArgs e)
+        {
+            String tag = ((Button)sender).Tag.ToString();
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("DELETE FROM CUSTOMER WHERE CUST_ID LIKE '" + tag + "' ", conn);
+                dr = cmd.ExecuteReader();
+                dr.Close();
+                conn.Close();
+                MessageBox.Show("Food item removed successfully!");
+                GetOrderList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -249,6 +376,12 @@ namespace Carinderia_Kiosk_System.Customer
             this.Hide();
         }
 
-
+        //Cart to view current orders
+        private void pbCart_Click(object sender, EventArgs e)
+        {
+            Cart cart = new Cart();
+            cart.Show();
+            this.Hide();
+        }
     }
 }
