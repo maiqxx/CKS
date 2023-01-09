@@ -140,7 +140,7 @@
     <Compile Include="Customer\Cart.Designer.cs">
       <DependentUpon>Cart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CutomerDineInOption.cs" />
+    <Compile Include="Customer\CustomerDineOption.cs" />
     <Compile Include="Customer\DineOption.cs">
       <SubType>Form</SubType>
     </Compile>

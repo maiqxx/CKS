@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Carinderia_Kiosk_System.Customer
 {
-    public class CutomerDineInOption
+    public class CustomerDineOption
     {
         public static string DineInOption { get; set; }
 

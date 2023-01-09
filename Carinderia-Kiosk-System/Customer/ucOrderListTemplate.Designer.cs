@@ -87,10 +87,10 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel4.Controls.Add(this.numericUpDown1);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(-65, 128);
+            this.panel4.Location = new System.Drawing.Point(19, 126);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(523, 87);
-            this.panel4.TabIndex = 5;
+            this.panel4.TabIndex = 6;
             // 
             // button1
             // 
@@ -140,7 +140,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.Controls.Add(this.lblFoodName);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucOrderListTemplate";
-            this.Size = new System.Drawing.Size(505, 342);
+            this.Size = new System.Drawing.Size(681, 342);
             ((System.ComponentModel.ISupportInitialize)(this.numericTxtQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRemoveItem)).EndInit();
             this.panel4.ResumeLayout(false);

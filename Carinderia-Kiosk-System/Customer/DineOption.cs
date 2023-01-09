@@ -24,7 +24,7 @@ namespace Carinderia_Kiosk_System.Customer
             menuBoard.Show();
             this.Hide();
 
-            lblDineIn.Text = CutomerDineInOption.DineInOption;
+            lblDineIn.Text = CustomerDineOption.DineInOption;
         }
 
         //Take Out button
@@ -34,7 +34,7 @@ namespace Carinderia_Kiosk_System.Customer
             menuBoard.Show();
             this.Hide();
 
-            lblTakeOut.Text = CutomerDineInOption.DineInOption;
+            lblTakeOut.Text = CustomerDineOption.DineInOption;
         }
     }
 }
