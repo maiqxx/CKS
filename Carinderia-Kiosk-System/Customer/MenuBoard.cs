@@ -42,6 +42,7 @@ namespace Carinderia_Kiosk_System.Customer
             GetData();
             GetOrderList();
             TotalAmount();
+            SelectCategory();
 
             pnlUserControlFoodItemHolder.Visible = false;
 
@@ -57,8 +58,9 @@ namespace Carinderia_Kiosk_System.Customer
         //gets data from database to be displayed on flowlayoutpanel
         private void GetData()
         {
+            flpMenuItems.Controls.Clear();
             conn.Open();
-            cmd = new MySqlCommand("SELECT STOCK_ID, FOOD_NAME, PRICE, IMAGE FROM INVENTORY", conn);
+            cmd = new MySqlCommand("SELECT STOCK_ID, FOOD_NAME, PRICE, IMAGE FROM INVENTORY WHERE FOOD_NAME LIKE '"+ txtSearchFoodItem.Text +"%' ORDER BY FOOD_NAME", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -316,7 +318,7 @@ namespace Carinderia_Kiosk_System.Customer
 
                 dr.Close();
                 conn.Close();
-                MessageBox.Show("Food item removed successfully!");
+                //MessageBox.Show("Food item updated successfully!");
                 GetOrderList();
             }
             catch (Exception ex)
@@ -333,40 +335,20 @@ namespace Carinderia_Kiosk_System.Customer
             try
             {
                 conn.Open();
+
+                //Deletes the selected food item
                 cmd = new MySqlCommand("DELETE FROM CUSTOMER WHERE CUST_ID LIKE '" + tag + "' ", conn);
+
                 dr = cmd.ExecuteReader();
                 dr.Close();
                 conn.Close();
                 MessageBox.Show("Food item removed successfully!");
-                GetOrderList();
+                GetOrderList(); //to reload the order list after deleting
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-
-
-
-        //displays category items to menu strip
-        void LoadCategoryItems()
-        {
-            //MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT CATEGORY FROM CATEGORY_TBL", conn);
-            //DataTable table = new DataTable();
-            //adapter.Fill(table);
-
-
-            //for (int i = 0; i < table.Rows.Count - 1; i++)
-            //{
-            //    ToolStripMenuItem category = new ToolStripMenuItem(table.Rows[i][0].ToString());
-            //    menuCategories.Items.Add(category);
-            //}
-        }
-
-        private void menuCategories_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void pbLogo_Click(object sender, EventArgs e)
@@ -376,12 +358,110 @@ namespace Carinderia_Kiosk_System.Customer
             this.Hide();
         }
 
-        //Cart to view current orders
+        //Opens Cart form to view current orders
         private void pbCart_Click(object sender, EventArgs e)
         {
             Cart cart = new Cart();
             cart.Show();
             this.Hide();
+        }
+
+        //Search Food Item 
+        private void txtSearchFoodItem_TextChanged(object sender, EventArgs e)
+        {
+            //displays the searched food item
+            GetData();
+        }
+
+        //Gets category values for combobox for filtering food items
+        void SelectCategory()
+        {
+            try
+            {
+                conn.Open();
+                string selectCategory = "SELECT CATEGORY FROM cks_db.CATEGORY_TBL";
+                MySqlCommand cmd = new MySqlCommand(selectCategory, conn);
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string category = reader.GetString("CATEGORY");
+                    cbMenuCategoriesFilter.Items.Add(category);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //This code is identical to GetData() method, but this acts as filtering food items by category
+        void DisplayByCategory()
+        {
+            flpMenuItems.Controls.Clear();
+            conn.Open();
+            cmd = new MySqlCommand("SELECT STOCK_ID, FOOD_NAME, PRICE, IMAGE FROM INVENTORY WHERE CATEGORY LIKE '" + cbMenuCategoriesFilter.Text + "%' ORDER BY FOOD_NAME", conn);
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                //cast dr["IMAGE"] as byte[] 
+                byte[] array = (byte[])dr["IMAGE"];
+
+                //set food item design format
+                item = new PictureBox();
+                item.Width = 200;
+                item.Height = 200;
+                item.BackgroundImageLayout = ImageLayout.Stretch;
+                item.Tag = dr["STOCK_ID"].ToString(); //test to display stock ID when OnClick
+
+                //displays price
+                price = new Label();
+                price.Text = "₱ " + double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
+                price.BackColor = Color.FromArgb(39, 174, 96);
+                price.ForeColor = Color.FromArgb(236, 240, 241);
+                price.Font = MediumFont;
+                price.TextAlign = ContentAlignment.MiddleCenter;
+                //price.Dock = DockStyle.Bottom;
+                price.Tag = dr["STOCK_ID"].ToString(); //test to display stock ID when OnClick
+
+                //displays food name
+                foodName = new Label();
+                foodName.Text = dr["FOOD_NAME"].ToString();
+                foodName.BackColor = Color.FromArgb(236, 240, 241);
+                foodName.Font = MediumFont;
+                foodName.TextAlign = ContentAlignment.MiddleCenter;
+                foodName.Dock = DockStyle.Bottom;
+                foodName.Tag = dr["STOCK_ID"].ToString(); //test to display stock ID when OnClick
+
+                //gets image from database
+                MemoryStream ms = new MemoryStream(array);
+                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+                item.BackgroundImage = bitmap;
+
+                //add to display controls
+                item.Controls.Add(price);
+                item.Controls.Add(foodName);
+                flpMenuItems.Controls.Add(item);
+
+                item.Cursor = Cursors.Hand;
+                item.Click += new EventHandler(OnClick); //calls Onclick Event
+
+                //item.Click += (sender, e) => OnClick(this, e, item.Tag.ToString());
+                //price.Click += (sender, e) => OnClick(this, e, price.Tag.ToString());
+                //foodName.Click += (sender, e) => OnClick(this, e, foodName.Tag.ToString());
+
+            }
+            dr.Close();
+            conn.Close();
+        }
+
+        private void cbMenuCategoriesFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //display filtered food items
+            DisplayByCategory();
         }
     }
 }
