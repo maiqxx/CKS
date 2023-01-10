@@ -203,6 +203,16 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dashboard_white_20x20 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard white 20x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_20_x_20 {
             get {
                 object obj = ResourceManager.GetObject("delete 20 x 20", resourceCulture);
@@ -283,6 +293,16 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gear_white_20x20 {
+            get {
+                object obj = ResourceManager.GetObject("gear white 20x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap green_wooden_BG_1182_x_683 {
             get {
                 object obj = ResourceManager.GetObject("green wooden BG 1182 x 683", resourceCulture);
@@ -313,6 +333,16 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap inventory_white_20x20 {
+            get {
+                object obj = ResourceManager.GetObject("inventory white 20x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap leaves_20_x_20 {
             get {
                 object obj = ResourceManager.GetObject("leaves 20 x 20", resourceCulture);
@@ -326,6 +356,46 @@ namespace Carinderia_Kiosk_System.Properties {
         internal static System.Drawing.Bitmap live_orders {
             get {
                 object obj = ResourceManager.GetObject("live orders", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_white_20x20 {
+            get {
+                object obj = ResourceManager.GetObject("logout white 20x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap manage_menu_white_20x20 {
+            get {
+                object obj = ResourceManager.GetObject("manage menu white 20x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap manage_orders_white_20x20 {
+            get {
+                object obj = ResourceManager.GetObject("manage orders white 20x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap manage_staff_white_20x20 {
+            get {
+                object obj = ResourceManager.GetObject("manage staff white 20x20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

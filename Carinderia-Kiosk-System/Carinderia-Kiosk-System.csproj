@@ -477,5 +477,26 @@
   <ItemGroup>
     <None Include="Resources\menu items green 20 x 20.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard white 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage orders white 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage menu white 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory white 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage staff white 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear white 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout white 20x20.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
