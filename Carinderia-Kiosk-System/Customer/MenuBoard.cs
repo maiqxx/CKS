@@ -508,5 +508,13 @@ namespace Carinderia_Kiosk_System.Customer
         {
             
         }
+
+        //Cart button - redirects to Cart form
+        private void btnGoToCart_Click(object sender, EventArgs e)
+        {
+            Cart cart = new Cart();
+            cart.Show();
+            this.Hide();
+        }
     }
 }

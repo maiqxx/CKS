@@ -330,9 +330,9 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.lblTotalPrice.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblTotalPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(411, 0);
+            this.lblTotalPrice.Location = new System.Drawing.Point(370, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(128, 38);
+            this.lblTotalPrice.Size = new System.Drawing.Size(169, 38);
             this.lblTotalPrice.TabIndex = 4;
             this.lblTotalPrice.Text = "0.00";
             this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -370,29 +370,30 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnCheckOut.BackColor = System.Drawing.Color.LightYellow;
             this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCheckOut.Location = new System.Drawing.Point(1184, 753);
+            this.btnCheckOut.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCheckOut.Location = new System.Drawing.Point(914, 753);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(109, 35);
+            this.btnCheckOut.Size = new System.Drawing.Size(150, 35);
             this.btnCheckOut.TabIndex = 10;
             this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = false;
             // 
             // btnGoToCart
             // 
-            this.btnGoToCart.BackColor = System.Drawing.Color.LightYellow;
+            this.btnGoToCart.BackColor = System.Drawing.Color.ForestGreen;
             this.btnGoToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoToCart.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoToCart.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGoToCart.Location = new System.Drawing.Point(966, 753);
+            this.btnGoToCart.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoToCart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGoToCart.Location = new System.Drawing.Point(1184, 753);
             this.btnGoToCart.Name = "btnGoToCart";
-            this.btnGoToCart.Size = new System.Drawing.Size(109, 35);
+            this.btnGoToCart.Size = new System.Drawing.Size(150, 35);
             this.btnGoToCart.TabIndex = 11;
             this.btnGoToCart.Text = "Cart";
             this.btnGoToCart.UseVisualStyleBackColor = false;
+            this.btnGoToCart.Click += new System.EventHandler(this.btnGoToCart_Click);
             // 
             // label4
             // 

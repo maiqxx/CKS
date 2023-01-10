@@ -30,24 +30,17 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblInventory = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.flpButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtUnit = new System.Windows.Forms.TextBox();
             this.lblUnit = new System.Windows.Forms.Label();
-            this.pbFoodImage = new System.Windows.Forms.PictureBox();
             this.txtImagePath = new System.Windows.Forms.TextBox();
             this.lblImage = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -65,13 +58,21 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cks_dbDataSet = new Carinderia_Kiosk_System.cks_dbDataSet();
             this.inventoryTableAdapter = new Carinderia_Kiosk_System.cks_dbDataSetTableAdapters.inventoryTableAdapter();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnMenuBoard = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.pbFoodImage = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cks_dbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInventory
@@ -134,127 +135,39 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.txtSearch.TabIndex = 20;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::Carinderia_Kiosk_System.Properties.Resources.search_blck_20_x_20;
-            this.btnSearch.Location = new System.Drawing.Point(278, 3);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(34, 29);
-            this.btnSearch.TabIndex = 21;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // flpButtons
             // 
             this.flpButtons.Controls.Add(this.btnAdd);
             this.flpButtons.Controls.Add(this.btnEdit);
             this.flpButtons.Controls.Add(this.btnDelete);
             this.flpButtons.Controls.Add(this.btnClear);
+            this.flpButtons.Controls.Add(this.btnMenuBoard);
             this.flpButtons.Controls.Add(this.btnRefresh);
             this.flpButtons.Location = new System.Drawing.Point(31, 338);
             this.flpButtons.Name = "flpButtons";
-            this.flpButtons.Size = new System.Drawing.Size(515, 42);
+            this.flpButtons.Size = new System.Drawing.Size(671, 42);
             this.flpButtons.TabIndex = 24;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnAdd.Image = global::Carinderia_Kiosk_System.Properties.Resources.add_20_x_20;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(3, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnAdd.Size = new System.Drawing.Size(130, 34);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Add New";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Cornsilk;
-            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnEdit.Image = global::Carinderia_Kiosk_System.Properties.Resources.update_20_x_20;
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(139, 3);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnEdit.Size = new System.Drawing.Size(111, 34);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Update";
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.Image = global::Carinderia_Kiosk_System.Properties.Resources.delete_20_x_20;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(256, 3);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnDelete.Size = new System.Drawing.Size(108, 34);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.LightCyan;
-            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.Teal;
-            this.btnClear.Image = global::Carinderia_Kiosk_System.Properties.Resources.clear_format_20_x_20;
-            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(370, 3);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnClear.Size = new System.Drawing.Size(99, 34);
-            this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "Clear";
-            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
-            this.btnRefresh.Location = new System.Drawing.Point(475, 3);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(35, 34);
-            this.btnRefresh.TabIndex = 19;
-            this.btnRefresh.Tag = "Reload";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // dgvInventory
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(31, 398);
             this.dgvInventory.Name = "dgvInventory";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInventory.RowHeadersWidth = 51;
             this.dgvInventory.RowTemplate.Height = 24;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -266,10 +179,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(864, 149);
+            this.btnBrowse.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.Location = new System.Drawing.Point(107, 233);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(89, 28);
+            this.btnBrowse.Size = new System.Drawing.Size(211, 39);
             this.btnBrowse.TabIndex = 22;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -278,7 +191,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // txtUnit
             // 
             this.txtUnit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnit.Location = new System.Drawing.Point(851, 113);
+            this.txtUnit.Location = new System.Drawing.Point(1037, 144);
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.Size = new System.Drawing.Size(101, 28);
             this.txtUnit.TabIndex = 18;
@@ -288,31 +201,19 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblUnit.AutoSize = true;
             this.lblUnit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUnit.Location = new System.Drawing.Point(803, 116);
+            this.lblUnit.Location = new System.Drawing.Point(989, 147);
             this.lblUnit.Name = "lblUnit";
             this.lblUnit.Size = new System.Drawing.Size(42, 19);
             this.lblUnit.TabIndex = 17;
             this.lblUnit.Text = "Unit:";
             // 
-            // pbFoodImage
-            // 
-            this.pbFoodImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pbFoodImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbFoodImage.Location = new System.Drawing.Point(713, 193);
-            this.pbFoodImage.Name = "pbFoodImage";
-            this.pbFoodImage.Size = new System.Drawing.Size(195, 105);
-            this.pbFoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFoodImage.TabIndex = 16;
-            this.pbFoodImage.TabStop = false;
-            this.pbFoodImage.Click += new System.EventHandler(this.pbFoodImage_Click);
-            // 
             // txtImagePath
             // 
             this.txtImagePath.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImagePath.Location = new System.Drawing.Point(696, 154);
+            this.txtImagePath.Location = new System.Drawing.Point(882, 185);
             this.txtImagePath.Multiline = true;
             this.txtImagePath.Name = "txtImagePath";
-            this.txtImagePath.Size = new System.Drawing.Size(161, 25);
+            this.txtImagePath.Size = new System.Drawing.Size(256, 25);
             this.txtImagePath.TabIndex = 15;
             this.txtImagePath.Click += new System.EventHandler(this.txtImagePath_Click);
             // 
@@ -321,16 +222,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblImage.AutoSize = true;
             this.lblImage.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblImage.Location = new System.Drawing.Point(616, 152);
+            this.lblImage.Location = new System.Drawing.Point(762, 191);
             this.lblImage.Name = "lblImage";
-            this.lblImage.Size = new System.Drawing.Size(68, 19);
+            this.lblImage.Size = new System.Drawing.Size(108, 19);
             this.lblImage.TabIndex = 14;
-            this.lblImage.Text = "Image:";
+            this.lblImage.Text = "Image Path:";
             // 
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(696, 113);
+            this.txtQuantity.Location = new System.Drawing.Point(882, 144);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(101, 28);
             this.txtQuantity.TabIndex = 11;
@@ -340,7 +241,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblQuantity.Location = new System.Drawing.Point(603, 116);
+            this.lblQuantity.Location = new System.Drawing.Point(789, 147);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(81, 19);
             this.lblQuantity.TabIndex = 10;
@@ -349,7 +250,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // txtUnitPrice
             // 
             this.txtUnitPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnitPrice.Location = new System.Drawing.Point(696, 73);
+            this.txtUnitPrice.Location = new System.Drawing.Point(882, 104);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(257, 28);
             this.txtUnitPrice.TabIndex = 9;
@@ -359,7 +260,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblUnitPrice.AutoSize = true;
             this.lblUnitPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnitPrice.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUnitPrice.Location = new System.Drawing.Point(598, 80);
+            this.lblUnitPrice.Location = new System.Drawing.Point(784, 111);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(88, 19);
             this.lblUnitPrice.TabIndex = 8;
@@ -369,7 +270,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.cbCategory.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(696, 30);
+            this.cbCategory.Location = new System.Drawing.Point(882, 61);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(257, 29);
             this.cbCategory.TabIndex = 7;
@@ -379,7 +280,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCategory.Location = new System.Drawing.Point(596, 38);
+            this.lblCategory.Location = new System.Drawing.Point(782, 69);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(90, 19);
             this.lblCategory.TabIndex = 6;
@@ -389,10 +290,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(289, 119);
+            this.txtDescription.Location = new System.Drawing.Point(465, 152);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(257, 127);
+            this.txtDescription.Size = new System.Drawing.Size(257, 102);
             this.txtDescription.TabIndex = 5;
             // 
             // lblDescription
@@ -400,7 +301,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDescription.Location = new System.Drawing.Point(175, 119);
+            this.lblDescription.Location = new System.Drawing.Point(351, 152);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(105, 19);
             this.lblDescription.TabIndex = 4;
@@ -409,7 +310,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // txtFoodName
             // 
             this.txtFoodName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFoodName.Location = new System.Drawing.Point(289, 73);
+            this.txtFoodName.Location = new System.Drawing.Point(465, 106);
             this.txtFoodName.Name = "txtFoodName";
             this.txtFoodName.Size = new System.Drawing.Size(257, 28);
             this.txtFoodName.TabIndex = 3;
@@ -419,7 +320,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblFoodName.AutoSize = true;
             this.lblFoodName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFoodName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblFoodName.Location = new System.Drawing.Point(170, 80);
+            this.lblFoodName.Location = new System.Drawing.Point(346, 113);
             this.lblFoodName.Name = "lblFoodName";
             this.lblFoodName.Size = new System.Drawing.Size(111, 19);
             this.lblFoodName.TabIndex = 2;
@@ -429,7 +330,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.txtStockCode.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtStockCode.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStockCode.Location = new System.Drawing.Point(289, 31);
+            this.txtStockCode.Location = new System.Drawing.Point(465, 64);
             this.txtStockCode.Name = "txtStockCode";
             this.txtStockCode.ReadOnly = true;
             this.txtStockCode.Size = new System.Drawing.Size(257, 28);
@@ -440,7 +341,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblStockCode.AutoSize = true;
             this.lblStockCode.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStockCode.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblStockCode.Location = new System.Drawing.Point(169, 38);
+            this.lblStockCode.Location = new System.Drawing.Point(345, 71);
             this.lblStockCode.Name = "lblStockCode";
             this.lblStockCode.Size = new System.Drawing.Size(110, 19);
             this.lblStockCode.TabIndex = 0;
@@ -460,6 +361,124 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.inventoryTableAdapter.ClearBeforeFill = true;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::Carinderia_Kiosk_System.Properties.Resources.search_blck_20_x_20;
+            this.btnSearch.Location = new System.Drawing.Point(278, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(34, 29);
+            this.btnSearch.TabIndex = 21;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnAdd.Image = global::Carinderia_Kiosk_System.Properties.Resources.add_20_x_20;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(3, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnAdd.Size = new System.Drawing.Size(118, 34);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Add New";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.Cornsilk;
+            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnEdit.Image = global::Carinderia_Kiosk_System.Properties.Resources.update_20_x_20;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(127, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnEdit.Size = new System.Drawing.Size(111, 34);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Update";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.Image = global::Carinderia_Kiosk_System.Properties.Resources.delete_20_x_20;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(244, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnDelete.Size = new System.Drawing.Size(108, 34);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.LightCyan;
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Teal;
+            this.btnClear.Image = global::Carinderia_Kiosk_System.Properties.Resources.clear_format_20_x_20;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(358, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnClear.Size = new System.Drawing.Size(99, 34);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "Clear";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnMenuBoard
+            // 
+            this.btnMenuBoard.BackColor = System.Drawing.Color.Honeydew;
+            this.btnMenuBoard.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuBoard.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnMenuBoard.Image = global::Carinderia_Kiosk_System.Properties.Resources.menu_items_green_20_x_20;
+            this.btnMenuBoard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuBoard.Location = new System.Drawing.Point(463, 3);
+            this.btnMenuBoard.Name = "btnMenuBoard";
+            this.btnMenuBoard.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnMenuBoard.Size = new System.Drawing.Size(139, 34);
+            this.btnMenuBoard.TabIndex = 26;
+            this.btnMenuBoard.Text = "Menu Board";
+            this.btnMenuBoard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuBoard.UseVisualStyleBackColor = false;
+            this.btnMenuBoard.Click += new System.EventHandler(this.btnMenuBoard_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
+            this.btnRefresh.Location = new System.Drawing.Point(608, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(35, 34);
+            this.btnRefresh.TabIndex = 19;
+            this.btnRefresh.Tag = "Reload";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // pbFoodImage
+            // 
+            this.pbFoodImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pbFoodImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbFoodImage.Location = new System.Drawing.Point(107, 38);
+            this.pbFoodImage.Name = "pbFoodImage";
+            this.pbFoodImage.Size = new System.Drawing.Size(211, 189);
+            this.pbFoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFoodImage.TabIndex = 16;
+            this.pbFoodImage.TabStop = false;
+            this.pbFoodImage.Click += new System.EventHandler(this.pbFoodImage_Click);
+            // 
             // ucInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -476,9 +495,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.flowLayoutPanel1.PerformLayout();
             this.flpButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cks_dbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,5 +538,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.DataGridView dgvInventory;
         private System.Windows.Forms.FlowLayoutPanel flpButtons;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnMenuBoard;
     }
 }

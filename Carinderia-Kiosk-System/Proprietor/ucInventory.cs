@@ -11,7 +11,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using MySql.Data.MySqlClient;
 using System.Data;
-
+using Carinderia_Kiosk_System.Customer;
 
 namespace Carinderia_Kiosk_System.Proprietor
 {
@@ -487,6 +487,10 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
-
+        private void btnMenuBoard_Click(object sender, EventArgs e)
+        {
+            ShowFoodItems showFoodItems = new ShowFoodItems();
+            showFoodItems.ShowDialog();
+        }
     }
 }
