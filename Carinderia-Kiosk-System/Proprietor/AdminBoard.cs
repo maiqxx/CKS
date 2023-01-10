@@ -130,6 +130,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
-        
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            AdminInfo.EmailAddress = "";
+            StartUp startUp = new StartUp();
+            startUp.Show();
+            this.Hide();
+        }
     }
 }

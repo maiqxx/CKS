@@ -31,6 +31,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             this.lblAccountSettings = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtContactNum = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblFirstname = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUploadNew = new System.Windows.Forms.Button();
+            this.pbProfile = new System.Windows.Forms.PictureBox();
             this.lblStoreDescription = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtpClosingTime = new System.Windows.Forms.DateTimePicker();
@@ -56,11 +58,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCreatedAt = new System.Windows.Forms.Label();
             this.lblUpdatedAt = new System.Windows.Forms.Label();
             this.lblLastUpdate = new System.Windows.Forms.Label();
-            this.pbProfile = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAccountSettings
@@ -94,6 +94,20 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(987, 328);
             this.panel1.TabIndex = 1;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnSave.Location = new System.Drawing.Point(446, 55);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(105, 40);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtPassword
             // 
@@ -176,6 +190,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDelete.Location = new System.Drawing.Point(596, 55);
@@ -188,6 +203,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnUploadNew
             // 
             this.btnUploadNew.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnUploadNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUploadNew.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUploadNew.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnUploadNew.Location = new System.Drawing.Point(412, 55);
@@ -197,6 +213,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnUploadNew.Text = "Upload new photo";
             this.btnUploadNew.UseVisualStyleBackColor = false;
             this.btnUploadNew.Click += new System.EventHandler(this.btnUploadNew_Click);
+            // 
+            // pbProfile
+            // 
+            this.pbProfile.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.pbProfile.Location = new System.Drawing.Point(286, 31);
+            this.pbProfile.Name = "pbProfile";
+            this.pbProfile.Size = new System.Drawing.Size(91, 86);
+            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfile.TabIndex = 0;
+            this.pbProfile.TabStop = false;
             // 
             // lblStoreDescription
             // 
@@ -302,6 +328,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnSaveChanges
             // 
             this.btnSaveChanges.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChanges.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanges.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnSaveChanges.Location = new System.Drawing.Point(439, 671);
@@ -352,29 +379,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblLastUpdate.TabIndex = 19;
             this.lblLastUpdate.Text = "Last updated:";
             // 
-            // pbProfile
-            // 
-            this.pbProfile.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.pbProfile.Location = new System.Drawing.Point(286, 31);
-            this.pbProfile.Name = "pbProfile";
-            this.pbProfile.Size = new System.Drawing.Size(91, 86);
-            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProfile.TabIndex = 0;
-            this.pbProfile.TabStop = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnSave.Location = new System.Drawing.Point(446, 55);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(105, 40);
-            this.btnSave.TabIndex = 13;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // ucAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -393,9 +397,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Load += new System.EventHandler(this.ucAccount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

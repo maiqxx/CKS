@@ -62,11 +62,6 @@ namespace Carinderia_Kiosk_System.Customer
             this.txtSearchFoodItem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbMenuCategoriesFilter = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -76,11 +71,9 @@ namespace Carinderia_Kiosk_System.Customer
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             this.pnlTitle.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.flpOrderListContainer.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlCurentOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -308,7 +301,6 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.flpOrderListContainer.AutoScroll = true;
             this.flpOrderListContainer.BackColor = System.Drawing.SystemColors.Control;
-            this.flpOrderListContainer.Controls.Add(this.panel4);
             this.flpOrderListContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpOrderListContainer.Location = new System.Drawing.Point(0, 44);
             this.flpOrderListContainer.Name = "flpOrderListContainer";
@@ -446,58 +438,6 @@ namespace Carinderia_Kiosk_System.Customer
             this.cbMenuCategoriesFilter.TabIndex = 16;
             this.cbMenuCategoriesFilter.SelectedIndexChanged += new System.EventHandler(this.cbMenuCategoriesFilter_SelectedIndexChanged);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(523, 87);
-            this.panel4.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(418, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 48);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 19);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "UnitPrice";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 19);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "FoodName";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(247, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 17);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "UnitPrice";
-            // 
             // MenuBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -532,14 +472,11 @@ namespace Carinderia_Kiosk_System.Customer
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.flpOrderListContainer.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnlCurentOrder.ResumeLayout(false);
             this.pnlCurentOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -580,10 +517,5 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.TextBox txtSearchFoodItem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbMenuCategoriesFilter;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
     }
 }

@@ -65,6 +65,7 @@ namespace Carinderia_Kiosk_System
             // btnCustomer
             // 
             this.btnCustomer.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.ForeColor = System.Drawing.Color.White;
             this.btnCustomer.Image = global::Carinderia_Kiosk_System.Properties.Resources.customers_icon_40_x_40;
@@ -82,6 +83,7 @@ namespace Carinderia_Kiosk_System
             // btnStaff
             // 
             this.btnStaff.BackColor = System.Drawing.Color.Black;
+            this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaff.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.Color.White;
             this.btnStaff.Image = global::Carinderia_Kiosk_System.Properties.Resources.staff_icon_40_x_40;
@@ -100,6 +102,7 @@ namespace Carinderia_Kiosk_System
             // 
             this.btnAdmin.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
             this.btnAdmin.Image = global::Carinderia_Kiosk_System.Properties.Resources.admin_icon_40_x_40;

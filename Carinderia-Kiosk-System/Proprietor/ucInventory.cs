@@ -368,6 +368,28 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //Search button
+        private void pbSearchIcon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlDataAdapter adapter;
+                DataTable table;
+                conn.Open();
+                adapter = new MySqlDataAdapter("SELECT STOCK_CODE, FOOD_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE " +
+                                                "FROM INVENTORY " +
+                                                "WHERE FOOD_NAME LIKE '%" + this.txtSearch.Text + "%' ", conn);
+                table = new DataTable();
+                adapter.Fill(table);
+                dgvInventory.DataSource = table;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         //Textbox live search
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -492,5 +514,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             ShowFoodItems showFoodItems = new ShowFoodItems();
             showFoodItems.ShowDialog();
         }
+
+        
     }
 }

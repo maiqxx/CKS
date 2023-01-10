@@ -31,6 +31,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             this.panelCreateAccount = new System.Windows.Forms.Panel();
             this.groupBoxContactNum = new System.Windows.Forms.GroupBox();
+            this.mTxtContactNum = new System.Windows.Forms.MaskedTextBox();
             this.buttonCreateAccount = new System.Windows.Forms.Button();
             this.groupBoxPassword = new System.Windows.Forms.GroupBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.mTxtContactNum = new System.Windows.Forms.MaskedTextBox();
             this.panelCreateAccount.SuspendLayout();
             this.groupBoxContactNum.SuspendLayout();
             this.groupBoxPassword.SuspendLayout();
@@ -95,6 +95,14 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.groupBoxContactNum.TabIndex = 12;
             this.groupBoxContactNum.TabStop = false;
             this.groupBoxContactNum.Text = "Contact Number *";
+            // 
+            // mTxtContactNum
+            // 
+            this.mTxtContactNum.Location = new System.Drawing.Point(13, 26);
+            this.mTxtContactNum.Mask = "(+63)000-000-0000";
+            this.mTxtContactNum.Name = "mTxtContactNum";
+            this.mTxtContactNum.Size = new System.Drawing.Size(300, 28);
+            this.mTxtContactNum.TabIndex = 0;
             // 
             // buttonCreateAccount
             // 
@@ -263,6 +271,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // buttonSignIn
             // 
             this.buttonSignIn.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSignIn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.buttonSignIn.ForeColor = System.Drawing.Color.Black;
             this.buttonSignIn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -325,14 +334,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // mTxtContactNum
-            // 
-            this.mTxtContactNum.Location = new System.Drawing.Point(13, 26);
-            this.mTxtContactNum.Mask = "(+63)000-000-0000";
-            this.mTxtContactNum.Name = "mTxtContactNum";
-            this.mTxtContactNum.Size = new System.Drawing.Size(300, 28);
-            this.mTxtContactNum.TabIndex = 0;
             // 
             // CreateAccount
             // 

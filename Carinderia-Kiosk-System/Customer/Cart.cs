@@ -121,7 +121,7 @@ namespace Carinderia_Kiosk_System.Customer
                 qty.Font = MediumFont;
                 qty.Location = new Point(301, 34);
                 qty.Tag = dr["CUST_ID"].ToString();
-                qty.Tag = dr["QUANTITY"].ToString();
+
 
                 //set button
                 set = new Button();
@@ -150,18 +150,19 @@ namespace Carinderia_Kiosk_System.Customer
                 //add to display controls
                 orderPanel.Controls.Add(cost);
                 orderPanel.Controls.Add(foodItemName);
-                orderPanel.Controls.Add(itemQuantity);
+                //orderPanel.Controls.Add(itemQuantity);
                 //orderPanel.Controls.Add(numDown);
                 //orderPanel.Controls.Add(numUp);
                 orderPanel.Controls.Add(set);
                 orderPanel.Controls.Add(remove);
-                //orderPanel.Controls.Add(qty);
+                orderPanel.Controls.Add(qty);
                 //orderPanel.Controls.Add(qty);
 
                 flpOrders.Controls.Add(orderPanel);
 
                 //item.Cursor = Cursors.Hand;
                 remove.Click += new EventHandler(Remove_OnClick);
+                qty.ValueChanged += new EventHandler(numericUpDown1_ValueChanged);
                 //qty.ValueChanged += new EventHandler(Quantity_ValueChanged);
 
 
@@ -169,6 +170,14 @@ namespace Carinderia_Kiosk_System.Customer
             dr.Close();
             conn.Close();
 
+        }
+
+        void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            String tag = ((Button)sender).Tag.ToString();
+            String itemQuantityTag = ((Button)sender).Tag.ToString();
+
+            MessageBox.Show(((Button)sender).Tag.ToString()); //test get stock ID
         }
 
         //Set button

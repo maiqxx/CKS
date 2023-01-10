@@ -118,11 +118,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             // buttonSignIn
             // 
             this.buttonSignIn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSignIn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSignIn.ForeColor = System.Drawing.Color.White;
-            this.buttonSignIn.Location = new System.Drawing.Point(139, 209);
+            this.buttonSignIn.Location = new System.Drawing.Point(139, 215);
             this.buttonSignIn.Name = "buttonSignIn";
-            this.buttonSignIn.Size = new System.Drawing.Size(147, 51);
+            this.buttonSignIn.Size = new System.Drawing.Size(147, 45);
             this.buttonSignIn.TabIndex = 2;
             this.buttonSignIn.Text = "Sign In";
             this.buttonSignIn.UseVisualStyleBackColor = false;
