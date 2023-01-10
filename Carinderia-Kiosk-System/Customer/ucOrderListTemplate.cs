@@ -39,29 +39,29 @@ namespace Carinderia_Kiosk_System.Customer
         //Get data
         void GetFoodItem()
         {
-            conn.Open();
-            cmd = new MySqlCommand("SELECT FOOD_NAME, QUANTITY, UNIT_PRICE FROM CUSTOMER", conn);
-            dr = cmd.ExecuteReader();
+            //conn.Open();
+            //cmd = new MySqlCommand("SELECT FOOD_NAME, QUANTITY, UNIT_PRICE FROM CUSTOMER", conn);
+            //dr = cmd.ExecuteReader();
 
-            while (dr.Read())
-            {
-                lblFoodName = new Label();
-                lblFoodName.Text = dr["FOOD_NAME"].ToString();
-                lblFoodName.ForeColor = Color.Black;
-                lblFoodName.Font = MediumFont;
-                lblFoodName.Tag = dr["FOOD_NAME"].ToString(); //test to display stock ID when OnClick
+            //while (dr.Read())
+            //{
+            //    lblFoodName = new Label();
+            //    lblFoodName.Text = dr["FOOD_NAME"].ToString();
+            //    lblFoodName.ForeColor = Color.Black;
+            //    lblFoodName.Font = MediumFont;
+            //    lblFoodName.Tag = dr["FOOD_NAME"].ToString(); //test to display stock ID when OnClick
 
-                //displays price
-                lblUnitPrice = new Label();
-                lblUnitPrice.Text = "₱ " + double.Parse(dr["UNIT_PRICE"].ToString()).ToString("#, ##0.00");
-                lblUnitPrice.ForeColor = Color.Black;
-                lblUnitPrice.Tag = dr["FOOD_NAME"].ToString(); //test to display stock ID when OnClick
+            //    //displays price
+            //    lblUnitPrice = new Label();
+            //    lblUnitPrice.Text = "₱ " + double.Parse(dr["UNIT_PRICE"].ToString()).ToString("#, ##0.00");
+            //    lblUnitPrice.ForeColor = Color.Black;
+            //    lblUnitPrice.Tag = dr["FOOD_NAME"].ToString(); //test to display stock ID when OnClick
 
-                numericTxtQuantity = new NumericUpDown();
-                numericTxtQuantity.Value = Convert.ToInt32(dr["QUANTITY"].ToString());
-                numericTxtQuantity.Tag = dr["FOOD_NAME"].ToString();
-            }
-            conn.Close();
+            //    numericTxtQuantity = new NumericUpDown();
+            //    numericTxtQuantity.Value = Convert.ToInt32(dr["QUANTITY"].ToString());
+            //    numericTxtQuantity.Tag = dr["FOOD_NAME"].ToString();
+            //}
+            //conn.Close();
         }
 
 

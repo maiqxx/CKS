@@ -33,24 +33,26 @@ namespace Carinderia_Kiosk_System.Customer
             this.lblCart = new System.Windows.Forms.Label();
             this.pbBackToMenu = new System.Windows.Forms.PictureBox();
             this.pbCart = new System.Windows.Forms.PictureBox();
+            this.btnBackToMenu = new System.Windows.Forms.Button();
+            this.btnPlaceOrder = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.flpOrders = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.nduTxtQty = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.btnPlaceOrder = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lblTotalPayment = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackToMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
+            this.panel2.SuspendLayout();
             this.flpOrders.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nduTxtQty)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,43 +101,68 @@ namespace Carinderia_Kiosk_System.Customer
             this.pbCart.TabStop = false;
             this.pbCart.Click += new System.EventHandler(this.pbCart_Click);
             // 
+            // btnBackToMenu
+            // 
+            this.btnBackToMenu.BackColor = System.Drawing.Color.LightYellow;
+            this.btnBackToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToMenu.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBackToMenu.Location = new System.Drawing.Point(954, 206);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(150, 40);
+            this.btnBackToMenu.TabIndex = 11;
+            this.btnBackToMenu.Text = "Back to Menu";
+            this.btnBackToMenu.UseVisualStyleBackColor = false;
+            // 
+            // btnPlaceOrder
+            // 
+            this.btnPlaceOrder.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnPlaceOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaceOrder.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlaceOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPlaceOrder.Location = new System.Drawing.Point(954, 139);
+            this.btnPlaceOrder.Name = "btnPlaceOrder";
+            this.btnPlaceOrder.Size = new System.Drawing.Size(150, 40);
+            this.btnPlaceOrder.TabIndex = 12;
+            this.btnPlaceOrder.Text = "Place Order";
+            this.btnPlaceOrder.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.flpOrders);
+            this.panel2.Location = new System.Drawing.Point(197, 87);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(654, 653);
+            this.panel2.TabIndex = 13;
+            // 
             // flpOrders
             // 
             this.flpOrders.AutoScroll = true;
             this.flpOrders.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.flpOrders.Controls.Add(this.panel4);
-            this.flpOrders.Location = new System.Drawing.Point(255, 83);
+            this.flpOrders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpOrders.Location = new System.Drawing.Point(0, 0);
             this.flpOrders.Name = "flpOrders";
-            this.flpOrders.Size = new System.Drawing.Size(674, 623);
-            this.flpOrders.TabIndex = 2;
+            this.flpOrders.Size = new System.Drawing.Size(654, 576);
+            this.flpOrders.TabIndex = 7;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.numericUpDown1);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.textBox1);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(662, 92);
+            this.panel4.Size = new System.Drawing.Size(646, 92);
             this.panel4.TabIndex = 7;
-            // 
-            // nduTxtQty
-            // 
-            this.nduTxtQty.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nduTxtQty.Location = new System.Drawing.Point(1021, 186);
-            this.nduTxtQty.Name = "nduTxtQty";
-            this.nduTxtQty.Size = new System.Drawing.Size(107, 28);
-            this.nduTxtQty.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(516, 35);
+            this.button1.Location = new System.Drawing.Point(487, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 24);
+            this.button1.Size = new System.Drawing.Size(75, 30);
             this.button1.TabIndex = 5;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -143,7 +170,7 @@ namespace Carinderia_Kiosk_System.Customer
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(110, 49);
+            this.label6.Location = new System.Drawing.Point(72, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 19);
             this.label6.TabIndex = 3;
@@ -156,86 +183,65 @@ namespace Carinderia_Kiosk_System.Customer
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(110, 19);
+            this.label7.Location = new System.Drawing.Point(72, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 19);
             this.label7.TabIndex = 1;
             this.label7.Text = "FoodName";
             // 
-            // btnCheckOut
+            // panel3
             // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.LightYellow;
-            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCheckOut.Location = new System.Drawing.Point(370, 729);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(150, 37);
-            this.btnCheckOut.TabIndex = 11;
-            this.btnCheckOut.Text = "Order Summary";
-            this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.lblAmount);
+            this.panel3.Controls.Add(this.lblTotalPayment);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 582);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(654, 71);
+            this.panel3.TabIndex = 9;
             // 
-            // btnPlaceOrder
+            // numericUpDown1
             // 
-            this.btnPlaceOrder.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnPlaceOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaceOrder.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlaceOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPlaceOrder.Location = new System.Drawing.Point(646, 729);
-            this.btnPlaceOrder.Name = "btnPlaceOrder";
-            this.btnPlaceOrder.Size = new System.Drawing.Size(150, 37);
-            this.btnPlaceOrder.TabIndex = 12;
-            this.btnPlaceOrder.Text = "Place Order";
-            this.btnPlaceOrder.UseVisualStyleBackColor = false;
+            this.numericUpDown1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(264, 30);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 30);
+            this.numericUpDown1.TabIndex = 6;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // lblTotalPayment
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(316, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(59, 28);
-            this.textBox1.TabIndex = 6;
+            this.lblTotalPayment.AutoSize = true;
+            this.lblTotalPayment.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPayment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTotalPayment.Location = new System.Drawing.Point(3, 23);
+            this.lblTotalPayment.Name = "lblTotalPayment";
+            this.lblTotalPayment.Size = new System.Drawing.Size(146, 23);
+            this.lblTotalPayment.TabIndex = 0;
+            this.lblTotalPayment.Text = "Total Payment:";
             // 
-            // button2
+            // lblAmount
             // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(285, 32);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 33);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(381, 31);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 34);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(435, 36);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 24);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.lblAmount.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblAmount.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAmount.Location = new System.Drawing.Point(490, 0);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(164, 71);
+            this.lblAmount.TabIndex = 1;
+            this.lblAmount.Text = "0.00";
+            this.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Honeydew;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1200, 800);
-            this.Controls.Add(this.nduTxtQty);
             this.Controls.Add(this.btnPlaceOrder);
-            this.Controls.Add(this.btnCheckOut);
-            this.Controls.Add(this.flpOrders);
+            this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cart";
@@ -245,10 +251,13 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackToMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.flpOrders.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nduTxtQty)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,17 +268,17 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.PictureBox pbBackToMenu;
-        private System.Windows.Forms.FlowLayoutPanel flpOrders;
-        private System.Windows.Forms.Button btnCheckOut;
+        private System.Windows.Forms.Button btnBackToMenu;
         private System.Windows.Forms.Button btnPlaceOrder;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.FlowLayoutPanel flpOrders;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown nduTxtQty;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label lblAmount;
+        private System.Windows.Forms.Label lblTotalPayment;
     }
 }

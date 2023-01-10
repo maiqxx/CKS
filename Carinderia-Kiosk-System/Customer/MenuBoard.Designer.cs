@@ -62,6 +62,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.txtSearchFoodItem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbMenuCategoriesFilter = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -74,6 +75,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel2.SuspendLayout();
             this.pnlCurentOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -174,6 +176,7 @@ namespace Carinderia_Kiosk_System.Customer
             // btnAddToCart
             // 
             this.btnAddToCart.BackColor = System.Drawing.Color.Honeydew;
+            this.btnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToCart.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddToCart.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnAddToCart.Image = global::Carinderia_Kiosk_System.Properties.Resources.add_to_cart_green_25_x_25;
@@ -191,7 +194,7 @@ namespace Carinderia_Kiosk_System.Customer
             // NUPTxtQuantity
             // 
             this.NUPTxtQuantity.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NUPTxtQuantity.Location = new System.Drawing.Point(173, 103);
+            this.NUPTxtQuantity.Location = new System.Drawing.Point(173, 107);
             this.NUPTxtQuantity.Name = "NUPTxtQuantity";
             this.NUPTxtQuantity.Size = new System.Drawing.Size(188, 30);
             this.NUPTxtQuantity.TabIndex = 16;
@@ -309,7 +312,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Info;
+            this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel2.Controls.Add(this.lblTotalPrice);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -364,11 +367,11 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.btnCheckOut.BackColor = System.Drawing.Color.LightYellow;
             this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCheckOut.Location = new System.Drawing.Point(914, 753);
+            this.btnCheckOut.Location = new System.Drawing.Point(3, 3);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(150, 35);
+            this.btnCheckOut.Size = new System.Drawing.Size(267, 54);
             this.btnCheckOut.TabIndex = 10;
             this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = false;
@@ -377,11 +380,11 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.btnGoToCart.BackColor = System.Drawing.Color.ForestGreen;
             this.btnGoToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoToCart.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoToCart.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoToCart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGoToCart.Location = new System.Drawing.Point(1184, 753);
+            this.btnGoToCart.Location = new System.Drawing.Point(276, 3);
             this.btnGoToCart.Name = "btnGoToCart";
-            this.btnGoToCart.Size = new System.Drawing.Size(150, 35);
+            this.btnGoToCart.Size = new System.Drawing.Size(263, 54);
             this.btnGoToCart.TabIndex = 11;
             this.btnGoToCart.Text = "Cart";
             this.btnGoToCart.UseVisualStyleBackColor = false;
@@ -438,6 +441,15 @@ namespace Carinderia_Kiosk_System.Customer
             this.cbMenuCategoriesFilter.TabIndex = 16;
             this.cbMenuCategoriesFilter.SelectedIndexChanged += new System.EventHandler(this.cbMenuCategoriesFilter_SelectedIndexChanged);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnCheckOut);
+            this.flowLayoutPanel1.Controls.Add(this.btnGoToCart);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(849, 740);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(551, 57);
+            this.flowLayoutPanel1.TabIndex = 17;
+            // 
             // MenuBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -446,11 +458,10 @@ namespace Carinderia_Kiosk_System.Customer
             this.ClientSize = new System.Drawing.Size(1400, 800);
             this.Controls.Add(this.cbMenuCategoriesFilter);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.txtSearchFoodItem);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnGoToCart);
-            this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlFooditemDetailsContainer);
             this.Controls.Add(this.flpMenuItems);
@@ -477,6 +488,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.pnlCurentOrder.ResumeLayout(false);
             this.pnlCurentOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,5 +529,6 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.TextBox txtSearchFoodItem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbMenuCategoriesFilter;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

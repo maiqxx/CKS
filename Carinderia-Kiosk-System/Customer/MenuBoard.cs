@@ -168,7 +168,6 @@ namespace Carinderia_Kiosk_System.Customer
             int quantity = Convert.ToInt32(Math.Round(NUPTxtQuantity.Value, 0));
             double totalAmount = unitPrice * quantity;
 
-
             //MemoryStream ms = new MemoryStream();
             //pbFoodImage.Image.Save(ms, pbFoodImage.Image.RawFormat);
             //byte[] img = ms.ToArray();

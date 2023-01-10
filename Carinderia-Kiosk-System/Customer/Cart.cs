@@ -60,87 +60,43 @@ namespace Carinderia_Kiosk_System.Customer
             {
 
                 orderPanel = new Panel();
-                orderPanel.Width = 662;
+                orderPanel.Width = 646;
                 orderPanel.Height = 92;
                 orderPanel.BackColor = Color.Honeydew;
+
+                //displays food name
+                foodItemName = new Label();
+                foodItemName.Text = dr["FOOD_NAME"].ToString();
+                foodItemName.ForeColor = Color.Black;
+                foodItemName.Location = new Point(72, 19);
+                foodItemName.Font = MediumFont;
+                foodItemName.Tag = dr["CUST_ID"].ToString();
 
                 //displays price
                 cost = new Label();
                 cost.Text = "₱ " + double.Parse(dr["UNIT_PRICE"].ToString()).ToString("#, ##0.00");
                 cost.Font = SmallFont;
                 cost.ForeColor = Color.Black;
-                cost.Location = new Point(33, 48);
+                cost.Location = new Point(72, 49);
                 cost.Tag = dr["CUST_ID"].ToString();
 
 
-                //displays food name
-                foodItemName = new Label();
-                foodItemName.Text = dr["FOOD_NAME"].ToString();
-                foodItemName.ForeColor = Color.Black;
-                foodItemName.Location = new Point(33, 20);
-                foodItemName.Font = MediumFont;
-                foodItemName.Tag = dr["CUST_ID"].ToString();
-
-
-                //displays food quantity
-                itemQuantity = new TextBox();
-                itemQuantity.Text = dr["QUANTITY"].ToString();
-                itemQuantity.Width = 59;
-                itemQuantity.Height = 28;
-                itemQuantity.Location = new Point(323, 39);
-                itemQuantity.Font = MediumFont;
-                itemQuantity.Tag = dr["CUST_ID"].ToString();
-                itemQuantity.Tag = dr["QUANTITY"].ToString();
-
-                //minus
-                numDown = new Button();
-                numDown.Text = "-";
-                numDown.Width = 25;
-                numDown.Height = 33;
-                numDown.Font = MediumFont;
-                numDown.Location = new Point(292, 35);
-                numDown.Tag = dr["CUST_ID"].ToString();
-                
-
-
-                //add
-                numUp = new Button();
-                numUp.Text = "+";
-                numUp.Width = 25;
-                numUp.Height = 33;
-                numUp.Font = MediumFont;
-                numUp.Location = new Point(388, 34);
-                numUp.Tag = dr["CUST_ID"].ToString();
-
-
-                //NumericUpDown
+                //NumericUpDown for quantity
                 qty = new NumericUpDown();
                 qty.Text = dr["QUANTITY"].ToString();
-                qty.Width = 107;
-                qty.Height = 28;
+                qty.Width = 120;
+                qty.Height = 30;
                 qty.Font = MediumFont;
-                qty.Location = new Point(301, 34);
+                qty.Location = new Point(264, 30);
                 qty.Tag = dr["CUST_ID"].ToString();
 
-
-                //set button
-                set = new Button();
-                set.Text = "Set";
-                set.Width = 80;
-                set.Height = 30;
-                set.Location = new Point(435, 36);
-                set.ForeColor = Color.ForestGreen;
-                set.BackColor = Color.Honeydew;
-                set.Font = SmallFont;
-                set.Tag = dr["CUST_ID"].ToString();
-                set.Tag = dr["QUANTITY"].ToString();
 
                 //remove button
                 remove = new Button();
                 remove.Text = "Remove";
                 remove.Width = 80;
                 remove.Height = 30;
-                remove.Location = new Point(516, 35);
+                remove.Location = new Point(487, 30);
                 remove.ForeColor = Color.Maroon;
                 remove.BackColor = Color.FromArgb(255, 192, 192);
                 remove.Font = SmallFont;
@@ -148,16 +104,12 @@ namespace Carinderia_Kiosk_System.Customer
 
 
                 //add to display controls
-                orderPanel.Controls.Add(cost);
                 orderPanel.Controls.Add(foodItemName);
-                //orderPanel.Controls.Add(itemQuantity);
-                //orderPanel.Controls.Add(numDown);
-                //orderPanel.Controls.Add(numUp);
-                orderPanel.Controls.Add(set);
-                orderPanel.Controls.Add(remove);
+                orderPanel.Controls.Add(cost);
                 orderPanel.Controls.Add(qty);
-                //orderPanel.Controls.Add(qty);
+                orderPanel.Controls.Add(remove);
 
+                //display controls over the flowlayout
                 flpOrders.Controls.Add(orderPanel);
 
                 //item.Cursor = Cursors.Hand;
