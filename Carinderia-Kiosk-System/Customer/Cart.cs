@@ -114,54 +114,12 @@ namespace Carinderia_Kiosk_System.Customer
 
                 //item.Cursor = Cursors.Hand;
                 remove.Click += new EventHandler(Remove_OnClick);
-                qty.ValueChanged += new EventHandler(numericUpDown1_ValueChanged);
+                //qty.ValueChanged += new EventHandler(numericUpDown1_ValueChanged);
                 //qty.ValueChanged += new EventHandler(Quantity_ValueChanged);
-
-
             }
             dr.Close();
             conn.Close();
 
-        }
-
-        void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            String tag = ((Button)sender).Tag.ToString();
-            String itemQuantityTag = ((Button)sender).Tag.ToString();
-
-            MessageBox.Show(((Button)sender).Tag.ToString()); //test get stock ID
-        }
-
-        //Set button
-        public void Set_OnClick(object sender, EventArgs e)
-        {
-            String tag = ((Button)sender).Tag.ToString();
-            String itemQuantityTag = ((Button)sender).Tag.ToString();
-
-            //MessageBox.Show(((Button)sender).Tag.ToString()); //test get stock ID
-
-            try
-            {
-                conn.Open();
-
-                //Deletes the selected food item
-                cmd = new MySqlCommand("UPDATE CUSTOMER SET QUANTITY = '" + itemQuantityTag.Trim() + "' WHERE CUST_ID LIKE '" + tag + "' ", conn);
-                //dr = cmd.ExecuteReader();
-                int ctr = cmd.ExecuteNonQuery();
-                if (ctr > 0)
-                {
-                    MessageBox.Show("Food item removed successfully!");
-                }
-                dr.Close();
-                conn.Close();
-                //MessageBox.Show("Food item removed successfully!");
-                GetOrderList(); //to reload the order list after deleting
-                //TotalAmount();  //to reload the total amount after deleting
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         //Remove button
@@ -213,42 +171,8 @@ namespace Carinderia_Kiosk_System.Customer
                 MessageBox.Show(ex.Message);
             }
         }
-
-        //
-        public void NumDown_OnClick(object sender, EventArgs e)
-        {
-            String tag = ((Button)sender).Tag.ToString();
-
-            
-
-            try
-            {
-                conn.Open();
-
-                //Deletes the selected food item
-                //cmd = new MySqlCommand("UPDATE CUSTOMER WHERE CUST_ID LIKE '" + tag + "' ", conn);
-
-                dr = cmd.ExecuteReader();
-                dr.Close();
-                conn.Close();
-                MessageBox.Show("Food item removed successfully!");
-                GetOrderList(); //to reload the order list after deleting
-                //TotalAmount();  //to reload the total amount after deleting
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-
-        public void NumUp_OnClick(object sender, EventArgs e)
-        {
-            String tag = ((Button)sender).Tag.ToString();
-        }
-
         
-
+        //arrow back to menu
         private void pbBackToMenu_Click(object sender, EventArgs e)
         {
             MenuBoard menuBoard = new MenuBoard();
