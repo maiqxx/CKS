@@ -41,6 +41,8 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void ucAccount_Load(object sender, EventArgs e)
         {
+            btnSave.Visible = false;
+
             //shows proprietor's data
             LoadInfo();
 
@@ -65,12 +67,19 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Updates proprietor's information
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
+            string dt;
+            string dt2;
+            DateTime date = DateTime.Now;
+            DateTime date2 = DateTime.Now;
+            dt = date.ToLongTimeString();      
+            dt2 = date2.ToShortDateString();
+
             try
             {
                 conn.Open();
 
                 //MemoryStream ms = new MemoryStream();
-                //pbFoodImage.Image.Save(ms, pbFoodImage.Image.RawFormat);
+                //pbProfile.Image.Save(ms, pbProfile.Image.RawFormat);
                 //byte[] img = ms.ToArray();
 
                 string message = "Are you sure you want to save changes??";
@@ -81,7 +90,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 {
                     InitializeTimePicker();
 
-                    string updateStock = "UPDATE PROPRIETOR " +
+                    string updateAccount = "UPDATE PROPRIETOR " +
                                             "SET FIRSTNAME = @fname, " +
                                             "LASTNAME = @lname, " +
                                             "STORE_NAME = @storeName, " +
@@ -89,18 +98,23 @@ namespace Carinderia_Kiosk_System.Proprietor
                                             "OPENING_TIME = @opening, " +
                                             "CLOSING_TIME = @closing, " +
                                             "CONTACT_NUMBER = @contactNum, " +
-                                            "PASSWORD = @password " +
+                                            "PASSWORD = @password, " +
+                                            "UPDATED_AT = @now " +
+                                           // "PROFILE_PIC = @img " +
                                             "WHERE EMAIL_ADDRESS  = '" + AdminInfo.EmailAddress + "'";
 
-                    MySqlCommand cmd = new MySqlCommand(updateStock, conn);
+                    MySqlCommand cmd = new MySqlCommand(updateAccount, conn);
                     cmd.Parameters.AddWithValue("@fname", txtFirstname.Text);
                     cmd.Parameters.AddWithValue("@lname", txtLastName.Text);
-                    cmd.Parameters.AddWithValue("@storeName", txtLastName.Text);
+                    cmd.Parameters.AddWithValue("@storeName", txtStoreName.Text);
                     cmd.Parameters.AddWithValue("@location", txtLocation.Text);
                     cmd.Parameters.AddWithValue("@opening", dtpOpeningTime.Text);
                     cmd.Parameters.AddWithValue("@closing", dtpClosingTime.Text);
                     cmd.Parameters.AddWithValue("@contactNum", txtContactNum.Text);
                     cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("@now", string.Concat(dt2, " ", dt));
+                    //cmd.Parameters.AddWithValue("@img", img);
+
 
                     int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
@@ -112,6 +126,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                         MessageBox.Show("Cannot save changes.");
                     }
                     conn.Close();
+                    LoadInfo();
                 }
                 else
                 {
@@ -135,6 +150,13 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             if (reader.Read())
             {
+                //gets image from database
+                byte[] array = (byte[])reader["PROFILE_PIC"];
+                MemoryStream ms = new MemoryStream(array);
+                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+                pbProfile.BackgroundImageLayout = ImageLayout.Stretch;
+                pbProfile.BackgroundImage = bitmap;
+
                 txtFirstname.Text = reader["FIRSTNAME"].ToString();
                 txtLastName.Text = reader["LASTNAME"].ToString();
                 txtContactNum.Text = reader["CONTACT_NUMBER"].ToString();
@@ -165,6 +187,73 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        //Upload new profile
+        private void btnUploadNew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog opf = new OpenFileDialog();
+                opf.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif;) | *.jpg; *.jpeg; *.png; *.gif;";
+                if (opf.ShowDialog() == DialogResult.OK)
+                {
+                    pbProfile.Image = Image.FromFile(opf.FileName);
+                    btnSave.Visible = true;
+                    btnUploadNew.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        //Save button for updating profile picture
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string dt;
+            string dt2;
+            DateTime date = DateTime.Now;
+            DateTime date2 = DateTime.Now;
+            dt = date.ToLongTimeString();
+            dt2 = date2.ToShortDateString();
+
+            try
+            {
+                conn.Open();
+
+                MemoryStream ms = new MemoryStream();
+                pbProfile.Image.Save(ms, pbProfile.Image.RawFormat);
+                byte[] img = ms.ToArray();
+
+                InitializeTimePicker();
+
+                string updateAccount = "UPDATE PROPRIETOR " +
+                                        "SET UPDATED_AT = @now, " +
+                                        "PROFILE_PIC = @img " +
+                                        "WHERE EMAIL_ADDRESS  = '" + AdminInfo.EmailAddress + "'";
+
+                MySqlCommand cmd = new MySqlCommand(updateAccount, conn);
+                cmd.Parameters.AddWithValue("@now", string.Concat(dt2, " ", dt));
+                cmd.Parameters.AddWithValue("@img", img);
+
+                int ctr = cmd.ExecuteNonQuery();
+                if (ctr > 0)
+                {
+                    MessageBox.Show("Profile Saved.");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot save changes.");
+                }
+                conn.Close();
+                LoadInfo();
+                btnSave.Visible = false;
+                btnUploadNew.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
