@@ -224,8 +224,110 @@ namespace Carinderia_Kiosk_System.Customer
             conn.Close();
         }
 
+        void DineOption()
+        {
+            string dineIn = "Dine In";
+            string takeOut = "Take Out";
+
+            if (checkBoxDineIn.Checked)
+            {
+                try
+                {
+                    
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if(checkBoxTakeOut.Checked)
+            {
+                try
+                {
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
+            {
+                MessageBox.Show("Choose only one method.");
+                checkBoxDineIn.Checked = false;
+                checkBoxTakeOut.Checked = false;
+            }
+            else
+            {
+                MessageBox.Show("Please choose a method in taking your order :)");
+            }
+        }
+
+        //Place Order button
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
+            string orderStatus = "Pending";
+            var total = lblTotalPrice.Text;
+
+            if (checkBoxDineIn.Checked)
+            {
+                string dineOption = "Dine In";
+
+                try
+                {
+                    conn.Open();
+                    cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
+                    cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                    cmd.Parameters.AddWithValue("@amount", total);
+                    cmd.Parameters.AddWithValue("@option", dineOption);
+
+                    int ctr = cmd.ExecuteNonQuery();
+
+                    if (ctr > 0)
+                    {
+                        MessageBox.Show("Added successfully!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (checkBoxTakeOut.Checked)
+            {
+                string dineOption = "Take Out";
+
+                try
+                {
+                    conn.Open();
+                    cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
+                    cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                    cmd.Parameters.AddWithValue("@amount", total);
+                    cmd.Parameters.AddWithValue("@option", dineOption);
+
+                    int ctr = cmd.ExecuteNonQuery();
+
+                    if (ctr > 0)
+                    {
+                        MessageBox.Show("Added successfully!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
+            {
+                MessageBox.Show("Choose only one method.");
+                checkBoxDineIn.Checked = false;
+                checkBoxTakeOut.Checked = false;
+            }
+            else
+            {
+                MessageBox.Show("Please choose a method in taking your order :)");
+            }
 
         }
 

@@ -111,7 +111,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnBackToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToMenu.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBackToMenu.Location = new System.Drawing.Point(872, 405);
+            this.btnBackToMenu.Location = new System.Drawing.Point(870, 385);
             this.btnBackToMenu.Name = "btnBackToMenu";
             this.btnBackToMenu.Size = new System.Drawing.Size(150, 50);
             this.btnBackToMenu.TabIndex = 11;
@@ -125,7 +125,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnPlaceOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlaceOrder.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlaceOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPlaceOrder.Location = new System.Drawing.Point(872, 322);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(870, 302);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(150, 50);
             this.btnPlaceOrder.TabIndex = 12;
@@ -245,7 +245,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.gbDineOption.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDineOption.Location = new System.Drawing.Point(740, 99);
             this.gbDineOption.Name = "gbDineOption";
-            this.gbDineOption.Size = new System.Drawing.Size(412, 179);
+            this.gbDineOption.Size = new System.Drawing.Size(412, 164);
             this.gbDineOption.TabIndex = 14;
             this.gbDineOption.TabStop = false;
             this.gbDineOption.Text = "Choose a method in taking your order:";
@@ -254,7 +254,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.checkBoxTakeOut.AutoSize = true;
             this.checkBoxTakeOut.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTakeOut.Location = new System.Drawing.Point(145, 101);
+            this.checkBoxTakeOut.Location = new System.Drawing.Point(154, 101);
             this.checkBoxTakeOut.Name = "checkBoxTakeOut";
             this.checkBoxTakeOut.Size = new System.Drawing.Size(114, 27);
             this.checkBoxTakeOut.TabIndex = 1;
@@ -265,7 +265,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.checkBoxDineIn.AutoSize = true;
             this.checkBoxDineIn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxDineIn.Location = new System.Drawing.Point(145, 52);
+            this.checkBoxDineIn.Location = new System.Drawing.Point(154, 52);
             this.checkBoxDineIn.Name = "checkBoxDineIn";
             this.checkBoxDineIn.Size = new System.Drawing.Size(94, 27);
             this.checkBoxDineIn.TabIndex = 0;

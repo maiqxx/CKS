@@ -253,6 +253,12 @@
   <data name="new category blue icon 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new category blue icon 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="settings gear 20 x 201" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings gear 20 x 201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check gif 200x200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check gif 200x200.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="userEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\userEmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -277,7 +283,7 @@
   <data name="logout white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings gear 20 x 201" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings gear 20 x 201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check icon 125x125" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check icon 125x125.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
