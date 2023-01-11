@@ -267,71 +267,81 @@ namespace Carinderia_Kiosk_System.Customer
         //Place Order button
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
-            orderSuccessfully.Show();
-            this.Hide();
+            //PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
+            //orderSuccessfully.Show();
+            //this.Hide();
 
-            //string orderStatus = "Pending";
-            //var total = lblTotalPrice.Text;
+            string orderStatus = "Pending";
+            var total = lblTotalPrice.Text;
 
-            //if (checkBoxDineIn.Checked)
-            //{
-            //    string dineOption = "Dine In";
+            if (checkBoxDineIn.Checked)
+            {
+                string dineOption = "Dine In";
 
-            //    try
-            //    {
-            //        conn.Open();
-            //        cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
-            //        cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
-            //        cmd.Parameters.AddWithValue("@amount", total);
-            //        cmd.Parameters.AddWithValue("@option", dineOption);
+                try
+                {
+                    conn.Open();
+                    cmd = new MySqlCommand("INSERT INTO ORDERS " +
+                                            "SET CUST_ID = (SELECT CUST_ID FROM CUSTOMER WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "'), " +
+                                            "FOOD_NAME = @foodName, " +
+                                            "DESCRIPTION = @desc, " +
+                                            "IMAGE = @image, " +
+                                            "STOCK_QUANTITY = @quantity, " +
+                                            "PRICE = @unitPrice, " +
+                                            "CATEGORY = @category, " +
+                                            "UNIT = @unit, " +
+                                            "INV_VALUE = @invValue, " +
+                                            "PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "') ", conn);
+                    cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                    cmd.Parameters.AddWithValue("@amount", total);
+                    cmd.Parameters.AddWithValue("@option", dineOption);
 
-            //        int ctr = cmd.ExecuteNonQuery();
+                    int ctr = cmd.ExecuteNonQuery();
 
-            //        if (ctr > 0)
-            //        {
-            //            MessageBox.Show("Added successfully!");
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //}
-            //else if (checkBoxTakeOut.Checked)
-            //{
-            //    string dineOption = "Take Out";
+                    if (ctr > 0)
+                    {
+                        MessageBox.Show("Added successfully!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (checkBoxTakeOut.Checked)
+            {
+                string dineOption = "Take Out";
 
-            //    try
-            //    {
-            //        conn.Open();
-            //        cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
-            //        cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
-            //        cmd.Parameters.AddWithValue("@amount", total);
-            //        cmd.Parameters.AddWithValue("@option", dineOption);
+                try
+                {
+                    conn.Open();
+                    cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
+                    cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                    cmd.Parameters.AddWithValue("@amount", total);
+                    cmd.Parameters.AddWithValue("@option", dineOption);
 
-            //        int ctr = cmd.ExecuteNonQuery();
+                    int ctr = cmd.ExecuteNonQuery();
 
-            //        if (ctr > 0)
-            //        {
-            //            MessageBox.Show("Added successfully!");
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //}
-            //else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
-            //{
-            //    MessageBox.Show("Choose only one method.");
-            //    checkBoxDineIn.Checked = false;
-            //    checkBoxTakeOut.Checked = false;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please choose a method in taking your order :)");
-            //}
+                    if (ctr > 0)
+                    {
+                        MessageBox.Show("Added successfully!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
+            {
+                MessageBox.Show("Choose only one method.");
+                checkBoxDineIn.Checked = false;
+                checkBoxTakeOut.Checked = false;
+            }
+            else
+            {
+                MessageBox.Show("Please choose a method in taking your order :)");
+            }
 
         }
 
