@@ -20,10 +20,13 @@ namespace Carinderia_Kiosk_System.Customer
         MySqlCommand cmd;
         MySqlDataReader dr;
 
+        double _total = 0.0; //variable for total amount for all food items
+
         //setting fonts
-        Font SmallFont = new Font("Century Gothic", 8, FontStyle.Bold);
-        Font MediumFont = new Font("Century Gothic", 10, FontStyle.Bold);
-        Font LargeFont = new Font("Century Gothic", 12, FontStyle.Bold);
+        Font SmallFontBold = new Font("Century Gothic", 8, FontStyle.Bold);
+        Font SmallFont = new Font("Century Gothic", 8);
+        Font MediumFontBold = new Font("Century Gothic", 10, FontStyle.Bold);
+        Font LargeFontBold = new Font("Century Gothic", 12, FontStyle.Bold);
 
         public Cart()
         {
@@ -35,6 +38,7 @@ namespace Carinderia_Kiosk_System.Customer
         private void Cart_Load(object sender, EventArgs e)
         {
             GetOrderList();
+            TotalAmount();
         }
 
         private Panel orderPanel;
@@ -42,11 +46,8 @@ namespace Carinderia_Kiosk_System.Customer
         private Label cost;
         private Label quantity;
         private NumericUpDown qty;
-        private Button set;
         private Button remove;
-        private Button numDown;
-        private Button numUp;
-        private TextBox itemQuantity;
+        private TextBox finalQty;
 
         //Gets current orders in the cart
         void GetOrderList()
@@ -58,7 +59,7 @@ namespace Carinderia_Kiosk_System.Customer
 
             while (dr.Read())
             {
-
+                //panel container
                 orderPanel = new Panel();
                 orderPanel.Width = 646;
                 orderPanel.Height = 92;
@@ -69,26 +70,52 @@ namespace Carinderia_Kiosk_System.Customer
                 foodItemName.Text = dr["FOOD_NAME"].ToString();
                 foodItemName.ForeColor = Color.Black;
                 foodItemName.Location = new Point(72, 19);
-                foodItemName.Font = MediumFont;
+                foodItemName.Font = MediumFontBold;
+                foodItemName.Width = 180;
                 foodItemName.Tag = dr["CUST_ID"].ToString();
 
                 //displays price
                 cost = new Label();
                 cost.Text = "₱ " + double.Parse(dr["UNIT_PRICE"].ToString()).ToString("#, ##0.00");
-                cost.Font = SmallFont;
+                cost.Font = SmallFontBold;
                 cost.ForeColor = Color.Black;
                 cost.Location = new Point(72, 49);
                 cost.Tag = dr["CUST_ID"].ToString();
+
+                //quantity label
+                quantity = new Label();
+                quantity.Text = "Quantity:";
+                quantity.Font = SmallFont;
+                quantity.AutoSize = false;
+                quantity.Width = 60;
+                quantity.ForeColor = Color.Black;
+                quantity.Location = new Point(251, 41);
+                quantity.Tag = dr["CUST_ID"].ToString();
 
 
                 //NumericUpDown for quantity
                 qty = new NumericUpDown();
                 qty.Text = dr["QUANTITY"].ToString();
-                qty.Width = 120;
-                qty.Height = 30;
-                qty.Font = MediumFont;
-                qty.Location = new Point(264, 30);
+                qty.Width = 90;
+                qty.Height = 35;
+                qty.Minimum = 0;
+                qty.Maximum = 25;
+                qty.Font = LargeFontBold;
+                qty.TextAlign = HorizontalAlignment.Center;
+                qty.Location = new Point(306, 30);
                 qty.Tag = dr["CUST_ID"].ToString();
+
+
+                //final quantity on textbox
+                finalQty = new TextBox();
+                finalQty.Text = dr["QUANTITY"].ToString();
+                finalQty.Width = 65;
+                finalQty.Height = 28;
+                finalQty.TextAlign = HorizontalAlignment.Center;
+                finalQty.Font = MediumFontBold;
+                finalQty.ForeColor = Color.Black;
+                finalQty.Location = new Point(320, 35);
+                finalQty.Tag = dr["CUST_ID"].ToString();
 
 
                 //remove button
@@ -107,6 +134,8 @@ namespace Carinderia_Kiosk_System.Customer
                 orderPanel.Controls.Add(foodItemName);
                 orderPanel.Controls.Add(cost);
                 orderPanel.Controls.Add(qty);
+                //orderPanel.Controls.Add(quantity);
+                //orderPanel.Controls.Add(finalQty);
                 orderPanel.Controls.Add(remove);
 
                 //display controls over the flowlayout
@@ -114,12 +143,32 @@ namespace Carinderia_Kiosk_System.Customer
 
                 //item.Cursor = Cursors.Hand;
                 remove.Click += new EventHandler(Remove_OnClick);
-                //qty.ValueChanged += new EventHandler(numericUpDown1_ValueChanged);
-                //qty.ValueChanged += new EventHandler(Quantity_ValueChanged);
+                qty.Click += new EventHandler(UpdateQty_OnClick);
             }
             dr.Close();
             conn.Close();
 
+        }
+
+        public void UpdateQty_OnClick(object sender, EventArgs e)
+        {
+            String tag = ((NumericUpDown)sender).Tag.ToString();
+            var value = (((NumericUpDown)sender).Value.ToString());
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("UPDATE CUSTOMER " +
+                                        "SET QUANTITY = '" + value + "' " +
+                                        "WHERE CUST_ID = '" + tag + "' ", conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                TotalAmount();  //to reload the total amount after updating quantity
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Remove button
@@ -139,7 +188,7 @@ namespace Carinderia_Kiosk_System.Customer
                 conn.Close();
                 MessageBox.Show("Food item removed successfully!");
                 GetOrderList(); //to reload the order list after deleting
-                //TotalAmount();  //to reload the total amount after deleting
+                TotalAmount();  //to reload the total amount after deleting
             }
             catch (Exception ex)
             {
@@ -147,33 +196,49 @@ namespace Carinderia_Kiosk_System.Customer
             }
         }
 
-        public void Quantity_ValueChanged(object sender, EventArgs e)
+        //Gets total amoun to be paid by the customer
+        void TotalAmount()
         {
-            String tag = ((NumericUpDown)sender).Tag.ToString();
-            String qty = ((NumericUpDown)sender).Tag.ToString();
+            lblTotalPrice.Controls.Clear();
+            conn.Open();
 
-            try
+            cmd = new MySqlCommand("SELECT * FROM CUSTOMER", conn);
+            dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
             {
-                conn.Open();
-
-                //Updates the selected food item
-                cmd = new MySqlCommand("UPDATE CUSTOMER SET QUANTITY = '"+ qty +"' WHERE CUST_ID LIKE '" + tag + "' ", conn);
-
+                dr.Close();
+                cmd = new MySqlCommand("SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER", conn);
                 dr = cmd.ExecuteReader();
+                dr.Read();
+
+                if (dr.HasRows)
+                {
+                    _total = double.Parse(dr["TOTAL"].ToString());
+                    lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
+                }
                 dr.Close();
                 conn.Close();
-                //MessageBox.Show("Food item updated successfully!");
-                GetOrderList(); //to reload the order list after deleting
-                //TotalAmount();  //to reload the total amount after deleting
+
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            conn.Close();
         }
-        
+
+        private void btnPlaceOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //arrow back to menu
         private void pbBackToMenu_Click(object sender, EventArgs e)
+        {
+            MenuBoard menuBoard = new MenuBoard();
+            menuBoard.Show();
+            this.Hide();
+        }
+
+        //Back to menu button - add more food item
+        private void btnBackToMenu_Click(object sender, EventArgs e)
         {
             MenuBoard menuBoard = new MenuBoard();
             menuBoard.Show();

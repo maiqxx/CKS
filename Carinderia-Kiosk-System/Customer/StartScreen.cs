@@ -20,13 +20,13 @@ namespace Carinderia_Kiosk_System.Customer
         //Order redirect button
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            DineOption dineOption = new DineOption();
-            dineOption.Show();
-            this.Hide();
-
-            //MenuBoard menuBoard = new MenuBoard();
-            //menuBoard.Show();
+            //DineOption dineOption = new DineOption();
+            //dineOption.Show();
             //this.Hide();
+
+            MenuBoard menuBoard = new MenuBoard();
+            menuBoard.Show();
+            this.Hide();
         }
     }
 }

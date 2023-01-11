@@ -49,6 +49,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.btnOrder.BackColor = System.Drawing.Color.ForestGreen;
             this.btnOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnOrder.Image = global::Carinderia_Kiosk_System.Properties.Resources.right_arrow_white_20_x_20;
