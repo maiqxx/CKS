@@ -203,6 +203,12 @@
     <Compile Include="Proprietor\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proprietor\LogInSuccessDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proprietor\LogInSuccessDialog.Designer.cs">
+      <DependentUpon>LogInSuccessDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\ShowFoodItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\LogInSuccessDialog.resx">
+      <DependentUpon>LogInSuccessDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ShowFoodItems.resx">
       <DependentUpon>ShowFoodItems.cs</DependentUpon>
@@ -526,6 +535,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\check icon 125x125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verified admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close icon black 20 x 20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

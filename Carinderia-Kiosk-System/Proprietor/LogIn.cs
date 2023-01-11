@@ -57,12 +57,16 @@ namespace Carinderia_Kiosk_System.Proprietor
                         AdminBoard board = new AdminBoard(emailAddress);
                         this.Hide();
                         board.Show();
+
+                        LogInSuccessDialog log = new LogInSuccessDialog();
+                        log.ShowDialog();
                     }
                     else
                     {
                         MessageBox.Show("Invalid Credentials");
                     }
                     conn.Close();
+                    
                 }
             }
             catch (Exception ex)

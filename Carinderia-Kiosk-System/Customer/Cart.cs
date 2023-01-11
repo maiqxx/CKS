@@ -267,67 +267,71 @@ namespace Carinderia_Kiosk_System.Customer
         //Place Order button
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            string orderStatus = "Pending";
-            var total = lblTotalPrice.Text;
+            PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
+            orderSuccessfully.Show();
+            this.Hide();
 
-            if (checkBoxDineIn.Checked)
-            {
-                string dineOption = "Dine In";
+            //string orderStatus = "Pending";
+            //var total = lblTotalPrice.Text;
 
-                try
-                {
-                    conn.Open();
-                    cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
-                    cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
-                    cmd.Parameters.AddWithValue("@amount", total);
-                    cmd.Parameters.AddWithValue("@option", dineOption);
+            //if (checkBoxDineIn.Checked)
+            //{
+            //    string dineOption = "Dine In";
 
-                    int ctr = cmd.ExecuteNonQuery();
+            //    try
+            //    {
+            //        conn.Open();
+            //        cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
+            //        cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+            //        cmd.Parameters.AddWithValue("@amount", total);
+            //        cmd.Parameters.AddWithValue("@option", dineOption);
 
-                    if (ctr > 0)
-                    {
-                        MessageBox.Show("Added successfully!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else if (checkBoxTakeOut.Checked)
-            {
-                string dineOption = "Take Out";
+            //        int ctr = cmd.ExecuteNonQuery();
 
-                try
-                {
-                    conn.Open();
-                    cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
-                    cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
-                    cmd.Parameters.AddWithValue("@amount", total);
-                    cmd.Parameters.AddWithValue("@option", dineOption);
+            //        if (ctr > 0)
+            //        {
+            //            MessageBox.Show("Added successfully!");
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
+            //else if (checkBoxTakeOut.Checked)
+            //{
+            //    string dineOption = "Take Out";
 
-                    int ctr = cmd.ExecuteNonQuery();
+            //    try
+            //    {
+            //        conn.Open();
+            //        cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
+            //        cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+            //        cmd.Parameters.AddWithValue("@amount", total);
+            //        cmd.Parameters.AddWithValue("@option", dineOption);
 
-                    if (ctr > 0)
-                    {
-                        MessageBox.Show("Added successfully!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
-            {
-                MessageBox.Show("Choose only one method.");
-                checkBoxDineIn.Checked = false;
-                checkBoxTakeOut.Checked = false;
-            }
-            else
-            {
-                MessageBox.Show("Please choose a method in taking your order :)");
-            }
+            //        int ctr = cmd.ExecuteNonQuery();
+
+            //        if (ctr > 0)
+            //        {
+            //            MessageBox.Show("Added successfully!");
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
+            //else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
+            //{
+            //    MessageBox.Show("Choose only one method.");
+            //    checkBoxDineIn.Checked = false;
+            //    checkBoxTakeOut.Checked = false;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please choose a method in taking your order :)");
+            //}
 
         }
 

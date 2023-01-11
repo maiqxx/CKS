@@ -193,6 +193,9 @@
   <data name="search blck 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search blck 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="verified admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\verified admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="inventory 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -247,6 +250,9 @@
   <data name="filter icon green 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filter icon green 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="check icon 125x125" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check icon 125x125.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="manage menu white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage menu white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -283,7 +289,7 @@
   <data name="logout white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check icon 125x125" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check icon 125x125.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close icon black 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close icon black 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -250,7 +250,7 @@ namespace Carinderia_Kiosk_System.Customer
                 orderPanel = new Panel();
                 orderPanel.Width = 523;
                 orderPanel.Height = 87;
-                orderPanel.BackColor = Color.Honeydew;
+                orderPanel.BackColor = Color.White;
 
                 //displays price
                 cost = new Label();
@@ -464,6 +464,11 @@ namespace Carinderia_Kiosk_System.Customer
             Cart cart = new Cart();
             cart.Show();
             this.Hide();
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
