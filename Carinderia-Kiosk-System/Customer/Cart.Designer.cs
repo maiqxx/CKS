@@ -50,9 +50,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel6 = new System.Windows.Forms.Panel();
             this.pbBackToMenu = new System.Windows.Forms.PictureBox();
             this.pbCart = new System.Windows.Forms.PictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnOrderNow = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,7 +62,6 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackToMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,7 +92,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnBackToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToMenu.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBackToMenu.Location = new System.Drawing.Point(58, 417);
+            this.btnBackToMenu.Location = new System.Drawing.Point(54, 251);
             this.btnBackToMenu.Name = "btnBackToMenu";
             this.btnBackToMenu.Size = new System.Drawing.Size(150, 50);
             this.btnBackToMenu.TabIndex = 11;
@@ -109,7 +106,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnPlaceOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlaceOrder.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlaceOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPlaceOrder.Location = new System.Drawing.Point(253, 417);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(249, 251);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(150, 50);
             this.btnPlaceOrder.TabIndex = 12;
@@ -229,7 +226,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.gbDineOption.Controls.Add(this.checkBoxDineIn);
             this.gbDineOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbDineOption.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDineOption.Location = new System.Drawing.Point(29, 206);
+            this.gbDineOption.Location = new System.Drawing.Point(25, 29);
             this.gbDineOption.Name = "gbDineOption";
             this.gbDineOption.Size = new System.Drawing.Size(412, 164);
             this.gbDineOption.TabIndex = 14;
@@ -262,7 +259,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.btnOrderNow);
             this.panel5.Controls.Add(this.gbDineOption);
             this.panel5.Controls.Add(this.btnPlaceOrder);
             this.panel5.Controls.Add(this.btnBackToMenu);
@@ -303,33 +300,19 @@ namespace Carinderia_Kiosk_System.Customer
             this.pbCart.TabStop = false;
             this.pbCart.Click += new System.EventHandler(this.pbCart_Click);
             // 
-            // panel7
+            // btnOrderNow
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel7.Controls.Add(this.textBox1);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(4, 9);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(469, 175);
-            this.panel7.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Please enter your name*";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(72, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(333, 32);
-            this.textBox1.TabIndex = 1;
+            this.btnOrderNow.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnOrderNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderNow.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderNow.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOrderNow.Location = new System.Drawing.Point(249, 443);
+            this.btnOrderNow.Name = "btnOrderNow";
+            this.btnOrderNow.Size = new System.Drawing.Size(150, 50);
+            this.btnOrderNow.TabIndex = 15;
+            this.btnOrderNow.Text = "Order Now";
+            this.btnOrderNow.UseVisualStyleBackColor = false;
+            this.btnOrderNow.Click += new System.EventHandler(this.btnOrderNow_Click);
             // 
             // Cart
             // 
@@ -360,8 +343,6 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackToMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -389,8 +370,6 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.CheckBox checkBoxDineIn;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnOrderNow;
     }
 }

@@ -37,6 +37,7 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void Cart_Load(object sender, EventArgs e)
         {
+            //btnPlaceOrder.Visible = false;
             GetOrderList();
             TotalAmount();
         }
@@ -54,7 +55,7 @@ namespace Carinderia_Kiosk_System.Customer
         {
             flpOrders.Controls.Clear();
             conn.Open();
-            cmd = new MySqlCommand("SELECT CUST_ID, FOOD_NAME, QUANTITY, UNIT_PRICE, TOTAL_AMOUNT FROM CUSTOMER", conn);
+            cmd = new MySqlCommand("SELECT CUST_ID, FOOD_NAME, QUANTITY, UNIT_PRICE, TOTAL_AMOUNT FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "' ", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -76,7 +77,7 @@ namespace Carinderia_Kiosk_System.Customer
 
                 //displays price
                 cost = new Label();
-                cost.Text = "₱ " + double.Parse(dr["UNIT_PRICE"].ToString()).ToString("#, ##0.00");
+                cost.Text = double.Parse(dr["UNIT_PRICE"].ToString()).ToString("#, ##0.00");
                 cost.Font = SmallFontBold;
                 cost.ForeColor = Color.Black;
                 cost.Location = new Point(72, 49);
@@ -202,13 +203,13 @@ namespace Carinderia_Kiosk_System.Customer
             lblTotalPrice.Controls.Clear();
             conn.Open();
 
-            cmd = new MySqlCommand("SELECT * FROM CUSTOMER", conn);
+            cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'", conn);
             dr = cmd.ExecuteReader();
 
             if (dr.HasRows)
             {
                 dr.Close();
-                cmd = new MySqlCommand("SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER", conn);
+                cmd = new MySqlCommand("SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'", conn);
                 dr = cmd.ExecuteReader();
                 dr.Read();
 
@@ -226,33 +227,7 @@ namespace Carinderia_Kiosk_System.Customer
 
         void DineOption()
         {
-            string dineIn = "Dine In";
-            string takeOut = "Take Out";
-
-            if (checkBoxDineIn.Checked)
-            {
-                try
-                {
-                    
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else if(checkBoxTakeOut.Checked)
-            {
-                try
-                {
-                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
+            if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
             {
                 MessageBox.Show("Choose only one method.");
                 checkBoxDineIn.Checked = false;
@@ -260,19 +235,17 @@ namespace Carinderia_Kiosk_System.Customer
             }
             else
             {
-                MessageBox.Show("Please choose a method in taking your order :)");
+                MessageBox.Show("Kindly choose a method in taking your order :)");
             }
         }
 
         //Place Order button
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            //PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
-            //orderSuccessfully.Show();
-            //this.Hide();
+            //btnOrderNow.Visible = false;
 
+            //DineOption();
             string orderStatus = "Pending";
-            var total = lblTotalPrice.Text;
 
             if (checkBoxDineIn.Checked)
             {
@@ -282,25 +255,17 @@ namespace Carinderia_Kiosk_System.Customer
                 {
                     conn.Open();
                     cmd = new MySqlCommand("INSERT INTO ORDERS " +
-                                            "SET CUST_ID = (SELECT CUST_ID FROM CUSTOMER WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "'), " +
-                                            "FOOD_NAME = @foodName, " +
-                                            "DESCRIPTION = @desc, " +
-                                            "IMAGE = @image, " +
-                                            "STOCK_QUANTITY = @quantity, " +
-                                            "PRICE = @unitPrice, " +
-                                            "CATEGORY = @category, " +
-                                            "UNIT = @unit, " +
-                                            "INV_VALUE = @invValue, " +
-                                            "PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "') ", conn);
-                    cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
-                    cmd.Parameters.AddWithValue("@amount", total);
-                    cmd.Parameters.AddWithValue("@option", dineOption);
+                                            "SET CUSTOMER_NAME = '" + CustomerInfo.Name + "', " +
+                                            "ORDER_STATUS = '" + orderStatus + "', " +
+                                            "TOTAL_AMOUNT = (SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = (SELECT CUSTOMER_NAME FROM CUSTOMER)), " +
+                                            "DINE_OPTION = '" + dineOption + "' ", conn);
 
                     int ctr = cmd.ExecuteNonQuery();
-
                     if (ctr > 0)
                     {
-                        MessageBox.Show("Added successfully!");
+                        PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
+                        orderSuccessfully.Show();
+                        this.Hide();
                     }
                 }
                 catch (Exception ex)
@@ -315,16 +280,18 @@ namespace Carinderia_Kiosk_System.Customer
                 try
                 {
                     conn.Open();
-                    cmd = new MySqlCommand("INSERT INTO ORDERS(ORDER_STATUS, TOTAL_AMOUNT, DINE_OPTION) VALUES(@orderStatus, @amount, @option) ", conn);
-                    cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
-                    cmd.Parameters.AddWithValue("@amount", total);
-                    cmd.Parameters.AddWithValue("@option", dineOption);
+                    cmd = new MySqlCommand("INSERT INTO ORDERS " +
+                                            "SET CUSTOMER_NAME = '" + CustomerInfo.Name + "', " +
+                                            "ORDER_STATUS = '" + orderStatus + "', " +
+                                            "TOTAL_AMOUNT = (SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = (SELECT CUSTOMER_NAME FROM CUSTOMER)), " +
+                                            "DINE_OPTION = '" + dineOption + "' ", conn);
 
                     int ctr = cmd.ExecuteNonQuery();
-
                     if (ctr > 0)
                     {
-                        MessageBox.Show("Added successfully!");
+                        PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
+                        orderSuccessfully.Show();
+                        this.Hide();
                     }
                 }
                 catch (Exception ex)
@@ -343,6 +310,27 @@ namespace Carinderia_Kiosk_System.Customer
                 MessageBox.Show("Please choose a method in taking your order :)");
             }
 
+        }
+
+        void RemoveRecord()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("DELETE * FROM CUSTOMER ", conn);
+
+                int ctr = cmd.ExecuteNonQuery();
+                if (ctr > 0)
+                {
+                    PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
+                    orderSuccessfully.Show();
+                    this.Hide();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //arrow back to menu
@@ -364,6 +352,14 @@ namespace Carinderia_Kiosk_System.Customer
         private void pbCart_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOrderNow_Click(object sender, EventArgs e)
+        {
+            CustomerInputName inputName = new CustomerInputName();
+            inputName.ShowDialog();
+
+            btnPlaceOrder.Visible = true;
         }
     }
 }

@@ -258,6 +258,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.flpOrderListContainer.Name = "flpOrderListContainer";
             this.flpOrderListContainer.Size = new System.Drawing.Size(539, 289);
             this.flpOrderListContainer.TabIndex = 4;
+            this.flpOrderListContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.flpMenuItems_Paint);
             // 
             // panel2
             // 

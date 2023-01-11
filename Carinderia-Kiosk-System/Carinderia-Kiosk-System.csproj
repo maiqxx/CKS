@@ -143,6 +143,13 @@
       <DependentUpon>Cart.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerDineOption.cs" />
+    <Compile Include="CustomerInfo.cs" />
+    <Compile Include="Customer\CustomerInputName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerInputName.Designer.cs">
+      <DependentUpon>CustomerInputName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\DineOption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +268,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Customer\Cart.resx">
       <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerInputName.resx">
+      <DependentUpon>CustomerInputName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\DineOption.resx">
       <DependentUpon>DineOption.cs</DependentUpon>

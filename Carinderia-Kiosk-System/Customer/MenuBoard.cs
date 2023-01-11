@@ -37,9 +37,9 @@ namespace Carinderia_Kiosk_System.Customer
         private void MenuBoard_Load(object sender, EventArgs e)
         {
             GetData();
-            GetOrderList();
             SelectCategory();
-            TotalAmount();
+            GetOrderList();
+            //TotalAmount();
             pnlUserControlFoodItemHolder.Visible = false;
         }
 
@@ -163,7 +163,7 @@ namespace Carinderia_Kiosk_System.Customer
                 {
                     conn.Open();
 
-                    cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE FOOD_NAME = '" + foodname + "' ", conn);
+                    cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE FOOD_NAME = '" + foodname + "' AND CUSTOMER_NAME = '"+ CustomerInfo.Name +"' ", conn);
                     dr = cmd.ExecuteReader();
 
                     if (dr.HasRows)
@@ -175,7 +175,7 @@ namespace Carinderia_Kiosk_System.Customer
                     {
                         dr.Close();
 
-                        cmd = new MySqlCommand("INSERT INTO CUSTOMER(FOOD_NAME, UNIT_PRICE, QUANTITY, TOTAL_AMOUNT) VALUES(@foodName, @unitPrice, @quantity, @total) ", conn);
+                        cmd = new MySqlCommand("INSERT INTO CUSTOMER(FOOD_NAME, UNIT_PRICE, QUANTITY, TOTAL_AMOUNT) VALUES(@foodName, @unitPrice, @quantity, @total) WHERE CUSTOMER_NAME = '"+ CustomerInfo.Name +"'", conn);
                         cmd.Parameters.AddWithValue("@foodName", foodname);
                         cmd.Parameters.AddWithValue("@unitPrice", unitPrice);
                         cmd.Parameters.AddWithValue("@quantity", quantity);
@@ -187,6 +187,7 @@ namespace Carinderia_Kiosk_System.Customer
                         {
                             MessageBox.Show("Added successfully!");
                         }
+                        conn.Close();
                     }
                     conn.Close();
                     TotalAmount();
@@ -207,20 +208,26 @@ namespace Carinderia_Kiosk_System.Customer
             lblTotalPrice.Controls.Clear();
             conn.Open();
 
-            cmd = new MySqlCommand("SELECT * FROM CUSTOMER", conn);
+            cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE CUSTOMER_NAME = '"+ CustomerInfo.Name +"' ", conn);
             dr = cmd.ExecuteReader();
 
             if (dr.HasRows)
             {
                 dr.Close();
-                cmd = new MySqlCommand("SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER", conn);
+                cmd = new MySqlCommand("SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'", conn);
                 dr = cmd.ExecuteReader();
                 dr.Read();
 
+
                 if (dr.HasRows)
                 {
-                    _total = double.Parse(dr["TOTAL"].ToString());
+                   
+                    _total = Convert.ToDouble(dr["TOTAL"]);
                     lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
+                }
+                else
+                {
+                    lblTotalPrice.Text = "₱ 0.00";
                 }
                 dr.Close();
                 conn.Close();
@@ -241,7 +248,7 @@ namespace Carinderia_Kiosk_System.Customer
         {
             flpOrderListContainer.Controls.Clear();
             conn.Open();
-            cmd = new MySqlCommand("SELECT CUST_ID, FOOD_NAME, QUANTITY, UNIT_PRICE, TOTAL_AMOUNT FROM CUSTOMER", conn);
+            cmd = new MySqlCommand("SELECT CUST_ID, FOOD_NAME, QUANTITY, UNIT_PRICE, TOTAL_AMOUNT FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "' ", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -254,7 +261,7 @@ namespace Carinderia_Kiosk_System.Customer
 
                 //displays price
                 cost = new Label();
-                cost.Text = "₱ " + double.Parse(dr["UNIT_PRICE"].ToString()).ToString("#, ##0.00");
+                cost.Text = dr["UNIT_PRICE"].ToString();
                 cost.Font = SmallFont;
                 cost.ForeColor = Color.Black;
                 cost.Location = new Point(33, 48);
@@ -455,7 +462,7 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void flpMenuItems_Paint(object sender, PaintEventArgs e)
         {
-            
+            GetOrderList();
         }
 
         //Cart button - redirects to Cart form
