@@ -39,8 +39,9 @@ namespace Carinderia_Kiosk_System.Customer
             GetData();
             SelectCategory();
             GetOrderList();
-            //TotalAmount();
+            TotalAmount();
             pnlUserControlFoodItemHolder.Visible = false;
+            //lblNoOrders.Visible = false;
         }
 
         private PictureBox item;
@@ -163,7 +164,7 @@ namespace Carinderia_Kiosk_System.Customer
                 {
                     conn.Open();
 
-                    cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE FOOD_NAME = '" + foodname + "' AND CUSTOMER_NAME = '"+ CustomerInfo.Name +"' ", conn);
+                    cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE FOOD_NAME = '" + foodname + "' AND CUSTOMER_NAME = '"+ CustomerInfo.Name.Trim() +"' ", conn);
                     dr = cmd.ExecuteReader();
 
                     if (dr.HasRows)
@@ -175,12 +176,13 @@ namespace Carinderia_Kiosk_System.Customer
                     {
                         dr.Close();
 
-                        cmd = new MySqlCommand("INSERT INTO CUSTOMER(FOOD_NAME, UNIT_PRICE, QUANTITY, TOTAL_AMOUNT) VALUES(@foodName, @unitPrice, @quantity, @total) WHERE CUSTOMER_NAME = '"+ CustomerInfo.Name +"'", conn);
+                        cmd = new MySqlCommand("INSERT INTO CUSTOMER SET CUSTOMER_NAME = '"+ CustomerInfo.Name +"', FOOD_NAME = @foodName,  UNIT_PRICE = @unitPrice, QUANTITY = @quantity, TOTAL_AMOUNT = @total ", conn);
+
                         cmd.Parameters.AddWithValue("@foodName", foodname);
                         cmd.Parameters.AddWithValue("@unitPrice", unitPrice);
                         cmd.Parameters.AddWithValue("@quantity", quantity);
                         cmd.Parameters.AddWithValue("@total", totalAmount);
-
+         
                         int ctr = cmd.ExecuteNonQuery();
 
                         if (ctr > 0)
@@ -193,8 +195,9 @@ namespace Carinderia_Kiosk_System.Customer
                     TotalAmount();
                     GetOrderList();
                 }
+                conn.Close();
 
-                
+
             }
             catch(Exception ex)
             {
@@ -206,34 +209,45 @@ namespace Carinderia_Kiosk_System.Customer
         void TotalAmount()
         {
             lblTotalPrice.Controls.Clear();
-            conn.Open();
-
-            cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE CUSTOMER_NAME = '"+ CustomerInfo.Name +"' ", conn);
-            dr = cmd.ExecuteReader();
-
-            if (dr.HasRows)
+           
+            try
             {
-                dr.Close();
-                cmd = new MySqlCommand("SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'", conn);
-                dr = cmd.ExecuteReader();
-                dr.Read();
+                conn.Open();
 
+                cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'", conn);
+                dr = cmd.ExecuteReader();
 
                 if (dr.HasRows)
                 {
-                   
-                    _total = Convert.ToDouble(dr["TOTAL"]);
-                    lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
-                }
-                else
-                {
-                    lblTotalPrice.Text = "₱ 0.00";
-                }
-                dr.Close();
-                conn.Close();
+                    dr.Close();
+                    cmd = new MySqlCommand("SELECT SUM(QUANTITY * UNIT_PRICE) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "' ", conn);
+                    dr = cmd.ExecuteReader();
+                    dr.Read();
 
+                    if (dr.HasRows)
+                    {
+
+                        _total = Convert.ToDouble(dr["TOTAL"]);
+                        lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
+                    }
+                    else
+                    {
+                        lblTotalPrice.Text = "₱ 0.00";
+                    }
+                    dr.Close();
+                    conn.Close();
+
+                    //_total = double.Parse(dr["TOTAL"].ToString().ToString("#, ##0.00"));
+                    //lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
+
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private Panel orderPanel;
@@ -248,7 +262,7 @@ namespace Carinderia_Kiosk_System.Customer
         {
             flpOrderListContainer.Controls.Clear();
             conn.Open();
-            cmd = new MySqlCommand("SELECT CUST_ID, FOOD_NAME, QUANTITY, UNIT_PRICE, TOTAL_AMOUNT FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "' ", conn);
+            cmd = new MySqlCommand("SELECT CUST_ID, FOOD_NAME, QUANTITY, UNIT_PRICE, TOTAL_AMOUNT FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -325,7 +339,7 @@ namespace Carinderia_Kiosk_System.Customer
                 conn.Open();
 
                 //Deletes the selected food item
-                cmd = new MySqlCommand("DELETE FROM CUSTOMER WHERE CUST_ID LIKE '" + tag + "' ", conn);
+                cmd = new MySqlCommand("DELETE FROM CUSTOMER WHERE CUST_ID LIKE '" + tag + "' AND CUSTOMER_NAME = '" + CustomerInfo.Name + "'  ", conn);
 
                 dr = cmd.ExecuteReader();
                 dr.Close();

@@ -94,7 +94,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.Controls.Add(this.panel4);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucOrderListTemplate";
-            this.Size = new System.Drawing.Size(530, 93);
+            this.Size = new System.Drawing.Size(777, 575);
             ((System.ComponentModel.ISupportInitialize)(this.pbRemoveItem)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

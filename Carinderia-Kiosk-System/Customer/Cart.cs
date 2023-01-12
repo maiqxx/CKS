@@ -77,7 +77,7 @@ namespace Carinderia_Kiosk_System.Customer
 
                 //displays price
                 cost = new Label();
-                cost.Text = double.Parse(dr["UNIT_PRICE"].ToString()).ToString("#, ##0.00");
+                cost.Text = dr["UNIT_PRICE"].ToString();
                 cost.Font = SmallFontBold;
                 cost.ForeColor = Color.Black;
                 cost.Location = new Point(72, 49);
@@ -215,6 +215,7 @@ namespace Carinderia_Kiosk_System.Customer
 
                 if (dr.HasRows)
                 {
+                    
                     _total = double.Parse(dr["TOTAL"].ToString());
                     lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
                 }

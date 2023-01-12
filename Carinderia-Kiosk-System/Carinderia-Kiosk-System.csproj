@@ -168,10 +168,10 @@
     <Compile Include="Customer\OrderSummary.Designer.cs">
       <DependentUpon>OrderSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\PlacedOrderSuccessfully.cs">
+    <Compile Include="Customer\CustomerDialogs\PlacedOrderSuccessfully.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\PlacedOrderSuccessfully.Designer.cs">
+    <Compile Include="Customer\CustomerDialogs\PlacedOrderSuccessfully.Designer.cs">
       <DependentUpon>PlacedOrderSuccessfully.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\StartScreen.cs">
@@ -281,7 +281,7 @@
     <EmbeddedResource Include="Customer\OrderSummary.resx">
       <DependentUpon>OrderSummary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\PlacedOrderSuccessfully.resx">
+    <EmbeddedResource Include="Customer\CustomerDialogs\PlacedOrderSuccessfully.resx">
       <DependentUpon>PlacedOrderSuccessfully.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\StartScreen.resx">
