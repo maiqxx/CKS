@@ -8,19 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Carinderia_Kiosk_System.Customer
+namespace Carinderia_Kiosk_System.Customer.CustomerDialogs
 {
-    public partial class PlacedOrderDialog : Form
+    public partial class OneDineOptionDialog : Form
     {
-        public PlacedOrderDialog()
+        public OneDineOptionDialog()
         {
             InitializeComponent();
         }
 
-        private void btnOrderSummary_Click(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
-            OrderSummary summary = new OrderSummary();
-            summary.Show();
             this.Close();
         }
     }

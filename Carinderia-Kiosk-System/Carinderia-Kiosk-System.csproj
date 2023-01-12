@@ -148,11 +148,23 @@
     <Compile Include="Customer\CustomerDialogs\AddedToCartDialog.Designer.cs">
       <DependentUpon>AddedToCartDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerDialogs\ChooseDineOptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerDialogs\ChooseDineOptionDialog.Designer.cs">
+      <DependentUpon>ChooseDineOptionDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerDialogs\OnCartDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer\CustomerDialogs\OnCartDialog.Designer.cs">
       <DependentUpon>OnCartDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerDialogs\OneDineOptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerDialogs\OneDineOptionDialog.Designer.cs">
+      <DependentUpon>OneDineOptionDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerDialogs\RemovedFoodItemDialog.cs">
       <SubType>Form</SubType>
@@ -296,8 +308,14 @@
     <EmbeddedResource Include="Customer\CustomerDialogs\AddedToCartDialog.resx">
       <DependentUpon>AddedToCartDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerDialogs\ChooseDineOptionDialog.resx">
+      <DependentUpon>ChooseDineOptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerDialogs\OnCartDialog.resx">
       <DependentUpon>OnCartDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerDialogs\OneDineOptionDialog.resx">
+      <DependentUpon>OneDineOptionDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerDialogs\RemovedFoodItemDialog.resx">
       <DependentUpon>RemovedFoodItemDialog.cs</DependentUpon>
@@ -596,6 +614,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\specify qty icon 70x77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dine option 80x64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

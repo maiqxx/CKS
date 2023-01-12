@@ -302,13 +302,19 @@ namespace Carinderia_Kiosk_System.Customer
             }
             else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
             {
-                MessageBox.Show("Choose only one method.");
+                OneDineOptionDialog oneDineOption = new OneDineOptionDialog();
+                oneDineOption.ShowDialog();
+
+               //MessageBox.Show("Choose only one method.");
                 checkBoxDineIn.Checked = false;
                 checkBoxTakeOut.Checked = false;
             }
             else
             {
-                MessageBox.Show("Please choose a method in taking your order :)");
+                ChooseDineOptionDialog chooseDineOption = new ChooseDineOptionDialog();
+                chooseDineOption.ShowDialog();
+
+                //MessageBox.Show("Please choose a method in taking your order :)");
             }
 
         }

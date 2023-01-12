@@ -29,22 +29,12 @@ namespace Carinderia_Kiosk_System.Customer
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddFeedback = new System.Windows.Forms.Button();
             this.btnOrderSummary = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.check_icon_125x125;
-            this.pictureBox1.Location = new System.Drawing.Point(249, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 133);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -79,8 +69,19 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnOrderSummary.TabIndex = 3;
             this.btnOrderSummary.Text = "Order Summary";
             this.btnOrderSummary.UseVisualStyleBackColor = false;
+            this.btnOrderSummary.Click += new System.EventHandler(this.btnOrderSummary_Click);
             // 
-            // PlacedOrderSuccessfully
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.check_icon_125x125;
+            this.pictureBox1.Location = new System.Drawing.Point(249, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // PlacedOrderDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,7 +93,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PlacedOrderSuccessfully";
+            this.Name = "PlacedOrderDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
