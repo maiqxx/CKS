@@ -29,12 +29,21 @@ namespace Carinderia_Kiosk_System.Customer
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOrder = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Carinderia_Kiosk_System.Properties.Resources.green_wooden_BG_1182_x_683;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(1187, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(213, 800);
+            this.panel2.TabIndex = 3;
             // 
             // panel1
             // 
@@ -72,15 +81,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Carinderia_Kiosk_System.Properties.Resources.green_wooden_BG_1182_x_683;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1187, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 800);
-            this.panel2.TabIndex = 3;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // StartScreen
             // 

@@ -103,7 +103,8 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-
+            ThankYouDialog thankYou = new ThankYouDialog();
+            thankYou.ShowDialog();
             this.Close();
         }
 

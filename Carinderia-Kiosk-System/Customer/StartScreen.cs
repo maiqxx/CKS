@@ -28,5 +28,12 @@ namespace Carinderia_Kiosk_System.Customer
             //menuBoard.Show();
             //this.Hide();
         }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            StartUp su = new StartUp();
+            su.Show();
+            this.Close();
+        }
     }
 }

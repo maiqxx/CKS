@@ -267,6 +267,7 @@ namespace Carinderia_Kiosk_System.Customer
                     int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
                     {
+                        this.Hide();
                         PlacedOrderDialog orderSuccessfully = new PlacedOrderDialog();
                         orderSuccessfully.ShowDialog();
                         this.Close();
@@ -293,6 +294,7 @@ namespace Carinderia_Kiosk_System.Customer
                     int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
                     {
+                        this.Hide();
                         PlacedOrderDialog orderSuccessfully = new PlacedOrderDialog();
                         orderSuccessfully.ShowDialog();
                         this.Close();

@@ -30,24 +30,24 @@ namespace Carinderia_Kiosk_System.Customer
         private void InitializeComponent()
         {
             this.pnlOrderSummaryContainer = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.lblOrderSummary = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnFeedBack = new System.Windows.Forms.Button();
-            this.lblDateTime = new System.Windows.Forms.Label();
-            this.lblDTValue = new System.Windows.Forms.Label();
-            this.lblOrderNum = new System.Windows.Forms.Label();
-            this.lblOrderNumValue = new System.Windows.Forms.Label();
-            this.lblCust = new System.Windows.Forms.Label();
-            this.lblCustomerName = new System.Windows.Forms.Label();
-            this.lblDineOption = new System.Windows.Forms.Label();
+            this.lblTotalPayment = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lvOrderList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTotalPayment = new System.Windows.Forms.Label();
+            this.lblDineOption = new System.Windows.Forms.Label();
+            this.lblCustomerName = new System.Windows.Forms.Label();
+            this.lblCust = new System.Windows.Forms.Label();
+            this.lblOrderNumValue = new System.Windows.Forms.Label();
+            this.lblOrderNum = new System.Windows.Forms.Label();
+            this.lblDTValue = new System.Windows.Forms.Label();
+            this.lblDateTime = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblOrderSummary = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnFeedBack = new System.Windows.Forms.Button();
             this.pnlOrderSummaryContainer.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,134 @@ namespace Carinderia_Kiosk_System.Customer
             this.pnlOrderSummaryContainer.Name = "pnlOrderSummaryContainer";
             this.pnlOrderSummaryContainer.Size = new System.Drawing.Size(595, 558);
             this.pnlOrderSummaryContainer.TabIndex = 0;
+            // 
+            // lblTotalPayment
+            // 
+            this.lblTotalPayment.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPayment.Location = new System.Drawing.Point(331, 525);
+            this.lblTotalPayment.Name = "lblTotalPayment";
+            this.lblTotalPayment.Size = new System.Drawing.Size(234, 18);
+            this.lblTotalPayment.TabIndex = 9;
+            this.lblTotalPayment.Text = "0.00";
+            this.lblTotalPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(33, 525);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 18);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Total Payment:";
+            // 
+            // lvOrderList
+            // 
+            this.lvOrderList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvOrderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvOrderList.GridLines = true;
+            this.lvOrderList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvOrderList.HideSelection = false;
+            this.lvOrderList.Location = new System.Drawing.Point(36, 95);
+            this.lvOrderList.Name = "lvOrderList";
+            this.lvOrderList.Size = new System.Drawing.Size(529, 417);
+            this.lvOrderList.TabIndex = 7;
+            this.lvOrderList.UseCompatibleStateImageBehavior = false;
+            this.lvOrderList.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Product";
+            this.columnHeader1.Width = 250;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Quantity";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 80;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Unit Price";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 85;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Amount";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 96;
+            // 
+            // lblDineOption
+            // 
+            this.lblDineOption.AutoSize = true;
+            this.lblDineOption.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDineOption.Location = new System.Drawing.Point(414, 46);
+            this.lblDineOption.Name = "lblDineOption";
+            this.lblDineOption.Size = new System.Drawing.Size(92, 18);
+            this.lblDineOption.TabIndex = 6;
+            this.lblDineOption.Text = "DineOption";
+            // 
+            // lblCustomerName
+            // 
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Location = new System.Drawing.Point(163, 46);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(123, 18);
+            this.lblCustomerName.TabIndex = 5;
+            this.lblCustomerName.Text = "CustomerName";
+            // 
+            // lblCust
+            // 
+            this.lblCust.AutoSize = true;
+            this.lblCust.Location = new System.Drawing.Point(17, 46);
+            this.lblCust.Name = "lblCust";
+            this.lblCust.Size = new System.Drawing.Size(140, 20);
+            this.lblCust.TabIndex = 4;
+            this.lblCust.Text = "Customer\'s Name:";
+            // 
+            // lblOrderNumValue
+            // 
+            this.lblOrderNumValue.AutoSize = true;
+            this.lblOrderNumValue.Location = new System.Drawing.Point(505, 15);
+            this.lblOrderNumValue.Name = "lblOrderNumValue";
+            this.lblOrderNumValue.Size = new System.Drawing.Size(85, 20);
+            this.lblOrderNumValue.TabIndex = 3;
+            this.lblOrderNumValue.Text = "OrderNum";
+            this.lblOrderNumValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblOrderNum
+            // 
+            this.lblOrderNum.AutoSize = true;
+            this.lblOrderNum.Location = new System.Drawing.Point(414, 15);
+            this.lblOrderNum.Name = "lblOrderNum";
+            this.lblOrderNum.Size = new System.Drawing.Size(85, 20);
+            this.lblOrderNum.TabIndex = 2;
+            this.lblOrderNum.Text = "Order No.:";
+            this.lblOrderNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDTValue
+            // 
+            this.lblDTValue.AutoSize = true;
+            this.lblDTValue.Location = new System.Drawing.Point(144, 15);
+            this.lblDTValue.Name = "lblDTValue";
+            this.lblDTValue.Size = new System.Drawing.Size(76, 20);
+            this.lblDTValue.TabIndex = 1;
+            this.lblDTValue.Text = "DateTime";
+            // 
+            // lblDateTime
+            // 
+            this.lblDateTime.AutoSize = true;
+            this.lblDateTime.Location = new System.Drawing.Point(17, 15);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(121, 20);
+            this.lblDateTime.TabIndex = 0;
+            this.lblDateTime.Text = "Date and Time: ";
             // 
             // panel6
             // 
@@ -119,133 +247,6 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnFeedBack.Text = "Feedback";
             this.btnFeedBack.UseVisualStyleBackColor = false;
             this.btnFeedBack.Click += new System.EventHandler(this.btnFeedBack_Click);
-            // 
-            // lblDateTime
-            // 
-            this.lblDateTime.AutoSize = true;
-            this.lblDateTime.Location = new System.Drawing.Point(17, 15);
-            this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(121, 20);
-            this.lblDateTime.TabIndex = 0;
-            this.lblDateTime.Text = "Date and Time: ";
-            // 
-            // lblDTValue
-            // 
-            this.lblDTValue.AutoSize = true;
-            this.lblDTValue.Location = new System.Drawing.Point(129, 15);
-            this.lblDTValue.Name = "lblDTValue";
-            this.lblDTValue.Size = new System.Drawing.Size(76, 20);
-            this.lblDTValue.TabIndex = 1;
-            this.lblDTValue.Text = "DateTime";
-            // 
-            // lblOrderNum
-            // 
-            this.lblOrderNum.AutoSize = true;
-            this.lblOrderNum.Location = new System.Drawing.Point(414, 15);
-            this.lblOrderNum.Name = "lblOrderNum";
-            this.lblOrderNum.Size = new System.Drawing.Size(85, 20);
-            this.lblOrderNum.TabIndex = 2;
-            this.lblOrderNum.Text = "Order No.:";
-            this.lblOrderNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblOrderNumValue
-            // 
-            this.lblOrderNumValue.AutoSize = true;
-            this.lblOrderNumValue.Location = new System.Drawing.Point(493, 15);
-            this.lblOrderNumValue.Name = "lblOrderNumValue";
-            this.lblOrderNumValue.Size = new System.Drawing.Size(85, 20);
-            this.lblOrderNumValue.TabIndex = 3;
-            this.lblOrderNumValue.Text = "OrderNum";
-            this.lblOrderNumValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblCust
-            // 
-            this.lblCust.AutoSize = true;
-            this.lblCust.Location = new System.Drawing.Point(17, 46);
-            this.lblCust.Name = "lblCust";
-            this.lblCust.Size = new System.Drawing.Size(140, 20);
-            this.lblCust.TabIndex = 4;
-            this.lblCust.Text = "Customer\'s Name:";
-            // 
-            // lblCustomerName
-            // 
-            this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerName.Location = new System.Drawing.Point(151, 47);
-            this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(123, 18);
-            this.lblCustomerName.TabIndex = 5;
-            this.lblCustomerName.Text = "CustomerName";
-            // 
-            // lblDineOption
-            // 
-            this.lblDineOption.AutoSize = true;
-            this.lblDineOption.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDineOption.Location = new System.Drawing.Point(414, 46);
-            this.lblDineOption.Name = "lblDineOption";
-            this.lblDineOption.Size = new System.Drawing.Size(92, 18);
-            this.lblDineOption.TabIndex = 6;
-            this.lblDineOption.Text = "DineOption";
-            // 
-            // lvOrderList
-            // 
-            this.lvOrderList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvOrderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lvOrderList.GridLines = true;
-            this.lvOrderList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvOrderList.Location = new System.Drawing.Point(21, 95);
-            this.lvOrderList.Name = "lvOrderList";
-            this.lvOrderList.Size = new System.Drawing.Size(557, 417);
-            this.lvOrderList.TabIndex = 7;
-            this.lvOrderList.UseCompatibleStateImageBehavior = false;
-            this.lvOrderList.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Product";
-            this.columnHeader1.Width = 250;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Quantity";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 80;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Unit Price";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 85;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Amount";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 96;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 525);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 18);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Total Payment:";
-            // 
-            // lblTotalPayment
-            // 
-            this.lblTotalPayment.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPayment.Location = new System.Drawing.Point(344, 525);
-            this.lblTotalPayment.Name = "lblTotalPayment";
-            this.lblTotalPayment.Size = new System.Drawing.Size(234, 18);
-            this.lblTotalPayment.TabIndex = 9;
-            this.lblTotalPayment.Text = "0.00";
-            this.lblTotalPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // OrderSummary
             // 

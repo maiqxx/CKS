@@ -636,5 +636,11 @@
   <ItemGroup>
     <None Include="Resources\dine option 80x64.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow_star.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

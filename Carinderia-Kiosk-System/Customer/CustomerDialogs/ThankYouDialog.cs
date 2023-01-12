@@ -16,5 +16,17 @@ namespace Carinderia_Kiosk_System.Customer.CustomerDialogs
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            //set customer info to nothing for new user
+            //CustomerInfo.ID = 0;
+            //CustomerInfo.Name = "";
+
+            StartScreen start = new StartScreen();
+            start.Show();
+        }
     }
 }

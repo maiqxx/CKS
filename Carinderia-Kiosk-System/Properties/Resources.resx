@@ -130,8 +130,8 @@
   <data name="refresh 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search blck 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search blck 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow back 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow back 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="admin icon 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin icon 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,14 +163,14 @@
   <data name="clear format 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear format 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="white star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="update 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\update 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="live orders" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\live orders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow back 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow back 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user icon 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user icon 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,6 +193,9 @@
   <data name="dashboard 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="search blck 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search blck 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="verified admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verified admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,14 +211,17 @@
   <data name="inventory white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Diacosta white 25 x 25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Diacosta white 25 x 25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dine option 80x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dine option 80x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="staff icon 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\staff icon 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="manage staff white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage staff white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check gif 200x200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check gif 200x200.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,8 +256,8 @@
   <data name="specify qty icon 70x77" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\specify qty icon 70x77.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check gif 200x200" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check gif 200x200.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Diacosta white 25 x 25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diacosta white 25 x 25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customers icon 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customers icon 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,7 +307,7 @@
   <data name="logout white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dine option 80x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dine option 80x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yellow_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellow_star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
