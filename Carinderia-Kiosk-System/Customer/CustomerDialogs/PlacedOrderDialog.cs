@@ -21,7 +21,6 @@ namespace Carinderia_Kiosk_System.Customer
         {
             OrderSummary summary = new OrderSummary();
             summary.Show();
-            this.Close();
         }
     }
 }

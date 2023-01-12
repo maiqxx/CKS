@@ -234,13 +234,19 @@ namespace Carinderia_Kiosk_System.Customer
         {
             if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
             {
-                MessageBox.Show("Choose only one method.");
+                OneDineOptionDialog oneDineOption = new OneDineOptionDialog();
+                oneDineOption.ShowDialog();
+
+                //MessageBox.Show("Choose only one method.");
                 checkBoxDineIn.Checked = false;
                 checkBoxTakeOut.Checked = false;
             }
-            else
+            else if (!checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
             {
-                MessageBox.Show("Kindly choose a method in taking your order :)");
+                ChooseDineOptionDialog chooseDineOption = new ChooseDineOptionDialog();
+                chooseDineOption.ShowDialog();
+
+                //MessageBox.Show("Kindly choose a method in taking your order :)");
             }
         }
 
@@ -249,7 +255,7 @@ namespace Carinderia_Kiosk_System.Customer
         {
             //btnOrderNow.Visible = false;
 
-            //DineOption();
+            DineOption();
             //string orderStatus = "Pending";
 
             if (checkBoxDineIn.Checked)
@@ -270,6 +276,7 @@ namespace Carinderia_Kiosk_System.Customer
                         PlacedOrderDialog orderSuccessfully = new PlacedOrderDialog();
                         orderSuccessfully.ShowDialog();
                     }
+                    conn.Close();
                 }
                 catch (Exception ex)
                 {
@@ -294,6 +301,7 @@ namespace Carinderia_Kiosk_System.Customer
                         PlacedOrderDialog orderSuccessfully = new PlacedOrderDialog();
                         orderSuccessfully.ShowDialog();
                     }
+                    conn.Close();
                 }
                 catch (Exception ex)
                 {
@@ -302,21 +310,13 @@ namespace Carinderia_Kiosk_System.Customer
             }
             else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
             {
-                OneDineOptionDialog oneDineOption = new OneDineOptionDialog();
-                oneDineOption.ShowDialog();
+
 
                //MessageBox.Show("Choose only one method.");
                 checkBoxDineIn.Checked = false;
                 checkBoxTakeOut.Checked = false;
             }
-            else
-            {
-                ChooseDineOptionDialog chooseDineOption = new ChooseDineOptionDialog();
-                chooseDineOption.ShowDialog();
-
-                //MessageBox.Show("Please choose a method in taking your order :)");
-            }
-
+            conn.Close();
         }
 
         void RemoveRecord()

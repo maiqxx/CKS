@@ -97,8 +97,6 @@ namespace Carinderia_Kiosk_System.Customer
             // panel2
             // 
             this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.flpOrders);
             this.panel2.Location = new System.Drawing.Point(24, 93);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(654, 695);
@@ -109,7 +107,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Controls.Add(this.lblTotalPrice);
             this.panel3.Controls.Add(this.lblTotalPayment);
-            this.panel3.Location = new System.Drawing.Point(0, 624);
+            this.panel3.Location = new System.Drawing.Point(24, 717);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(654, 71);
             this.panel3.TabIndex = 9;
@@ -141,10 +139,9 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.flpOrders.AutoScroll = true;
             this.flpOrders.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.flpOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpOrders.Location = new System.Drawing.Point(0, 0);
+            this.flpOrders.Location = new System.Drawing.Point(24, 142);
             this.flpOrders.Name = "flpOrders";
-            this.flpOrders.Size = new System.Drawing.Size(654, 695);
+            this.flpOrders.Size = new System.Drawing.Size(654, 572);
             this.flpOrders.TabIndex = 7;
             // 
             // gbDineOption
@@ -245,6 +242,8 @@ namespace Carinderia_Kiosk_System.Customer
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1200, 800);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.flpOrders);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

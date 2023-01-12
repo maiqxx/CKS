@@ -123,7 +123,7 @@ namespace Carinderia_Kiosk_System.Customer
             // flpMenuItems
             // 
             this.flpMenuItems.AutoScroll = true;
-            this.flpMenuItems.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.flpMenuItems.BackColor = System.Drawing.SystemColors.Control;
             this.flpMenuItems.Location = new System.Drawing.Point(12, 112);
             this.flpMenuItems.Name = "flpMenuItems";
             this.flpMenuItems.Size = new System.Drawing.Size(831, 685);

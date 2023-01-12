@@ -33,9 +33,9 @@ namespace Carinderia_Kiosk_System.Customer
             this.txtCustomerUniqueName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbBackIcon = new System.Windows.Forms.PictureBox();
             this.btnProceedToOrder = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.pbBackIcon = new System.Windows.Forms.PictureBox();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackIcon)).BeginInit();
@@ -79,20 +79,6 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel1.Size = new System.Drawing.Size(813, 60);
             this.panel1.TabIndex = 17;
             // 
-            // pbBackIcon
-            // 
-            this.pbBackIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbBackIcon.Image = global::Carinderia_Kiosk_System.Properties.Resources.Back_icon_White_20_x_20;
-            this.pbBackIcon.Location = new System.Drawing.Point(3, 3);
-            this.pbBackIcon.Name = "pbBackIcon";
-            this.pbBackIcon.Size = new System.Drawing.Size(49, 50);
-            this.pbBackIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbBackIcon.TabIndex = 18;
-            this.pbBackIcon.TabStop = false;
-            this.pbBackIcon.Click += new System.EventHandler(this.pbBackIcon_Click);
-            // 
             // btnProceedToOrder
             // 
             this.btnProceedToOrder.BackColor = System.Drawing.Color.ForestGreen;
@@ -112,7 +98,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCancel.Location = new System.Drawing.Point(232, 374);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(140, 56);
@@ -120,6 +106,20 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // pbBackIcon
+            // 
+            this.pbBackIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbBackIcon.Image = global::Carinderia_Kiosk_System.Properties.Resources.Back_icon_White_20_x_20;
+            this.pbBackIcon.Location = new System.Drawing.Point(3, 3);
+            this.pbBackIcon.Name = "pbBackIcon";
+            this.pbBackIcon.Size = new System.Drawing.Size(49, 50);
+            this.pbBackIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackIcon.TabIndex = 18;
+            this.pbBackIcon.TabStop = false;
+            this.pbBackIcon.Click += new System.EventHandler(this.pbBackIcon_Click);
             // 
             // CustomerInputName
             // 
