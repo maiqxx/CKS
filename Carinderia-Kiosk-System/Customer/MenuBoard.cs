@@ -43,7 +43,6 @@ namespace Carinderia_Kiosk_System.Customer
             GetOrderList();
             TotalAmount();
             pnlUserControlFoodItemHolder.Visible = false;
-            //lblNoOrders.Visible = false;
         }
 
         //gets and sets CUST_ID
@@ -124,7 +123,6 @@ namespace Carinderia_Kiosk_System.Customer
 
                 item.Cursor = Cursors.Hand;
                 item.Click += new EventHandler(OnClick);
-                
             }
             dr.Close();
             conn.Close();
@@ -136,7 +134,6 @@ namespace Carinderia_Kiosk_System.Customer
             //MessageBox.Show(((PictureBox)sender).Tag.ToString()); //test get stock ID
 
             pnlUserControlFoodItemHolder.Visible = true;
-
             String tag = ((PictureBox)sender).Tag.ToString();
 
             try
@@ -224,8 +221,6 @@ namespace Carinderia_Kiosk_System.Customer
                     GetOrderList();
                 }
                 conn.Close();
-
-
             }
             catch(Exception ex)
             {
@@ -281,10 +276,6 @@ namespace Carinderia_Kiosk_System.Customer
                     }
                     dr.Close();
                     conn.Close();
-
-                    //_total = double.Parse(dr["TOTAL"].ToString().ToString("#, ##0.00"));
-                    //lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
-
                 }
                 conn.Close();
             }
@@ -292,7 +283,6 @@ namespace Carinderia_Kiosk_System.Customer
             {
                 MessageBox.Show(ex.Message);
             }
-           
         }
 
         private Panel orderPanel;
@@ -499,9 +489,6 @@ namespace Carinderia_Kiosk_System.Customer
                 item.Click += new EventHandler(OnClick); //calls Onclick Event
 
                 //item.Click += (sender, e) => OnClick(this, e, item.Tag.ToString());
-                //price.Click += (sender, e) => OnClick(this, e, price.Tag.ToString());
-                //foodName.Click += (sender, e) => OnClick(this, e, foodName.Tag.ToString());
-
             }
             dr.Close();
             conn.Close();
@@ -520,7 +507,7 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void flpMenuItems_Paint(object sender, PaintEventArgs e)
         {
-            GetOrderList();
+            GetOrderList(); //Loads current orders in a flowlayoutpanel
         }
 
         //Cart button - redirects to Cart form
