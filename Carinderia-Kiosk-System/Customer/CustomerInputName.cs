@@ -52,33 +52,33 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void btnProceedToOrder_Click(object sender, EventArgs e)
         {
-            CustomerInfo.Name = txtCustomerUniqueName.Text;
+            CustomerInfo.Name = txtCustomerUniqueName.Text; //sets current user
 
-            try
-            {
-                conn.Open();
-                cmd = new MySqlCommand("INSERT INTO CUSTOMER (CUSTOMER_NAME) VALUES(@customer)", conn);
-                cmd.Parameters.AddWithValue("@customer", txtCustomerUniqueName.Text);
+            //try
+            //{
+            //    conn.Open();
+            //    cmd = new MySqlCommand("INSERT INTO CUSTOMER (CUSTOMER_NAME) VALUES(@customer)", conn);
+            //    cmd.Parameters.AddWithValue("@customer", txtCustomerUniqueName.Text);
 
-                int ctr = cmd.ExecuteNonQuery();
-                if (ctr > 0)
-                {
-                    MenuBoard menuBoard = new MenuBoard();
-                    menuBoard.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Wa na insert si name");
-                    StartScreen startScreen = new StartScreen();
-                    startScreen.Show();
-                    this.Hide();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //    int ctr = cmd.ExecuteNonQuery();
+            //    if (ctr > 0)
+            //    {
+            //        MenuBoard menuBoard = new MenuBoard();
+            //        menuBoard.Show();
+            //        this.Hide();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Wa na insert si name");
+            //        StartScreen startScreen = new StartScreen();
+            //        startScreen.Show();
+            //        this.Hide();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }

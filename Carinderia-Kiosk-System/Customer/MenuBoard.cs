@@ -37,6 +37,7 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void MenuBoard_Load(object sender, EventArgs e)
         {
+            GetUniqueID();
             GetData();
             SelectCategory();
             GetOrderList();
@@ -45,12 +46,22 @@ namespace Carinderia_Kiosk_System.Customer
             //lblNoOrders.Visible = false;
         }
 
-        //
+        //gets and sets CUST_ID
         void GetUniqueID()
         {
             try
             {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT * FROM CUSTOMER", conn);
+                dr = cmd.ExecuteReader();
 
+                if(dr.Read())
+                {
+                    //set CUST_ID to CustomerInfo.ID
+                    CustomerInfo.ID = int.Parse(dr["CUST_ID"].ToString());
+                }
+                dr.Close();
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -204,6 +215,7 @@ namespace Carinderia_Kiosk_System.Customer
                             //MessageBox.Show("Added successfully!");
                             AddedToCartDialog added = new AddedToCartDialog();
                             added.ShowDialog();
+                            SetCustomer(); //sets every food item with customer's name
                         }
                         conn.Close();
                     }
@@ -221,17 +233,17 @@ namespace Carinderia_Kiosk_System.Customer
             }
         }
 
+        //sets every food item with customer's name
         void SetCustomer()
         {
+            GetUniqueID(); 
+
             try
             {
                 conn.Open();
-
-                cmd = new MySqlCommand("UPDATE CUSTOMER " +
-                                            "SET CUSTOMER_NAME = '"+CustomerInfo.Name +"', " +
-                                            "WHERE CUST_ID = '" + txtStockCode.Text + "'");
-
-
+                cmd = new MySqlCommand("UPDATE CUSTOMER SET CUSTOMER_NAME = '"+ CustomerInfo.Name +"' WHERE CUST_ID = '" + CustomerInfo.ID + "'", conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -300,7 +312,6 @@ namespace Carinderia_Kiosk_System.Customer
 
             while (dr.Read())
             {
-
                 orderPanel = new Panel();
                 orderPanel.Width = 523;
                 orderPanel.Height = 87;
