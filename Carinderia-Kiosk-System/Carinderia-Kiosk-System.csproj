@@ -148,6 +148,12 @@
     <Compile Include="Customer\CustomerDialogs\AddedToCartDialog.Designer.cs">
       <DependentUpon>AddedToCartDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerDialogs\RemovedFoodItemDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerDialogs\RemovedFoodItemDialog.Designer.cs">
+      <DependentUpon>RemovedFoodItemDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerDineOption.cs" />
     <Compile Include="CustomerInfo.cs" />
     <Compile Include="Customer\CustomerInputName.cs">
@@ -174,11 +180,11 @@
     <Compile Include="Customer\OrderSummary.Designer.cs">
       <DependentUpon>OrderSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CustomerDialogs\PlacedOrderSuccessfully.cs">
+    <Compile Include="Customer\CustomerDialogs\PlacedOrderDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\CustomerDialogs\PlacedOrderSuccessfully.Designer.cs">
-      <DependentUpon>PlacedOrderSuccessfully.cs</DependentUpon>
+    <Compile Include="Customer\CustomerDialogs\PlacedOrderDialog.Designer.cs">
+      <DependentUpon>PlacedOrderDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\StartScreen.cs">
       <SubType>Form</SubType>
@@ -278,6 +284,9 @@
     <EmbeddedResource Include="Customer\CustomerDialogs\AddedToCartDialog.resx">
       <DependentUpon>AddedToCartDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerDialogs\RemovedFoodItemDialog.resx">
+      <DependentUpon>RemovedFoodItemDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerInputName.resx">
       <DependentUpon>CustomerInputName.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,8 +299,8 @@
     <EmbeddedResource Include="Customer\OrderSummary.resx">
       <DependentUpon>OrderSummary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerDialogs\PlacedOrderSuccessfully.resx">
-      <DependentUpon>PlacedOrderSuccessfully.cs</DependentUpon>
+    <EmbeddedResource Include="Customer\CustomerDialogs\PlacedOrderDialog.resx">
+      <DependentUpon>PlacedOrderDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\StartScreen.resx">
       <DependentUpon>StartScreen.cs</DependentUpon>

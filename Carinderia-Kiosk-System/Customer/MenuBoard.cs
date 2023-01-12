@@ -214,8 +214,10 @@ namespace Carinderia_Kiosk_System.Customer
                             added.ShowDialog();
                             SetCustomer(); //sets every food item with customer's name
                         }
+                        dr.Close();
                         conn.Close();
                     }
+                    dr.Close();
                     conn.Close();
                     TotalAmount();
                     GetOrderList();
@@ -277,6 +279,7 @@ namespace Carinderia_Kiosk_System.Customer
                     dr.Close();
                     conn.Close();
                 }
+                dr.Close();
                 conn.Close();
             }
             catch (Exception ex)
@@ -378,6 +381,8 @@ namespace Carinderia_Kiosk_System.Customer
                 dr = cmd.ExecuteReader();
                 dr.Close();
                 conn.Close();
+
+
                 MessageBox.Show("Food item removed successfully!");
                 GetOrderList(); //to reload the order list after deleting
                 TotalAmount();  //to reload the total amount after deleting
