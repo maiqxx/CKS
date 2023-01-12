@@ -21,6 +21,14 @@ namespace Carinderia_Kiosk_System.Customer
         {
             OrderSummary summary = new OrderSummary();
             summary.Show();
+            this.Close();
+        }
+
+        private void btnAddFeedback_Click(object sender, EventArgs e)
+        {
+            Feedback fb = new Feedback();
+            fb.Show();
+            this.Close();
         }
     }
 }

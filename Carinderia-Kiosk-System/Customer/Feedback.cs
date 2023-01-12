@@ -40,15 +40,13 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            ThankYouDialog thankYou = new ThankYouDialog();
-            thankYou.ShowDialog();
-            this.Close();
-
+            string rating = lblRatingNum.Text.Trim();
+            string comment = txtComment.Text;
             try
             {
                 conn.Open();
-                cmd = new MySqlCommand("INSERT INTO FEEDBACK SET RATING = '" + lblRatingNum.Text + "', " +
-                                        "COMMENT = '"+ txtComment.Text + "',  " +
+                cmd = new MySqlCommand("INSERT INTO FEEDBACK SET RATING = '" + rating + "', " +
+                                        "COMMENT = '"+ comment + "',  " +
                                         "ORDER_ID = (SELECT ORDER_ID FROM ORDERS WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "') ", conn);
 
                 int ctr = cmd.ExecuteNonQuery();

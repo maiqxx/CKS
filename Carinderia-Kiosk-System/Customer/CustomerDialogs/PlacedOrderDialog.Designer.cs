@@ -57,6 +57,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnAddFeedback.TabIndex = 2;
             this.btnAddFeedback.Text = "Add Feedback";
             this.btnAddFeedback.UseVisualStyleBackColor = false;
+            this.btnAddFeedback.Click += new System.EventHandler(this.btnAddFeedback_Click);
             // 
             // btnOrderSummary
             // 
