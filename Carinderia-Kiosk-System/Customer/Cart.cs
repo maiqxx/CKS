@@ -246,7 +246,7 @@ namespace Carinderia_Kiosk_System.Customer
             //btnOrderNow.Visible = false;
 
             //DineOption();
-            string orderStatus = "Pending";
+            //string orderStatus = "Pending";
 
             if (checkBoxDineIn.Checked)
             {
@@ -257,7 +257,6 @@ namespace Carinderia_Kiosk_System.Customer
                     conn.Open();
                     cmd = new MySqlCommand("INSERT INTO ORDERS " +
                                             "SET CUSTOMER_NAME = '" + CustomerInfo.Name + "', " +
-                                            "ORDER_STATUS = '" + orderStatus + "', " +
                                             "TOTAL_AMOUNT = (SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = (SELECT CUSTOMER_NAME FROM CUSTOMER)), " +
                                             "DINE_OPTION = '" + dineOption + "' ", conn);
 
@@ -283,7 +282,6 @@ namespace Carinderia_Kiosk_System.Customer
                     conn.Open();
                     cmd = new MySqlCommand("INSERT INTO ORDERS " +
                                             "SET CUSTOMER_NAME = '" + CustomerInfo.Name + "', " +
-                                            "ORDER_STATUS = '" + orderStatus + "', " +
                                             "TOTAL_AMOUNT = (SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = (SELECT CUSTOMER_NAME FROM CUSTOMER)), " +
                                             "DINE_OPTION = '" + dineOption + "' ", conn);
 

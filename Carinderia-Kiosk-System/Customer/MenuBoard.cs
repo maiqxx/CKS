@@ -226,7 +226,6 @@ namespace Carinderia_Kiosk_System.Customer
 
                     if (dr.HasRows)
                     {
-
                         _total = Convert.ToDouble(dr["TOTAL"]);
                         lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
                     }

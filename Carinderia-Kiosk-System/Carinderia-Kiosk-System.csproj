@@ -142,6 +142,12 @@
     <Compile Include="Customer\Cart.Designer.cs">
       <DependentUpon>Cart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerDialogs\AddedToCartDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerDialogs\AddedToCartDialog.Designer.cs">
+      <DependentUpon>AddedToCartDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerDineOption.cs" />
     <Compile Include="CustomerInfo.cs" />
     <Compile Include="Customer\CustomerInputName.cs">
