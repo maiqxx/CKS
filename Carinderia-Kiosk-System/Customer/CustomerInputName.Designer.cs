@@ -99,9 +99,9 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnProceedToOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProceedToOrder.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProceedToOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnProceedToOrder.Location = new System.Drawing.Point(400, 373);
+            this.btnProceedToOrder.Location = new System.Drawing.Point(416, 373);
             this.btnProceedToOrder.Name = "btnProceedToOrder";
-            this.btnProceedToOrder.Size = new System.Drawing.Size(179, 56);
+            this.btnProceedToOrder.Size = new System.Drawing.Size(140, 56);
             this.btnProceedToOrder.TabIndex = 18;
             this.btnProceedToOrder.Text = "OK";
             this.btnProceedToOrder.UseVisualStyleBackColor = false;
@@ -113,9 +113,9 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(183, 373);
+            this.btnCancel.Location = new System.Drawing.Point(223, 373);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(179, 56);
+            this.btnCancel.Size = new System.Drawing.Size(140, 56);
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -125,7 +125,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 606);
+            this.ClientSize = new System.Drawing.Size(813, 567);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnProceedToOrder);
             this.Controls.Add(this.panel1);

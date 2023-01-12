@@ -54,6 +54,10 @@ namespace Carinderia_Kiosk_System.Customer
         {
             CustomerInfo.Name = txtCustomerUniqueName.Text; //sets current user
 
+            MenuBoard menu = new MenuBoard();
+            menu.Show();
+            this.Hide();
+
             //try
             //{
             //    conn.Open();
