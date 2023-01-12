@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Drawing;
+using Carinderia_Kiosk_System.Customer.CustomerDialogs;
 
 namespace Carinderia_Kiosk_System.Customer
 {
@@ -42,6 +43,19 @@ namespace Carinderia_Kiosk_System.Customer
             TotalAmount();
             pnlUserControlFoodItemHolder.Visible = false;
             //lblNoOrders.Visible = false;
+        }
+
+        //
+        void GetUniqueID()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private PictureBox item;
@@ -187,7 +201,9 @@ namespace Carinderia_Kiosk_System.Customer
 
                         if (ctr > 0)
                         {
-                            MessageBox.Show("Added successfully!");
+                            //MessageBox.Show("Added successfully!");
+                            AddedToCartDialog added = new AddedToCartDialog();
+                            added.ShowDialog();
                         }
                         conn.Close();
                     }
@@ -200,6 +216,24 @@ namespace Carinderia_Kiosk_System.Customer
 
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void SetCustomer()
+        {
+            try
+            {
+                conn.Open();
+
+                cmd = new MySqlCommand("UPDATE CUSTOMER " +
+                                            "SET CUSTOMER_NAME = '"+CustomerInfo.Name +"', " +
+                                            "WHERE CUST_ID = '" + txtStockCode.Text + "'");
+
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

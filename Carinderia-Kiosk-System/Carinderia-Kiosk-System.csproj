@@ -275,6 +275,9 @@
     <EmbeddedResource Include="Customer\Cart.resx">
       <DependentUpon>Cart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerDialogs\AddedToCartDialog.resx">
+      <DependentUpon>AddedToCartDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerInputName.resx">
       <DependentUpon>CustomerInputName.cs</DependentUpon>
     </EmbeddedResource>
@@ -557,6 +560,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close icon black 20 x 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\added to cart 80x80.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

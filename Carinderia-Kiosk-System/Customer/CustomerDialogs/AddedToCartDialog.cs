@@ -16,5 +16,10 @@ namespace Carinderia_Kiosk_System.Customer.CustomerDialogs
         {
             InitializeComponent();
         }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
