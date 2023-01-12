@@ -64,7 +64,7 @@ namespace Carinderia_Kiosk_System.Customer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -164,7 +164,7 @@ namespace Carinderia_Kiosk_System.Customer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -180,7 +180,10 @@ namespace Carinderia_Kiosk_System.Customer
             {
                 if (quantity <= 0)
                 {
-                    MessageBox.Show("Please specify the quantity.");
+                    SpecifyQuantityDialog specifyQuantity = new SpecifyQuantityDialog();
+                    specifyQuantity.ShowDialog();
+
+                    //MessageBox.Show("Please specify the quantity.");
                 }
                 else
                 {
@@ -240,15 +243,16 @@ namespace Carinderia_Kiosk_System.Customer
 
             try
             {
-                //conn.Open();
+                conn.Open();
                 cmd = new MySqlCommand("UPDATE CUSTOMER SET CUSTOMER_NAME = '"+ CustomerInfo.Name +"' WHERE CUST_ID = '" + CustomerInfo.ID + "'", conn);
                 cmd.ExecuteNonQuery();
+
                 conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("naa kos try-catch block sa set customer");
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show("naa kos try-catch block sa set customer");
+                //MessageBox.Show(ex.Message);
             }
         }
 

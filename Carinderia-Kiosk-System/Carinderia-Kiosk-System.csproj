@@ -160,6 +160,12 @@
     <Compile Include="Customer\CustomerDialogs\RemovedFoodItemDialog.Designer.cs">
       <DependentUpon>RemovedFoodItemDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerDialogs\SpecifyQuantityDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerDialogs\SpecifyQuantityDialog.Designer.cs">
+      <DependentUpon>SpecifyQuantityDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerDineOption.cs" />
     <Compile Include="CustomerInfo.cs" />
     <Compile Include="Customer\CustomerInputName.cs">
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerDialogs\RemovedFoodItemDialog.resx">
       <DependentUpon>RemovedFoodItemDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerDialogs\SpecifyQuantityDialog.resx">
+      <DependentUpon>SpecifyQuantityDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerInputName.resx">
       <DependentUpon>CustomerInputName.cs</DependentUpon>
@@ -584,6 +593,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\remove from cart 80x80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\specify qty icon 70x77.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
