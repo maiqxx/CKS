@@ -103,12 +103,15 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
 
         private void btnFeedBack_Click(object sender, EventArgs e)
         {
-
+            Feedback feedback = new Feedback();
+            feedback.Show();
+            this.Close();
         }
     }
 }
