@@ -19,7 +19,7 @@ namespace Carinderia_Kiosk_System.Customer.CustomerDialogs
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -382,8 +382,10 @@ namespace Carinderia_Kiosk_System.Customer
                 dr.Close();
                 conn.Close();
 
+                RemovedFoodItemDialog removed = new RemovedFoodItemDialog();
+                removed.ShowDialog();
 
-                MessageBox.Show("Food item removed successfully!");
+                //MessageBox.Show("Food item removed successfully!");
                 GetOrderList(); //to reload the order list after deleting
                 TotalAmount();  //to reload the total amount after deleting
             }
