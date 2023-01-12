@@ -241,13 +241,7 @@ namespace Carinderia_Kiosk_System.Customer
                 checkBoxDineIn.Checked = false;
                 checkBoxTakeOut.Checked = false;
             }
-            else if (!checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
-            {
-                ChooseDineOptionDialog chooseDineOption = new ChooseDineOptionDialog();
-                chooseDineOption.ShowDialog();
 
-                //MessageBox.Show("Kindly choose a method in taking your order :)");
-            }
         }
 
         //Place Order button
@@ -275,6 +269,7 @@ namespace Carinderia_Kiosk_System.Customer
                     {
                         PlacedOrderDialog orderSuccessfully = new PlacedOrderDialog();
                         orderSuccessfully.ShowDialog();
+                        this.Close();
                     }
                     conn.Close();
                 }
@@ -300,6 +295,7 @@ namespace Carinderia_Kiosk_System.Customer
                     {
                         PlacedOrderDialog orderSuccessfully = new PlacedOrderDialog();
                         orderSuccessfully.ShowDialog();
+                        this.Close();
                     }
                     conn.Close();
                 }
@@ -308,13 +304,14 @@ namespace Carinderia_Kiosk_System.Customer
                     MessageBox.Show(ex.Message);
                 }
             }
-            else if (checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
+            else if (!checkBoxDineIn.Checked && checkBoxTakeOut.Checked)
             {
+                ChooseDineOptionDialog chooseDineOption = new ChooseDineOptionDialog();
+                chooseDineOption.ShowDialog();
 
-
-               //MessageBox.Show("Choose only one method.");
-                checkBoxDineIn.Checked = false;
-                checkBoxTakeOut.Checked = false;
+                //MessageBox.Show("Choose only one method.");
+                //checkBoxDineIn.Checked = false;
+                //checkBoxTakeOut.Checked = false;
             }
             conn.Close();
         }
