@@ -46,7 +46,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel7.Controls.Add(this.txtCustomerUniqueName);
             this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(151, 188);
+            this.panel7.Location = new System.Drawing.Point(160, 189);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(469, 155);
             this.panel7.TabIndex = 16;
@@ -99,7 +99,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnProceedToOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProceedToOrder.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProceedToOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnProceedToOrder.Location = new System.Drawing.Point(416, 373);
+            this.btnProceedToOrder.Location = new System.Drawing.Point(425, 374);
             this.btnProceedToOrder.Name = "btnProceedToOrder";
             this.btnProceedToOrder.Size = new System.Drawing.Size(140, 56);
             this.btnProceedToOrder.TabIndex = 18;
@@ -113,7 +113,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(223, 373);
+            this.btnCancel.Location = new System.Drawing.Point(232, 374);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(140, 56);
             this.btnCancel.TabIndex = 19;

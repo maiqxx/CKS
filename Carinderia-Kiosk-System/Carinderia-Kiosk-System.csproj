@@ -148,6 +148,12 @@
     <Compile Include="Customer\CustomerDialogs\AddedToCartDialog.Designer.cs">
       <DependentUpon>AddedToCartDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerDialogs\OnCartDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerDialogs\OnCartDialog.Designer.cs">
+      <DependentUpon>OnCartDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerDialogs\RemovedFoodItemDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerDialogs\AddedToCartDialog.resx">
       <DependentUpon>AddedToCartDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerDialogs\OnCartDialog.resx">
+      <DependentUpon>OnCartDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerDialogs\RemovedFoodItemDialog.resx">
       <DependentUpon>RemovedFoodItemDialog.cs</DependentUpon>

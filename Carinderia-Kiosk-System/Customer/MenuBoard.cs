@@ -191,7 +191,10 @@ namespace Carinderia_Kiosk_System.Customer
 
                     if (dr.HasRows)
                     {
-                        MessageBox.Show("Food item is already in order list. Check your cart!");
+                        OnCartDialog onCart = new OnCartDialog();
+                        onCart.ShowDialog();
+
+                        //MessageBox.Show("Food item is already in order list. Check your cart!");
                         dr.Close();
                     }
                     else
@@ -237,13 +240,14 @@ namespace Carinderia_Kiosk_System.Customer
 
             try
             {
-                conn.Open();
+                //conn.Open();
                 cmd = new MySqlCommand("UPDATE CUSTOMER SET CUSTOMER_NAME = '"+ CustomerInfo.Name +"' WHERE CUST_ID = '" + CustomerInfo.ID + "'", conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
             catch (Exception ex)
             {
+                MessageBox.Show("naa kos try-catch block sa set customer");
                 MessageBox.Show(ex.Message);
             }
         }
@@ -284,6 +288,7 @@ namespace Carinderia_Kiosk_System.Customer
             }
             catch (Exception ex)
             {
+                MessageBox.Show("naa kos try-catch block sa total amount");
                 MessageBox.Show(ex.Message);
             }
         }
@@ -358,8 +363,6 @@ namespace Carinderia_Kiosk_System.Customer
                 //item.Cursor = Cursors.Hand;
                 remove.Click += new EventHandler(Remove_OnClick);
                 //qty.ValueChanged += new EventHandler(Quantity_ValueChanged);
-
-
             }
             dr.Close();
             conn.Close();
@@ -391,6 +394,7 @@ namespace Carinderia_Kiosk_System.Customer
             }
             catch (Exception ex)
             {
+                MessageBox.Show("naa kos try-catch block sa Remove");
                 MessageBox.Show(ex.Message);
             }
         }

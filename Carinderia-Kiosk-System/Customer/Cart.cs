@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Drawing;
+using Carinderia_Kiosk_System.Customer.CustomerDialogs;
 
 namespace Carinderia_Kiosk_System.Customer
 {
@@ -187,7 +188,11 @@ namespace Carinderia_Kiosk_System.Customer
                 dr = cmd.ExecuteReader();
                 dr.Close();
                 conn.Close();
-                MessageBox.Show("Food item removed successfully!");
+
+                RemovedFoodItemDialog removed = new RemovedFoodItemDialog();
+                removed.ShowDialog();
+
+                //MessageBox.Show("Food item removed successfully!");
                 GetOrderList(); //to reload the order list after deleting
                 TotalAmount();  //to reload the total amount after deleting
             }
@@ -209,7 +214,7 @@ namespace Carinderia_Kiosk_System.Customer
             if (dr.HasRows)
             {
                 dr.Close();
-                cmd = new MySqlCommand("SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'", conn);
+                cmd = new MySqlCommand("SELECT SUM(QUANTITY * UNIT_PRICE) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'", conn);
                 dr = cmd.ExecuteReader();
                 dr.Read();
 
