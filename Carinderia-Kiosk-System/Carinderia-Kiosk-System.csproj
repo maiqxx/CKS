@@ -154,6 +154,12 @@
     <Compile Include="Customer\CustomerDialogs\ChooseDineOptionDialog.Designer.cs">
       <DependentUpon>ChooseDineOptionDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerDialogs\InputUniqueNameDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerDialogs\InputUniqueNameDialog.Designer.cs">
+      <DependentUpon>InputUniqueNameDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerDialogs\OnCartDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerDialogs\ChooseDineOptionDialog.resx">
       <DependentUpon>ChooseDineOptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerDialogs\InputUniqueNameDialog.resx">
+      <DependentUpon>InputUniqueNameDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerDialogs\OnCartDialog.resx">
       <DependentUpon>OnCartDialog.cs</DependentUpon>
@@ -641,6 +650,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\yellow_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\valued customer green.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

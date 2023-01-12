@@ -673,6 +673,16 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap valued_customer_green {
+            get {
+                object obj = ResourceManager.GetObject("valued customer green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap verified_admin {
             get {
                 object obj = ResourceManager.GetObject("verified admin", resourceCulture);

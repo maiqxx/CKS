@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Drawing;
+using Carinderia_Kiosk_System.Customer.CustomerDialogs;
 
 namespace Carinderia_Kiosk_System.Customer
 {
@@ -29,60 +30,52 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void pbBackIcon_Click(object sender, EventArgs e)
         {
-            //StartScreen startScreen = new StartScreen();
-            //startScreen.Show();
-            //this.Hide();
-
-            Cart cart = new Cart();
-            cart.Show();
+            txtCustomerUniqueName.Clear();
+            StartScreen startScreen = new StartScreen();
+            startScreen.Show();
             this.Hide();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtCustomerUniqueName.Clear();
-            //StartScreen startScreen = new StartScreen();
-            //startScreen.Show();
-            //this.Hide();
-
-            Cart cart = new Cart();
-            cart.Show();
+            StartScreen startScreen = new StartScreen();
+            startScreen.Show();
             this.Hide();
+
         }
 
         private void btnProceedToOrder_Click(object sender, EventArgs e)
         {
-            CustomerInfo.Name = txtCustomerUniqueName.Text; //sets current user
+            string name = txtCustomerUniqueName.Text;
 
-            MenuBoard menu = new MenuBoard();
-            menu.Show();
-            this.Hide();
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE EMAIL_ADDRESS = '" + name + "'", conn);
+                cmd.Parameters.AddWithValue("@customer", txtCustomerUniqueName.Text);
+                dr = cmd.ExecuteReader();
 
-            //try
-            //{
-            //    conn.Open();
-            //    cmd = new MySqlCommand("INSERT INTO CUSTOMER (CUSTOMER_NAME) VALUES(@customer)", conn);
-            //    cmd.Parameters.AddWithValue("@customer", txtCustomerUniqueName.Text);
+                if (dr.HasRows)
+                {
+                    InputUniqueNameDialog uniqueNameDialog = new InputUniqueNameDialog();
+                    uniqueNameDialog.ShowDialog();
+                    txtCustomerUniqueName.Clear();
+                }
+                else
+                {
+                    CustomerInfo.Name = name; //sets current user
 
-            //    int ctr = cmd.ExecuteNonQuery();
-            //    if (ctr > 0)
-            //    {
-            //        MenuBoard menuBoard = new MenuBoard();
-            //        menuBoard.Show();
-            //        this.Hide();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Wa na insert si name");
-            //        StartScreen startScreen = new StartScreen();
-            //        startScreen.Show();
-            //        this.Hide();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+                    MenuBoard menuBoard = new MenuBoard();
+                    menuBoard.Show();
+                    this.Hide();
+                }
+                    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
