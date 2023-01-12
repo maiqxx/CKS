@@ -1,7 +1,7 @@
 ﻿
 namespace Carinderia_Kiosk_System.Customer
 {
-    partial class PlacedOrderSuccessfully
+    partial class PlacedOrderDialog
     {
         /// <summary>
         /// Required designer variable.

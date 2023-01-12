@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Carinderia_Kiosk_System.Customer
 {
-    public partial class PlacedOrderSuccessfully : Form
+    public partial class PlacedOrderDialog : Form
     {
-        public PlacedOrderSuccessfully()
+        public PlacedOrderDialog()
         {
             InitializeComponent();
         }

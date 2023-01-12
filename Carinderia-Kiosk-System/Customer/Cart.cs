@@ -149,13 +149,13 @@ namespace Carinderia_Kiosk_System.Customer
             }
             dr.Close();
             conn.Close();
-
         }
 
+        //Updates food quantity
         public void UpdateQty_OnClick(object sender, EventArgs e)
         {
-            String tag = ((NumericUpDown)sender).Tag.ToString();
-            var value = (((NumericUpDown)sender).Value.ToString());
+            String tag = ((NumericUpDown)sender).Tag.ToString();    //gets CUST_ID using tag
+            var value = (((NumericUpDown)sender).Value.ToString()); //gets the value from numericUpDown controls
 
             try
             {
@@ -173,7 +173,7 @@ namespace Carinderia_Kiosk_System.Customer
             }
         }
 
-        //Remove button
+        //Remove button - to remove food item from cart
         public void Remove_OnClick(object sender, EventArgs e)
         {
             String tag = ((Button)sender).Tag.ToString();
@@ -219,8 +219,7 @@ namespace Carinderia_Kiosk_System.Customer
                 dr.Read();
 
                 if (dr.HasRows)
-                {
-                    
+                { 
                     _total = double.Parse(dr["TOTAL"].ToString());
                     lblTotalPrice.Text = "₱ " + double.Parse(_total.ToString()).ToString("#, ##0.00");
                 }
@@ -262,15 +261,14 @@ namespace Carinderia_Kiosk_System.Customer
                     conn.Open();
                     cmd = new MySqlCommand("INSERT INTO ORDERS " +
                                             "SET CUSTOMER_NAME = '" + CustomerInfo.Name + "', " +
-                                            "TOTAL_AMOUNT = (SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = (SELECT CUSTOMER_NAME FROM CUSTOMER)), " +
+                                            "TOTAL_AMOUNT = (SELECT SUM(QUANTITY * UNIT_PRICE) FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'), " +
                                             "DINE_OPTION = '" + dineOption + "' ", conn);
 
                     int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
                     {
-                        PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
-                        orderSuccessfully.Show();
-                        this.Hide();
+                        PlacedOrderDialog orderSuccessfully = new PlacedOrderDialog();
+                        orderSuccessfully.ShowDialog();
                     }
                 }
                 catch (Exception ex)
@@ -287,15 +285,14 @@ namespace Carinderia_Kiosk_System.Customer
                     conn.Open();
                     cmd = new MySqlCommand("INSERT INTO ORDERS " +
                                             "SET CUSTOMER_NAME = '" + CustomerInfo.Name + "', " +
-                                            "TOTAL_AMOUNT = (SELECT SUM(QUANTITY * TOTAL_AMOUNT) AS TOTAL FROM CUSTOMER WHERE CUSTOMER_NAME = (SELECT CUSTOMER_NAME FROM CUSTOMER)), " +
+                                            "TOTAL_AMOUNT = (SELECT SUM(QUANTITY * UNIT_PRICE) FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'), " +
                                             "DINE_OPTION = '" + dineOption + "' ", conn);
 
                     int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
                     {
-                        PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
-                        orderSuccessfully.Show();
-                        this.Hide();
+                        PlacedOrderDialog orderSuccessfully = new PlacedOrderDialog();
+                        orderSuccessfully.ShowDialog();
                     }
                 }
                 catch (Exception ex)
@@ -326,7 +323,7 @@ namespace Carinderia_Kiosk_System.Customer
                 int ctr = cmd.ExecuteNonQuery();
                 if (ctr > 0)
                 {
-                    PlacedOrderSuccessfully orderSuccessfully = new PlacedOrderSuccessfully();
+                    PlacedOrderDialog orderSuccessfully = new PlacedOrderDialog();
                     orderSuccessfully.Show();
                     this.Hide();
                 }
