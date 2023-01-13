@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Carinderia_Kiosk_System.Staff.StaffDialog;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,34 +31,38 @@ namespace Carinderia_Kiosk_System.Staff
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             var emailAddress = txtEmailAddress.Text;
-            AdminInfo.EmailAddress = emailAddress;
-            var password = txtPasscode.Text;
-            var id = AdminInfo.ID;
+            StaffInfo.EmailAddress = emailAddress;
+
+            var passcode = txtPasscode.Text;
+            StaffInfo.StaffCode = passcode;
 
             try
             {
-                if (emailAddress == "" && password == "")
+                if (emailAddress == "" && passcode == "")
                 {
-                    MessageBox.Show("Please enter your login credentials.");
+                    MessageBox.Show("Please enter your log in credentials.");
                 }
                 else
                 {
                     //Database connection
                     string connectionString = null;
                     MySqlConnection conn;
-                    connectionString = "server=localhost; database=cks_db; uid=root; pwd=\"\";";
+                    connectionString = "server=localhost; database=cks_db; Convert Zero Datetime=True; uid=root; pwd=\"\";";
                     conn = new MySqlConnection(connectionString);
 
                     conn.Open();
 
-                    //This query checks if the user credentials
-                    string check = "SELECT * FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "' AND PASSWORD = '" + password + "'";
+                    //This query checks the user credentials
+                    string check = "SELECT * FROM STAFF WHERE EMAIL_ADDRESS = '" + StaffInfo.StaffCode + "' AND STAFF_ID = '" + passcode + "'";
                     MySqlCommand cmd1 = new MySqlCommand(check, conn);
                     MySqlDataReader reader = cmd1.ExecuteReader();
 
                     if (reader.Read())
                     {
+                        //redirects to another windows form
 
+                        StaffLogInSuccessDialog successDialog = new StaffLogInSuccessDialog();
+                        successDialog.ShowDialog();
                     }
                     else
                     {

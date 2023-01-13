@@ -35,7 +35,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             {
                 if (emailAddress == "" && password == "")
                 {
-                    MessageBox.Show("Please enter your login credentials.");
+                    MessageBox.Show("Please enter your log in credentials.");
                 }
                 else
                 {
@@ -47,7 +47,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                     conn.Open();
 
-                    //This query checks if the user credentials
+                    //This query checks the user credentials
                     string check = "SELECT * FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "' AND PASSWORD = '" + password + "'";
                     MySqlCommand cmd1 = new MySqlCommand(check, conn);
                     MySqlDataReader reader = cmd1.ExecuteReader();

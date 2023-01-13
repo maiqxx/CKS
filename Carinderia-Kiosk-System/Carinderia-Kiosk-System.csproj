@@ -264,10 +264,10 @@
     <Compile Include="Proprietor\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proprietor\LogInSuccessDialog.cs">
+    <Compile Include="Proprietor\ProprietorDialogs\LogInSuccessDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proprietor\LogInSuccessDialog.Designer.cs">
+    <Compile Include="Proprietor\ProprietorDialogs\LogInSuccessDialog.Designer.cs">
       <DependentUpon>LogInSuccessDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Proprietor\ShowFoodItems.cs">
@@ -276,7 +276,7 @@
     <Compile Include="Proprietor\ShowFoodItems.Designer.cs">
       <DependentUpon>ShowFoodItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proprietor\StaffInfo.cs" />
+    <Compile Include="StaffInfo.cs" />
     <Compile Include="Proprietor\ucAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -312,6 +312,12 @@
     </Compile>
     <Compile Include="Proprietor\ucStaff.Designer.cs">
       <DependentUpon>ucStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\StaffDialog\StaffLogInSuccessDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\StaffDialog\StaffLogInSuccessDialog.Designer.cs">
+      <DependentUpon>StaffLogInSuccessDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Staff\StaffLogIn.cs">
       <SubType>Form</SubType>
@@ -400,7 +406,7 @@
     <EmbeddedResource Include="Proprietor\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proprietor\LogInSuccessDialog.resx">
+    <EmbeddedResource Include="Proprietor\ProprietorDialogs\LogInSuccessDialog.resx">
       <DependentUpon>LogInSuccessDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ShowFoodItems.resx">
@@ -423,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ucStaff.resx">
       <DependentUpon>ucStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\StaffDialog\StaffLogInSuccessDialog.resx">
+      <DependentUpon>StaffLogInSuccessDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\StaffLogIn.resx">
       <DependentUpon>StaffLogIn.cs</DependentUpon>
@@ -668,7 +677,7 @@
     <None Include="Resources\staff id 40x33.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Staff\StaffDialog\" />
+    <None Include="Resources\staff login success icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Carinderia_Kiosk_System.Proprietor
+namespace Carinderia_Kiosk_System.Staff.StaffDialog
 {
-    public partial class LogInSuccessDialog : Form
+    public partial class StaffLogInSuccessDialog : Form
     {
-        public LogInSuccessDialog()
+        public StaffLogInSuccessDialog()
         {
             InitializeComponent();
         }
