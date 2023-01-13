@@ -103,6 +103,16 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap admin_icon_20_x_201 {
+            get {
+                object obj = ResourceManager.GetObject("admin icon 20 x 201", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap admin_icon_40_x_40 {
             get {
                 object obj = ResourceManager.GetObject("admin icon 40 x 40", resourceCulture);
@@ -596,6 +606,16 @@ namespace Carinderia_Kiosk_System.Properties {
         internal static System.Drawing.Bitmap staff_icon_40_x_40 {
             get {
                 object obj = ResourceManager.GetObject("staff icon 40 x 40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap staff_id_40x33 {
+            get {
+                object obj = ResourceManager.GetObject("staff id 40x33", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

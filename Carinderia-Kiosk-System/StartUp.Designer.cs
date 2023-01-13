@@ -82,7 +82,7 @@ namespace Carinderia_Kiosk_System
             // 
             // btnStaff
             // 
-            this.btnStaff.BackColor = System.Drawing.Color.Black;
+            this.btnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(12)))), ((int)(((byte)(172)))));
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaff.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.Color.White;

@@ -61,6 +61,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.label3 = new System.Windows.Forms.Label();
             this.pnlCurentOrder = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblNoOrders = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -71,6 +72,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.flpOrderListContainer.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlCurentOrder.SuspendLayout();
             this.SuspendLayout();
@@ -369,6 +371,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.flpOrderListContainer.AutoScroll = true;
             this.flpOrderListContainer.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.flpOrderListContainer.Controls.Add(this.lblNoOrders);
             this.flpOrderListContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpOrderListContainer.Location = new System.Drawing.Point(0, 44);
             this.flpOrderListContainer.Name = "flpOrderListContainer";
@@ -428,6 +431,16 @@ namespace Carinderia_Kiosk_System.Customer
             this.label2.TabIndex = 8;
             this.label2.Text = "Current Orders";
             // 
+            // lblNoOrders
+            // 
+            this.lblNoOrders.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoOrders.Location = new System.Drawing.Point(3, 0);
+            this.lblNoOrders.Name = "lblNoOrders";
+            this.lblNoOrders.Size = new System.Drawing.Size(533, 286);
+            this.lblNoOrders.TabIndex = 1;
+            this.lblNoOrders.Text = "No orders.";
+            this.lblNoOrders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MenuBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -462,6 +475,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.pnlTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.flpOrderListContainer.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnlCurentOrder.ResumeLayout(false);
@@ -505,5 +519,6 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnlCurentOrder;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNoOrders;
     }
 }

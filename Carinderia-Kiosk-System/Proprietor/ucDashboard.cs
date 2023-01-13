@@ -140,6 +140,9 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

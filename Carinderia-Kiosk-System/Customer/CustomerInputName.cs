@@ -70,6 +70,8 @@ namespace Carinderia_Kiosk_System.Customer
                     menuBoard.Show();
                     this.Hide();
                 }
+                dr.Close();
+                conn.Close();
                     
             }
             catch (Exception ex)

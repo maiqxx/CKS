@@ -307,6 +307,8 @@ namespace Carinderia_Kiosk_System.Customer
         //Gets current orders in the cart
         void GetOrderList()
         {
+            lblNoOrders.Visible = false;
+
             flpOrderListContainer.Controls.Clear();
             conn.Open();
             cmd = new MySqlCommand("SELECT CUST_ID, FOOD_NAME, QUANTITY, UNIT_PRICE, TOTAL_AMOUNT FROM CUSTOMER WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "'", conn);
@@ -314,6 +316,8 @@ namespace Carinderia_Kiosk_System.Customer
 
             while (dr.Read())
             {
+                
+
                 orderPanel = new Panel();
                 orderPanel.Width = 523;
                 orderPanel.Height = 87;

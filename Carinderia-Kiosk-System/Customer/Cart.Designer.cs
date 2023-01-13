@@ -30,9 +30,13 @@ namespace Carinderia_Kiosk_System.Customer
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbBackToMenu = new System.Windows.Forms.PictureBox();
             this.btnBackToMenu = new System.Windows.Forms.Button();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblCart = new System.Windows.Forms.Label();
+            this.pbCart = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.lblTotalPayment = new System.Windows.Forms.Label();
@@ -41,18 +45,16 @@ namespace Carinderia_Kiosk_System.Customer
             this.checkBoxTakeOut = new System.Windows.Forms.CheckBox();
             this.checkBoxDineIn = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.lblCart = new System.Windows.Forms.Label();
-            this.pbBackToMenu = new System.Windows.Forms.PictureBox();
-            this.pbCart = new System.Windows.Forms.PictureBox();
+            this.lblNoOrders = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackToMenu)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             this.panel3.SuspendLayout();
+            this.flpOrders.SuspendLayout();
             this.gbDineOption.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackToMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,6 +67,17 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 64);
             this.panel1.TabIndex = 1;
+            // 
+            // pbBackToMenu
+            // 
+            this.pbBackToMenu.Image = global::Carinderia_Kiosk_System.Properties.Resources.Back_icon_White_20_x_20;
+            this.pbBackToMenu.Location = new System.Drawing.Point(24, 20);
+            this.pbBackToMenu.Name = "pbBackToMenu";
+            this.pbBackToMenu.Size = new System.Drawing.Size(34, 27);
+            this.pbBackToMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackToMenu.TabIndex = 1;
+            this.pbBackToMenu.TabStop = false;
+            this.pbBackToMenu.Click += new System.EventHandler(this.pbBackToMenu_Click);
             // 
             // btnBackToMenu
             // 
@@ -101,6 +114,39 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(654, 695);
             this.panel2.TabIndex = 13;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel6.Controls.Add(this.lblCart);
+            this.panel6.Controls.Add(this.pbCart);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(654, 48);
+            this.panel6.TabIndex = 10;
+            // 
+            // lblCart
+            // 
+            this.lblCart.AutoSize = true;
+            this.lblCart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCart.Location = new System.Drawing.Point(14, 13);
+            this.lblCart.Name = "lblCart";
+            this.lblCart.Size = new System.Drawing.Size(61, 23);
+            this.lblCart.TabIndex = 1;
+            this.lblCart.Text = "CART";
+            // 
+            // pbCart
+            // 
+            this.pbCart.BackColor = System.Drawing.Color.Transparent;
+            this.pbCart.Image = global::Carinderia_Kiosk_System.Properties.Resources.shopping_cart_white_25_x_25;
+            this.pbCart.Location = new System.Drawing.Point(59, 6);
+            this.pbCart.Name = "pbCart";
+            this.pbCart.Size = new System.Drawing.Size(46, 37);
+            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCart.TabIndex = 2;
+            this.pbCart.TabStop = false;
             // 
             // panel3
             // 
@@ -139,6 +185,7 @@ namespace Carinderia_Kiosk_System.Customer
             // 
             this.flpOrders.AutoScroll = true;
             this.flpOrders.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.flpOrders.Controls.Add(this.lblNoOrders);
             this.flpOrders.Location = new System.Drawing.Point(24, 142);
             this.flpOrders.Name = "flpOrders";
             this.flpOrders.Size = new System.Drawing.Size(654, 572);
@@ -192,48 +239,15 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel5.Size = new System.Drawing.Size(476, 695);
             this.panel5.TabIndex = 15;
             // 
-            // panel6
+            // lblNoOrders
             // 
-            this.panel6.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel6.Controls.Add(this.lblCart);
-            this.panel6.Controls.Add(this.pbCart);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(654, 48);
-            this.panel6.TabIndex = 10;
-            // 
-            // lblCart
-            // 
-            this.lblCart.AutoSize = true;
-            this.lblCart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCart.Location = new System.Drawing.Point(14, 13);
-            this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(61, 23);
-            this.lblCart.TabIndex = 1;
-            this.lblCart.Text = "CART";
-            // 
-            // pbBackToMenu
-            // 
-            this.pbBackToMenu.Image = global::Carinderia_Kiosk_System.Properties.Resources.Back_icon_White_20_x_20;
-            this.pbBackToMenu.Location = new System.Drawing.Point(24, 20);
-            this.pbBackToMenu.Name = "pbBackToMenu";
-            this.pbBackToMenu.Size = new System.Drawing.Size(34, 27);
-            this.pbBackToMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbBackToMenu.TabIndex = 1;
-            this.pbBackToMenu.TabStop = false;
-            this.pbBackToMenu.Click += new System.EventHandler(this.pbBackToMenu_Click);
-            // 
-            // pbCart
-            // 
-            this.pbCart.Image = global::Carinderia_Kiosk_System.Properties.Resources.shopping_cart_white_25_x_25;
-            this.pbCart.Location = new System.Drawing.Point(66, 6);
-            this.pbCart.Name = "pbCart";
-            this.pbCart.Size = new System.Drawing.Size(46, 37);
-            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCart.TabIndex = 2;
-            this.pbCart.TabStop = false;
+            this.lblNoOrders.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoOrders.Location = new System.Drawing.Point(3, 0);
+            this.lblNoOrders.Name = "lblNoOrders";
+            this.lblNoOrders.Size = new System.Drawing.Size(648, 572);
+            this.lblNoOrders.TabIndex = 0;
+            this.lblNoOrders.Text = "No orders.";
+            this.lblNoOrders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Cart
             // 
@@ -252,16 +266,17 @@ namespace Carinderia_Kiosk_System.Customer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Cart_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackToMenu)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.flpOrders.ResumeLayout(false);
             this.gbDineOption.ResumeLayout(false);
             this.gbDineOption.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackToMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,5 +299,6 @@ namespace Carinderia_Kiosk_System.Customer
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.PictureBox pbCart;
+        private System.Windows.Forms.Label lblNoOrders;
     }
 }

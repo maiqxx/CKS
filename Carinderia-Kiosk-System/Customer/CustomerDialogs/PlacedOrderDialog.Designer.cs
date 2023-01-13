@@ -51,7 +51,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnAddFeedback.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFeedback.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFeedback.Location = new System.Drawing.Point(122, 236);
+            this.btnAddFeedback.Location = new System.Drawing.Point(131, 234);
             this.btnAddFeedback.Name = "btnAddFeedback";
             this.btnAddFeedback.Size = new System.Drawing.Size(176, 45);
             this.btnAddFeedback.TabIndex = 2;
@@ -64,7 +64,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnOrderSummary.BackColor = System.Drawing.Color.Honeydew;
             this.btnOrderSummary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderSummary.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderSummary.Location = new System.Drawing.Point(317, 236);
+            this.btnOrderSummary.Location = new System.Drawing.Point(326, 234);
             this.btnOrderSummary.Name = "btnOrderSummary";
             this.btnOrderSummary.Size = new System.Drawing.Size(176, 45);
             this.btnOrderSummary.TabIndex = 3;

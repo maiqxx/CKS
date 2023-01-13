@@ -82,5 +82,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Hide();
             createAccount.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
