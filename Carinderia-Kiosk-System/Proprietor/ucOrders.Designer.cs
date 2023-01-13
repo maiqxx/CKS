@@ -31,10 +31,10 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             this.lblManageOrders = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblOrderList = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblManageOrders
@@ -52,53 +52,52 @@ namespace Carinderia_Kiosk_System.Proprietor
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Location = new System.Drawing.Point(73, 53);
+            this.panel1.Location = new System.Drawing.Point(24, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1114, 155);
+            this.panel1.Size = new System.Drawing.Size(1209, 198);
             this.panel1.TabIndex = 1;
             // 
-            // dgvOrders
+            // tabPage2
             // 
-            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(35, 291);
-            this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.RowHeadersWidth = 51;
-            this.dgvOrders.RowTemplate.Height = 24;
-            this.dgvOrders.Size = new System.Drawing.Size(1198, 459);
-            this.dgvOrders.TabIndex = 2;
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1250, 658);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // tabPage1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1014, 249);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 24);
-            this.comboBox1.TabIndex = 3;
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1250, 658);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // lblOrderList
+            // tabControl1
             // 
-            this.lblOrderList.AutoSize = true;
-            this.lblOrderList.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderList.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblOrderList.Location = new System.Drawing.Point(31, 250);
-            this.lblOrderList.Name = "lblOrderList";
-            this.lblOrderList.Size = new System.Drawing.Size(95, 23);
-            this.lblOrderList.TabIndex = 4;
-            this.lblOrderList.Text = "Order List";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(3, 275);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1258, 687);
+            this.tabControl1.TabIndex = 2;
             // 
             // ucOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.Controls.Add(this.lblOrderList);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dgvOrders);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblManageOrders);
             this.Name = "ucOrders";
             this.Size = new System.Drawing.Size(1264, 965);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,8 +107,8 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private System.Windows.Forms.Label lblManageOrders;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvOrders;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblOrderList;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }

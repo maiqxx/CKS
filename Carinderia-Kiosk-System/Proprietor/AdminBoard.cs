@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Carinderia_Kiosk_System.Properties;
 using Carinderia_Kiosk_System.Proprietor;
 
 namespace Carinderia_Kiosk_System.Proprietor
@@ -66,6 +67,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
             else
             {
+                btnOrders.BackColor = Color.White;
+                btnOrders.Image = Resources.manage_orders_black_20x20;
+                btnOrders.ForeColor = Color.Black;
+
                 ucOrders.Instance.BringToFront();
             }
         }
