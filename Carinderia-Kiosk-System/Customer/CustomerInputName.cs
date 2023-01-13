@@ -52,7 +52,7 @@ namespace Carinderia_Kiosk_System.Customer
             try
             {
                 conn.Open();
-                cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE EMAIL_ADDRESS = '" + name + "'", conn);
+                cmd = new MySqlCommand("SELECT * FROM CUSTOMER WHERE CUSTOMER_NAME = '" + name + "'", conn);
                 cmd.Parameters.AddWithValue("@customer", txtCustomerUniqueName.Text);
                 dr = cmd.ExecuteReader();
 
