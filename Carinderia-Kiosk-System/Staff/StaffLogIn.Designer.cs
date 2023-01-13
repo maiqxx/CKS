@@ -32,18 +32,18 @@ namespace Carinderia_Kiosk_System.Staff
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbBackIcon = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.buttonSignIn = new System.Windows.Forms.Button();
+            this.btnSignIn = new System.Windows.Forms.Button();
             this.groupBoxPassword = new System.Windows.Forms.GroupBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtPasscode = new System.Windows.Forms.TextBox();
             this.groupBoxEmailAdd = new System.Windows.Forms.GroupBox();
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackIcon)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -55,7 +55,7 @@ namespace Carinderia_Kiosk_System.Staff
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(12)))), ((int)(((byte)(172)))));
             this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pbBackIcon);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -84,22 +84,23 @@ namespace Carinderia_Kiosk_System.Staff
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox1
+            // pbBackIcon
             // 
-            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.Back_icon_White_20_x_20;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pbBackIcon.Image = global::Carinderia_Kiosk_System.Properties.Resources.Back_icon_White_20_x_20;
+            this.pbBackIcon.Location = new System.Drawing.Point(0, 0);
+            this.pbBackIcon.Name = "pbBackIcon";
+            this.pbBackIcon.Size = new System.Drawing.Size(50, 50);
+            this.pbBackIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbBackIcon.TabIndex = 1;
+            this.pbBackIcon.TabStop = false;
+            this.pbBackIcon.Click += new System.EventHandler(this.pbBackIcon_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(212)))), ((int)(((byte)(237)))));
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.buttonSignIn);
+            this.panel1.Controls.Add(this.btnSignIn);
             this.panel1.Controls.Add(this.groupBoxPassword);
             this.panel1.Controls.Add(this.groupBoxEmailAdd);
             this.panel1.Location = new System.Drawing.Point(73, 161);
@@ -127,22 +128,23 @@ namespace Carinderia_Kiosk_System.Staff
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // buttonSignIn
+            // btnSignIn
             // 
-            this.buttonSignIn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSignIn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSignIn.ForeColor = System.Drawing.Color.White;
-            this.buttonSignIn.Location = new System.Drawing.Point(139, 215);
-            this.buttonSignIn.Name = "buttonSignIn";
-            this.buttonSignIn.Size = new System.Drawing.Size(147, 45);
-            this.buttonSignIn.TabIndex = 2;
-            this.buttonSignIn.Text = "Sign In";
-            this.buttonSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignIn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.ForeColor = System.Drawing.Color.White;
+            this.btnSignIn.Location = new System.Drawing.Point(139, 215);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(147, 45);
+            this.btnSignIn.TabIndex = 2;
+            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // groupBoxPassword
             // 
-            this.groupBoxPassword.Controls.Add(this.txtPassword);
+            this.groupBoxPassword.Controls.Add(this.txtPasscode);
             this.groupBoxPassword.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxPassword.Location = new System.Drawing.Point(37, 114);
             this.groupBoxPassword.Name = "groupBoxPassword";
@@ -152,15 +154,15 @@ namespace Carinderia_Kiosk_System.Staff
             this.groupBoxPassword.Tag = "Passcode";
             this.groupBoxPassword.Text = "Passcode";
             // 
-            // txtPassword
+            // txtPasscode
             // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(49, 21);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(300, 30);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPasscode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPasscode.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasscode.Location = new System.Drawing.Point(49, 21);
+            this.txtPasscode.Name = "txtPasscode";
+            this.txtPasscode.Size = new System.Drawing.Size(300, 30);
+            this.txtPasscode.TabIndex = 1;
+            this.txtPasscode.UseSystemPasswordChar = true;
             // 
             // groupBoxEmailAdd
             // 
@@ -198,7 +200,7 @@ namespace Carinderia_Kiosk_System.Staff
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackIcon)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -214,14 +216,14 @@ namespace Carinderia_Kiosk_System.Staff
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbBackIcon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button buttonSignIn;
+        private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.GroupBox groupBoxPassword;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtPasscode;
         private System.Windows.Forms.GroupBox groupBoxEmailAdd;
         private System.Windows.Forms.TextBox txtEmailAddress;
     }

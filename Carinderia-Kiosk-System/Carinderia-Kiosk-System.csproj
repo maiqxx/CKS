@@ -276,6 +276,7 @@
     <Compile Include="Proprietor\ShowFoodItems.Designer.cs">
       <DependentUpon>ShowFoodItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proprietor\StaffInfo.cs" />
     <Compile Include="Proprietor\ucAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -665,6 +666,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\staff id 40x33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Staff\StaffDialog\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
