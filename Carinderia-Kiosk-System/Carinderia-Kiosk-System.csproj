@@ -280,12 +280,6 @@
     <Compile Include="Proprietor\ucCompletedOrders.Designer.cs">
       <DependentUpon>ucCompletedOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proprietor\ucOrderList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Proprietor\ucOrderList.Designer.cs">
-      <DependentUpon>ucOrderList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Proprietor\ProprietorDialogs\LogInSuccessDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +291,12 @@
     </Compile>
     <Compile Include="Proprietor\ShowFoodItems.Designer.cs">
       <DependentUpon>ShowFoodItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ucOrderList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucOrderList.Designer.cs">
+      <DependentUpon>ucOrderList.cs</DependentUpon>
     </Compile>
     <Compile Include="Proprietor\ucTransactionList.cs">
       <SubType>UserControl</SubType>
@@ -440,9 +440,6 @@
     <EmbeddedResource Include="Proprietor\ucCompletedOrders.resx">
       <DependentUpon>ucCompletedOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proprietor\ucOrderList.resx">
-      <DependentUpon>ucOrderList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\LogInSuccessDialog.resx">
       <DependentUpon>LogInSuccessDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ucInventory.resx">
       <DependentUpon>ucInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucOrderList.resx">
+      <DependentUpon>ucOrderList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ucOrders.resx">
       <DependentUpon>ucOrders.cs</DependentUpon>

@@ -12,6 +12,21 @@ namespace Carinderia_Kiosk_System.Proprietor
 {
     public partial class ucCancelledOrders : UserControl
     {
+        private static ucCancelledOrders instance;
+
+        public static ucCancelledOrders Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ucCancelledOrders();
+
+                }
+                return instance;
+            }
+        }
+
         public ucCancelledOrders()
         {
             InitializeComponent();

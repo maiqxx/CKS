@@ -36,7 +36,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnCompleted = new System.Windows.Forms.Button();
             this.btnCancelled = new System.Windows.Forms.Button();
             this.btnTransacts = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlManageOrdersContainer = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnOrderList.TabIndex = 0;
             this.btnOrderList.Text = "Order List";
             this.btnOrderList.UseVisualStyleBackColor = false;
+            this.btnOrderList.Click += new System.EventHandler(this.btnOrderList_Click);
             // 
             // btnCompleted
             // 
@@ -104,6 +105,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnCompleted.TabIndex = 1;
             this.btnCompleted.Text = "Completed";
             this.btnCompleted.UseVisualStyleBackColor = false;
+            this.btnCompleted.Click += new System.EventHandler(this.btnCompleted_Click);
             // 
             // btnCancelled
             // 
@@ -117,6 +119,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnCancelled.TabIndex = 2;
             this.btnCancelled.Text = "Cancelled";
             this.btnCancelled.UseVisualStyleBackColor = false;
+            this.btnCancelled.Click += new System.EventHandler(this.btnCancelled_Click);
             // 
             // btnTransacts
             // 
@@ -130,20 +133,21 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnTransacts.TabIndex = 4;
             this.btnTransacts.Text = "Transaction List";
             this.btnTransacts.UseVisualStyleBackColor = false;
+            this.btnTransacts.Click += new System.EventHandler(this.btnTransacts_Click);
             // 
-            // panel2
+            // pnlManageOrdersContainer
             // 
-            this.panel2.Location = new System.Drawing.Point(27, 192);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1213, 815);
-            this.panel2.TabIndex = 3;
+            this.pnlManageOrdersContainer.Location = new System.Drawing.Point(27, 192);
+            this.pnlManageOrdersContainer.Name = "pnlManageOrdersContainer";
+            this.pnlManageOrdersContainer.Size = new System.Drawing.Size(1213, 815);
+            this.pnlManageOrdersContainer.TabIndex = 3;
             // 
             // ucOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlManageOrdersContainer);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblManageOrders);
@@ -165,6 +169,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Button btnCompleted;
         private System.Windows.Forms.Button btnOrderList;
         private System.Windows.Forms.Button btnTransacts;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlManageOrdersContainer;
     }
 }
