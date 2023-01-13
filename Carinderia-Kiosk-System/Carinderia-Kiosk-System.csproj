@@ -268,6 +268,24 @@
     <Compile Include="Proprietor\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proprietor\ucCancelledOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucCancelledOrders.Designer.cs">
+      <DependentUpon>ucCancelledOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ucCompletedOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucCompletedOrders.Designer.cs">
+      <DependentUpon>ucCompletedOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ucOrderList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucOrderList.Designer.cs">
+      <DependentUpon>ucOrderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\ProprietorDialogs\LogInSuccessDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +297,12 @@
     </Compile>
     <Compile Include="Proprietor\ShowFoodItems.Designer.cs">
       <DependentUpon>ShowFoodItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ucTransactionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucTransactionList.Designer.cs">
+      <DependentUpon>ucTransactionList.cs</DependentUpon>
     </Compile>
     <Compile Include="StaffInfo.cs" />
     <Compile Include="Proprietor\ucAccount.cs">
@@ -410,6 +434,15 @@
     <EmbeddedResource Include="Proprietor\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucCancelledOrders.resx">
+      <DependentUpon>ucCancelledOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucCompletedOrders.resx">
+      <DependentUpon>ucCompletedOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucOrderList.resx">
+      <DependentUpon>ucOrderList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\LogInSuccessDialog.resx">
       <DependentUpon>LogInSuccessDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ucStaff.resx">
       <DependentUpon>ucStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucTransactionList.resx">
+      <DependentUpon>ucTransactionList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\StaffDialog\StaffLogInSuccessDialog.resx">
       <DependentUpon>StaffLogInSuccessDialog.cs</DependentUpon>
