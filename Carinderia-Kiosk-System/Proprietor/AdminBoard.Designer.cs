@@ -30,32 +30,32 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlUserControlContainer = new System.Windows.Forms.Panel();
-            this.pbProfile = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.kryptonSeparator1 = new ComponentFactory.Krypton.Toolkit.KryptonSeparator();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnCategories = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
-            this.kryptonSeparator1 = new ComponentFactory.Krypton.Toolkit.KryptonSeparator();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pbProfile = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnlUserControlContainer = new System.Windows.Forms.Panel();
             this.ucAccount1 = new Carinderia_Kiosk_System.Proprietor.ucAccount();
             this.ucStaff1 = new Carinderia_Kiosk_System.Proprietor.ucStaff();
             this.ucInventory1 = new Carinderia_Kiosk_System.Proprietor.ucInventory();
             this.ucCategories1 = new Carinderia_Kiosk_System.Proprietor.ucCategories();
             this.ucOrders1 = new Carinderia_Kiosk_System.Proprietor.ucOrders();
             this.ucDashboard1 = new Carinderia_Kiosk_System.Proprietor.ucDashboard();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.pnlUserControlContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSeparator1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlUserControlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -76,70 +76,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.flowLayoutPanel1.Size = new System.Drawing.Size(227, 1013);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.pbProfile);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(227, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1264, 45);
-            this.panel1.TabIndex = 1;
-            // 
-            // pnlUserControlContainer
-            // 
-            this.pnlUserControlContainer.Controls.Add(this.ucAccount1);
-            this.pnlUserControlContainer.Controls.Add(this.ucStaff1);
-            this.pnlUserControlContainer.Controls.Add(this.ucInventory1);
-            this.pnlUserControlContainer.Controls.Add(this.ucCategories1);
-            this.pnlUserControlContainer.Controls.Add(this.ucOrders1);
-            this.pnlUserControlContainer.Controls.Add(this.ucDashboard1);
-            this.pnlUserControlContainer.Location = new System.Drawing.Point(227, 48);
-            this.pnlUserControlContainer.Name = "pnlUserControlContainer";
-            this.pnlUserControlContainer.Size = new System.Drawing.Size(1264, 965);
-            this.pnlUserControlContainer.TabIndex = 2;
-            this.pnlUserControlContainer.BackColorChanged += new System.EventHandler(this.button1_Click);
-            // 
-            // pbProfile
-            // 
-            this.pbProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbProfile.Image = global::Carinderia_Kiosk_System.Properties.Resources.user_icon_20_x_20;
-            this.pbProfile.Location = new System.Drawing.Point(1172, 3);
-            this.pbProfile.Name = "pbProfile";
-            this.pbProfile.Size = new System.Drawing.Size(47, 39);
-            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProfile.TabIndex = 1;
-            this.pbProfile.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Carinderia_Kiosk_System.Properties.Resources.user_icon_20_x_20;
-            this.pictureBox2.Location = new System.Drawing.Point(1595, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogOut.Image = global::Carinderia_Kiosk_System.Properties.Resources.logout_white_20x20;
-            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(4, 949);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(223, 60);
-            this.btnLogOut.TabIndex = 9;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.Dialcosta_Light_200_x_100;
@@ -150,6 +86,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // kryptonSeparator1
+            // 
+            this.kryptonSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonSeparator1.Location = new System.Drawing.Point(3, 86);
+            this.kryptonSeparator1.Name = "kryptonSeparator1";
+            this.kryptonSeparator1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.kryptonSeparator1.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.LowProfile;
+            this.kryptonSeparator1.Size = new System.Drawing.Size(224, 10);
+            this.kryptonSeparator1.TabIndex = 4;
             // 
             // btnDashboard
             // 
@@ -260,21 +206,58 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
-            // kryptonSeparator1
+            // panel1
             // 
-            this.kryptonSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonSeparator1.Location = new System.Drawing.Point(3, 86);
-            this.kryptonSeparator1.Name = "kryptonSeparator1";
-            this.kryptonSeparator1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.kryptonSeparator1.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.LowProfile;
-            this.kryptonSeparator1.Size = new System.Drawing.Size(224, 10);
-            this.kryptonSeparator1.TabIndex = 4;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.pbProfile);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(227, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1264, 45);
+            this.panel1.TabIndex = 1;
+            // 
+            // pbProfile
+            // 
+            this.pbProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbProfile.Image = global::Carinderia_Kiosk_System.Properties.Resources.user_icon_20_x_20;
+            this.pbProfile.Location = new System.Drawing.Point(1172, 3);
+            this.pbProfile.Name = "pbProfile";
+            this.pbProfile.Size = new System.Drawing.Size(47, 39);
+            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfile.TabIndex = 1;
+            this.pbProfile.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Carinderia_Kiosk_System.Properties.Resources.user_icon_20_x_20;
+            this.pictureBox2.Location = new System.Drawing.Point(1595, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(42, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pnlUserControlContainer
+            // 
+            this.pnlUserControlContainer.Controls.Add(this.ucAccount1);
+            this.pnlUserControlContainer.Controls.Add(this.ucStaff1);
+            this.pnlUserControlContainer.Controls.Add(this.ucInventory1);
+            this.pnlUserControlContainer.Controls.Add(this.ucCategories1);
+            this.pnlUserControlContainer.Controls.Add(this.ucOrders1);
+            this.pnlUserControlContainer.Controls.Add(this.ucDashboard1);
+            this.pnlUserControlContainer.Location = new System.Drawing.Point(227, 48);
+            this.pnlUserControlContainer.Name = "pnlUserControlContainer";
+            this.pnlUserControlContainer.Size = new System.Drawing.Size(1264, 965);
+            this.pnlUserControlContainer.TabIndex = 2;
+            this.pnlUserControlContainer.BackColorChanged += new System.EventHandler(this.button1_Click);
             // 
             // ucAccount1
             // 
             this.ucAccount1.BackColor = System.Drawing.Color.AliceBlue;
             this.ucAccount1.Location = new System.Drawing.Point(0, 0);
-            this.ucAccount1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucAccount1.Margin = new System.Windows.Forms.Padding(4);
             this.ucAccount1.Name = "ucAccount1";
             this.ucAccount1.Size = new System.Drawing.Size(1264, 965);
             this.ucAccount1.TabIndex = 5;
@@ -283,7 +266,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.ucStaff1.BackColor = System.Drawing.Color.AliceBlue;
             this.ucStaff1.Location = new System.Drawing.Point(0, 0);
-            this.ucStaff1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucStaff1.Margin = new System.Windows.Forms.Padding(4);
             this.ucStaff1.Name = "ucStaff1";
             this.ucStaff1.Size = new System.Drawing.Size(1264, 965);
             this.ucStaff1.TabIndex = 4;
@@ -292,7 +275,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.ucInventory1.BackColor = System.Drawing.Color.AliceBlue;
             this.ucInventory1.Location = new System.Drawing.Point(0, 0);
-            this.ucInventory1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucInventory1.Margin = new System.Windows.Forms.Padding(4);
             this.ucInventory1.Name = "ucInventory1";
             this.ucInventory1.Size = new System.Drawing.Size(1264, 965);
             this.ucInventory1.TabIndex = 3;
@@ -301,7 +284,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.ucCategories1.BackColor = System.Drawing.Color.AliceBlue;
             this.ucCategories1.Location = new System.Drawing.Point(0, 0);
-            this.ucCategories1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucCategories1.Margin = new System.Windows.Forms.Padding(4);
             this.ucCategories1.Name = "ucCategories1";
             this.ucCategories1.Size = new System.Drawing.Size(1264, 965);
             this.ucCategories1.TabIndex = 2;
@@ -309,8 +292,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // ucOrders1
             // 
             this.ucOrders1.BackColor = System.Drawing.Color.AliceBlue;
+            this.ucOrders1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ucOrders1.Location = new System.Drawing.Point(0, 5);
-            this.ucOrders1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucOrders1.Margin = new System.Windows.Forms.Padding(4);
             this.ucOrders1.Name = "ucOrders1";
             this.ucOrders1.Size = new System.Drawing.Size(1264, 965);
             this.ucOrders1.TabIndex = 1;
@@ -320,10 +304,27 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.ucDashboard1.BackColor = System.Drawing.Color.AliceBlue;
             this.ucDashboard1.ForeColor = System.Drawing.Color.SteelBlue;
             this.ucDashboard1.Location = new System.Drawing.Point(0, 5);
-            this.ucDashboard1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucDashboard1.Margin = new System.Windows.Forms.Padding(4);
             this.ucDashboard1.Name = "ucDashboard1";
             this.ucDashboard1.Size = new System.Drawing.Size(1264, 965);
             this.ucDashboard1.TabIndex = 0;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLogOut.Image = global::Carinderia_Kiosk_System.Properties.Resources.logout_white_20x20;
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.Location = new System.Drawing.Point(4, 949);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(223, 60);
+            this.btnLogOut.TabIndex = 9;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // AdminBoard
             // 
@@ -336,18 +337,18 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.AdminBoard_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.pnlUserControlContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSeparator1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnlUserControlContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -61,7 +61,6 @@ namespace Carinderia_Kiosk_System.Customer
 
             while (dr.Read())
             {
-
                 //panel container
                 orderPanel = new Panel();
                 orderPanel.Width = 646;

@@ -721,6 +721,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\dashboard black 20x20.png" />
+    <None Include="Resources\remove 16x16.png" />
     <None Include="Resources\manage staff black 20x201.png" />
     <None Include="Resources\manage orders black 20x201.png" />
     <None Include="Resources\manage menu black 20x201.png" />
