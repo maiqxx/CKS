@@ -64,6 +64,8 @@ namespace Carinderia_Kiosk_System.Proprietor
         //gets the list of orders from database and display to flowlayoutpanel
         void GetOrderList()
         {
+            flpOrderList.Controls.Clear();
+
             conn.Open();
             cmd = new MySqlCommand("SELECT ORDER_ID, CUSTOMER_NAME, TOTAL_AMOUNT, DINE_OPTION, ORDER_STATUS FROM ORDERS ", conn);
             dr = cmd.ExecuteReader();
@@ -82,7 +84,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 orderID.Text = dr["ORDER_ID"].ToString();
                 orderID.ForeColor = Color.Black;
                 orderID.Location = new Point(25, 22);
-                orderID.Font = SmallFontBold;
+                orderID.Font = MediumFontBold;
                 orderID.Tag = dr["ORDER_ID"].ToString();
 
                 //displays customer's name
@@ -90,7 +92,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 customerName.Text = dr["CUSTOMER_NAME"].ToString();
                 customerName.ForeColor = Color.Black;
                 customerName.Location = new Point(140, 18);
-                customerName.Font = SmallFontBold;
+                customerName.Font = MediumFontBold;
                 customerName.Tag = dr["ORDER_ID"].ToString();
 
                 //displays total amount
@@ -99,7 +101,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 totalAmount.ForeColor = Color.Black;
                 totalAmount.TextAlign = ContentAlignment.MiddleCenter;
                 totalAmount.Location = new Point(333, 18);
-                totalAmount.Font = SmallFontBold;
+                totalAmount.Font = MediumFontBold;
                 totalAmount.Tag = dr["ORDER_ID"].ToString();
 
                 //displays dine option
@@ -107,7 +109,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 dineOption.Text = dr["DINE_OPTION"].ToString();
                 dineOption.ForeColor = Color.Black;
                 dineOption.Location = new Point(505, 18);
-                dineOption.Font = SmallFontBold;
+                dineOption.Font = MediumFontBold;
                 dineOption.Tag = dr["ORDER_ID"].ToString();
 
                 //displays order status
@@ -115,7 +117,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 orderStatus.Text = dr["ORDER_STATUS"].ToString();
                 orderStatus.ForeColor = Color.Black;
                 orderStatus.Location = new Point(650, 15);
-                orderStatus.Font = SmallFontBold;
+                orderStatus.Font = MediumFontBold;
                 orderStatus.Tag = dr["ORDER_ID"].ToString();
 
                 //delete icon
@@ -141,7 +143,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                 //click events
                 orderListPanel.Click += new EventHandler(orderListPanel_OnClick);
-
+                orderListPanel.MouseHover += new EventHandler(orderListPanel_MouseHover);
 
             }
             dr.Close();
@@ -149,11 +151,18 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        //hover event
+        public void orderListPanel_MouseHover(object sender, System.EventArgs e)
+        {
+           // String tag = ((Panel)sender).Tag.ToString();
+           orderListPanel.BackColor = Color.AliceBlue;
+        }
+
         //when a specified orderListPanel is being cicked
         public void orderListPanel_OnClick(object sender, EventArgs e)
         {
             String tag = ((Panel)sender).Tag.ToString();
-
+            flpDetailedOrders.Controls.Clear();
             pnlDetails.Visible = true;
 
             try
@@ -207,7 +216,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 order = new Panel();
                 order.Width = 332;
                 order.Height = 50;
-                order.BackColor = Color.Azure;
+                order.BackColor = Color.WhiteSmoke;
                 order.Tag = dr["FOOD_NAME"].ToString();
 
                 //displays food name
@@ -215,7 +224,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 product.Text = dr["FOOD_NAME"].ToString();
                 product.ForeColor = Color.Black;
                 product.Location = new Point(3, 16);
-                product.Font = SmallFontBold;
+                product.Font = MediumFontBold;
                 product.Tag = dr["FOOD_NAME"].ToString();
 
                 //displays quantity
@@ -223,7 +232,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 qty.Text = dr["QUANTITY"].ToString();
                 qty.ForeColor = Color.Black;
                 qty.Location = new Point(175, 16);
-                qty.Font = SmallFontBold;
+                qty.Font = MediumFontBold;
                 qty.Tag = dr["FOOD_NAME"].ToString();
 
                 //displays price
@@ -232,7 +241,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 price.ForeColor = Color.Black;
                 price.TextAlign = ContentAlignment.MiddleRight;
                 price.Location = new Point(230, 16);
-                price.Font = SmallFontBold;
+                price.Font = MediumFontBold;
                 price.Tag = dr["FOOD_NAME"].ToString();
 
                 //add to display controls in a panel
@@ -243,7 +252,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //add to display controls dynamically in flowlayout
                 flpDetailedOrders.Controls.Add(order);
             }
-
+            //flpDetailedOrders.Controls.Clear();
             dr.Close();
             conn.Close();
         }
