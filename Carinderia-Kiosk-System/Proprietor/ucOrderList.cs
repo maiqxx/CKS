@@ -119,6 +119,8 @@ namespace Carinderia_Kiosk_System.Proprietor
                 orderStatus.Location = new Point(650, 15);
                 orderStatus.Font = MediumFontBold;
                 orderStatus.Tag = dr["ORDER_ID"].ToString();
+                orderStatus.Items.Add("Completed");
+                orderStatus.Items.Add("Cancelled");
 
                 //delete icon
                 deleteIcon = new PictureBox();
@@ -144,6 +146,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //click events
                 orderListPanel.Click += new EventHandler(orderListPanel_OnClick);
                 orderListPanel.MouseHover += new EventHandler(orderListPanel_MouseHover);
+                orderStatus.SelectedIndexChanged += new EventHandler(orderStatus_SelectedIndexChanged);
 
             }
             dr.Close();
@@ -151,14 +154,37 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
-        //hover event
-        public void orderListPanel_MouseHover(object sender, System.EventArgs e)
+        //When order status is changed
+        private void orderStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // String tag = ((Panel)sender).Tag.ToString();
-           orderListPanel.BackColor = Color.AliceBlue;
+            String tag = ((ComboBox)sender).Tag.ToString();    //gets ORDER_ID using tag
+            var newStat = (((ComboBox)sender).SelectedItem.ToString()); //gets the value from numericUpDown controls
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("UPDATE ORDERS " +
+                                        "SET ORDER_STATUS = '" + newStat + "' " +
+                                        "WHERE ORDER_ID = '" + tag + "' ", conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Order status updated to " + newStat);
+                conn.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        //when a specified orderListPanel is being cicked
+        //hover event
+        public void orderListPanel_MouseHover(object sender, EventArgs e)
+        {
+           // String tag = ((Panel)sender).Tag.ToString();
+           orderListPanel.BackColor = Color.WhiteSmoke;
+        }
+
+        //displays the details of orders  when a specified orderListPanel is being cicked
         public void orderListPanel_OnClick(object sender, EventArgs e)
         {
             String tag = ((Panel)sender).Tag.ToString();
@@ -263,7 +289,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
 
 
-        //lists orders of the specific customer - using datagridview
+        //lists orders of the specific customer - using datagridview [this is an alternative way]
         void GetOrders()
         {
             try
