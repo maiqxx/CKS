@@ -37,10 +37,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnOrderList = new System.Windows.Forms.Button();
             this.btnTransacts = new System.Windows.Forms.Button();
             this.pnlManageOrdersContainer = new System.Windows.Forms.Panel();
-            this.ucOrderList1 = new Carinderia_Kiosk_System.Proprietor.ucOrderList();
-            this.ucCompletedOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCompletedOrders();
-            this.ucCancelledOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCancelledOrders();
             this.ucTransactionList1 = new Carinderia_Kiosk_System.Proprietor.ucTransactionList();
+            this.ucCancelledOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCancelledOrders();
+            this.ucCompletedOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCompletedOrders();
+            this.ucOrderList1 = new Carinderia_Kiosk_System.Proprietor.ucOrderList();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlManageOrdersContainer.SuspendLayout();
             this.SuspendLayout();
@@ -151,20 +151,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pnlManageOrdersContainer.Size = new System.Drawing.Size(1213, 815);
             this.pnlManageOrdersContainer.TabIndex = 3;
             // 
-            // ucOrderList1
+            // ucTransactionList1
             // 
-            this.ucOrderList1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucOrderList1.Location = new System.Drawing.Point(4, 4);
-            this.ucOrderList1.Name = "ucOrderList1";
-            this.ucOrderList1.Size = new System.Drawing.Size(1213, 815);
-            this.ucOrderList1.TabIndex = 0;
-            // 
-            // ucCompletedOrders1
-            // 
-            this.ucCompletedOrders1.Location = new System.Drawing.Point(0, -1);
-            this.ucCompletedOrders1.Name = "ucCompletedOrders1";
-            this.ucCompletedOrders1.Size = new System.Drawing.Size(1213, 815);
-            this.ucCompletedOrders1.TabIndex = 1;
+            this.ucTransactionList1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucTransactionList1.Location = new System.Drawing.Point(-3, -3);
+            this.ucTransactionList1.Name = "ucTransactionList1";
+            this.ucTransactionList1.Size = new System.Drawing.Size(1213, 815);
+            this.ucTransactionList1.TabIndex = 3;
             // 
             // ucCancelledOrders1
             // 
@@ -174,13 +167,20 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.ucCancelledOrders1.Size = new System.Drawing.Size(1213, 815);
             this.ucCancelledOrders1.TabIndex = 2;
             // 
-            // ucTransactionList1
+            // ucCompletedOrders1
             // 
-            this.ucTransactionList1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucTransactionList1.Location = new System.Drawing.Point(-3, -3);
-            this.ucTransactionList1.Name = "ucTransactionList1";
-            this.ucTransactionList1.Size = new System.Drawing.Size(1213, 815);
-            this.ucTransactionList1.TabIndex = 3;
+            this.ucCompletedOrders1.Location = new System.Drawing.Point(0, -1);
+            this.ucCompletedOrders1.Name = "ucCompletedOrders1";
+            this.ucCompletedOrders1.Size = new System.Drawing.Size(1213, 815);
+            this.ucCompletedOrders1.TabIndex = 1;
+            // 
+            // ucOrderList1
+            // 
+            this.ucOrderList1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucOrderList1.Location = new System.Drawing.Point(4, 4);
+            this.ucOrderList1.Name = "ucOrderList1";
+            this.ucOrderList1.Size = new System.Drawing.Size(1213, 815);
+            this.ucOrderList1.TabIndex = 0;
             // 
             // ucOrders
             // 
@@ -194,6 +194,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucOrders";
             this.Size = new System.Drawing.Size(1264, 1025);
+            this.Load += new System.EventHandler(this.ucOrders_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pnlManageOrdersContainer.ResumeLayout(false);
             this.ResumeLayout(false);

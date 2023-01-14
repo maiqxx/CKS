@@ -43,6 +43,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void ucOrderList_Load(object sender, EventArgs e)
         {
             GetOrderList();
+            pnlDetails.Visible = false;
         }
 
         //setting fonts
@@ -74,12 +75,13 @@ namespace Carinderia_Kiosk_System.Proprietor
                 orderListPanel.Width = 850;
                 orderListPanel.Height = 55;
                 orderListPanel.BackColor = Color.White;
+                orderListPanel.Tag = dr["ORDER_ID"].ToString();
 
                 //displays order ID
                 orderID = new Label();
                 orderID.Text = dr["ORDER_ID"].ToString();
                 orderID.ForeColor = Color.Black;
-                orderID.Location = new Point(28, 22);
+                orderID.Location = new Point(25, 22);
                 orderID.Font = SmallFontBold;
                 orderID.Tag = dr["ORDER_ID"].ToString();
 
@@ -134,7 +136,12 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //add to display controls dynamically in flowlayout
                 flpOrderList.Controls.Add(orderListPanel);
 
-                //button events
+                //Turns hand cursor when hovered
+                orderListPanel.Cursor = Cursors.Hand;
+
+                //click events
+                orderListPanel.Click += new EventHandler(orderListPanel_OnClick);
+
 
             }
             dr.Close();
@@ -142,6 +149,176 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        //when a specified orderListPanel is being cicked
+        public void orderListPanel_OnClick(object sender, EventArgs e)
+        {
+            String tag = ((Panel)sender).Tag.ToString();
 
+            pnlDetails.Visible = true;
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT * FROM ORDERS WHERE ORDER_ID LIKE '" + tag + "' ", conn);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    lblOrderNum.Text = dr["ORDER_ID"].ToString();
+                    lblCustomer.Text = dr["CUSTOMER_NAME"].ToString();
+                    lblDateTime.Text = dr["CREATED_AT"].ToString();
+                    lblOption.Text = dr["DINE_OPTION"].ToString();
+                    lblOrderStatus.Text = dr["ORDER_STATUS"].ToString();
+                    lblTotalPayment.Text = "₱ " + dr["TOTAL_AMOUNT"].ToString();
+                }
+                dr.Close();
+                conn.Close();
+                //GetOrders();
+                GetDetailedOrders();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dr.Close();
+                conn.Close();
+            }
+        }
+
+        private Panel order;
+        private Label product;
+        private Label qty;
+        private Label price;
+
+        //lists orders of the specific customer - using flowlayoutpanel
+        void GetDetailedOrders()
+        {
+
+            conn.Open();
+            cmd = new MySqlCommand("SELECT FOOD_NAME, QUANTITY, UNIT_PRICE FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text.Trim() + "' ", conn);
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                //panel container
+                order = new Panel();
+                order.Width = 332;
+                order.Height = 50;
+                order.BackColor = Color.Azure;
+                order.Tag = dr["FOOD_NAME"].ToString();
+
+                //displays food name
+                product = new Label();
+                product.Text = dr["FOOD_NAME"].ToString();
+                product.ForeColor = Color.Black;
+                product.Location = new Point(3, 16);
+                product.Font = SmallFontBold;
+                product.Tag = dr["FOOD_NAME"].ToString();
+
+                //displays quantity
+                qty = new Label();
+                qty.Text = dr["QUANTITY"].ToString();
+                qty.ForeColor = Color.Black;
+                qty.Location = new Point(175, 16);
+                qty.Font = SmallFontBold;
+                qty.Tag = dr["FOOD_NAME"].ToString();
+
+                //displays price
+                price = new Label();
+                price.Text = "₱ " + dr["UNIT_PRICE"].ToString();
+                price.ForeColor = Color.Black;
+                price.TextAlign = ContentAlignment.MiddleRight;
+                price.Location = new Point(230, 16);
+                price.Font = SmallFontBold;
+                price.Tag = dr["FOOD_NAME"].ToString();
+
+                //add to display controls in a panel
+                order.Controls.Add(product);
+                order.Controls.Add(qty);
+                order.Controls.Add(price);
+
+                //add to display controls dynamically in flowlayout
+                flpDetailedOrders.Controls.Add(order);
+            }
+
+            dr.Close();
+            conn.Close();
+        }
+
+
+
+
+
+
+
+        //lists orders of the specific customer - using datagridview
+        void GetOrders()
+        {
+            try
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT FOOD_NAME, QUANTITY, UNIT_PRICE FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text.Trim() + "'", conn);
+                adapter.Fill(dt);
+
+                //Set the column header style.
+                DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+                columnHeaderStyle.BackColor = Color.SteelBlue;
+                columnHeaderStyle.ForeColor = Color.White;
+                columnHeaderStyle.Font = new Font("Century Gothic", 10, FontStyle.Bold);
+
+                //dgvInventory properties
+                //dgvOrderList.RowTemplate.Height = 35;
+                //dgvOrderList.AllowUserToAddRows = false;
+
+                //dgvOrderList.DataSource = dt;
+                //dgvOrderList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                ////Column header names
+                //dgvOrderList.Columns[0].HeaderText = "Food Name";
+                //dgvOrderList.Columns[1].HeaderText = "Quantity";
+                //dgvOrderList.Columns[2].HeaderText = "Unit Price";
+                //dgvOrderList.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
+                //DataRow dr = dt.Rows[i];
+                //ListViewItem listitem = new ListViewItem(dr["FOOD_NAME"].ToString());
+                //    listitem.SubItems.Add(dr["QUANTITY"].ToString());
+                //    listitem.SubItems.Add(dr["UNIT_PRICE"].ToString());
+                //    lvCustomerOrderList.Items.Add(listitem);
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

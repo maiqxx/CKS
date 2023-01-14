@@ -33,6 +33,20 @@ namespace Carinderia_Kiosk_System.Proprietor
             instance = this;
         }
 
+        private void ucOrders_Load(object sender, EventArgs e)
+        {
+            if (!pnlManageOrdersContainer.Controls.Contains(ucOrderList.Instance))
+            {
+                pnlManageOrdersContainer.Controls.Add(ucOrderList.Instance);
+                ucOrderList.Instance.Dock = DockStyle.Fill;
+                ucOrderList.Instance.BringToFront();
+            }
+            else
+            {
+                ucOrderList.Instance.BringToFront();
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -100,5 +114,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 ucTransactionList.Instance.BringToFront();
             }
         }
+
+
     }
 }

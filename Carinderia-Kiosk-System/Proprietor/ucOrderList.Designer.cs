@@ -37,9 +37,31 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlDetails = new System.Windows.Forms.Panel();
+            this.lblOrderNo = new System.Windows.Forms.Label();
+            this.lblOrderNum = new System.Windows.Forms.Label();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.lblCustName = new System.Windows.Forms.Label();
+            this.lblOption = new System.Windows.Forms.Label();
+            this.lblDineOp = new System.Windows.Forms.Label();
+            this.lblOrderStatus = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalPayment = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblDateTime = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.flpDetailedOrders = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.pnlDetails.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -150,19 +172,250 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label3.Text = "Total Payment";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // pnlDetails
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(871, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(342, 815);
-            this.panel2.TabIndex = 2;
+            this.pnlDetails.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlDetails.Controls.Add(this.flpDetailedOrders);
+            this.pnlDetails.Controls.Add(this.label9);
+            this.pnlDetails.Controls.Add(this.tableLayoutPanel2);
+            this.pnlDetails.Controls.Add(this.lblDateTime);
+            this.pnlDetails.Controls.Add(this.label6);
+            this.pnlDetails.Controls.Add(this.panel3);
+            this.pnlDetails.Controls.Add(this.lblOrderStatus);
+            this.pnlDetails.Controls.Add(this.lblStatus);
+            this.pnlDetails.Controls.Add(this.lblOption);
+            this.pnlDetails.Controls.Add(this.lblDineOp);
+            this.pnlDetails.Controls.Add(this.lblCustomer);
+            this.pnlDetails.Controls.Add(this.lblCustName);
+            this.pnlDetails.Controls.Add(this.lblOrderNum);
+            this.pnlDetails.Controls.Add(this.lblOrderNo);
+            this.pnlDetails.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlDetails.Location = new System.Drawing.Point(871, 0);
+            this.pnlDetails.Name = "pnlDetails";
+            this.pnlDetails.Size = new System.Drawing.Size(342, 815);
+            this.pnlDetails.TabIndex = 2;
+            this.pnlDetails.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // lblOrderNo
+            // 
+            this.lblOrderNo.AutoSize = true;
+            this.lblOrderNo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderNo.Location = new System.Drawing.Point(13, 9);
+            this.lblOrderNo.Name = "lblOrderNo";
+            this.lblOrderNo.Size = new System.Drawing.Size(102, 21);
+            this.lblOrderNo.TabIndex = 0;
+            this.lblOrderNo.Text = "Order No.: ";
+            // 
+            // lblOrderNum
+            // 
+            this.lblOrderNum.AutoSize = true;
+            this.lblOrderNum.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderNum.Location = new System.Drawing.Point(121, 9);
+            this.lblOrderNum.Name = "lblOrderNum";
+            this.lblOrderNum.Size = new System.Drawing.Size(91, 19);
+            this.lblOrderNum.TabIndex = 1;
+            this.lblOrderNum.Text = "orderNum";
+            this.lblOrderNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblOrderNum.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // lblCustomer
+            // 
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.Location = new System.Drawing.Point(173, 32);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(136, 19);
+            this.lblCustomer.TabIndex = 3;
+            this.lblCustomer.Text = "customerName";
+            this.lblCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblCustName
+            // 
+            this.lblCustName.AutoSize = true;
+            this.lblCustName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustName.Location = new System.Drawing.Point(13, 30);
+            this.lblCustName.Name = "lblCustName";
+            this.lblCustName.Size = new System.Drawing.Size(166, 21);
+            this.lblCustName.TabIndex = 2;
+            this.lblCustName.Text = "Customer\'s Name: ";
+            // 
+            // lblOption
+            // 
+            this.lblOption.AutoSize = true;
+            this.lblOption.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOption.Location = new System.Drawing.Point(139, 71);
+            this.lblOption.Name = "lblOption";
+            this.lblOption.Size = new System.Drawing.Size(99, 19);
+            this.lblOption.TabIndex = 5;
+            this.lblOption.Text = "dineOption";
+            this.lblOption.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblDineOp
+            // 
+            this.lblDineOp.AutoSize = true;
+            this.lblDineOp.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDineOp.Location = new System.Drawing.Point(13, 72);
+            this.lblDineOp.Name = "lblDineOp";
+            this.lblDineOp.Size = new System.Drawing.Size(120, 21);
+            this.lblDineOp.TabIndex = 4;
+            this.lblDineOp.Text = "Dine Option: ";
+            // 
+            // lblOrderStatus
+            // 
+            this.lblOrderStatus.AutoSize = true;
+            this.lblOrderStatus.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderStatus.Location = new System.Drawing.Point(90, 95);
+            this.lblOrderStatus.Name = "lblOrderStatus";
+            this.lblOrderStatus.Size = new System.Drawing.Size(54, 19);
+            this.lblOrderStatus.TabIndex = 7;
+            this.lblOrderStatus.Text = "status";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(13, 93);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(71, 21);
+            this.lblStatus.TabIndex = 6;
+            this.lblStatus.Text = "Status: ";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.Controls.Add(this.lblTotalPayment);
+            this.panel3.Controls.Add(this.lblTotal);
+            this.panel3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.ForeColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(3, 459);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(335, 40);
+            this.panel3.TabIndex = 9;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTotal.Location = new System.Drawing.Point(0, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(67, 40);
+            this.lblTotal.TabIndex = 7;
+            this.lblTotal.Text = "Total: ";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTotalPayment
+            // 
+            this.lblTotalPayment.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblTotalPayment.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPayment.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPayment.Location = new System.Drawing.Point(83, 0);
+            this.lblTotalPayment.Name = "lblTotalPayment";
+            this.lblTotalPayment.Size = new System.Drawing.Size(252, 40);
+            this.lblTotalPayment.TabIndex = 8;
+            this.lblTotalPayment.Text = "0.00";
+            this.lblTotalPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(13, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 21);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Date/Time: ";
+            // 
+            // lblDateTime
+            // 
+            this.lblDateTime.AutoSize = true;
+            this.lblDateTime.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateTime.Location = new System.Drawing.Point(126, 52);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(84, 19);
+            this.lblDateTime.TabIndex = 11;
+            this.lblDateTime.Text = "dateTime";
+            this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel2.Controls.Add(this.label11, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label8, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 132);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(335, 40);
+            this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 40);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Product";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 19);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Qty";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(154, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 40);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Qty";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(236, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 40);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Price";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flpDetailedOrders
+            // 
+            this.flpDetailedOrders.AutoScroll = true;
+            this.flpDetailedOrders.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.flpDetailedOrders.Location = new System.Drawing.Point(0, 175);
+            this.flpDetailedOrders.Name = "flpDetailedOrders";
+            this.flpDetailedOrders.Size = new System.Drawing.Size(339, 281);
+            this.flpDetailedOrders.TabIndex = 16;
             // 
             // ucOrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlDetails);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucOrderList";
@@ -171,6 +424,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.pnlDetails.ResumeLayout(false);
+            this.pnlDetails.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -179,12 +437,31 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flpOrderList;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlDetails;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblOrderNum;
+        private System.Windows.Forms.Label lblOrderNo;
+        private System.Windows.Forms.Label lblOrderStatus;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblOption;
+        private System.Windows.Forms.Label lblDineOp;
+        private System.Windows.Forms.Label lblCustomer;
+        private System.Windows.Forms.Label lblCustName;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblTotalPayment;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblDateTime;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.FlowLayoutPanel flpDetailedOrders;
     }
 }
