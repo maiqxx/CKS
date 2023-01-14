@@ -46,7 +46,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         }
 
         //setting fonts
-        Font SmallFontBold = new Font("Century Gothic", 8, FontStyle.Bold);
+        Font SmallFontBold = new Font("Century Gothic", 9, FontStyle.Bold);
         Font SmallFont = new Font("Century Gothic", 8);
         Font MediumFontBold = new Font("Century Gothic", 10, FontStyle.Bold);
         Font LargeFontBold = new Font("Century Gothic", 12, FontStyle.Bold);
@@ -79,8 +79,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 orderID = new Label();
                 orderID.Text = dr["ORDER_ID"].ToString();
                 orderID.ForeColor = Color.Black;
-                orderID.Location = new Point(12, 18);
-                orderID.TextAlign = ContentAlignment.MiddleCenter;
+                orderID.Location = new Point(28, 22);
                 orderID.Font = SmallFontBold;
                 orderID.Tag = dr["ORDER_ID"].ToString();
 
@@ -88,16 +87,16 @@ namespace Carinderia_Kiosk_System.Proprietor
                 customerName = new Label();
                 customerName.Text = dr["CUSTOMER_NAME"].ToString();
                 customerName.ForeColor = Color.Black;
-                customerName.Location = new Point(136, 18);
+                customerName.Location = new Point(140, 18);
                 customerName.Font = SmallFontBold;
                 customerName.Tag = dr["ORDER_ID"].ToString();
 
                 //displays total amount
                 totalAmount = new Label();
-                totalAmount.Text = "₱" + dr["TOTAL_AMOUNT"].ToString();
+                totalAmount.Text = "₱ " + dr["TOTAL_AMOUNT"].ToString();
                 totalAmount.ForeColor = Color.Black;
                 totalAmount.TextAlign = ContentAlignment.MiddleCenter;
-                totalAmount.Location = new Point(356, 18);
+                totalAmount.Location = new Point(333, 18);
                 totalAmount.Font = SmallFontBold;
                 totalAmount.Tag = dr["ORDER_ID"].ToString();
 
@@ -105,7 +104,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 dineOption = new Label();
                 dineOption.Text = dr["DINE_OPTION"].ToString();
                 dineOption.ForeColor = Color.Black;
-                dineOption.Location = new Point(480, 18);
+                dineOption.Location = new Point(505, 18);
                 dineOption.Font = SmallFontBold;
                 dineOption.Tag = dr["ORDER_ID"].ToString();
 
@@ -113,7 +112,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 orderStatus = new ComboBox();
                 orderStatus.Text = dr["ORDER_STATUS"].ToString();
                 orderStatus.ForeColor = Color.Black;
-                orderStatus.Location = new Point(589, 15);
+                orderStatus.Location = new Point(650, 15);
                 orderStatus.Font = SmallFontBold;
                 orderStatus.Tag = dr["ORDER_ID"].ToString();
 
@@ -121,10 +120,11 @@ namespace Carinderia_Kiosk_System.Proprietor
                 deleteIcon = new PictureBox();
                 deleteIcon.Image = Resources.remove_16x16;
                 deleteIcon.SizeMode = PictureBoxSizeMode.CenterImage;
-                deleteIcon.Location = new Point(798, 3);
+                deleteIcon.Location = new Point(765, 3);
                 deleteIcon.Tag = dr["ORDER_ID"].ToString();
 
                 //add to display controls in orderListPanel
+                orderListPanel.Controls.Add(orderID);
                 orderListPanel.Controls.Add(customerName);
                 orderListPanel.Controls.Add(totalAmount);
                 orderListPanel.Controls.Add(dineOption);

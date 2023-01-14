@@ -26,7 +26,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Sign In Button
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
-            var emailAddress = txtEmailAddress.Text;
+            var emailAddress = txtEmailAddress.Text.Trim();
             AdminInfo.EmailAddress = emailAddress;
             var password = txtPassword.Text;
             var id = AdminInfo.ID;
