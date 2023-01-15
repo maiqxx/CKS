@@ -164,7 +164,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             String tag = ((Panel)sender).Tag.ToString();
             flpDetailedOrders.Controls.Clear();
             pnlDetails.Visible = true;
-            btnRecordToInvoice.Visible = false;
+            btnConfirmSold.Visible = false;
 
             try
             {
@@ -185,6 +185,18 @@ namespace Carinderia_Kiosk_System.Proprietor
                 }
                 dr.Close();
                 conn.Close();
+
+                if (lblOrderStatus.Text == "Completed")
+                {
+                    btnConfirmSold.Visible = true;
+
+                    //UpdateInventory();
+
+                }
+                else
+                {
+                    //do nothing...
+                }
 
                 //GetOrders();
                 GetDetailedOrders();
@@ -274,19 +286,10 @@ namespace Carinderia_Kiosk_System.Proprietor
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Order status updated to " + newStat);
                 conn.Close();
+
                 GetDetailedOrders(); //reloads details
-                if (lblOrderStatus.Text == "Completed")
-                {
-                    //btnRecordToInvoice.Visible = true;
-
-                    UpdateInventory();
-
-                }
-                else
-                {
-                    //do nothing...
-                }
-                GetDetailedOrders();
+                
+                
             }
             catch (Exception ex)
             {
@@ -326,12 +329,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
-
+        private void btnConfirmSold_Click(object sender, EventArgs e)
+        {
+            UpdateInventory();
+        }
 
         /// <summary>
         /// HERE'S MY ATTEMPT IN UPDATING INVENTORY STOCK_QUANTITY
         /// </summary>
-        
+
         void UpdateInventory()
         {
             try
@@ -340,7 +346,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 bool updated = false;
 
                 conn.Open();
-                cmd = new MySqlCommand("SELECT QUANTITY, STOCK_QUANTITY, FOOD_NAME AS FOOD_ITEM FROM CUSTOMER, INVENTORY WHERE CUSTOMER.FOOD_NAME = INVENTORY.FOOD_ITEM ", conn);
+                cmd = new MySqlCommand("SELECT QUANTITY, STOCK_QUANTITY, STOCK_NAME AS FOOD_ITEM FROM CUSTOMER, INVENTORY WHERE CUSTOMER.STOCK_NAME = INVENTORY.FOOD_ITEM ", conn);
                 dr = cmd.ExecuteReader();
 
                 if (dr.HasRows)
@@ -348,7 +354,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     //List<Tuple<string, int>> results = new List<Tuple<string, int>>();
                     while (dr.Read())
                     {
-                        string foodName = dr["FOOD_NAME"].ToString();
+                        string foodName = dr["STOCK_NAME"].ToString();
                         int orderQty = Convert.ToInt32(dr["QUANTITY"]);
                         int stockQty = Convert.ToInt32(dr["STOCK_QUANTITY"]);
                         int updatedQty = stockQty - orderQty;
@@ -371,7 +377,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                         var foodName = arrayList1[i];
                         var updatedQty = arrayList1[i + 1];
 
-                        cmd = new MySqlCommand("UPDATE INVENTORY SET STOCK_QUANTY = '" + updatedQty + "' WHERE FOOD_NAME = '" + foodName + "' ", conn);
+                        cmd = new MySqlCommand("UPDATE INVENTORY SET STOCK_QUANTY = '" + updatedQty + "' WHERE STOCK_NAME = '" + foodName + "' ", conn);
                         dr = cmd.ExecuteReader();
 
                         if (dr.Read())
@@ -405,11 +411,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             //if (dr.Read())
             //{
             //    var quantity = Convert.ToInt32(dr["QUANTITY"]);
-            //    var foodName = dr["FOOD_NAME"].ToString();
+            //    var foodName = dr["STOCK_NAME"].ToString();
 
             //    // Update stock quantity in inventory
             //    cmd = new MySqlCommand("UPDATE INVENTOTY SET STOCK_QUANTITY = STOCK_QUANTITY - '" + quantity + "' " +
-            //                          "WHERE FOOD_NAME = '" + foodName + "' ", conn);
+            //                          "WHERE STOCK_NAME = '" + foodName + "' ", conn);
             //    cmd.ExecuteNonQuery();
             //}
             //dr.Close();
@@ -428,8 +434,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             //    cmd.ExecuteNonQuery();
             //}
             //conn.Close();
-
-
         }
 
         //hover event
@@ -450,7 +454,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 // Record to INVOICE table
                 cmd = new MySqlCommand("INSERT INTO INVOICE " +
                                         "SET CUSTOMER_NAME = '" + lblCustomer.Text + "', " +
-                                        "FOOD_NAME = (SELECT FOOD_NAME FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "'), " +
+                                        "STOCK_NAME = (SELECT STOCK_NAME FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "'), " +
                                         "QUANTITY = (SELECT QUANTITY FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "'), " +
                                         "UNIT_PRICE = (SELECT UNIT_PRICE FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "')," +
                                         "TOTAL_AMOUNT = (SELECT TOTAL_AMOUNT FROM ORDERS WHERE ORDER_ID = '" + lblOrderNum.Text + "')," +
@@ -509,7 +513,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
 
                 //DataRow dr = dt.Rows[i];
-                //ListViewItem listitem = new ListViewItem(dr["FOOD_NAME"].ToString());
+                //ListViewItem listitem = new ListViewItem(dr["STOCK_NAME"].ToString());
                 //    listitem.SubItems.Add(dr["QUANTITY"].ToString());
                 //    listitem.SubItems.Add(dr["UNIT_PRICE"].ToString());
                 //    lvCustomerOrderList.Items.Add(listitem);
@@ -544,9 +548,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
-        private void btnConfirmSold_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

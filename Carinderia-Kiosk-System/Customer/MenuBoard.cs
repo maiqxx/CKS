@@ -77,7 +77,7 @@ namespace Carinderia_Kiosk_System.Customer
         {
             flpMenuItems.Controls.Clear();
             conn.Open();
-            cmd = new MySqlCommand("SELECT STOCK_ID, FOOD_NAME, PRICE, IMAGE FROM INVENTORY WHERE FOOD_NAME LIKE '"+ txtSearchFoodItem.Text +"%' ORDER BY FOOD_NAME", conn);
+            cmd = new MySqlCommand("SELECT STOCK_ID, STOCK_NAME, PRICE, IMAGE FROM INVENTORY WHERE STOCK_NAME LIKE '" + txtSearchFoodItem.Text + "%' ORDER BY STOCK_NAME", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -104,7 +104,7 @@ namespace Carinderia_Kiosk_System.Customer
 
                 //displays food name
                 foodName = new Label();
-                foodName.Text = dr["FOOD_NAME"].ToString();
+                foodName.Text = dr["STOCK_NAME"].ToString();
                 foodName.BackColor = Color.FromArgb(236, 240, 241);
                 foodName.Font = MediumFont;
                 foodName.TextAlign = ContentAlignment.MiddleCenter;
@@ -154,7 +154,7 @@ namespace Carinderia_Kiosk_System.Customer
                     pbFoodImage.BackgroundImageLayout = ImageLayout.Stretch;
                     pbFoodImage.BackgroundImage = bitmap;
 
-                    lblFoodName.Text = dr["FOOD_NAME"].ToString();
+                    lblFoodName.Text = dr["STOCK_NAME"].ToString();
                     lblUnitPrice.Text = double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
                     lblUnit.Text = dr["UNIT"].ToString();
                     lblDesc.Text = dr["DESCRIPTION"].ToString();
@@ -460,7 +460,7 @@ namespace Carinderia_Kiosk_System.Customer
         {
             flpMenuItems.Controls.Clear();
             conn.Open();
-            cmd = new MySqlCommand("SELECT STOCK_ID, FOOD_NAME, PRICE, IMAGE FROM INVENTORY WHERE CATEGORY LIKE '" + cbMenuCategoriesFilter.Text + "%' ORDER BY FOOD_NAME", conn);
+            cmd = new MySqlCommand("SELECT STOCK_ID, STOCK_NAME, PRICE, IMAGE FROM INVENTORY WHERE CATEGORY LIKE '" + cbMenuCategoriesFilter.Text + "%' ORDER BY STOCK_NAME", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -487,7 +487,7 @@ namespace Carinderia_Kiosk_System.Customer
 
                 //displays food name
                 foodName = new Label();
-                foodName.Text = dr["FOOD_NAME"].ToString();
+                foodName.Text = dr["STOCK_NAME"].ToString();
                 foodName.BackColor = Color.FromArgb(236, 240, 241);
                 foodName.Font = MediumFont;
                 foodName.TextAlign = ContentAlignment.MiddleCenter;

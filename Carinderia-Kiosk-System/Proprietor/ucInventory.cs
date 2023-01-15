@@ -58,7 +58,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             conn.Open();
             DataTable dt = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_CODE, FOOD_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE FROM INVENTORY WHERE PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_CODE, STOCK_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE FROM INVENTORY WHERE PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')", conn);
             adapter.Fill(dt);
 
             //dgvInventory properties
@@ -207,7 +207,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                     string addStock = "INSERT INTO INVENTORY " +
                                         "SET STOCK_CODE = @stockCode, " +
-                                        "FOOD_NAME = @foodName, " +
+                                        "STOCK_NAME = @foodName, " +
                                         "DESCRIPTION = @desc, " +
                                         "IMAGE = @image, " +
                                         "STOCK_QUANTITY = @quantity, " +
@@ -268,7 +268,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     byte[] img = ms.ToArray();
 
                     string updateStock = "UPDATE INVENTORY " +
-                                            "SET FOOD_NAME = @foodName, " +
+                                            "SET STOCK_NAME = @foodName, " +
                                             "DESCRIPTION = @description, " +
                                             "STOCK_QUANTITY = @quantity, " +
                                             "PRICE = @price, " +
@@ -354,9 +354,9 @@ namespace Carinderia_Kiosk_System.Proprietor
                 MySqlDataAdapter adapter;
                 DataTable table;
                 conn.Open();
-                adapter = new MySqlDataAdapter("SELECT STOCK_CODE, FOOD_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE " +
+                adapter = new MySqlDataAdapter("SELECT STOCK_CODE, STOCK_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE " +
                                                 "FROM INVENTORY " +
-                                                "WHERE FOOD_NAME LIKE '%" + this.txtSearch.Text + "%' ", conn);
+                                                "WHERE STOCK_NAME LIKE '%" + this.txtSearch.Text + "%' ", conn);
                 table = new DataTable();
                 adapter.Fill(table);
                 dgvInventory.DataSource = table;
@@ -376,9 +376,9 @@ namespace Carinderia_Kiosk_System.Proprietor
                 MySqlDataAdapter adapter;
                 DataTable table;
                 conn.Open();
-                adapter = new MySqlDataAdapter("SELECT STOCK_CODE, FOOD_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE " +
+                adapter = new MySqlDataAdapter("SELECT STOCK_CODE, STOCK_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE " +
                                                 "FROM INVENTORY " +
-                                                "WHERE FOOD_NAME LIKE '%" + this.txtSearch.Text + "%' ", conn);
+                                                "WHERE STOCK_NAME LIKE '%" + this.txtSearch.Text + "%' ", conn);
                 table = new DataTable();
                 adapter.Fill(table);
                 dgvInventory.DataSource = table;
@@ -396,9 +396,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             MySqlDataAdapter adapter;
             DataTable table;
             conn.Open();
-            adapter = new MySqlDataAdapter("SELECT STOCK_CODE, FOOD_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE " +
+            adapter = new MySqlDataAdapter("SELECT STOCK_CODE, STOCK_NAME, DESCRIPTION, STOCK_QUANTITY, PRICE, CATEGORY, UNIT, INV_VALUE, CREATED_AT, UPDATED_AT, IMAGE " +
                                             "FROM INVENTORY " +
-                                            "WHERE FOOD_NAME LIKE '%" + this.txtSearch.Text + "%' ", conn);
+                                            "WHERE STOCK_NAME LIKE '%" + this.txtSearch.Text + "%' ", conn);
             table = new DataTable();
             adapter.Fill(table);
             dgvInventory.DataSource = table;

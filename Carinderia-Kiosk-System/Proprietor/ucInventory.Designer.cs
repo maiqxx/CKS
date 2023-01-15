@@ -30,10 +30,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblInventory = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbSearchIcon = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.flpButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -64,14 +65,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cks_dbDataSet = new Carinderia_Kiosk_System.cks_dbDataSet();
             this.inventoryTableAdapter = new Carinderia_Kiosk_System.cks_dbDataSetTableAdapters.inventoryTableAdapter();
-            this.pbSearchIcon = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearchIcon)).BeginInit();
             this.flpButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cks_dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearchIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInventory
@@ -115,6 +115,20 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.Size = new System.Drawing.Size(1227, 901);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pbSearchIcon
+            // 
+            this.pbSearchIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbSearchIcon.BackColor = System.Drawing.SystemColors.Control;
+            this.pbSearchIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbSearchIcon.Image = global::Carinderia_Kiosk_System.Properties.Resources.search_blck_20_x_20;
+            this.pbSearchIcon.Location = new System.Drawing.Point(1147, 347);
+            this.pbSearchIcon.Name = "pbSearchIcon";
+            this.pbSearchIcon.Size = new System.Drawing.Size(42, 28);
+            this.pbSearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSearchIcon.TabIndex = 21;
+            this.pbSearchIcon.TabStop = false;
+            this.pbSearchIcon.Click += new System.EventHandler(this.pbSearchIcon_Click);
             // 
             // txtSearch
             // 
@@ -246,24 +260,24 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // dgvInventory
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(31, 398);
             this.dgvInventory.Name = "dgvInventory";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventory.RowHeadersWidth = 51;
             this.dgvInventory.RowTemplate.Height = 24;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -430,11 +444,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblFoodName.AutoSize = true;
             this.lblFoodName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFoodName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblFoodName.Location = new System.Drawing.Point(346, 113);
+            this.lblFoodName.Location = new System.Drawing.Point(379, 115);
             this.lblFoodName.Name = "lblFoodName";
-            this.lblFoodName.Size = new System.Drawing.Size(111, 19);
+            this.lblFoodName.Size = new System.Drawing.Size(76, 19);
             this.lblFoodName.TabIndex = 2;
-            this.lblFoodName.Text = "Food Name:";
+            this.lblFoodName.Text = "Product:";
             // 
             // txtStockCode
             // 
@@ -471,20 +485,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.inventoryTableAdapter.ClearBeforeFill = true;
             // 
-            // pbSearchIcon
-            // 
-            this.pbSearchIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbSearchIcon.BackColor = System.Drawing.SystemColors.Control;
-            this.pbSearchIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbSearchIcon.Image = global::Carinderia_Kiosk_System.Properties.Resources.search_blck_20_x_20;
-            this.pbSearchIcon.Location = new System.Drawing.Point(1147, 347);
-            this.pbSearchIcon.Name = "pbSearchIcon";
-            this.pbSearchIcon.Size = new System.Drawing.Size(42, 28);
-            this.pbSearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbSearchIcon.TabIndex = 21;
-            this.pbSearchIcon.TabStop = false;
-            this.pbSearchIcon.Click += new System.EventHandler(this.pbSearchIcon_Click);
-            // 
             // ucInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -497,12 +497,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Load += new System.EventHandler(this.ucInventory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearchIcon)).EndInit();
             this.flpButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cks_dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearchIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

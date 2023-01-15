@@ -48,7 +48,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             flpMenuItems.Controls.Clear();
             conn.Open();
-            cmd = new MySqlCommand("SELECT STOCK_ID, FOOD_NAME, PRICE, IMAGE FROM INVENTORY WHERE FOOD_NAME LIKE '" + txtSearchFoodItem.Text + "%' ORDER BY FOOD_NAME", conn);
+            cmd = new MySqlCommand("SELECT STOCK_ID, STOCK_NAME, PRICE, IMAGE FROM INVENTORY WHERE STOCK_NAME LIKE '" + txtSearchFoodItem.Text + "%' ORDER BY STOCK_NAME", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -75,7 +75,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                 //displays food name
                 foodName = new Label();
-                foodName.Text = dr["FOOD_NAME"].ToString();
+                foodName.Text = dr["STOCK_NAME"].ToString();
                 foodName.BackColor = Color.FromArgb(236, 240, 241);
                 foodName.Font = MediumFont;
                 foodName.TextAlign = ContentAlignment.MiddleCenter;
@@ -135,7 +135,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             flpMenuItems.Controls.Clear();
             conn.Open();
-            cmd = new MySqlCommand("SELECT STOCK_ID, FOOD_NAME, PRICE, IMAGE FROM INVENTORY WHERE CATEGORY LIKE '" + cbMenuCategoriesFilter.Text + "%' ORDER BY FOOD_NAME", conn);
+            cmd = new MySqlCommand("SELECT STOCK_ID, STOCK_NAME, PRICE, IMAGE FROM INVENTORY WHERE CATEGORY LIKE '" + cbMenuCategoriesFilter.Text + "%' ORDER BY STOCK_NAME", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -162,7 +162,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                 //displays food name
                 foodName = new Label();
-                foodName.Text = dr["FOOD_NAME"].ToString();
+                foodName.Text = dr["STOCK_NAME"].ToString();
                 foodName.BackColor = Color.FromArgb(236, 240, 241);
                 foodName.Font = MediumFont;
                 foodName.TextAlign = ContentAlignment.MiddleCenter;

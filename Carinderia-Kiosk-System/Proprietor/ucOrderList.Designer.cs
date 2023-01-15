@@ -405,12 +405,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnConfirmSold.AllowDrop = true;
             this.btnConfirmSold.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnConfirmSold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmSold.Location = new System.Drawing.Point(90, 600);
+            this.btnConfirmSold.Location = new System.Drawing.Point(90, 615);
             this.btnConfirmSold.Name = "btnConfirmSold";
             this.btnConfirmSold.Size = new System.Drawing.Size(170, 46);
             this.btnConfirmSold.TabIndex = 17;
             this.btnConfirmSold.Text = "Confirm Product Sold";
             this.btnConfirmSold.UseVisualStyleBackColor = false;
+            this.btnConfirmSold.Visible = false;
             this.btnConfirmSold.Click += new System.EventHandler(this.btnConfirmSold_Click);
             // 
             // ucOrderList
