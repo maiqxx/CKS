@@ -147,6 +147,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 orderListPanel.Click += new EventHandler(orderListPanel_OnClick);
                 orderListPanel.MouseHover += new EventHandler(orderListPanel_MouseHover);
                 orderStatus.SelectedIndexChanged += new EventHandler(orderStatus_SelectedIndexChanged);
+                deleteIcon.Click += new EventHandler(RemoveFromOrderlist_OnClick);
 
             }
             dr.Close();
@@ -158,7 +159,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void orderStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             String tag = ((ComboBox)sender).Tag.ToString();    //gets ORDER_ID using tag
-            var newStat = (((ComboBox)sender).SelectedItem.ToString()); //gets the value from numericUpDown controls
+            var newStat = (((ComboBox)sender).SelectedItem.ToString()); //gets the selected item from combobox 
 
             try
             {
@@ -168,6 +169,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                                         "WHERE ORDER_ID = '" + tag + "' ", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Order status updated to " + newStat);
+                GetDetailedOrders(); //reloads details
                 conn.Close();
                 
             }
@@ -175,6 +177,36 @@ namespace Carinderia_Kiosk_System.Proprietor
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        //Removes order from order list and move to Transactions
+        public void RemoveFromOrderlist_OnClick(object sender, EventArgs e)
+        {
+            String tag = ((PictureBox)sender).Tag.ToString();
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("INSERT INTO TRANSACTION (ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, STATUS) " +
+                                        "(SELECT ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, ORDER_STATUS FROM ORDERS WHERE ORDER_ID = '"+ tag+"') ", conn);
+
+                int ctr = cmd.ExecuteNonQuery();
+                if (ctr > 0)
+                {
+                    MessageBox.Show("Moved to transactions!");
+                    GetOrderList();
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        void UpdateStocks()
+        {
+
         }
 
         //hover event
@@ -286,10 +318,10 @@ namespace Carinderia_Kiosk_System.Proprietor
 
 
 
+        /// <summary>
+        /// lists orders of the specific customer - using datagridview [this is an alternative way]
+        /// </summary>
 
-
-
-        //lists orders of the specific customer - using datagridview [this is an alternative way]
         void GetOrders()
         {
             try
