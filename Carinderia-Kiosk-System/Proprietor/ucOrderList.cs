@@ -164,7 +164,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             String tag = ((Panel)sender).Tag.ToString();
             flpDetailedOrders.Controls.Clear();
             pnlDetails.Visible = true;
-            btnConfirmSold.Visible = false;
+            //btnConfirmSold.Visible = false;
 
             try
             {
@@ -188,7 +188,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                 if (lblOrderStatus.Text == "Completed")
                 {
-                    btnConfirmSold.Visible = true;
+                    //btnConfirmSold.Visible = true;
 
                     //UpdateInventory();
 
@@ -331,6 +331,12 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void btnConfirmSold_Click(object sender, EventArgs e)
         {
+            string newStat = "Completed";
+            conn.Open();
+            cmd = new MySqlCommand("UPDATE ORDERS SET ORDER_STATUS = '" + newStat  + "' WHERE ORDER_ID = '" + lblOrderNum.Text + "' ", conn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Order status updated to " + newStat);
+            conn.Close();
             UpdateInventory();
         }
 
@@ -340,13 +346,14 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         void UpdateInventory()
         {
+
             try
             {
                 var arrayList1 = new ArrayList();
                 bool updated = false;
 
                 conn.Open();
-                cmd = new MySqlCommand("SELECT QUANTITY, STOCK_QUANTITY, STOCK_NAME AS FOOD_ITEM FROM CUSTOMER, INVENTORY WHERE CUSTOMER.STOCK_NAME = INVENTORY.FOOD_ITEM ", conn);
+                cmd = new MySqlCommand("SELECT QUANTITY, STOCK_QUANTITY, STOCK_NAME FROM CUSTOMER, INVENTORY WHERE CUSTOMER.FOOD_NAME = INVENTORY.STOCK_NAME ", conn);
                 dr = cmd.ExecuteReader();
 
                 if (dr.HasRows)
@@ -366,9 +373,9 @@ namespace Carinderia_Kiosk_System.Proprietor
                         };
                         arrayList1.AddRange(arrayList2);
                     }
-
-                    
+                    dr.Close();
                 }
+                dr.Close();
 
                 for (int i = 0; i < arrayList1.Count; i++)
                 {
@@ -377,14 +384,16 @@ namespace Carinderia_Kiosk_System.Proprietor
                         var foodName = arrayList1[i];
                         var updatedQty = arrayList1[i + 1];
 
-                        cmd = new MySqlCommand("UPDATE INVENTORY SET STOCK_QUANTY = '" + updatedQty + "' WHERE STOCK_NAME = '" + foodName + "' ", conn);
+                        cmd = new MySqlCommand("UPDATE INVENTORY SET STOCK_QUANTITY = '" + updatedQty + "' WHERE STOCK_NAME = '" + foodName + "' ", conn);
                         dr = cmd.ExecuteReader();
 
                         if (dr.Read())
                         {
-                            var updatedStock = dr["STOCK_QUANTY"];
+                            var updatedStock = dr["STOCK_QUANTITY"];
+                            lblOrderStatus.Text = "Completed";
                             MessageBox.Show("Stock updated!");
                         }
+                        dr.Close();
                     }
                     updated = true;
                 }
@@ -434,6 +443,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             //    cmd.ExecuteNonQuery();
             //}
             //conn.Close();
+        }
+
+        private void btnCompeted_Click(object sender, EventArgs e)
+        {
+            
         }
 
         //hover event
