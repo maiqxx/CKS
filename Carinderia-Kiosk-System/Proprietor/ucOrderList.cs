@@ -340,7 +340,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 bool updated = false;
 
                 conn.Open();
-                cmd = new MySqlCommand("SELECT CUSTOMER.FOOD_NAME, CUSTOMER.QUANTITY, INVENTORY.FOOD_NAME, INVENTORY.STOCK_QUANTITY FROM CUSTOMER JOIN INVENTORY ON CUSTOMER.FOOD_NAME = INVENTORY.FOOD_NAME ", conn);
+                cmd = new MySqlCommand("SELECT QUANTITY, STOCK_QUANTITY, FOOD_NAME AS FOOD_ITEM FROM CUSTOMER, INVENTORY WHERE CUSTOMER.FOOD_NAME = INVENTORY.FOOD_ITEM ", conn);
                 dr = cmd.ExecuteReader();
 
                 if (dr.HasRows)
@@ -361,30 +361,30 @@ namespace Carinderia_Kiosk_System.Proprietor
                         arrayList1.AddRange(arrayList2);
                     }
 
-                    for (int i = 0; i < arrayList1.Count; i++)
-                    {
-                        if (i % 2 == 0)
-                        {
-                            var foodName = arrayList1[i];
-                            var updatedQty = arrayList1[i + 1];
-
-                            cmd = new MySqlCommand("UPDATE INVENTORY SET STOCK_QUANTY = '" + updatedQty + "' WHERE FOOD_NAME = '" + foodName + "' ", conn);
-                            dr = cmd.ExecuteReader();
-
-                            if (dr.Read())
-                            {
-                                var updatedStock = dr["STOCK_QUANTY"];
-                                MessageBox.Show("Stock updated!");
-                            }
-                        }
-                        updated = true;
-                    }
-                    dr.Close();
-                    conn.Close();
+                    
                 }
 
+                for (int i = 0; i < arrayList1.Count; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        var foodName = arrayList1[i];
+                        var updatedQty = arrayList1[i + 1];
 
-                
+                        cmd = new MySqlCommand("UPDATE INVENTORY SET STOCK_QUANTY = '" + updatedQty + "' WHERE FOOD_NAME = '" + foodName + "' ", conn);
+                        dr = cmd.ExecuteReader();
+
+                        if (dr.Read())
+                        {
+                            var updatedStock = dr["STOCK_QUANTY"];
+                            MessageBox.Show("Stock updated!");
+                        }
+                    }
+                    updated = true;
+                }
+                dr.Close();
+                conn.Close();
+
 
             }
             catch (Exception ex)
