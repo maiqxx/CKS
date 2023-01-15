@@ -38,7 +38,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
-            this.btnRecordToInvoice = new System.Windows.Forms.Button();
             this.flpDetailedOrders = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCustName = new System.Windows.Forms.Label();
             this.lblOrderNum = new System.Windows.Forms.Label();
             this.lblOrderNo = new System.Windows.Forms.Label();
+            this.btnConfirmSold = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlDetails.SuspendLayout();
@@ -175,7 +175,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // pnlDetails
             // 
             this.pnlDetails.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnlDetails.Controls.Add(this.btnRecordToInvoice);
+            this.pnlDetails.Controls.Add(this.btnConfirmSold);
             this.pnlDetails.Controls.Add(this.flpDetailedOrders);
             this.pnlDetails.Controls.Add(this.tableLayoutPanel2);
             this.pnlDetails.Controls.Add(this.lblDateTime);
@@ -195,18 +195,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pnlDetails.Size = new System.Drawing.Size(342, 815);
             this.pnlDetails.TabIndex = 2;
             this.pnlDetails.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // btnRecordToInvoice
-            // 
-            this.btnRecordToInvoice.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnRecordToInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecordToInvoice.Location = new System.Drawing.Point(90, 593);
-            this.btnRecordToInvoice.Name = "btnRecordToInvoice";
-            this.btnRecordToInvoice.Size = new System.Drawing.Size(163, 40);
-            this.btnRecordToInvoice.TabIndex = 17;
-            this.btnRecordToInvoice.Text = "Record Invoice";
-            this.btnRecordToInvoice.UseVisualStyleBackColor = false;
-            this.btnRecordToInvoice.Click += new System.EventHandler(this.btnRecordToInvoice_Click);
             // 
             // flpDetailedOrders
             // 
@@ -412,6 +400,19 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblOrderNo.TabIndex = 0;
             this.lblOrderNo.Text = "Order No.: ";
             // 
+            // btnConfirmSold
+            // 
+            this.btnConfirmSold.AllowDrop = true;
+            this.btnConfirmSold.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnConfirmSold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmSold.Location = new System.Drawing.Point(90, 600);
+            this.btnConfirmSold.Name = "btnConfirmSold";
+            this.btnConfirmSold.Size = new System.Drawing.Size(170, 46);
+            this.btnConfirmSold.TabIndex = 17;
+            this.btnConfirmSold.Text = "Confirm Product Sold";
+            this.btnConfirmSold.UseVisualStyleBackColor = false;
+            this.btnConfirmSold.Click += new System.EventHandler(this.btnConfirmSold_Click);
+            // 
             // ucOrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -463,6 +464,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.FlowLayoutPanel flpDetailedOrders;
-        private System.Windows.Forms.Button btnRecordToInvoice;
+        private System.Windows.Forms.Button btnConfirmSold;
     }
 }

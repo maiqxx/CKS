@@ -442,26 +442,27 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void btnRecordToInvoice_Click(object sender, EventArgs e)
         {
+
             try
             {
                 conn.Open();
 
                 // Record to INVOICE table
                 cmd = new MySqlCommand("INSERT INTO INVOICE " +
-                                        "SET CUSTOMER_NAME = '"+ lblCustomer.Text+ "', " +
-                                        "FOOD_NAME = (SELECT FOOD_NAME FROM CUSTOMER WHERE CUSTOMER_NAME = '"+ lblCustomer.Text +"'), " +
+                                        "SET CUSTOMER_NAME = '" + lblCustomer.Text + "', " +
+                                        "FOOD_NAME = (SELECT FOOD_NAME FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "'), " +
                                         "QUANTITY = (SELECT QUANTITY FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "'), " +
                                         "UNIT_PRICE = (SELECT UNIT_PRICE FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "')," +
                                         "TOTAL_AMOUNT = (SELECT TOTAL_AMOUNT FROM ORDERS WHERE ORDER_ID = '" + lblOrderNum.Text + "')," +
-                                        "DINE_OPTION = (SELECT DINE_OPTION FROM ORDERS WHERE ORDER_ID = '" + lblOrderNum.Text+ "')," +
-                                        "ORDER_ID = (SELECT ORDER_ID FROM ORDERS WHERE ORDER_ID = '" + lblOrderNum.Text+ "') ", conn);
+                                        "DINE_OPTION = (SELECT DINE_OPTION FROM ORDERS WHERE ORDER_ID = '" + lblOrderNum.Text + "')," +
+                                        "ORDER_ID = (SELECT ORDER_ID FROM ORDERS WHERE ORDER_ID = '" + lblOrderNum.Text + "') ", conn);
 
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
-               // UpdateInventory();
+                // UpdateInventory();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Sad, wa na record.");
                 MessageBox.Show(ex.Message);
@@ -470,7 +471,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             {
                 conn.Close();
             }
-            
         }
 
 
@@ -544,6 +544,9 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        private void btnConfirmSold_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
