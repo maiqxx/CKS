@@ -41,7 +41,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(92, 193);
+            this.label1.Location = new System.Drawing.Point(78, 203);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 23);
             this.label1.TabIndex = 4;
@@ -51,7 +51,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // pbCloseIcon
             // 
             this.pbCloseIcon.Image = global::Carinderia_Kiosk_System.Properties.Resources.close_icon_black_20_x_20;
-            this.pbCloseIcon.Location = new System.Drawing.Point(350, 3);
+            this.pbCloseIcon.Location = new System.Drawing.Point(320, 0);
             this.pbCloseIcon.Name = "pbCloseIcon";
             this.pbCloseIcon.Size = new System.Drawing.Size(42, 32);
             this.pbCloseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -62,7 +62,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.verified_admin;
-            this.pictureBox1.Location = new System.Drawing.Point(96, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(82, 70);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(192, 107);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -74,7 +74,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 280);
+            this.ClientSize = new System.Drawing.Size(363, 280);
             this.Controls.Add(this.pbCloseIcon);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
