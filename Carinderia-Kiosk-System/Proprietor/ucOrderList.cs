@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,7 +68,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             flpOrderList.Controls.Clear();
 
             conn.Open();
-            cmd = new MySqlCommand("SELECT ORDER_ID, CUSTOMER_NAME, TOTAL_AMOUNT, DINE_OPTION, ORDER_STATUS FROM ORDERS ", conn);
+            cmd = new MySqlCommand("SELECT * FROM ORDERS ", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -119,6 +120,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 orderStatus.Location = new Point(650, 15);
                 orderStatus.Font = MediumFontBold;
                 orderStatus.Tag = dr["ORDER_ID"].ToString();
+                orderStatus.Items.Add("Pending");
                 orderStatus.Items.Add("Completed");
                 orderStatus.Items.Add("Cancelled");
 
@@ -155,66 +157,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
-        //When order status is changed
-        private void orderStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            String tag = ((ComboBox)sender).Tag.ToString();    //gets ORDER_ID using tag
-            var newStat = (((ComboBox)sender).SelectedItem.ToString()); //gets the selected item from combobox 
-
-            try
-            {
-                conn.Open();
-                cmd = new MySqlCommand("UPDATE ORDERS " +
-                                        "SET ORDER_STATUS = '" + newStat + "' " +
-                                        "WHERE ORDER_ID = '" + tag + "' ", conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Order status updated to " + newStat);
-                GetDetailedOrders(); //reloads details
-                conn.Close();
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        //Removes order from order list and move to Transactions
-        public void RemoveFromOrderlist_OnClick(object sender, EventArgs e)
-        {
-            String tag = ((PictureBox)sender).Tag.ToString();
-
-            try
-            {
-                conn.Open();
-                cmd = new MySqlCommand("INSERT INTO TRANSACTION (ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, STATUS) " +
-                                        "(SELECT ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, ORDER_STATUS FROM ORDERS WHERE ORDER_ID = '"+ tag+"') ", conn);
-
-                int ctr = cmd.ExecuteNonQuery();
-                if (ctr > 0)
-                {
-                    MessageBox.Show("Moved to transactions!");
-                    GetOrderList();
-                }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message);
-            }
-        }
-
-        void UpdateStocks()
-        {
-
-        }
-
-        //hover event
-        public void orderListPanel_MouseHover(object sender, EventArgs e)
-        {
-           // String tag = ((Panel)sender).Tag.ToString();
-           orderListPanel.BackColor = Color.WhiteSmoke;
-        }
 
         //displays the details of orders  when a specified orderListPanel is being cicked
         public void orderListPanel_OnClick(object sender, EventArgs e)
@@ -222,6 +164,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             String tag = ((Panel)sender).Tag.ToString();
             flpDetailedOrders.Controls.Clear();
             pnlDetails.Visible = true;
+            btnRecordToInvoice.Visible = false;
 
             try
             {
@@ -237,9 +180,12 @@ namespace Carinderia_Kiosk_System.Proprietor
                     lblOption.Text = dr["DINE_OPTION"].ToString();
                     lblOrderStatus.Text = dr["ORDER_STATUS"].ToString();
                     lblTotalPayment.Text = "₱ " + dr["TOTAL_AMOUNT"].ToString();
+
+
                 }
                 dr.Close();
                 conn.Close();
+
                 //GetOrders();
                 GetDetailedOrders();
 
@@ -263,7 +209,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         //lists orders of the specific customer - using flowlayoutpanel
         void GetDetailedOrders()
         {
-
+            //pnlDetails.Controls.Clear();
             conn.Open();
             cmd = new MySqlCommand("SELECT FOOD_NAME, QUANTITY, UNIT_PRICE FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text.Trim() + "' ", conn);
             dr = cmd.ExecuteReader();
@@ -315,7 +261,217 @@ namespace Carinderia_Kiosk_System.Proprietor
             conn.Close();
         }
 
+        //When order status is changed
+        private void orderStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String tag = ((ComboBox)sender).Tag.ToString();    //gets ORDER_ID using tag
+            var newStat = (((ComboBox)sender).SelectedItem.ToString()); //gets the selected item from combobox 
 
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("UPDATE ORDERS SET ORDER_STATUS = '" + newStat + "' WHERE ORDER_ID = '" + tag + "' ", conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Order status updated to " + newStat);
+                conn.Close();
+                GetDetailedOrders(); //reloads details
+                if (lblOrderStatus.Text == "Completed")
+                {
+                    //btnRecordToInvoice.Visible = true;
+
+                    UpdateInventory();
+
+                }
+                else
+                {
+                    //do nothing...
+                }
+                GetDetailedOrders();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Removes order from order list and move to Transactions
+        public void RemoveFromOrderlist_OnClick(object sender, EventArgs e)
+        {
+            String tag = ((PictureBox)sender).Tag.ToString();
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("INSERT INTO TRANSACTION (ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, STATUS) " +
+                                        "(SELECT ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, ORDER_STATUS FROM ORDERS WHERE ORDER_ID = '"+ tag+"') ", conn);
+
+                int ctr = cmd.ExecuteNonQuery();
+                if (ctr > 0)
+                {
+                    MessageBox.Show("Moved to transactions!");
+                }
+                else
+                {
+                    conn.Close();
+                }
+
+                cmd = new MySqlCommand("DELETE * FROM ORDERS WHERE ORDER_ID = '" + tag + "' ", conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                GetOrderList();
+            }
+            catch (Exception ex)
+            {
+               // MessageBox.Show(ex.Message);
+            }
+        }
+
+
+
+        /// <summary>
+        /// HERE'S MY ATTEMPT IN UPDATING INVENTORY STOCK_QUANTITY
+        /// </summary>
+        
+        void UpdateInventory()
+        {
+            try
+            {
+                var arrayList1 = new ArrayList();
+                bool updated = false;
+
+                conn.Open();
+                cmd = new MySqlCommand("SELECT CUSTOMER.FOOD_NAME, CUSTOMER.QUANTITY, INVENTORY.FOOD_NAME, INVENTORY.STOCK_QUANTITY FROM CUSTOMER JOIN INVENTORY ON CUSTOMER.FOOD_NAME = INVENTORY.FOOD_NAME ", conn);
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    //List<Tuple<string, int>> results = new List<Tuple<string, int>>();
+                    while (dr.Read())
+                    {
+                        string foodName = dr["FOOD_NAME"].ToString();
+                        int orderQty = Convert.ToInt32(dr["QUANTITY"]);
+                        int stockQty = Convert.ToInt32(dr["STOCK_QUANTITY"]);
+                        int updatedQty = stockQty - orderQty;
+
+                        //results.Add(new Tuple<string, int>(foodName, updatedQty));
+                        var arrayList2 = new ArrayList()
+                        {
+                            foodName, updatedQty
+                        };
+                        arrayList1.AddRange(arrayList2);
+                    }
+
+                    for (int i = 0; i < arrayList1.Count; i++)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            var foodName = arrayList1[i];
+                            var updatedQty = arrayList1[i + 1];
+
+                            cmd = new MySqlCommand("UPDATE INVENTORY SET STOCK_QUANTY = '" + updatedQty + "' WHERE FOOD_NAME = '" + foodName + "' ", conn);
+                            dr = cmd.ExecuteReader();
+
+                            if (dr.Read())
+                            {
+                                var updatedStock = dr["STOCK_QUANTY"];
+                                MessageBox.Show("Stock updated!");
+                            }
+                        }
+                        updated = true;
+                    }
+                    dr.Close();
+                    conn.Close();
+                }
+
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("di ma update ang stocks");
+               MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+            //conn.Open();
+            //cmd = new MySqlCommand("SELECT * FROM CUSTOMERS WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "' ", conn);
+            //dr = cmd.ExecuteReader();
+
+            //if (dr.Read())
+            //{
+            //    var quantity = Convert.ToInt32(dr["QUANTITY"]);
+            //    var foodName = dr["FOOD_NAME"].ToString();
+
+            //    // Update stock quantity in inventory
+            //    cmd = new MySqlCommand("UPDATE INVENTOTY SET STOCK_QUANTITY = STOCK_QUANTITY - '" + quantity + "' " +
+            //                          "WHERE FOOD_NAME = '" + foodName + "' ", conn);
+            //    cmd.ExecuteNonQuery();
+            //}
+            //dr.Close();
+            //conn.Close();
+
+
+            //conn.Open();
+            //MySqlCommand cmd = new MySqlCommand("UPDATE inventory SET quantity = quantity - @quantity WHERE id = @id");
+            //cmd.Prepare();
+
+            //foreach (var item in items)
+            //{
+            //    cmd.Parameters.Clear();
+            //    cmd.Parameters.AddWithValue("@quantity", item.Quantity);
+            //    cmd.Parameters.AddWithValue("@id", item.Id);
+            //    cmd.ExecuteNonQuery();
+            //}
+            //conn.Close();
+
+
+        }
+
+        //hover event
+        public void orderListPanel_MouseHover(object sender, EventArgs e)
+        {
+           // String tag = ((Panel)sender).Tag.ToString();
+           orderListPanel.BackColor = Color.WhiteSmoke;
+        }
+
+
+        private void btnRecordToInvoice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+
+                // Record to INVOICE table
+                cmd = new MySqlCommand("INSERT INTO INVOICE " +
+                                        "SET CUSTOMER_NAME = '"+ lblCustomer.Text+ "', " +
+                                        "FOOD_NAME = (SELECT FOOD_NAME FROM CUSTOMER WHERE CUSTOMER_NAME = '"+ lblCustomer.Text +"'), " +
+                                        "QUANTITY = (SELECT QUANTITY FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "'), " +
+                                        "UNIT_PRICE = (SELECT UNIT_PRICE FROM CUSTOMER WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "')," +
+                                        "TOTAL_AMOUNT = (SELECT TOTAL_AMOUNT FROM ORDERS WHERE ORDER_ID = '" + lblOrderNum.Text + "')," +
+                                        "DINE_OPTION = (SELECT DINE_OPTION FROM ORDERS WHERE ORDER_ID = '" + lblOrderNum.Text+ "')," +
+                                        "ORDER_ID = (SELECT ORDER_ID FROM ORDERS WHERE ORDER_ID = '" + lblOrderNum.Text+ "') ", conn);
+
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+               // UpdateInventory();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Sad, wa na record.");
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
+        }
 
 
         /// <summary>
@@ -387,5 +543,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
 
         }
+
+
     }
 }
