@@ -37,10 +37,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnOrderList = new System.Windows.Forms.Button();
             this.btnTransacts = new System.Windows.Forms.Button();
             this.pnlManageOrdersContainer = new System.Windows.Forms.Panel();
-            this.ucTransactionList1 = new Carinderia_Kiosk_System.Proprietor.ucTransactionList();
-            this.ucCancelledOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCancelledOrders();
-            this.ucCompletedOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCompletedOrders();
-            this.ucOrderList1 = new Carinderia_Kiosk_System.Proprietor.ucOrderList();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +46,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCurrentNumOrders = new System.Windows.Forms.Label();
             this.lblCompletedOrders = new System.Windows.Forms.Label();
             this.lblCancelledOrders = new System.Windows.Forms.Label();
+            this.ucTransactionList1 = new Carinderia_Kiosk_System.Proprietor.ucTransactionList();
+            this.ucCancelledOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCancelledOrders();
+            this.ucCompletedOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCompletedOrders();
+            this.ucOrderList1 = new Carinderia_Kiosk_System.Proprietor.ucOrderList();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlManageOrdersContainer.SuspendLayout();
@@ -174,43 +174,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pnlManageOrdersContainer.Size = new System.Drawing.Size(1213, 815);
             this.pnlManageOrdersContainer.TabIndex = 3;
             // 
-            // ucTransactionList1
-            // 
-            this.ucTransactionList1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucTransactionList1.Location = new System.Drawing.Point(-3, -3);
-            this.ucTransactionList1.Name = "ucTransactionList1";
-            this.ucTransactionList1.Size = new System.Drawing.Size(1213, 815);
-            this.ucTransactionList1.TabIndex = 3;
-            // 
-            // ucCancelledOrders1
-            // 
-            this.ucCancelledOrders1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucCancelledOrders1.Location = new System.Drawing.Point(0, 0);
-            this.ucCancelledOrders1.Name = "ucCancelledOrders1";
-            this.ucCancelledOrders1.Size = new System.Drawing.Size(1213, 815);
-            this.ucCancelledOrders1.TabIndex = 2;
-            // 
-            // ucCompletedOrders1
-            // 
-            this.ucCompletedOrders1.Location = new System.Drawing.Point(0, -1);
-            this.ucCompletedOrders1.Name = "ucCompletedOrders1";
-            this.ucCompletedOrders1.Size = new System.Drawing.Size(1213, 815);
-            this.ucCompletedOrders1.TabIndex = 1;
-            // 
-            // ucOrderList1
-            // 
-            this.ucOrderList1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucOrderList1.Location = new System.Drawing.Point(4, 4);
-            this.ucOrderList1.Name = "ucOrderList1";
-            this.ucOrderList1.Size = new System.Drawing.Size(1213, 815);
-            this.ucOrderList1.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(98, 20);
+            this.label1.Location = new System.Drawing.Point(87, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 19);
             this.label1.TabIndex = 1;
@@ -221,7 +190,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(275, 20);
+            this.label2.Location = new System.Drawing.Point(261, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 19);
             this.label2.TabIndex = 3;
@@ -232,7 +201,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(489, 20);
+            this.label3.Location = new System.Drawing.Point(474, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 19);
             this.label3.TabIndex = 5;
@@ -273,7 +242,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCurrentNumOrders.AutoSize = true;
             this.lblCurrentNumOrders.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentNumOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCurrentNumOrders.Location = new System.Drawing.Point(98, 51);
+            this.lblCurrentNumOrders.Location = new System.Drawing.Point(87, 51);
             this.lblCurrentNumOrders.Name = "lblCurrentNumOrders";
             this.lblCurrentNumOrders.Size = new System.Drawing.Size(19, 19);
             this.lblCurrentNumOrders.TabIndex = 6;
@@ -284,7 +253,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCompletedOrders.AutoSize = true;
             this.lblCompletedOrders.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompletedOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCompletedOrders.Location = new System.Drawing.Point(275, 51);
+            this.lblCompletedOrders.Location = new System.Drawing.Point(271, 51);
             this.lblCompletedOrders.Name = "lblCompletedOrders";
             this.lblCompletedOrders.Size = new System.Drawing.Size(19, 19);
             this.lblCompletedOrders.TabIndex = 7;
@@ -295,11 +264,42 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCancelledOrders.AutoSize = true;
             this.lblCancelledOrders.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCancelledOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCancelledOrders.Location = new System.Drawing.Point(489, 51);
+            this.lblCancelledOrders.Location = new System.Drawing.Point(474, 51);
             this.lblCancelledOrders.Name = "lblCancelledOrders";
             this.lblCancelledOrders.Size = new System.Drawing.Size(19, 19);
             this.lblCancelledOrders.TabIndex = 8;
             this.lblCancelledOrders.Text = "0";
+            // 
+            // ucTransactionList1
+            // 
+            this.ucTransactionList1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucTransactionList1.Location = new System.Drawing.Point(-3, -3);
+            this.ucTransactionList1.Name = "ucTransactionList1";
+            this.ucTransactionList1.Size = new System.Drawing.Size(1213, 815);
+            this.ucTransactionList1.TabIndex = 3;
+            // 
+            // ucCancelledOrders1
+            // 
+            this.ucCancelledOrders1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucCancelledOrders1.Location = new System.Drawing.Point(0, 0);
+            this.ucCancelledOrders1.Name = "ucCancelledOrders1";
+            this.ucCancelledOrders1.Size = new System.Drawing.Size(1213, 815);
+            this.ucCancelledOrders1.TabIndex = 2;
+            // 
+            // ucCompletedOrders1
+            // 
+            this.ucCompletedOrders1.Location = new System.Drawing.Point(0, -1);
+            this.ucCompletedOrders1.Name = "ucCompletedOrders1";
+            this.ucCompletedOrders1.Size = new System.Drawing.Size(1213, 815);
+            this.ucCompletedOrders1.TabIndex = 1;
+            // 
+            // ucOrderList1
+            // 
+            this.ucOrderList1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucOrderList1.Location = new System.Drawing.Point(4, 4);
+            this.ucOrderList1.Name = "ucOrderList1";
+            this.ucOrderList1.Size = new System.Drawing.Size(1213, 815);
+            this.ucOrderList1.TabIndex = 0;
             // 
             // ucOrders
             // 

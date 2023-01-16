@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,10 @@ namespace Carinderia_Kiosk_System.Proprietor
     public partial class ucOrders : UserControl
     {
         public static ucOrders instance;
+
+        MySqlConnection conn;
+        MySqlCommand cmd;
+        MySqlDataReader dr;
 
         public static ucOrders Instance
         {
@@ -31,10 +36,16 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             InitializeComponent();
             instance = this;
+            conn = new MySqlConnection();
+            conn.ConnectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
         }
 
         private void ucOrders_Load(object sender, EventArgs e)
         {
+            GetPendingOrders();
+            GetCompletedOrder();
+            GetCancelledOrder();
+
             if (!pnlManageOrdersContainer.Controls.Contains(ucOrderList.Instance))
             {
                 pnlManageOrdersContainer.Controls.Add(ucOrderList.Instance);
@@ -112,6 +123,59 @@ namespace Carinderia_Kiosk_System.Proprietor
             else
             {
                 ucTransactionList.Instance.BringToFront();
+            }
+        }
+
+        //Live Orders
+
+        void GetPendingOrders()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '"+ "Pending" +"' ", conn);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                lblCurrentNumOrders.Text = count.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void GetCompletedOrder()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '" + "Completed" + "' ", conn);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                lblCompletedOrders.Text = count.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void GetCancelledOrder()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '" + "Cancelled" + "' ", conn);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                lblCancelledOrders.Text = count.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
