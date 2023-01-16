@@ -82,9 +82,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.flpOrderList.AutoScroll = true;
             this.flpOrderList.BackColor = System.Drawing.Color.AliceBlue;
             this.flpOrderList.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpOrderList.Location = new System.Drawing.Point(0, 42);
+            this.flpOrderList.Location = new System.Drawing.Point(0, 43);
             this.flpOrderList.Name = "flpOrderList";
-            this.flpOrderList.Size = new System.Drawing.Size(865, 773);
+            this.flpOrderList.Size = new System.Drawing.Size(865, 772);
             this.flpOrderList.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -204,7 +204,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnConfirmSold
             // 
             this.btnConfirmSold.AllowDrop = true;
-            this.btnConfirmSold.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnConfirmSold.BackColor = System.Drawing.Color.ForestGreen;
             this.btnConfirmSold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmSold.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmSold.ForeColor = System.Drawing.SystemColors.ButtonHighlight;

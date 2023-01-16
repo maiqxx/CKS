@@ -31,8 +31,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             this.lblManageOrders = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCancelled = new System.Windows.Forms.Button();
-            this.btnCompleted = new System.Windows.Forms.Button();
             this.btnOrderList = new System.Windows.Forms.Button();
             this.btnTransacts = new System.Windows.Forms.Button();
             this.pnlManageOrdersContainer = new System.Windows.Forms.Panel();
@@ -60,49 +58,19 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 591F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelled, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCompleted, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnOrderList, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnTransacts, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnTransacts, 1, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 46);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1216, 44);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(374, 44);
             this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // btnCancelled
-            // 
-            this.btnCancelled.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnCancelled.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelled.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelled.Location = new System.Drawing.Point(303, 3);
-            this.btnCancelled.Name = "btnCancelled";
-            this.btnCancelled.Size = new System.Drawing.Size(144, 38);
-            this.btnCancelled.TabIndex = 2;
-            this.btnCancelled.Text = "Cancelled";
-            this.btnCancelled.UseVisualStyleBackColor = false;
-            this.btnCancelled.Click += new System.EventHandler(this.btnCancelled_Click);
-            // 
-            // btnCompleted
-            // 
-            this.btnCompleted.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnCompleted.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompleted.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCompleted.Location = new System.Drawing.Point(153, 3);
-            this.btnCompleted.Name = "btnCompleted";
-            this.btnCompleted.Size = new System.Drawing.Size(144, 38);
-            this.btnCompleted.TabIndex = 1;
-            this.btnCompleted.Text = "Completed";
-            this.btnCompleted.UseVisualStyleBackColor = false;
-            this.btnCompleted.Click += new System.EventHandler(this.btnCompleted_Click);
             // 
             // btnOrderList
             // 
@@ -121,12 +89,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnTransacts
             // 
             this.btnTransacts.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnTransacts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTransacts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransacts.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTransacts.Location = new System.Drawing.Point(1044, 3);
+            this.btnTransacts.Location = new System.Drawing.Point(153, 3);
             this.btnTransacts.Name = "btnTransacts";
-            this.btnTransacts.Size = new System.Drawing.Size(169, 38);
+            this.btnTransacts.Size = new System.Drawing.Size(161, 38);
             this.btnTransacts.TabIndex = 4;
             this.btnTransacts.Text = "Transaction List";
             this.btnTransacts.UseVisualStyleBackColor = false;
@@ -197,8 +164,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private System.Windows.Forms.Label lblManageOrders;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnCancelled;
-        private System.Windows.Forms.Button btnCompleted;
         private System.Windows.Forms.Button btnOrderList;
         private System.Windows.Forms.Button btnTransacts;
         private System.Windows.Forms.Panel pnlManageOrdersContainer;

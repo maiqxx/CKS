@@ -69,7 +69,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             flpOrderList.Controls.Clear();
 
             conn.Open();
-            cmd = new MySqlCommand("SELECT* FROM ORDERS ", conn);
+            cmd = new MySqlCommand("SELECT * FROM ORDERS ", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())

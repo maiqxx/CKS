@@ -81,32 +81,32 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Completed orders button
         private void btnCompleted_Click(object sender, EventArgs e)
         {
-            if (!pnlManageOrdersContainer.Controls.Contains(ucCompletedOrders.Instance))
-            {
-                pnlManageOrdersContainer.Controls.Add(ucCompletedOrders.Instance);
-                ucCompletedOrders.Instance.Dock = DockStyle.Fill;
-                ucCompletedOrders.Instance.BringToFront();
-            }
-            else
-            {
-                ucCompletedOrders.Instance.BringToFront();
-            }
+            //if (!pnlManageOrdersContainer.Controls.Contains(ucCompletedOrders.Instance))
+            //{
+            //    pnlManageOrdersContainer.Controls.Add(ucCompletedOrders.Instance);
+            //    ucCompletedOrders.Instance.Dock = DockStyle.Fill;
+            //    ucCompletedOrders.Instance.BringToFront();
+            //}
+            //else
+            //{
+            //    ucCompletedOrders.Instance.BringToFront();
+            //}
         }
 
 
         //Cancelled orders button
         private void btnCancelled_Click(object sender, EventArgs e)
         {
-            if (!pnlManageOrdersContainer.Controls.Contains(ucCancelledOrders.Instance))
-            {
-                pnlManageOrdersContainer.Controls.Add(ucCancelledOrders.Instance);
-                ucCancelledOrders.Instance.Dock = DockStyle.Fill;
-                ucCancelledOrders.Instance.BringToFront();
-            }
-            else
-            {
-                ucCancelledOrders.Instance.BringToFront();
-            }
+            //if (!pnlManageOrdersContainer.Controls.Contains(ucCancelledOrders.Instance))
+            //{
+            //    pnlManageOrdersContainer.Controls.Add(ucCancelledOrders.Instance);
+            //    ucCancelledOrders.Instance.Dock = DockStyle.Fill;
+            //    ucCancelledOrders.Instance.BringToFront();
+            //}
+            //else
+            //{
+            //    ucCancelledOrders.Instance.BringToFront();
+            //}
         }
 
 
