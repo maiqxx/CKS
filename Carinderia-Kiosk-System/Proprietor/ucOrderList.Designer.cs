@@ -203,7 +203,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnConfirmSold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmSold.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmSold.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnConfirmSold.Location = new System.Drawing.Point(90, 577);
+            this.btnConfirmSold.Location = new System.Drawing.Point(90, 573);
             this.btnConfirmSold.Name = "btnConfirmSold";
             this.btnConfirmSold.Size = new System.Drawing.Size(170, 46);
             this.btnConfirmSold.TabIndex = 17;

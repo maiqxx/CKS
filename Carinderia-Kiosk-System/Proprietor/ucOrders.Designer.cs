@@ -84,7 +84,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(31, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(622, 90);
+            this.panel1.Size = new System.Drawing.Size(593, 90);
             this.panel1.TabIndex = 1;
             // 
             // tableLayoutPanel1

@@ -26,7 +26,6 @@ namespace Carinderia_Kiosk_System.Proprietor
                 if (instance == null)
                 {
                     instance = new ucOrders();
-
                 }
                 return instance;
             }
@@ -128,6 +127,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         //Live Orders
 
+        //Counts the pending orders
         void GetPendingOrders()
         {
             try
@@ -145,6 +145,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //Counts the complete orders
         void GetCompletedOrder()
         {
             try
@@ -162,6 +163,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //Counts the cancelled orders
         void GetCancelledOrder()
         {
             try

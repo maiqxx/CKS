@@ -754,6 +754,7 @@
     <None Include="Resources\inventory black 20x201.png" />
     <None Include="Resources\gear black 20x201.png" />
     <None Include="Resources\dashboard black 20x201.png" />
+    <None Include="Resources\feedback white icon 40x40.png" />
     <Content Include="Resources\gear black 20x20.png" />
     <Content Include="Resources\inventory black 20x20.png" />
     <Content Include="Resources\logout black 20x20.png" />

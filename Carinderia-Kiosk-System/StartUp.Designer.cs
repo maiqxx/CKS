@@ -89,7 +89,7 @@ namespace Carinderia_Kiosk_System
             this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmin.Location = new System.Drawing.Point(110, 18);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 30, 0);
+            this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btnAdmin.Size = new System.Drawing.Size(220, 80);
             this.btnAdmin.TabIndex = 0;
             this.btnAdmin.Text = "PROPRIETOR";

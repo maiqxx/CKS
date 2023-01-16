@@ -13,15 +13,22 @@ namespace Carinderia_Kiosk_System.Proprietor
 {
     public partial class ucDashboard : UserControl
     {
+
+        MySqlConnection conn;
+        MySqlCommand cmd;
+        MySqlDataReader dr;
+
         private static ucDashboard _instance;
 
         //Database connection
-        MySqlConnection conn = new MySqlConnection("server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";");
+       // MySqlConnection conn = new MySqlConnection("server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";");
 
         public ucDashboard()
         {
             InitializeComponent();
             timerCurrTime.Start();
+            conn = new MySqlConnection();
+            conn.ConnectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
         }
 
         public static ucDashboard Instance
@@ -41,6 +48,12 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             //Loads menu categories with number of stocks available
             LoadMenuStocks();
+
+            //Live Orders
+            GetPendingOrders();
+            GetCompletedOrder();
+            GetCancelledOrder();
+            GetFeedbacks();
 
         }
 
@@ -109,6 +122,88 @@ namespace Carinderia_Kiosk_System.Proprietor
             LoadStoreDescription();
             LoadMenuStocks();
         }
+
+        //////Live Orders
+        ///GetPendingOrders()
+        ///GetCompletedOrder()
+        ///GetCancelledOrder()
+        ///GetFeedbacks()
+
+        //Counts the pending orders
+        void GetPendingOrders()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '" + "Pending" + "' ", conn);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                lblCurrentNumOrders.Text = count.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Counts the complete orders
+        void GetCompletedOrder()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '" + "Completed" + "' ", conn);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                lblCompletedOrders.Text = count.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Counts the cancelled orders
+        void GetCancelledOrder()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '" + "Cancelled" + "' ", conn);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                lblCancelledOrders.Text = count.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void GetFeedbacks()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT COUNT(RATING) FROM FEEDBACK", conn);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                lblFeedbacks.Text = count.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+
+
+
 
         private void lblTime_Click(object sender, EventArgs e)
         {
