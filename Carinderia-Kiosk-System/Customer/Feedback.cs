@@ -128,6 +128,15 @@ namespace Carinderia_Kiosk_System.Customer
             lblRatingNum.Text = "1";
         }
 
+        private void pbStar1_DoubleClick(object sender, EventArgs e)
+        {
+            pbStar5.Image = Resources.white_star;
+            pbStar4.Image = Resources.white_star;
+            pbStar3.Image = Resources.white_star;
+            pbStar2.Image = Resources.white_star;
+            pbStar1.Image = Resources.white_star;
 
+            lblRatingNum.Text = "0";
+        }
     }
 }

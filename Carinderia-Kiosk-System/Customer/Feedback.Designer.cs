@@ -98,7 +98,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSubmit.Location = new System.Drawing.Point(427, 455);
+            this.btnSubmit.Location = new System.Drawing.Point(445, 453);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
             this.btnSubmit.TabIndex = 16;
@@ -112,7 +112,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.btnOrderSummary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderSummary.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrderSummary.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOrderSummary.Location = new System.Drawing.Point(232, 455);
+            this.btnOrderSummary.Location = new System.Drawing.Point(250, 453);
             this.btnOrderSummary.Name = "btnOrderSummary";
             this.btnOrderSummary.Size = new System.Drawing.Size(150, 50);
             this.btnOrderSummary.TabIndex = 15;
@@ -190,6 +190,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.pbStar1.TabIndex = 17;
             this.pbStar1.TabStop = false;
             this.pbStar1.Click += new System.EventHandler(this.pbStar1_Click);
+            this.pbStar1.DoubleClick += new System.EventHandler(this.pbStar1_DoubleClick);
             // 
             // Feedback
             // 

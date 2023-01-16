@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Carinderia_Kiosk_System.Properties;
+using Carinderia_Kiosk_System.Proprietor.ProprietorDialogs;
 using MySql.Data.MySqlClient;
 
 namespace Carinderia_Kiosk_System.Proprietor
@@ -126,7 +127,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                 //delete icon
                 deleteIcon = new PictureBox();
-                deleteIcon.Image = Resources.remove_16x16;
+                deleteIcon.Image = Resources.move_folder_25x19;
                 deleteIcon.SizeMode = PictureBoxSizeMode.CenterImage;
                 deleteIcon.Location = new Point(765, 3);
                 deleteIcon.Tag = dr["ORDER_ID"].ToString();
@@ -186,21 +187,8 @@ namespace Carinderia_Kiosk_System.Proprietor
                 dr.Close();
                 conn.Close();
 
-                if (lblOrderStatus.Text == "Completed")
-                {
-                    //btnConfirmSold.Visible = true;
-
-                    //UpdateInventory();
-
-                }
-                else
-                {
-                    //do nothing...
-                }
-
                 //GetOrders();
                 GetDetailedOrders();
-
             }
             catch (Exception ex)
             {
@@ -273,7 +261,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             conn.Close();
         }
 
-        //When order status is changed
+        //Updates order status when changed in combobox
         private void orderStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             String tag = ((ComboBox)sender).Tag.ToString();    //gets ORDER_ID using tag
@@ -286,10 +274,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Order status updated to " + newStat);
                 conn.Close();
-
                 GetDetailedOrders(); //reloads details
-                
-                
             }
             catch (Exception ex)
             {
@@ -302,33 +287,39 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             String tag = ((PictureBox)sender).Tag.ToString();
 
+            conn.Open();
+            MySqlTransaction transaction = conn.BeginTransaction();
             try
             {
-                conn.Open();
+                //Recorders transaction
                 cmd = new MySqlCommand("INSERT INTO TRANSACTION (ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, STATUS) " +
                                         "(SELECT ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, ORDER_STATUS FROM ORDERS WHERE ORDER_ID = '"+ tag+"') ", conn);
 
                 int ctr = cmd.ExecuteNonQuery();
                 if (ctr > 0)
                 {
-                    MessageBox.Show("Moved to transactions!");
+                    MoveToTrasactsDialog move = new MoveToTrasactsDialog();
+                    move.ShowDialog();
+                    
+                    cmd = new MySqlCommand("DELETE FROM ORDERS WHERE ORDER_ID = '" + tag + "' ", conn);
+                    cmd.ExecuteNonQuery();
+                    transaction.Commit();
                 }
                 else
                 {
                     conn.Close();
                 }
-
-                cmd = new MySqlCommand("DELETE * FROM ORDERS WHERE ORDER_ID = '" + tag + "' ", conn);
-                cmd.ExecuteNonQuery();
                 conn.Close();
                 GetOrderList();
             }
             catch (Exception ex)
             {
-               // MessageBox.Show(ex.Message);
+                //transaction.Rollback();
+                MessageBox.Show(ex.Message);
             }
         }
 
+        //updates order status
         private void btnConfirmSold_Click(object sender, EventArgs e)
         {
             string newStat = "Completed";
@@ -340,13 +331,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             UpdateInventory();
         }
 
-        /// <summary>
-        /// HERE'S MY ATTEMPT IN UPDATING INVENTORY STOCK_QUANTITY
-        /// </summary>
-
+        //updates stock quantity in inventory
         void UpdateInventory()
         {
-
             try
             {
                 var arrayList1 = new ArrayList();
@@ -391,7 +378,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                         {
                             var updatedStock = dr["STOCK_QUANTITY"];
                             lblOrderStatus.Text = "Completed";
-                            MessageBox.Show("Stock updated!");
+                            //MessageBox.Show("Stock updated!");
                         }
                         dr.Close();
                     }
@@ -399,8 +386,6 @@ namespace Carinderia_Kiosk_System.Proprietor
                 }
                 dr.Close();
                 conn.Close();
-
-
             }
             catch (Exception ex)
             {
@@ -411,38 +396,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             {
                 conn.Close();
             }
-
-
-            //conn.Open();
-            //cmd = new MySqlCommand("SELECT * FROM CUSTOMERS WHERE CUSTOMER_NAME = '" + lblCustomer.Text + "' ", conn);
-            //dr = cmd.ExecuteReader();
-
-            //if (dr.Read())
-            //{
-            //    var quantity = Convert.ToInt32(dr["QUANTITY"]);
-            //    var foodName = dr["STOCK_NAME"].ToString();
-
-            //    // Update stock quantity in inventory
-            //    cmd = new MySqlCommand("UPDATE INVENTOTY SET STOCK_QUANTITY = STOCK_QUANTITY - '" + quantity + "' " +
-            //                          "WHERE STOCK_NAME = '" + foodName + "' ", conn);
-            //    cmd.ExecuteNonQuery();
-            //}
-            //dr.Close();
-            //conn.Close();
-
-
-            //conn.Open();
-            //MySqlCommand cmd = new MySqlCommand("UPDATE inventory SET quantity = quantity - @quantity WHERE id = @id");
-            //cmd.Prepare();
-
-            //foreach (var item in items)
-            //{
-            //    cmd.Parameters.Clear();
-            //    cmd.Parameters.AddWithValue("@quantity", item.Quantity);
-            //    cmd.Parameters.AddWithValue("@id", item.Id);
-            //    cmd.ExecuteNonQuery();
-            //}
-            //conn.Close();
         }
 
         private void btnCompeted_Click(object sender, EventArgs e)
@@ -460,7 +413,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void btnRecordToInvoice_Click(object sender, EventArgs e)
         {
-
             try
             {
                 conn.Open();

@@ -163,6 +163,16 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancelled_orders {
+            get {
+                object obj = ResourceManager.GetObject("cancelled orders", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap categories_20x20 {
             get {
                 object obj = ResourceManager.GetObject("categories 20x20", resourceCulture);
@@ -226,6 +236,26 @@ namespace Carinderia_Kiosk_System.Properties {
         internal static System.Drawing.Bitmap close_icon_black_20_x_20 {
             get {
                 object obj = ResourceManager.GetObject("close icon black 20 x 20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap completed_orders {
+            get {
+                object obj = ResourceManager.GetObject("completed orders", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap current_orders {
+            get {
+                object obj = ResourceManager.GetObject("current orders", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -536,6 +566,46 @@ namespace Carinderia_Kiosk_System.Properties {
         internal static System.Drawing.Bitmap menu_items_green_20_x_20 {
             get {
                 object obj = ResourceManager.GetObject("menu items green 20 x 20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap move_folder_25x19 {
+            get {
+                object obj = ResourceManager.GetObject("move folder 25x19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap move_item_40x40 {
+            get {
+                object obj = ResourceManager.GetObject("move item 40x40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap move_to_folder_20x20 {
+            get {
+                object obj = ResourceManager.GetObject("move to folder 20x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap move_to_transactions_34x34 {
+            get {
+                object obj = ResourceManager.GetObject("move to transactions 34x34", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

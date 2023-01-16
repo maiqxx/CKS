@@ -93,7 +93,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.1924F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.tableLayoutPanel1.Controls.Add(this.label5, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 3, 0);
@@ -113,7 +113,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(611, 0);
+            this.label5.Location = new System.Drawing.Point(610, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 40);
             this.label5.TabIndex = 4;
@@ -139,7 +139,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(478, 0);
+            this.label4.Location = new System.Drawing.Point(477, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 40);
             this.label4.TabIndex = 3;
@@ -154,7 +154,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(69, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(243, 40);
+            this.label2.Size = new System.Drawing.Size(242, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "Customer Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -165,7 +165,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(318, 0);
+            this.label3.Location = new System.Drawing.Point(317, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 40);
             this.label3.TabIndex = 2;
@@ -201,7 +201,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnConfirmSold.AllowDrop = true;
             this.btnConfirmSold.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnConfirmSold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmSold.Location = new System.Drawing.Point(74, 587);
+            this.btnConfirmSold.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmSold.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnConfirmSold.Location = new System.Drawing.Point(90, 577);
             this.btnConfirmSold.Name = "btnConfirmSold";
             this.btnConfirmSold.Size = new System.Drawing.Size(170, 46);
             this.btnConfirmSold.TabIndex = 17;
