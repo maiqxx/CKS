@@ -183,6 +183,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //Counts feedbacks
         void GetFeedbacks()
         {
             try

@@ -69,7 +69,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             flpOrderList.Controls.Clear();
 
             conn.Open();
-            cmd = new MySqlCommand("SELECT * FROM ORDERS ", conn);
+            cmd = new MySqlCommand("SELECT* FROM ORDERS ", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -398,6 +398,110 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //Textbox search
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            GetSearchedOrder();
+
+            if(txtSearch.Text == "")
+            {
+                GetOrderList();
+            }
+        }
+
+        void GetSearchedOrder()
+        {
+            flpOrderList.Controls.Clear();
+
+            conn.Open();
+            cmd = new MySqlCommand("SELECT ORDER_ID, CUSTOMER_NAME, TOTAL_AMOUNT, DINE_OPTION, ORDER_STATUS FROM ORDERS WHERE ORDER_ID LIKE '" + txtSearch.Text + "' ORDER BY ORDER_ID ", conn);
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                //panel container
+                orderListPanel = new Panel();
+                orderListPanel.Width = 850;
+                orderListPanel.Height = 55;
+                orderListPanel.BackColor = Color.White;
+                orderListPanel.Tag = dr["ORDER_ID"].ToString();
+
+                //displays order ID
+                orderID = new Label();
+                orderID.Text = dr["ORDER_ID"].ToString();
+                orderID.ForeColor = Color.Black;
+                orderID.Location = new Point(25, 22);
+                orderID.Font = MediumFontBold;
+                orderID.Tag = dr["ORDER_ID"].ToString();
+
+                //displays customer's name
+                customerName = new Label();
+                customerName.Text = dr["CUSTOMER_NAME"].ToString();
+                customerName.ForeColor = Color.Black;
+                customerName.Location = new Point(140, 18);
+                customerName.Font = MediumFontBold;
+                customerName.Tag = dr["ORDER_ID"].ToString();
+
+                //displays total amount
+                totalAmount = new Label();
+                totalAmount.Text = "₱ " + dr["TOTAL_AMOUNT"].ToString();
+                totalAmount.ForeColor = Color.Black;
+                totalAmount.TextAlign = ContentAlignment.MiddleCenter;
+                totalAmount.Location = new Point(333, 18);
+                totalAmount.Font = MediumFontBold;
+                totalAmount.Tag = dr["ORDER_ID"].ToString();
+
+                //displays dine option
+                dineOption = new Label();
+                dineOption.Text = dr["DINE_OPTION"].ToString();
+                dineOption.ForeColor = Color.Black;
+                dineOption.Location = new Point(505, 18);
+                dineOption.Font = MediumFontBold;
+                dineOption.Tag = dr["ORDER_ID"].ToString();
+
+                //displays order status
+                orderStatus = new ComboBox();
+                orderStatus.Text = dr["ORDER_STATUS"].ToString();
+                orderStatus.ForeColor = Color.Black;
+                orderStatus.Location = new Point(650, 15);
+                orderStatus.Font = MediumFontBold;
+                orderStatus.Tag = dr["ORDER_ID"].ToString();
+                orderStatus.Items.Add("Pending");
+                orderStatus.Items.Add("Completed");
+                orderStatus.Items.Add("Cancelled");
+
+                //delete icon
+                deleteIcon = new PictureBox();
+                deleteIcon.Image = Resources.move_folder_25x19;
+                deleteIcon.SizeMode = PictureBoxSizeMode.CenterImage;
+                deleteIcon.Location = new Point(765, 3);
+                deleteIcon.Tag = dr["ORDER_ID"].ToString();
+
+                //add to display controls in orderListPanel
+                orderListPanel.Controls.Add(orderID);
+                orderListPanel.Controls.Add(customerName);
+                orderListPanel.Controls.Add(totalAmount);
+                orderListPanel.Controls.Add(dineOption);
+                orderListPanel.Controls.Add(orderStatus);
+                orderListPanel.Controls.Add(deleteIcon);
+
+                //add to display controls dynamically in flowlayout
+                flpOrderList.Controls.Add(orderListPanel);
+
+                //Turns hand cursor when hovered
+                orderListPanel.Cursor = Cursors.Hand;
+
+                //click events
+                orderListPanel.Click += new EventHandler(orderListPanel_OnClick);
+                orderListPanel.MouseHover += new EventHandler(orderListPanel_MouseHover);
+                orderStatus.SelectedIndexChanged += new EventHandler(orderStatus_SelectedIndexChanged);
+                deleteIcon.Click += new EventHandler(RemoveFromOrderlist_OnClick);
+
+            }
+            dr.Close();
+            conn.Close();
+        }
+
         private void btnCompeted_Click(object sender, EventArgs e)
         {
             
@@ -497,8 +601,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         }
 
 
-
-
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -514,6 +616,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
-
+      
     }
 }

@@ -136,7 +136,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '"+ "Pending" +"' ", conn);
 
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
-                lblCurrentNumOrders.Text = count.ToString();
+              //  lblCurrentNumOrders.Text = count.ToString();
                 conn.Close();
             }
             catch (Exception ex)
@@ -154,7 +154,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '" + "Completed" + "' ", conn);
 
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
-                lblCompletedOrders.Text = count.ToString();
+             //   lblCompletedOrders.Text = count.ToString();
                 conn.Close();
             }
             catch (Exception ex)
@@ -172,7 +172,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '" + "Cancelled" + "' ", conn);
 
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
-                lblCancelledOrders.Text = count.ToString();
+               // lblCancelledOrders.Text = count.ToString();
                 conn.Close();
             }
             catch (Exception ex)
