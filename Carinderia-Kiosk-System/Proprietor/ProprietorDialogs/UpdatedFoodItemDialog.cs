@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
 {
-    public partial class ConfirmSoldProductDialog : Form
+    public partial class UpdatedFoodItemDialog : Form
     {
-        public ConfirmSoldProductDialog()
+        public UpdatedFoodItemDialog()
         {
             InitializeComponent();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

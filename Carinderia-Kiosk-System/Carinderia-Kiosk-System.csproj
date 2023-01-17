@@ -274,11 +274,11 @@
     <Compile Include="Proprietor\ProprietorDialogs\AddStock.Designer.cs">
       <DependentUpon>AddStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proprietor\ProprietorDialogs\ConfirmSoldProductDialog.cs">
+    <Compile Include="Proprietor\ProprietorDialogs\FailedToAddProductDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proprietor\ProprietorDialogs\ConfirmSoldProductDialog.Designer.cs">
-      <DependentUpon>ConfirmSoldProductDialog.cs</DependentUpon>
+    <Compile Include="Proprietor\ProprietorDialogs\FailedToAddProductDialog.Designer.cs">
+      <DependentUpon>FailedToAddProductDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Proprietor\ProprietorDialogs\InsufficientStockDialog.cs">
       <SubType>Form</SubType>
@@ -297,6 +297,12 @@
     </Compile>
     <Compile Include="Proprietor\ProprietorDialogs\MoveToTrasactsDialog.Designer.cs">
       <DependentUpon>MoveToTrasactsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\UpdatedFoodItemDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\UpdatedFoodItemDialog.Designer.cs">
+      <DependentUpon>UpdatedFoodItemDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Proprietor\ucCancelledOrders.cs">
       <SubType>UserControl</SubType>
@@ -473,8 +479,8 @@
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\AddStock.resx">
       <DependentUpon>AddStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proprietor\ProprietorDialogs\ConfirmSoldProductDialog.resx">
-      <DependentUpon>ConfirmSoldProductDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Proprietor\ProprietorDialogs\FailedToAddProductDialog.resx">
+      <DependentUpon>FailedToAddProductDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\InsufficientStockDialog.resx">
       <DependentUpon>InsufficientStockDialog.cs</DependentUpon>
@@ -484,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\MoveToTrasactsDialog.resx">
       <DependentUpon>MoveToTrasactsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ProprietorDialogs\UpdatedFoodItemDialog.resx">
+      <DependentUpon>UpdatedFoodItemDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ucCancelledOrders.resx">
       <DependentUpon>ucCancelledOrders.cs</DependentUpon>
@@ -774,6 +783,7 @@
     <None Include="Resources\staff login success icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\updated food item 100 x 150px.png" />
     <None Include="Resources\current orders.png" />
     <None Include="Resources\completed orders.png" />
     <None Include="Resources\cancelled orders.png" />

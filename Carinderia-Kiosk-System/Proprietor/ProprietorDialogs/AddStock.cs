@@ -77,11 +77,13 @@ namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
                     int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
                     {
-                        MessageBox.Show("Food item added successfully!");
+                        UpdatedFoodItemDialog updatedFoodItem = new UpdatedFoodItemDialog();
+                        updatedFoodItem.ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show("Failed to add food item.");
+                        FailedToAddProductDialog failedToAddProductDialog = new FailedToAddProductDialog();
+                        failedToAddProductDialog.ShowDialog();
                     }
                     conn.Close();
                     GetStockID();
