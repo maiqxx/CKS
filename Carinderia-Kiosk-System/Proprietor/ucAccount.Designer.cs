@@ -57,6 +57,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblUpdatedAt = new System.Windows.Forms.Label();
             this.lblLastUpdate = new System.Windows.Forms.Label();
             this.pbProfile = new System.Windows.Forms.PictureBox();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
@@ -364,11 +365,26 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pbProfile.TabIndex = 0;
             this.pbProfile.TabStop = false;
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnLogOut.Location = new System.Drawing.Point(652, 671);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(148, 40);
+            this.btnLogOut.TabIndex = 21;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // ucAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblUpdatedAt);
             this.Controls.Add(this.lblLastUpdate);
             this.Controls.Add(this.lblCreatedAt);
@@ -420,5 +436,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Label lblUpdatedAt;
         private System.Windows.Forms.Label lblLastUpdate;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }
