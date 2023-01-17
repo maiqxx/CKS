@@ -42,13 +42,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pbProfile = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlUserControlContainer = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.ucAccount1 = new Carinderia_Kiosk_System.Proprietor.ucAccount();
             this.ucStaff1 = new Carinderia_Kiosk_System.Proprietor.ucStaff();
             this.ucInventory1 = new Carinderia_Kiosk_System.Proprietor.ucInventory();
             this.ucCategories1 = new Carinderia_Kiosk_System.Proprietor.ucCategories();
             this.ucOrders1 = new Carinderia_Kiosk_System.Proprietor.ucOrders();
             this.ucDashboard1 = new Carinderia_Kiosk_System.Proprietor.ucDashboard();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSeparator1)).BeginInit();
@@ -220,7 +220,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // pbProfile
             // 
-            this.pbProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbProfile.Image = global::Carinderia_Kiosk_System.Properties.Resources.user_icon_20_x_20;
             this.pbProfile.Location = new System.Drawing.Point(1172, 3);
             this.pbProfile.Name = "pbProfile";
@@ -253,6 +252,23 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pnlUserControlContainer.Size = new System.Drawing.Size(1264, 965);
             this.pnlUserControlContainer.TabIndex = 2;
             this.pnlUserControlContainer.BackColorChanged += new System.EventHandler(this.button1_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLogOut.Image = global::Carinderia_Kiosk_System.Properties.Resources.logout_white_20x20;
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.Location = new System.Drawing.Point(4, 949);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(223, 60);
+            this.btnLogOut.TabIndex = 9;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // ucAccount1
             // 
@@ -309,23 +325,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.ucDashboard1.Name = "ucDashboard1";
             this.ucDashboard1.Size = new System.Drawing.Size(1264, 965);
             this.ucDashboard1.TabIndex = 0;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogOut.Image = global::Carinderia_Kiosk_System.Properties.Resources.logout_white_20x20;
-            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(4, 949);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(223, 60);
-            this.btnLogOut.TabIndex = 9;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // AdminBoard
             // 
