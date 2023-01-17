@@ -170,6 +170,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //Logout button
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             AdminInfo.EmailAddress = "";
@@ -178,6 +179,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Hide();
         }
 
+        //redirect to user;s account setting when clicked
         private void pbProfile_Click(object sender, EventArgs e)
         {
             if (!pnlUserControlContainer.Controls.Contains(ucAccount.Instance))
