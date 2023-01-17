@@ -273,6 +273,42 @@ namespace Carinderia_Kiosk_System.Proprietor
                 cmd = new MySqlCommand("UPDATE ORDERS SET ORDER_STATUS = '" + newStat + "' WHERE ORDER_ID = '" + tag + "' ", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Order status updated to " + newStat);
+
+                if (newStat == "Cancelled")
+                {
+                    string amount = "0.00";
+
+                    MySqlTransaction transaction = conn.BeginTransaction();
+
+                   // Recorders transaction
+                    cmd = new MySqlCommand("INSERT INTO TRANSACTION " +
+                                            "SET ORDER_ID = (SELECT ORDER_ID FROM ORDERS WHERE ORDER_ID = '" + tag + "'), " +
+                                            "CUSTOMER_NAME = (SELECT CUSTOMER_NAME FROM ORDERS WHERE ORDER_ID = '" + tag + "'), " +
+                                            "DINE_OPTION = (SELECT DINE_OPTION FROM ORDERS WHERE ORDER_ID = '" + tag + "'), " +
+                                            "TOTAL_AMOUNT = @amount, " +
+                                            "STATUS =  @status ", conn);
+
+                    cmd.Parameters.AddWithValue("@amount", amount);
+                    cmd.Parameters.AddWithValue("@status", newStat);
+
+                    int ctr = cmd.ExecuteNonQuery();
+                    if (ctr > 0)
+                    {
+                        MoveToTrasactsDialog move = new MoveToTrasactsDialog();
+                        move.ShowDialog();
+
+                        cmd = new MySqlCommand("DELETE FROM ORDERS WHERE ORDER_ID = '" + tag + "' ", conn);
+                        cmd.ExecuteNonQuery();
+                        transaction.Commit();
+                    }
+                    else
+                    {
+                        conn.Close();
+                    }
+                    conn.Close();
+                    GetOrderList();
+
+                }
                 conn.Close();
                 GetDetailedOrders(); //reloads details
             }
@@ -281,6 +317,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         //Removes order from order list and move to Transactions
         public void RemoveFromOrderlist_OnClick(object sender, EventArgs e)

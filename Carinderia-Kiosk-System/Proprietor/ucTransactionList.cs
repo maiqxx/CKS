@@ -150,7 +150,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
 
 
-
         private void lblTransactNum_Click(object sender, EventArgs e)
         {
 
@@ -166,6 +165,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
-        
+
     }
 }
