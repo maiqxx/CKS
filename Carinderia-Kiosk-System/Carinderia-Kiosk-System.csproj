@@ -268,6 +268,12 @@
     <Compile Include="Proprietor\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\AddStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\AddStock.Designer.cs">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\ProprietorDialogs\ConfirmSoldProductDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -457,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ProprietorDialogs\AddStock.resx">
+      <DependentUpon>AddStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\ConfirmSoldProductDialog.resx">
       <DependentUpon>ConfirmSoldProductDialog.cs</DependentUpon>

@@ -12,6 +12,7 @@ using System.Drawing.Imaging;
 using MySql.Data.MySqlClient;
 using System.Data;
 using Carinderia_Kiosk_System.Customer;
+using Carinderia_Kiosk_System.Proprietor.ProprietorDialogs;
 
 namespace Carinderia_Kiosk_System.Proprietor
 {
@@ -189,6 +190,12 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Add button - Add new stock
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            AddStock add = new AddStock();
+            add.Show();
+        }
+
+        void AddStock()
+        {
             double unitPrice = double.Parse(txtUnitPrice.Text);
             int quantity = int.Parse(txtQuantity.Text);
             double inventoryValue = unitPrice * quantity;
@@ -215,7 +222,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                                         "UNIT = @unit, " +
                                         "INV_VALUE = @invValue, " +
                                         "PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')";
-                    
+
                     MySqlCommand cmd = new MySqlCommand(addStock, conn);
                     cmd.Parameters.AddWithValue("@stockCode", txtStockCode.Text);
                     cmd.Parameters.AddWithValue("@foodName", txtFoodName.Text);
