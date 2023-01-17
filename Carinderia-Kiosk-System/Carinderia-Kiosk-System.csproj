@@ -310,6 +310,12 @@
     <Compile Include="Proprietor\ShowFoodItems.Designer.cs">
       <DependentUpon>ShowFoodItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proprietor\ucFeedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ucFeedback.Designer.cs">
+      <DependentUpon>ucFeedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\ucOrderList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -478,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ucCategories.resx">
       <DependentUpon>ucCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ucFeedback.resx">
+      <DependentUpon>ucFeedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ucInventory.resx">
       <DependentUpon>ucInventory.cs</DependentUpon>
@@ -751,6 +760,7 @@
     <None Include="Resources\completed orders.png" />
     <None Include="Resources\cancelled orders.png" />
     <None Include="Resources\close.png" />
+    <None Include="Resources\close or cancel 20 x 20.png" />
     <Content Include="Resources\dashboard black 20x20.png" />
     <None Include="Resources\move folder 25x19.png" />
     <None Include="Resources\move item 40x40.png" />

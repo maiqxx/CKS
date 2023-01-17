@@ -294,8 +294,8 @@ namespace Carinderia_Kiosk_System.Proprietor
                     int ctr = cmd.ExecuteNonQuery();
                     if (ctr > 0)
                     {
-                        MoveToTrasactsDialog move = new MoveToTrasactsDialog();
-                        move.ShowDialog();
+                        //MoveToTrasactsDialog move = new MoveToTrasactsDialog();
+                        //move.ShowDialog();
 
                         cmd = new MySqlCommand("DELETE FROM ORDERS WHERE ORDER_ID = '" + tag + "' ", conn);
                         cmd.ExecuteNonQuery();

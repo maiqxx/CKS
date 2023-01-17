@@ -125,6 +125,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //Feedback button
+        private void btnFeedbacks_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //Live Orders
 
         //Counts the pending orders
@@ -179,6 +185,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ucTransactionList1_Load(object sender, EventArgs e)
+        {
+
         }
 
 

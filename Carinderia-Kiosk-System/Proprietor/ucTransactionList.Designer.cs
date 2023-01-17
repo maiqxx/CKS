@@ -29,7 +29,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -48,14 +47,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dgvTransactions.AllowUserToAddRows = false;
             this.dgvTransactions.AllowUserToDeleteRows = false;
             this.dgvTransactions.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransactions.Location = new System.Drawing.Point(53, 86);
             this.dgvTransactions.Name = "dgvTransactions";
@@ -118,7 +109,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(834, 43);
+            this.label3.Location = new System.Drawing.Point(867, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(192, 19);
             this.label3.TabIndex = 11;

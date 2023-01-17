@@ -38,6 +38,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.ucCancelledOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCancelledOrders();
             this.ucCompletedOrders1 = new Carinderia_Kiosk_System.Proprietor.ucCompletedOrders();
             this.ucOrderList1 = new Carinderia_Kiosk_System.Proprietor.ucOrderList();
+            this.btnFeedbacks = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlManageOrdersContainer.SuspendLayout();
             this.SuspendLayout();
@@ -59,9 +60,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 591F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 559F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tableLayoutPanel1.Controls.Add(this.btnFeedbacks, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnOrderList, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnTransacts, 1, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -69,7 +71,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(374, 44);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(495, 44);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // btnOrderList
@@ -112,11 +114,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // ucTransactionList1
             // 
+            this.ucTransactionList1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ucTransactionList1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ucTransactionList1.Location = new System.Drawing.Point(0, -3);
             this.ucTransactionList1.Name = "ucTransactionList1";
             this.ucTransactionList1.Size = new System.Drawing.Size(1213, 815);
             this.ucTransactionList1.TabIndex = 3;
+            this.ucTransactionList1.Load += new System.EventHandler(this.ucTransactionList1_Load);
             // 
             // ucCancelledOrders1
             // 
@@ -140,6 +144,21 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.ucOrderList1.Name = "ucOrderList1";
             this.ucOrderList1.Size = new System.Drawing.Size(1213, 815);
             this.ucOrderList1.TabIndex = 0;
+            // 
+            // btnFeedbacks
+            // 
+            this.btnFeedbacks.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnFeedbacks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFeedbacks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeedbacks.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedbacks.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFeedbacks.Location = new System.Drawing.Point(320, 3);
+            this.btnFeedbacks.Name = "btnFeedbacks";
+            this.btnFeedbacks.Size = new System.Drawing.Size(159, 38);
+            this.btnFeedbacks.TabIndex = 5;
+            this.btnFeedbacks.Text = "Feedbacks";
+            this.btnFeedbacks.UseVisualStyleBackColor = false;
+            this.btnFeedbacks.Click += new System.EventHandler(this.btnFeedbacks_Click);
             // 
             // ucOrders
             // 
@@ -171,5 +190,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private ucOrderList ucOrderList1;
         private ucTransactionList ucTransactionList1;
         private ucCancelledOrders ucCancelledOrders1;
+        private System.Windows.Forms.Button btnFeedbacks;
     }
 }

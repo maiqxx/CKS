@@ -171,7 +171,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             try
             {
                 conn.Open();
-                cmd = new MySqlCommand("SELECT COUNT(ORDER_STATUS) FROM ORDERS WHERE ORDER_STATUS = '" + "Cancelled" + "' ", conn);
+                cmd = new MySqlCommand("SELECT COUNT(STATUS) FROM TRANSACTION WHERE STATUS = '" + "Cancelled" + "' ", conn);
 
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
                 lblCancelledOrders.Text = count.ToString();

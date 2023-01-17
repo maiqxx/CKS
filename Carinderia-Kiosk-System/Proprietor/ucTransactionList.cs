@@ -116,7 +116,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             conn.Open();
             DataTable dt = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM TRANSACTION WHERE TRANSACT_ID = '" + txtSearch.Text + "' ", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM TRANSACTION WHERE TRANSACT_ID LIKE '" + txtSearch.Text + "' ", conn);
             adapter.Fill(dt);
 
             //dgvInventory properties

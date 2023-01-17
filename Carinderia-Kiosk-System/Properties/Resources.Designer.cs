@@ -253,6 +253,16 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_or_cancel_20_x_20 {
+            get {
+                object obj = ResourceManager.GetObject("close or cancel 20 x 20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap completed_orders {
             get {
                 object obj = ResourceManager.GetObject("completed orders", resourceCulture);
