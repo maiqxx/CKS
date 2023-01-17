@@ -361,7 +361,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
             else
             {
-                //...
+                //do nothing
             }       
         }
 

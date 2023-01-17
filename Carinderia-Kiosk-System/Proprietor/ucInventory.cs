@@ -30,7 +30,6 @@ namespace Carinderia_Kiosk_System.Proprietor
                 if (instance == null)
                 {
                     instance = new ucInventory();
-
                 }
                 return instance;
             }
@@ -64,6 +63,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             //dgvInventory properties
             dgvInventory.RowTemplate.Height = 60;
             dgvInventory.AllowUserToAddRows = false;
+            dgvInventory.FirstDisplayedScrollingRowIndex = 25;
 
             dgvInventory.DataSource = dt;
 
