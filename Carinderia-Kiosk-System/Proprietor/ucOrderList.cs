@@ -374,7 +374,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             try
             {
                 var arrayList1 = new ArrayList();
-                bool updated = false;
+              //  bool updated = false;
 
                 conn.Open();
                 cmd = new MySqlCommand("SELECT QUANTITY, STOCK_QUANTITY, STOCK_NAME FROM CUSTOMER, INVENTORY WHERE CUSTOMER.FOOD_NAME = INVENTORY.STOCK_NAME ", conn);
@@ -419,7 +419,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                         }
                         dr.Close();
                     }
-                    updated = true;
+                    //updated = true;
                 }
                 dr.Close();
                 conn.Close();

@@ -65,6 +65,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label1.Size = new System.Drawing.Size(48, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "From:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dateTimePicker1
             // 
@@ -83,6 +84,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label2.Size = new System.Drawing.Size(28, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "To:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dateTimePicker2
             // 
@@ -90,6 +92,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(201, 23);
             this.dateTimePicker2.TabIndex = 8;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // btnGo
             // 
@@ -99,9 +102,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnGo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGo.Location = new System.Drawing.Point(540, 31);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(45, 27);
+            this.btnGo.Size = new System.Drawing.Size(54, 27);
             this.btnGo.TabIndex = 9;
-            this.btnGo.Text = "Go";
+            this.btnGo.Text = "Apply";
             this.btnGo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnGo.UseVisualStyleBackColor = false;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
@@ -127,7 +130,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.pbReload.BackColor = System.Drawing.Color.Transparent;
             this.pbReload.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
-            this.pbReload.Location = new System.Drawing.Point(591, 34);
+            this.pbReload.Location = new System.Drawing.Point(600, 31);
             this.pbReload.Name = "pbReload";
             this.pbReload.Size = new System.Drawing.Size(22, 25);
             this.pbReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;

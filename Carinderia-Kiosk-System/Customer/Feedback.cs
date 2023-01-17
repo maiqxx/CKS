@@ -40,7 +40,7 @@ namespace Carinderia_Kiosk_System.Customer
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string rating = lblRatingNum.Text.Trim();
+            string rating = lblRatingNum.Text.Trim() + " stars";
             string comment = txtComment.Text;
             try
             {
