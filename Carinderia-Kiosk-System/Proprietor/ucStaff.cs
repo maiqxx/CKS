@@ -244,12 +244,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             try
             {
-
                 conn.Open();
 
                 //Search category
                 string searchCategory = "SELECT STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, HIRE_DATE FROM STAFF " +
-                    "WHERE STAFF_ID ='" + txtSearch.Text + "' ";
+                                         "WHERE STAFF_ID ='" + txtSearch.Text + "' ";
                 MySqlCommand cmd = new MySqlCommand(searchCategory, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
@@ -321,6 +320,41 @@ namespace Carinderia_Kiosk_System.Proprietor
             dateTimePicker1.Text = "";
         }
 
+        void SearchStaff()
+        {
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, HIRE_DATE, UPDATED_AT FROM STAFF WHERE STAFF_ID LIKE '" + txtSearch.Text + "' ", conn);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+
+            dgvStaff.RowTemplate.Height = 50;
+            dgvStaff.DataSource = dt;
+
+            //Column header names
+            dgvStaff.Columns[0].HeaderText = "Staff ID";
+            dgvStaff.Columns[1].HeaderText = "First Name";
+            dgvStaff.Columns[2].HeaderText = "Last Name";
+            dgvStaff.Columns[3].HeaderText = "Contact No.";
+            dgvStaff.Columns[4].HeaderText = "Email Address";
+            dgvStaff.Columns[5].HeaderText = "Address";
+            dgvStaff.Columns[6].HeaderText = "Role";
+            dgvStaff.Columns[7].HeaderText = "Date Hired";
+            dgvStaff.Columns[8].HeaderText = "Last Update";
+
+            conn.Close();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchStaff();
+
+            if (txtSearch.Text == "")
+            {
+                PopulateData();
+            }
+        }
+
         private void pnlForm_Paint(object sender, PaintEventArgs e)
         {
 
@@ -331,6 +365,36 @@ namespace Carinderia_Kiosk_System.Proprietor
            //dgvStaff.CurrentCell.Value = dateTimePicker1.Text.ToString();
         }
 
+        private void pbSearchIcon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
 
+                //Search category
+                string searchCategory = "SELECT STAFF_ID, FIRSTNAME, LASTNAME, CONTACT_NUMBER, EMAIL_ADDRESS, ADDRESS, ROLE, HIRE_DATE FROM STAFF " +
+                                         "WHERE STAFF_ID ='" + txtSearch.Text + "' ";
+                MySqlCommand cmd = new MySqlCommand(searchCategory, conn);
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+
+                txtStaffIDNum.Text = dt.ToString();
+                txtFirstname.Text = dt.ToString();
+                txtLastname.Text = dt.ToString();
+                txtContactNum.Text = dt.ToString();
+                txtEmail.Text = dt.ToString();
+                txtAddress.Text = dt.ToString();
+                txtRole.Text = dt.ToString();
+                dateTimePicker1.Text = dt.ToString();
+                dgvStaff.DataSource = dt;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
