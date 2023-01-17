@@ -79,11 +79,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void btnGo_Click(object sender, EventArgs e)
         {
             conn.Open();
-            cmd = new MySqlCommand("SELECT * FROM TRANSACTION WHERE `DATE` BETWEEN @d1 AND @d2", conn);
+            cmd = new MySqlCommand("SELECT * FROM TRANSACTION WHERE DATE BETWEEN @start AND @end ", conn);
 
             //add values to the parameters form dateTimePickers
-            cmd.Parameters.Add("@d1", MySqlDbType.Date).Value = dateTimePicker1.Value;
-            cmd.Parameters.Add("@d2", MySqlDbType.Date).Value = dateTimePicker2.Value;
+            cmd.Parameters.Add("@start", MySqlDbType.Date).Value = Convert.ToDateTime(dtpStartDate.Text);
+            cmd.Parameters.Add("@end", MySqlDbType.Date).Value = Convert.ToDateTime(dtpEndDate.Text);
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             adapter.Fill(dt);
@@ -152,6 +152,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             GetTransactions();
         }
 
+        void GetFilteredData()
+        {
+
+        }
+
 
         private void lblTransactNum_Click(object sender, EventArgs e)
         {
@@ -179,6 +184,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

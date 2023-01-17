@@ -180,8 +180,6 @@ namespace Carinderia_Kiosk_System.Proprietor
                     lblOption.Text = dr["DINE_OPTION"].ToString();
                     lblOrderStatus.Text = dr["ORDER_STATUS"].ToString();
                     lblTotalPayment.Text = "₱ " + dr["TOTAL_AMOUNT"].ToString();
-
-
                 }
                 dr.Close();
                 conn.Close();
@@ -324,36 +322,47 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             String tag = ((PictureBox)sender).Tag.ToString();
 
-            conn.Open();
-            MySqlTransaction transaction = conn.BeginTransaction();
-            try
+            string message = "This order will be recorded to transaction list. Please confirm...";
+            string title = "Completed Order";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
             {
-                //Recorders transaction
-                cmd = new MySqlCommand("INSERT INTO TRANSACTION (ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, STATUS) " +
-                                        "(SELECT ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, ORDER_STATUS FROM ORDERS WHERE ORDER_ID = '"+ tag+"') ", conn);
+                conn.Open();
+                MySqlTransaction transaction = conn.BeginTransaction();
+                try
+                {
+                    //Recorders transaction
+                    cmd = new MySqlCommand("INSERT INTO TRANSACTION (ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, STATUS) " +
+                                            "(SELECT ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, ORDER_STATUS FROM ORDERS WHERE ORDER_ID = '" + tag + "') ", conn);
 
-                int ctr = cmd.ExecuteNonQuery();
-                if (ctr > 0)
-                {
-                    MoveToTrasactsDialog move = new MoveToTrasactsDialog();
-                    move.ShowDialog();
-                    
-                    cmd = new MySqlCommand("DELETE FROM ORDERS WHERE ORDER_ID = '" + tag + "' ", conn);
-                    cmd.ExecuteNonQuery();
-                    transaction.Commit();
-                }
-                else
-                {
+                    int ctr = cmd.ExecuteNonQuery();
+                    if (ctr > 0)
+                    {
+                        MoveToTrasactsDialog move = new MoveToTrasactsDialog();
+                        move.ShowDialog();
+
+                        cmd = new MySqlCommand("DELETE FROM ORDERS WHERE ORDER_ID = '" + tag + "' ", conn);
+                        cmd.ExecuteNonQuery();
+                        transaction.Commit();
+                    }
+                    else
+                    {
+                        conn.Close();
+                    }
                     conn.Close();
+                    GetOrderList();
                 }
-                conn.Close();
-                GetOrderList();
+                catch (Exception ex)
+                {
+                    //transaction.Rollback();
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                //transaction.Rollback();
-                MessageBox.Show(ex.Message);
-            }
+                //...
+            }       
         }
 
         //updates order status

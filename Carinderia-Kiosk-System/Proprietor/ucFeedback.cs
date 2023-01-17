@@ -271,6 +271,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
+        //Items in combobox
         void FilterRatingItems()
         {
             cbRating.Items.Add("All");
@@ -281,7 +282,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             cbRating.Items.Add("1 stars");
         }
 
-
+        
         private void cbRating_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterFeedback();
