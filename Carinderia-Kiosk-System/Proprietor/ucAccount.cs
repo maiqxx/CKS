@@ -255,5 +255,10 @@ namespace Carinderia_Kiosk_System.Proprietor
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

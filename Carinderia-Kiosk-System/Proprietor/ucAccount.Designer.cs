@@ -40,9 +40,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblLastname = new System.Windows.Forms.Label();
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.lblFirstname = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUploadNew = new System.Windows.Forms.Button();
-            this.pbProfile = new System.Windows.Forms.PictureBox();
             this.lblStoreDescription = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtpClosingTime = new System.Windows.Forms.DateTimePicker();
@@ -58,9 +56,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCreatedAt = new System.Windows.Forms.Label();
             this.lblUpdatedAt = new System.Windows.Forms.Label();
             this.lblLastUpdate = new System.Windows.Forms.Label();
+            this.pbProfile = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAccountSettings
@@ -87,7 +86,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.Controls.Add(this.lblLastname);
             this.panel1.Controls.Add(this.txtFirstname);
             this.panel1.Controls.Add(this.lblFirstname);
-            this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnUploadNew);
             this.panel1.Controls.Add(this.pbProfile);
             this.panel1.Location = new System.Drawing.Point(132, 57);
@@ -187,19 +185,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblFirstname.TabIndex = 3;
             this.lblFirstname.Text = "First Name:";
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.Location = new System.Drawing.Point(596, 55);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(94, 40);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
             // btnUploadNew
             // 
             this.btnUploadNew.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -213,16 +198,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnUploadNew.Text = "Upload new photo";
             this.btnUploadNew.UseVisualStyleBackColor = false;
             this.btnUploadNew.Click += new System.EventHandler(this.btnUploadNew_Click);
-            // 
-            // pbProfile
-            // 
-            this.pbProfile.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.pbProfile.Location = new System.Drawing.Point(286, 31);
-            this.pbProfile.Name = "pbProfile";
-            this.pbProfile.Size = new System.Drawing.Size(91, 86);
-            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProfile.TabIndex = 0;
-            this.pbProfile.TabStop = false;
             // 
             // lblStoreDescription
             // 
@@ -379,6 +354,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblLastUpdate.TabIndex = 19;
             this.lblLastUpdate.Text = "Last updated:";
             // 
+            // pbProfile
+            // 
+            this.pbProfile.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pbProfile.Location = new System.Drawing.Point(286, 31);
+            this.pbProfile.Name = "pbProfile";
+            this.pbProfile.Size = new System.Drawing.Size(91, 86);
+            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfile.TabIndex = 0;
+            this.pbProfile.TabStop = false;
+            // 
             // ucAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,9 +382,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Load += new System.EventHandler(this.ucAccount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,7 +402,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Label lblLastname;
         private System.Windows.Forms.TextBox txtFirstname;
         private System.Windows.Forms.Label lblFirstname;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUploadNew;
         private System.Windows.Forms.PictureBox pbProfile;
         private System.Windows.Forms.TextBox txtPassword;
