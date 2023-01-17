@@ -177,5 +177,19 @@ namespace Carinderia_Kiosk_System.Proprietor
             startUp.Show();
             this.Hide();
         }
+
+        private void pbProfile_Click(object sender, EventArgs e)
+        {
+            if (!pnlUserControlContainer.Controls.Contains(ucAccount.Instance))
+            {
+                pnlUserControlContainer.Controls.Add(ucAccount.Instance);
+                ucAccount.Instance.Dock = DockStyle.Fill;
+                ucAccount.Instance.BringToFront();
+            }
+            else
+            {
+                ucAccount.Instance.BringToFront();
+            }
+        }
     }
 }

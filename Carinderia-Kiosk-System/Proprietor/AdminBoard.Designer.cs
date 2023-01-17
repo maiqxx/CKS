@@ -228,6 +228,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProfile.TabIndex = 1;
             this.pbProfile.TabStop = false;
+            this.pbProfile.Click += new System.EventHandler(this.pbProfile_Click);
             // 
             // pictureBox2
             // 
