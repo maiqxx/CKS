@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.Drawing.Imaging;
-using System.Drawing;
 using Carinderia_Kiosk_System.Customer.CustomerDialogs;
 
 namespace Carinderia_Kiosk_System.Customer

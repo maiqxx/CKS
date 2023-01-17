@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Carinderia_Kiosk_System.Properties;
 using Carinderia_Kiosk_System.Proprietor;
+using System.IO;
+using System.Drawing.Imaging;
+using System.Drawing;
+using MySql.Data.MySqlClient;
 
 namespace Carinderia_Kiosk_System.Proprietor
 {
@@ -16,14 +20,22 @@ namespace Carinderia_Kiosk_System.Proprietor
     {
         public static AdminBoard instance;
 
+        MySqlConnection conn;
+        MySqlCommand cmd;
+        MySqlDataReader dr;
+
         public AdminBoard(string emailAddress)
         {
             InitializeComponent();
             instance = this;
+            conn = new MySqlConnection();
+            conn.ConnectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
         }
 
         private void AdminBoard_Load(object sender, EventArgs e)
         {
+            LoadData();
+
             if (!pnlUserControlContainer.Controls.Contains(ucDashboard.Instance))
             {
                 pnlUserControlContainer.Controls.Add(ucDashboard.Instance);
@@ -33,6 +45,33 @@ namespace Carinderia_Kiosk_System.Proprietor
             else
             {
                 ucDashboard.Instance.BringToFront();
+            }
+        }
+
+        void LoadData()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT PROFILE_PIC FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "' ", conn);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    //gets image from database
+                    byte[] array = (byte[])dr["PROFILE_PIC"];
+                    MemoryStream ms = new MemoryStream(array);
+                    System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+                    pbProfile.BackgroundImageLayout = ImageLayout.Stretch;
+                    pbProfile.BackgroundImage = bitmap;
+
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
