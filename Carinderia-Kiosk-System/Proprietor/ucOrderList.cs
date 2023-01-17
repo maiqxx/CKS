@@ -29,7 +29,6 @@ namespace Carinderia_Kiosk_System.Proprietor
                 if (instance == null)
                 {
                     instance = new ucOrderList();
-
                 }
                 return instance;
             }
@@ -226,6 +225,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //displays food name
                 product = new Label();
                 product.Text = dr["FOOD_NAME"].ToString();
+                product.Width = 150;
                 product.ForeColor = Color.Black;
                 product.Location = new Point(3, 16);
                 product.Font = MediumFontBold;

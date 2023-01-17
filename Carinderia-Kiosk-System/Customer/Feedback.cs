@@ -45,7 +45,8 @@ namespace Carinderia_Kiosk_System.Customer
             try
             {
                 conn.Open();
-                cmd = new MySqlCommand("INSERT INTO FEEDBACK SET RATING = '" + rating + "', " +
+                cmd = new MySqlCommand("INSERT INTO FEEDBACK SET CUSTOMER_NAME = '" + CustomerInfo.Name + "', " +
+                                        "RATING = '" + rating + "', " +
                                         "COMMENT = '"+ comment + "',  " +
                                         "ORDER_ID = (SELECT ORDER_ID FROM ORDERS WHERE CUSTOMER_NAME = '" + CustomerInfo.Name + "') ", conn);
 

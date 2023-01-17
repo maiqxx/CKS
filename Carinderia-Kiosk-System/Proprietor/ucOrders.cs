@@ -129,6 +129,16 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void btnFeedbacks_Click(object sender, EventArgs e)
         {
 
+            if (!pnlManageOrdersContainer.Controls.Contains(ucFeedback.Instance))
+            {
+                pnlManageOrdersContainer.Controls.Add(ucFeedback.Instance);
+                ucFeedback.Instance.Dock = DockStyle.Fill;
+                ucFeedback.Instance.BringToFront();
+            }
+            else
+            {
+                ucFeedback.Instance.BringToFront();
+            }
         }
 
         //Live Orders
