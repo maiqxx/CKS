@@ -40,7 +40,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(82, 161);
+            this.label1.Location = new System.Drawing.Point(80, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 23);
             this.label1.TabIndex = 4;
@@ -50,7 +50,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.verified_admin;
-            this.pictureBox1.Location = new System.Drawing.Point(86, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(84, 41);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(192, 107);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -63,7 +63,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnOK.BackColor = System.Drawing.Color.SteelBlue;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOK.Location = new System.Drawing.Point(137, 201);
+            this.btnOK.Location = new System.Drawing.Point(135, 202);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(69, 34);
             this.btnOK.TabIndex = 9;
@@ -81,7 +81,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LogInSuccessDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
