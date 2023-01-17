@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using Carinderia_Kiosk_System.Proprietor.ProprietorDialogs;
 
 namespace Carinderia_Kiosk_System.Proprietor
 {
@@ -63,7 +64,8 @@ namespace Carinderia_Kiosk_System.Proprietor
                     }
                     else
                     {
-                        MessageBox.Show("Invalid Credentials");
+                        InvalidCredentialsDialog invalid = new InvalidCredentialsDialog();
+                        invalid.ShowDialog();
                     }
                     conn.Close();
                     

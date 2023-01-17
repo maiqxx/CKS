@@ -178,6 +178,9 @@
   <data name="filter icon green 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filter icon green 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="feedback white icon 40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\feedback white icon 40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="categories blue 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\categories blue 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -262,6 +265,9 @@
   <data name="Back icon White 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Back icon White 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Diacosta Green 200 x 100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diacosta Green 200 x 100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="move folder 25x19" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\move folder 25x19.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -328,9 +334,6 @@
   <data name="dine option 80x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dine option 80x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings gear 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings gear 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="customers icon 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customers icon 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -340,8 +343,8 @@
   <data name="check gif 200x200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check gif 200x200.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings gear 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings gear 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="store40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\store40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,8 +355,8 @@
   <data name="dashboard white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Diacosta Green 200 x 100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Diacosta Green 200 x 100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Take Out 100 x 150" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Take Out 100 x 150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -367,7 +370,7 @@
   <data name="completed orders" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\completed orders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="feedback white icon 40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feedback white icon 40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

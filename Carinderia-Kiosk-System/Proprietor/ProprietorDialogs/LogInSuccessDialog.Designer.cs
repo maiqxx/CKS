@@ -75,7 +75,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 280);
+            this.ClientSize = new System.Drawing.Size(356, 280);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);

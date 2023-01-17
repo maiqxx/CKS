@@ -274,6 +274,12 @@
     <Compile Include="Proprietor\ProprietorDialogs\ConfirmSoldProductDialog.Designer.cs">
       <DependentUpon>ConfirmSoldProductDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\InvalidCredentialsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\InvalidCredentialsDialog.Designer.cs">
+      <DependentUpon>InvalidCredentialsDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\ProprietorDialogs\MoveToTrasactsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\ConfirmSoldProductDialog.resx">
       <DependentUpon>ConfirmSoldProductDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ProprietorDialogs\InvalidCredentialsDialog.resx">
+      <DependentUpon>InvalidCredentialsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\MoveToTrasactsDialog.resx">
       <DependentUpon>MoveToTrasactsDialog.cs</DependentUpon>
@@ -741,6 +750,7 @@
     <None Include="Resources\current orders.png" />
     <None Include="Resources\completed orders.png" />
     <None Include="Resources\cancelled orders.png" />
+    <None Include="Resources\close.png" />
     <Content Include="Resources\dashboard black 20x20.png" />
     <None Include="Resources\move folder 25x19.png" />
     <None Include="Resources\move item 40x40.png" />
