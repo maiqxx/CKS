@@ -372,7 +372,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             conn.Open();
             cmd = new MySqlCommand("UPDATE ORDERS SET ORDER_STATUS = '" + newStat  + "' WHERE ORDER_ID = '" + lblOrderNum.Text + "' ", conn);
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Order status updated to " + newStat);
+            GetOrderList();
             conn.Close();
             UpdateInventory();
         }
@@ -399,12 +399,21 @@ namespace Carinderia_Kiosk_System.Proprietor
                         int stockQty = Convert.ToInt32(dr["STOCK_QUANTITY"]);
                         int updatedQty = stockQty - orderQty;
 
-                        //results.Add(new Tuple<string, int>(foodName, updatedQty));
-                        var arrayList2 = new ArrayList()
+                        if (stockQty < updatedQty)
                         {
-                            foodName, updatedQty
-                        };
-                        arrayList1.AddRange(arrayList2);
+                            InsufficientStockDialog insufficientStockDialog = new InsufficientStockDialog();
+                            insufficientStockDialog.ShowDialog();
+                        }
+                        else
+                        {
+                            //results.Add(new Tuple<string, int>(foodName, updatedQty));
+                            var arrayList2 = new ArrayList()
+                            {
+                                 foodName, updatedQty
+                            };
+                            arrayList1.AddRange(arrayList2);
+                        }
+
                     }
                     dr.Close();
                 }
@@ -430,6 +439,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     }
                     //updated = true;
                 }
+
                 dr.Close();
                 conn.Close();
             }

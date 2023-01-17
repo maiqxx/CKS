@@ -280,6 +280,12 @@
     <Compile Include="Proprietor\ProprietorDialogs\ConfirmSoldProductDialog.Designer.cs">
       <DependentUpon>ConfirmSoldProductDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\InsufficientStockDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\InsufficientStockDialog.Designer.cs">
+      <DependentUpon>InsufficientStockDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proprietor\ProprietorDialogs\InvalidCredentialsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -469,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\ConfirmSoldProductDialog.resx">
       <DependentUpon>ConfirmSoldProductDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ProprietorDialogs\InsufficientStockDialog.resx">
+      <DependentUpon>InsufficientStockDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\InvalidCredentialsDialog.resx">
       <DependentUpon>InvalidCredentialsDialog.cs</DependentUpon>
@@ -785,6 +794,9 @@
     <None Include="Resources\dashboard black 20x201.png" />
     <None Include="Resources\feedback white icon 40x40.png" />
     <Content Include="Resources\gear black 20x20.png" />
+    <None Include="Resources\insufficient stocks 40 x 40.png" />
+    <None Include="Resources\insufficient stocks white 40 x 40.png" />
+    <None Include="Resources\insufficient stocks 100 x 150px.png" />
     <Content Include="Resources\inventory black 20x20.png" />
     <Content Include="Resources\logout black 20x20.png" />
     <Content Include="Resources\manage menu black 20x20.png" />

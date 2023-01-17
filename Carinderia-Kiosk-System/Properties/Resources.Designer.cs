@@ -453,6 +453,36 @@ namespace Carinderia_Kiosk_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap insufficient_stocks_100_x_150px {
+            get {
+                object obj = ResourceManager.GetObject("insufficient stocks 100 x 150px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap insufficient_stocks_40_x_40 {
+            get {
+                object obj = ResourceManager.GetObject("insufficient stocks 40 x 40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap insufficient_stocks_white_40_x_40 {
+            get {
+                object obj = ResourceManager.GetObject("insufficient stocks white 40 x 40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap inventory_20_x_20 {
             get {
                 object obj = ResourceManager.GetObject("inventory 20 x 20", resourceCulture);

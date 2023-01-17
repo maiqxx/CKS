@@ -142,6 +142,9 @@
   <data name="inventory white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="insufficient stocks white 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\insufficient stocks white 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="live orders" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\live orders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +153,9 @@
   </data>
   <data name="added to cart 80x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\added to cart 80x80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close or cancel 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close or cancel 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Diacosta white 25 x 25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Diacosta white 25 x 25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,8 +193,8 @@
   <data name="inventory summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory summary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Diacosta Green 200 x 100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Diacosta Green 200 x 100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dashboard 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,6 +262,9 @@
   <data name="arrow back 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow back 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="insufficient stocks 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\insufficient stocks 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="staff m. 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\staff m. 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -264,6 +273,12 @@
   </data>
   <data name="Back icon White 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Back icon White 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Diacosta Green 200 x 100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diacosta Green 200 x 100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close icon black 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close icon black 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="move folder 25x19" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\move folder 25x19.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -292,9 +307,6 @@
   <data name="store white 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\store white 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="valued customer green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\valued customer green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -303,9 +315,6 @@
   </data>
   <data name="manage orders black 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage orders black 20x201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="current orders" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\current orders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,8 +328,8 @@
   <data name="manage staff white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage staff white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close icon black 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close icon black 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clear format 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear format 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -373,7 +382,7 @@
   <data name="completed orders" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\completed orders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close or cancel 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close or cancel 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="insufficient stocks 100 x 150px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\insufficient stocks 100 x 150px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
