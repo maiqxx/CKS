@@ -147,7 +147,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
-
+        private void pbReload_Click(object sender, EventArgs e)
+        {
+            GetTransactions();
+        }
 
 
         private void lblTransactNum_Click(object sender, EventArgs e)

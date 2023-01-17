@@ -42,9 +42,9 @@ namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(79, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 23);
+            this.label1.Size = new System.Drawing.Size(223, 23);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Move To Transactions!";
+            this.label1.Text = "Moved To Transactions!";
             // 
             // pictureBox1
             // 

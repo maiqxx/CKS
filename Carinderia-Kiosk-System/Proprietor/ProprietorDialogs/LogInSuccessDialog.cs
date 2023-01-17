@@ -19,7 +19,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void pbCloseIcon_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,6 +30,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

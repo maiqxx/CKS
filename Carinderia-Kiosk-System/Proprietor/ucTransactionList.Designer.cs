@@ -29,7 +29,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -38,7 +38,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnGo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.pbReload = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReload)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTransactions
@@ -46,14 +48,14 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dgvTransactions.AllowUserToAddRows = false;
             this.dgvTransactions.AllowUserToDeleteRows = false;
             this.dgvTransactions.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransactions.Location = new System.Drawing.Point(53, 86);
             this.dgvTransactions.Name = "dgvTransactions";
@@ -104,7 +106,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGo.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGo.Location = new System.Drawing.Point(540, 35);
+            this.btnGo.Location = new System.Drawing.Point(540, 31);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(45, 27);
             this.btnGo.TabIndex = 9;
@@ -116,7 +118,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(799, 39);
+            this.label3.Location = new System.Drawing.Point(834, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(192, 19);
             this.label3.TabIndex = 11;
@@ -124,17 +126,30 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(997, 39);
+            this.txtSearch.Location = new System.Drawing.Point(1023, 39);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(165, 23);
+            this.txtSearch.Size = new System.Drawing.Size(139, 23);
             this.txtSearch.TabIndex = 12;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // pbReload
+            // 
+            this.pbReload.BackColor = System.Drawing.Color.Transparent;
+            this.pbReload.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
+            this.pbReload.Location = new System.Drawing.Point(591, 34);
+            this.pbReload.Name = "pbReload";
+            this.pbReload.Size = new System.Drawing.Size(22, 25);
+            this.pbReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbReload.TabIndex = 13;
+            this.pbReload.TabStop = false;
+            this.pbReload.Click += new System.EventHandler(this.pbReload_Click);
             // 
             // ucTransactionList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.pbReload);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnGo);
@@ -148,6 +163,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Size = new System.Drawing.Size(1213, 815);
             this.Load += new System.EventHandler(this.ucTransactionList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +179,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.PictureBox pbReload;
     }
 }
