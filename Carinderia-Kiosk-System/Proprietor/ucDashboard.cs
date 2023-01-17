@@ -99,7 +99,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                 //Column names
                 dgvMenuStocks.Columns[0].HeaderText = "Category";
-                dgvMenuStocks.Columns[1].HeaderText = "No. Of Stocks";
+                dgvMenuStocks.Columns[1].HeaderText = "Products";
 
                 conn.Close();
             }

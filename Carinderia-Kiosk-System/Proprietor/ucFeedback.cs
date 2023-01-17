@@ -92,7 +92,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 customerName.Text = dr["CUSTOMER_NAME"].ToString();
                 customerName.ForeColor = Color.Black;
                 customerName.Location = new Point(55, 22);
-                customerName.Font = MediumFontBold;
+                customerName.Font = MediumFontBold2;
                 customerName.Tag = dr["FEEDBACK_ID"].ToString();
 
                 //displays customer's order number/id
@@ -173,8 +173,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             conn.Close();
         }
 
-
-
+        //filters feedback list using combobox
         void FilterFeedback()
         {
             flpFeedbacks.Controls.Clear();
@@ -197,7 +196,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 customerName.Text = dr["CUSTOMER_NAME"].ToString();
                 customerName.ForeColor = Color.Black;
                 customerName.Location = new Point(55, 22);
-                customerName.Font = MediumFontBold;
+                customerName.Font = MediumFontBold2;
                 customerName.Tag = dr["FEEDBACK_ID"].ToString();
 
                 //displays customer's order number/id
