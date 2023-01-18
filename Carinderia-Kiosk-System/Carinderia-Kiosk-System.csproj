@@ -783,12 +783,24 @@
     <None Include="Resources\staff login success icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pending orders 100x100.png" />
+    <None Include="Resources\weekly.png" />
+    <None Include="Resources\monthly.png" />
+    <None Include="Resources\yearly.png" />
+    <None Include="Resources\open store 20x20.png" />
+    <None Include="Resources\phone 20x20.png" />
+    <None Include="Resources\store steelblue2 20x20.png" />
+    <None Include="Resources\store steelblue 40 x 40.png" />
     <None Include="Resources\updated food item 100 x 150px.png" />
     <None Include="Resources\current orders.png" />
     <None Include="Resources\completed orders.png" />
     <None Include="Resources\cancelled orders.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\close or cancel 20 x 20.png" />
+    <None Include="Resources\close store 20x20.png" />
+    <None Include="Resources\daily.png" />
+    <None Include="Resources\complete orders 100x100.png" />
+    <None Include="Resources\cancelled orders 100x100.png" />
     <Content Include="Resources\dashboard black 20x20.png" />
     <None Include="Resources\move folder 25x19.png" />
     <None Include="Resources\move item 40x40.png" />
@@ -803,11 +815,14 @@
     <None Include="Resources\gear black 20x201.png" />
     <None Include="Resources\dashboard black 20x201.png" />
     <None Include="Resources\feedback white icon 40x40.png" />
+    <None Include="Resources\email 20x20.png" />
+    <None Include="Resources\feedbacks 100x100.png" />
     <Content Include="Resources\gear black 20x20.png" />
     <None Include="Resources\insufficient stocks 40 x 40.png" />
     <None Include="Resources\insufficient stocks white 40 x 40.png" />
     <None Include="Resources\insufficient stocks 100 x 150px.png" />
     <Content Include="Resources\inventory black 20x20.png" />
+    <None Include="Resources\location 20x20.png" />
     <Content Include="Resources\logout black 20x20.png" />
     <Content Include="Resources\manage menu black 20x20.png" />
     <Content Include="Resources\manage orders black 20x20.png" />

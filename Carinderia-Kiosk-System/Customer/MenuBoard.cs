@@ -142,7 +142,7 @@ namespace Carinderia_Kiosk_System.Customer
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())
-                {
+               {
                     //_total += double.Parse(dr["PRICE"].ToString());
                     //dataGridview1.Rows.Add(dataGridView1.Rows.Count + 1, dr["FOOD_NAME"].ToString(), double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00"));
 

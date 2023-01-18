@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="phone 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="update 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\update 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,6 +154,9 @@
   <data name="added to cart 80x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\added to cart 80x80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pending orders 100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pending orders 100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Diacosta white 25 x 25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Diacosta white 25 x 25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,6 +165,9 @@
   </data>
   <data name="search blck 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search blck 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="store steelblue2 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\store steelblue2 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="new category blue icon 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new category blue icon 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,6 +238,9 @@
   <data name="move item 40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\move item 40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="store steelblue 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\store steelblue 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="check icon 125x125" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check icon 125x125.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -247,8 +259,8 @@
   <data name="userEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\userEmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dine In 100 x 150" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dine In 100 x 150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="location 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\location 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gear black 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gear black 20x201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,8 +268,14 @@
   <data name="menu items green 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu items green 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="monthly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\monthly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="arrow back 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow back 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dine In 100 x 150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dine In 100 x 150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="insufficient stocks 100 x 150px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\insufficient stocks 100 x 150px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,17 +301,14 @@
   <data name="inventory 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shopping cart white 25 x 25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shopping cart white 25 x 25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="add to cart green 25 x 25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add to cart green 25 x 25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="move to folder 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\move to folder 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="manage menu white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\manage menu white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shopping cart white 25 x 25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shopping cart white 25 x 25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="password 28 x 26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password 28 x 26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,8 +319,11 @@
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="valued customer green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\valued customer green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancelled orders 100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancelled orders 100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open store 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open store 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="manage staff black 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage staff black 20x201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,6 +337,9 @@
   <data name="insufficient stocks white 40 x 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\insufficient stocks white 40 x 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="email 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\email 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="current orders" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\current orders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -328,6 +349,12 @@
   <data name="admin icon 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin icon 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="complete orders 100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\complete orders 100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="daily" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\daily.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="manage staff white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage staff white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -336,6 +363,9 @@
   </data>
   <data name="clear format 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear format 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close store 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close store 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blue wooden bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue wooden bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -370,11 +400,26 @@
   <data name="dashboard white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="yearly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yearly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="updated food item 100 x 150px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\updated food item 100 x 150px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="manage menu white 20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manage menu white 20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Take Out 100 x 150" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Take Out 100 x 150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weekly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weekly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="valued customer green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\valued customer green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refresh 20 x 20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh 20 x 20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -385,7 +430,7 @@
   <data name="completed orders" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\completed orders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="updated food item 100 x 150px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\updated food item 100 x 150px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="feedbacks 100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\feedbacks 100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
