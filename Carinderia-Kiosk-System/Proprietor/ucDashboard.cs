@@ -29,6 +29,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             timerCurrTime.Start();
             conn = new MySqlConnection();
             conn.ConnectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
+            Dashboard();
         }
 
         public static ucDashboard Instance
@@ -54,8 +55,44 @@ namespace Carinderia_Kiosk_System.Proprietor
             GetCompletedOrder();
             GetCancelledOrder();
             GetFeedbacks();
+            LoadAvailableStocks();
+            GetTotalStocks();
+        }    
 
+        //returns total income
+        public double GetTotal(string sql)
+        {
+            double _total = 0;
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand(sql, conn);
+                _total = double.Parse(cmd.ExecuteScalar().ToString());
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+            //returns total of income
+            return _total;
         }
+
+        //displays daily, weekly, monthly, and yearly income
+        public void Dashboard()
+        {
+            lblDaily.Text = "₱ " + GetTotal("SELECT IFNULL(SUM(TOTAL_AMOUNT),0) FROM TRANSACTION WHERE DATE = CURDATE()").ToString("#,##0.00");
+
+            lblWeekly.Text = "₱ " + GetTotal("SELECT IFNULL(SUM(TOTAL_AMOUNT),0) FROM TRANSACTION WHERE WEEK(DATE) = WEEK(NOW())").ToString("#,##0.00");
+
+            lblMonthly.Text = "₱ " + GetTotal("SELECT IFNULL(SUM(TOTAL_AMOUNT),0) FROM TRANSACTION WHERE MONTH(DATE) = MONTH(NOW())").ToString("#,##0.00");
+
+            lblYearly.Text = "₱ " + GetTotal("SELECT IFNULL(SUM(TOTAL_AMOUNT),0) FROM TRANSACTION WHERE YEAR(DATE) = YEAR(NOW())").ToString("#,##0.00");
+        }
+
 
         //Loads data for store description
         void LoadStoreDescription()
@@ -100,7 +137,52 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //Column names
                 dgvMenuStocks.Columns[0].HeaderText = "Category";
                 dgvMenuStocks.Columns[1].HeaderText = "Products";
+                dgvMenuStocks.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //data gridview for Inventory Summary
+        void LoadAvailableStocks()
+        {
+            try
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT STOCK_NAME, STOCK_QUANTITY FROM INVENTORY WHERE PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '"+ AdminInfo.EmailAddress +"' )", conn);
+                adapter.Fill(dt);
+
+                dgvInventorySum.RowTemplate.Height = 20;
+                dgvInventorySum.DataSource = dt;
+
+                //Column names
+                dgvInventorySum.Columns[0].HeaderText = "Product";
+                dgvInventorySum.Columns[1].HeaderText = "Available Stocks";
+                dgvInventorySum.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //displays the total number of available stocks
+        void GetTotalStocks()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT IFNULL(SUM(STOCK_QUANTITY), 0) FROM INVENTORY WHERE PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "' ) ", conn);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                lblTotalStocks.Text = count.ToString() + " stocks";
                 conn.Close();
             }
             catch (Exception ex)
@@ -237,6 +319,11 @@ namespace Carinderia_Kiosk_System.Proprietor
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblYearly_Click(object sender, EventArgs e)
         {
 
         }
