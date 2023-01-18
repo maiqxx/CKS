@@ -29,8 +29,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
@@ -52,20 +51,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dgvTransactions.AllowUserToDeleteRows = false;
             this.dgvTransactions.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTransactions.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTransactions.Location = new System.Drawing.Point(53, 86);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTransactions.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTransactions.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTransactions.RowTemplate.Height = 24;
             this.dgvTransactions.Size = new System.Drawing.Size(1109, 698);
             this.dgvTransactions.TabIndex = 4;
@@ -73,12 +64,12 @@ namespace Carinderia_Kiosk_System.Proprietor
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(128, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 32);
+            this.label1.Size = new System.Drawing.Size(38, 32);
             this.label1.TabIndex = 5;
-            this.label1.Text = "From:";
+            this.label1.Text = "-";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -88,21 +79,21 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dtpStartDate.CalendarTitleBackColor = System.Drawing.Color.Azure;
             this.dtpStartDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(56, 3);
+            this.dtpStartDate.Location = new System.Drawing.Point(3, 3);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(124, 23);
+            this.dtpStartDate.Size = new System.Drawing.Size(119, 23);
             this.dtpStartDate.TabIndex = 6;
             this.dtpStartDate.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(186, 0);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(52, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 32);
+            this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 7;
-            this.label2.Text = "To:";
+            this.label2.Text = "Filter by Date:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -112,9 +103,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dtpEndDate.CalendarTitleBackColor = System.Drawing.Color.Azure;
             this.dtpEndDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(226, 3);
+            this.dtpEndDate.Location = new System.Drawing.Point(172, 3);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(119, 23);
+            this.dtpEndDate.Size = new System.Drawing.Size(117, 23);
             this.dtpEndDate.TabIndex = 8;
             this.dtpEndDate.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
@@ -122,13 +113,13 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.btnGo.BackColor = System.Drawing.Color.SteelBlue;
             this.btnGo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGo.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGo.Location = new System.Drawing.Point(351, 3);
+            this.btnGo.Location = new System.Drawing.Point(295, 3);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(80, 26);
+            this.btnGo.Size = new System.Drawing.Size(73, 26);
             this.btnGo.TabIndex = 9;
             this.btnGo.Text = "Apply";
             this.btnGo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -140,7 +131,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(748, 0);
+            this.label3.Location = new System.Drawing.Point(747, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(201, 32);
             this.label3.TabIndex = 11;
@@ -151,10 +142,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(955, 3);
+            this.txtSearch.Location = new System.Drawing.Point(954, 3);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(151, 26);
+            this.txtSearch.Size = new System.Drawing.Size(152, 26);
             this.txtSearch.TabIndex = 12;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -163,9 +154,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pbReload.BackColor = System.Drawing.Color.Transparent;
             this.pbReload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbReload.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
-            this.pbReload.Location = new System.Drawing.Point(437, 3);
+            this.pbReload.Location = new System.Drawing.Point(374, 3);
             this.pbReload.Name = "pbReload";
-            this.pbReload.Size = new System.Drawing.Size(24, 26);
+            this.pbReload.Size = new System.Drawing.Size(23, 26);
             this.pbReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbReload.TabIndex = 13;
             this.pbReload.TabStop = false;
@@ -174,24 +165,23 @@ namespace Carinderia_Kiosk_System.Proprietor
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 9;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.96175F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.03825F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.9645F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.0355F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
             this.tableLayoutPanel1.Controls.Add(this.txtSearch, 8, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pbReload, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbReload, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dtpEndDate, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnGo, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dtpStartDate, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dtpEndDate, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnGo, 4, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 31);
+            this.tableLayoutPanel1.Controls.Add(this.dtpStartDate, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 39);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -205,6 +195,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvTransactions);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucTransactionList";
@@ -215,6 +206,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
