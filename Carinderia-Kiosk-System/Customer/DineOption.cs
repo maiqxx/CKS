@@ -36,5 +36,10 @@ namespace Carinderia_Kiosk_System.Customer
 
             lblTakeOut.Text = CustomerDineOption.DineInOption;
         }
+
+        private void DineOption_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

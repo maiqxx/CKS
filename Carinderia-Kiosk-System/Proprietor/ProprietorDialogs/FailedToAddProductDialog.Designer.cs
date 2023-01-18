@@ -46,6 +46,7 @@ namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
             this.btnOK.TabIndex = 14;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label1
             // 

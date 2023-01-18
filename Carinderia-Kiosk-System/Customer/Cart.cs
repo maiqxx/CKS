@@ -367,5 +367,10 @@ namespace Carinderia_Kiosk_System.Customer
 
             btnPlaceOrder.Visible = true;
         }
+
+        private void lblNoOrders_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

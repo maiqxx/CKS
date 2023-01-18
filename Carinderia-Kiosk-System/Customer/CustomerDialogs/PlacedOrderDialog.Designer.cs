@@ -96,6 +96,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PlacedOrderDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.PlacedOrderDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

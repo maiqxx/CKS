@@ -79,5 +79,10 @@ namespace Carinderia_Kiosk_System.Customer
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void CustomerInputName_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

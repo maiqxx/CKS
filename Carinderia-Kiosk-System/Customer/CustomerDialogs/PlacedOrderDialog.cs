@@ -30,5 +30,10 @@ namespace Carinderia_Kiosk_System.Customer
             fb.Show();
             this.Close();
         }
+
+        private void PlacedOrderDialog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

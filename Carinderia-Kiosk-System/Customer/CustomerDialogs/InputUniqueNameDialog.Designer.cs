@@ -83,6 +83,7 @@ namespace Carinderia_Kiosk_System.Customer.CustomerDialogs
             this.Name = "InputUniqueNameDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InputUniqueName";
+            this.Load += new System.EventHandler(this.InputUniqueNameDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

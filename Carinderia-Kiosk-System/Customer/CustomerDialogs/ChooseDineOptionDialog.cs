@@ -21,5 +21,10 @@ namespace Carinderia_Kiosk_System.Customer.CustomerDialogs
         {
             this.Close();
         }
+
+        private void ChooseDineOptionDialog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

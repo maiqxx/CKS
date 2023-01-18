@@ -122,7 +122,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //Database connection
                 string connectionString = null;
                 MySqlConnection conn;
-                connectionString = "server=localhost; database=cks_db; Convert Zero Datetime=True; uid=root; pwd=\"\";";
+                connectionString = "server=localhost; database=cks_db.proprietor; Convert Zero Datetime=True; uid=root; pwd=\"\";";
                 conn = new MySqlConnection(connectionString);
 
                 try
@@ -161,10 +161,5 @@ namespace Carinderia_Kiosk_System.Proprietor
                 }
             }
         }
-
-
-
-
-
     }
 }

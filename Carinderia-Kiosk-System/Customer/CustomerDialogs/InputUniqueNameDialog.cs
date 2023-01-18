@@ -21,5 +21,10 @@ namespace Carinderia_Kiosk_System.Customer.CustomerDialogs
         {
             this.Close();
         }
+
+        private void InputUniqueNameDialog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

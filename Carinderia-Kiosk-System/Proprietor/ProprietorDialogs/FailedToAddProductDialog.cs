@@ -16,5 +16,10 @@ namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
         {
             InitializeComponent();
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

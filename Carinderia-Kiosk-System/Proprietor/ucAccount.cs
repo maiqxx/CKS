@@ -44,7 +44,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             btnSave.Visible = false;
 
             //shows proprietor's data
-            LoadInfo();
+             LoadInfo();
 
             //displays time format
             InitializeTimePicker();
@@ -150,12 +150,12 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             if (reader.Read())
             {
-                //gets image from database
-                byte[] array = (byte[])reader["PROFILE_PIC"];
-                MemoryStream ms = new MemoryStream(array);
-                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
-                pbProfile.BackgroundImageLayout = ImageLayout.Stretch;
-                pbProfile.BackgroundImage = bitmap;
+                ////gets image from database
+                //byte[] array = (byte[])reader["PROFILE_PIC"];
+                //MemoryStream ms = new MemoryStream(array);
+                //System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+                //pbProfile.BackgroundImageLayout = ImageLayout.Stretch;
+                //pbProfile.BackgroundImage = bitmap;
 
                 txtFirstname.Text = reader["FIRSTNAME"].ToString();
                 txtLastName.Text = reader["LASTNAME"].ToString();

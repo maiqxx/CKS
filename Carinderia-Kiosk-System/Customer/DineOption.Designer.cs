@@ -126,6 +126,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DineOption";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.DineOption_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

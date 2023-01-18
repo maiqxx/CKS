@@ -514,5 +514,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             orderListPanel.BackColor = Color.WhiteSmoke;
         }
 
+        private void flpOrderList_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

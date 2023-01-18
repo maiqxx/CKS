@@ -84,6 +84,7 @@ namespace Carinderia_Kiosk_System.Customer.CustomerDialogs
             this.Name = "AddedToCartDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddedToCartDialog";
+            this.Load += new System.EventHandler(this.AddedToCartDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
