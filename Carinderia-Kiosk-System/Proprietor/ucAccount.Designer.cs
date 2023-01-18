@@ -56,8 +56,8 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCreatedAt = new System.Windows.Forms.Label();
             this.lblUpdatedAt = new System.Windows.Forms.Label();
             this.lblLastUpdate = new System.Windows.Forms.Label();
-            this.pbProfile = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.pbProfile = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
@@ -318,52 +318,42 @@ namespace Carinderia_Kiosk_System.Proprietor
             // lblAccountCreated
             // 
             this.lblAccountCreated.AutoSize = true;
-            this.lblAccountCreated.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountCreated.Location = new System.Drawing.Point(392, 805);
+            this.lblAccountCreated.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccountCreated.Location = new System.Drawing.Point(343, 805);
             this.lblAccountCreated.Name = "lblAccountCreated";
-            this.lblAccountCreated.Size = new System.Drawing.Size(115, 17);
+            this.lblAccountCreated.Size = new System.Drawing.Size(141, 20);
             this.lblAccountCreated.TabIndex = 17;
             this.lblAccountCreated.Text = "Account created:";
             // 
             // lblCreatedAt
             // 
             this.lblCreatedAt.AutoSize = true;
-            this.lblCreatedAt.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedAt.Location = new System.Drawing.Point(501, 805);
+            this.lblCreatedAt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreatedAt.Location = new System.Drawing.Point(477, 805);
             this.lblCreatedAt.Name = "lblCreatedAt";
-            this.lblCreatedAt.Size = new System.Drawing.Size(75, 17);
+            this.lblCreatedAt.Size = new System.Drawing.Size(91, 20);
             this.lblCreatedAt.TabIndex = 18;
             this.lblCreatedAt.Text = "Created At";
             // 
             // lblUpdatedAt
             // 
             this.lblUpdatedAt.AutoSize = true;
-            this.lblUpdatedAt.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdatedAt.Location = new System.Drawing.Point(865, 805);
+            this.lblUpdatedAt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdatedAt.Location = new System.Drawing.Point(853, 805);
             this.lblUpdatedAt.Name = "lblUpdatedAt";
-            this.lblUpdatedAt.Size = new System.Drawing.Size(78, 17);
+            this.lblUpdatedAt.Size = new System.Drawing.Size(95, 20);
             this.lblUpdatedAt.TabIndex = 20;
             this.lblUpdatedAt.Text = "Updated At";
             // 
             // lblLastUpdate
             // 
             this.lblLastUpdate.AutoSize = true;
-            this.lblLastUpdate.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastUpdate.Location = new System.Drawing.Point(782, 805);
+            this.lblLastUpdate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastUpdate.Location = new System.Drawing.Point(750, 805);
             this.lblLastUpdate.Name = "lblLastUpdate";
-            this.lblLastUpdate.Size = new System.Drawing.Size(90, 17);
+            this.lblLastUpdate.Size = new System.Drawing.Size(109, 20);
             this.lblLastUpdate.TabIndex = 19;
             this.lblLastUpdate.Text = "Last updated:";
-            // 
-            // pbProfile
-            // 
-            this.pbProfile.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pbProfile.Location = new System.Drawing.Point(286, 31);
-            this.pbProfile.Name = "pbProfile";
-            this.pbProfile.Size = new System.Drawing.Size(91, 86);
-            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProfile.TabIndex = 0;
-            this.pbProfile.TabStop = false;
             // 
             // btnLogOut
             // 
@@ -378,6 +368,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // pbProfile
+            // 
+            this.pbProfile.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pbProfile.Location = new System.Drawing.Point(286, 31);
+            this.pbProfile.Name = "pbProfile";
+            this.pbProfile.Size = new System.Drawing.Size(91, 86);
+            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfile.TabIndex = 0;
+            this.pbProfile.TabStop = false;
             // 
             // ucAccount
             // 

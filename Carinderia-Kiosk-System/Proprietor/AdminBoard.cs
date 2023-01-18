@@ -174,9 +174,9 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             AdminInfo.EmailAddress = "";
+            this.Hide();
             StartUp startUp = new StartUp();
             startUp.Show();
-            this.Hide();
         }
 
         //redirect to user;s account setting when clicked

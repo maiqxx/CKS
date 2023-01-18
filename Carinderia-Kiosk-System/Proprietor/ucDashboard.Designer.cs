@@ -30,16 +30,16 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.lblClosingTime = new System.Windows.Forms.Label();
             this.lblOpeningTime = new System.Windows.Forms.Label();
@@ -49,8 +49,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblStoreName = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timerCurrTime = new System.Windows.Forms.Timer(this.components);
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lblMenuCategories = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLiveOrders = new System.Windows.Forms.Label();
@@ -104,7 +102,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbClock = new System.Windows.Forms.PictureBox();
             this.pbMenuCategoriesIcon = new System.Windows.Forms.PictureBox();
-            this.panel2.SuspendLayout();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenuStocks)).BeginInit();
             this.pnlLiveOrders.SuspendLayout();
@@ -224,7 +222,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblTime.Location = new System.Drawing.Point(90, 19);
+            this.lblTime.Location = new System.Drawing.Point(128, 16);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(53, 23);
             this.lblTime.TabIndex = 0;
@@ -234,24 +232,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             // timerCurrTime
             // 
             this.timerCurrTime.Tick += new System.EventHandler(this.timerCurrTime_Tick);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.BackColor = System.Drawing.Color.AliceBlue;
-            this.monthCalendar1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 0);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 3;
-            this.monthCalendar1.TrailingForeColor = System.Drawing.Color.LightSkyBlue;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.monthCalendar1);
-            this.panel2.Location = new System.Drawing.Point(49, 288);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(262, 207);
-            this.panel2.TabIndex = 5;
             // 
             // lblMenuCategories
             // 
@@ -267,9 +247,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.panel1.Controls.Add(this.pbClock);
             this.panel1.Controls.Add(this.lblTime);
-            this.panel1.Location = new System.Drawing.Point(49, 231);
+            this.panel1.Location = new System.Drawing.Point(24, 649);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(262, 51);
+            this.panel1.Size = new System.Drawing.Size(322, 51);
             this.panel1.TabIndex = 10;
             // 
             // lblLiveOrders
@@ -288,50 +268,50 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dgvMenuStocks.AllowUserToDeleteRows = false;
             this.dgvMenuStocks.AllowUserToResizeColumns = false;
             this.dgvMenuStocks.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvMenuStocks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvMenuStocks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvMenuStocks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMenuStocks.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvMenuStocks.CausesValidation = false;
             this.dgvMenuStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMenuStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMenuStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvMenuStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenuStocks.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenuStocks.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvMenuStocks.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvMenuStocks.Location = new System.Drawing.Point(376, 488);
             this.dgvMenuStocks.Name = "dgvMenuStocks";
             this.dgvMenuStocks.ReadOnly = true;
             this.dgvMenuStocks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMenuStocks.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMenuStocks.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvMenuStocks.RowHeadersWidth = 55;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            this.dgvMenuStocks.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            this.dgvMenuStocks.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvMenuStocks.RowTemplate.Height = 24;
             this.dgvMenuStocks.Size = new System.Drawing.Size(403, 365);
             this.dgvMenuStocks.TabIndex = 18;
@@ -461,7 +441,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.lblStoreName);
             this.panel3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(24, 517);
+            this.panel3.Location = new System.Drawing.Point(24, 297);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(322, 346);
             this.panel3.TabIndex = 25;
@@ -481,7 +461,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblStoreDesc.AutoSize = true;
             this.lblStoreDesc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStoreDesc.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblStoreDesc.Location = new System.Drawing.Point(64, 491);
+            this.lblStoreDesc.Location = new System.Drawing.Point(69, 268);
             this.lblStoreDesc.Name = "lblStoreDesc";
             this.lblStoreDesc.Size = new System.Drawing.Size(173, 23);
             this.lblStoreDesc.TabIndex = 27;
@@ -671,51 +651,51 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dgvInventorySum.AllowUserToDeleteRows = false;
             this.dgvInventorySum.AllowUserToResizeColumns = false;
             this.dgvInventorySum.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvInventorySum.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvInventorySum.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
             this.dgvInventorySum.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventorySum.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvInventorySum.CausesValidation = false;
             this.dgvInventorySum.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventorySum.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventorySum.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dgvInventorySum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInventorySum.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInventorySum.DefaultCellStyle = dataGridViewCellStyle28;
             this.dgvInventorySum.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvInventorySum.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvInventorySum.Location = new System.Drawing.Point(0, 0);
             this.dgvInventorySum.Name = "dgvInventorySum";
             this.dgvInventorySum.ReadOnly = true;
             this.dgvInventorySum.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventorySum.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventorySum.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.dgvInventorySum.RowHeadersWidth = 55;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            this.dgvInventorySum.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            this.dgvInventorySum.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvInventorySum.RowTemplate.Height = 24;
             this.dgvInventorySum.Size = new System.Drawing.Size(425, 304);
             this.dgvInventorySum.TabIndex = 19;
@@ -773,7 +753,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Carinderia_Kiosk_System.Properties.Resources.store_steelblue2_20x20;
-            this.pictureBox3.Location = new System.Drawing.Point(24, 488);
+            this.pictureBox3.Location = new System.Drawing.Point(24, 261);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -888,7 +868,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // btnRefreshDashboard
             // 
             this.btnRefreshDashboard.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
-            this.btnRefreshDashboard.Location = new System.Drawing.Point(152, 15);
+            this.btnRefreshDashboard.Location = new System.Drawing.Point(117, 14);
             this.btnRefreshDashboard.Name = "btnRefreshDashboard";
             this.btnRefreshDashboard.Size = new System.Drawing.Size(29, 27);
             this.btnRefreshDashboard.TabIndex = 23;
@@ -908,7 +888,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // pbClock
             // 
             this.pbClock.Image = global::Carinderia_Kiosk_System.Properties.Resources.clock_20_x_20;
-            this.pbClock.Location = new System.Drawing.Point(45, 12);
+            this.pbClock.Location = new System.Drawing.Point(83, 9);
             this.pbClock.Name = "pbClock";
             this.pbClock.Size = new System.Drawing.Size(39, 33);
             this.pbClock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -925,11 +905,21 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pbMenuCategoriesIcon.TabIndex = 8;
             this.pbMenuCategoriesIcon.TabStop = false;
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.BackColor = System.Drawing.Color.AliceBlue;
+            this.monthCalendar1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendar1.Location = new System.Drawing.Point(49, 706);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 35;
+            this.monthCalendar1.TrailingForeColor = System.Drawing.Color.LightSkyBlue;
+            // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.panel4);
@@ -948,13 +938,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblMenuCategories);
             this.Controls.Add(this.pbMenuCategoriesIcon);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblDashboard);
             this.ForeColor = System.Drawing.Color.SteelBlue;
             this.Name = "ucDashboard";
             this.Size = new System.Drawing.Size(1264, 965);
             this.Load += new System.EventHandler(this.ucDashboard_Load);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenuStocks)).EndInit();
@@ -1009,8 +997,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.Label lblStoreName;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timerCurrTime;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbMenuCategoriesIcon;
         private System.Windows.Forms.Label lblMenuCategories;
         private System.Windows.Forms.Panel panel1;
@@ -1063,5 +1049,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
