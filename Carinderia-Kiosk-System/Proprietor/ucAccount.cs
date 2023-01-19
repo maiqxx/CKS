@@ -151,11 +151,11 @@ namespace Carinderia_Kiosk_System.Proprietor
             if (reader.Read())
             {
                 //gets image from database
-                byte[] array = (byte[])reader["PROFILE_PIC"];
-                MemoryStream ms = new MemoryStream(array);
-                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
-                pbProfile.BackgroundImageLayout = ImageLayout.Stretch;
-                pbProfile.BackgroundImage = bitmap;
+                //byte[] array = (byte[])reader["PROFILE_PIC"];
+                //MemoryStream ms = new MemoryStream(array);
+                //System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+                //pbProfile.BackgroundImageLayout = ImageLayout.Stretch;
+                //pbProfile.BackgroundImage = bitmap;
 
                 txtFirstname.Text = reader["FIRSTNAME"].ToString();
                 txtLastName.Text = reader["LASTNAME"].ToString();
@@ -203,7 +203,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
         }
 
@@ -221,9 +221,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             {
                 conn.Open();
 
-                MemoryStream ms = new MemoryStream();
-                pbProfile.Image.Save(ms, pbProfile.Image.RawFormat);
-                byte[] img = ms.ToArray();
+                //MemoryStream ms = new MemoryStream();
+                //pbProfile.Image.Save(ms, pbProfile.Image.RawFormat);
+                //byte[] img = ms.ToArray();
 
                 InitializeTimePicker();
 
@@ -234,7 +234,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                 MySqlCommand cmd = new MySqlCommand(updateAccount, conn);
                 cmd.Parameters.AddWithValue("@now", string.Concat(dt2, " ", dt));
-                cmd.Parameters.AddWithValue("@img", img);
+                //cmd.Parameters.AddWithValue("@img", img);
 
                 int ctr = cmd.ExecuteNonQuery();
                 if (ctr > 0)

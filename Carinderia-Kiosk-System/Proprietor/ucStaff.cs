@@ -185,14 +185,14 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //updates staff info
                 MySqlCommand cmd = new MySqlCommand();
                 cmd = new MySqlCommand("UPDATE STAFF " +
-                    "SET FIRSTNAME = @fname, " +
-                    "LASTNAME = @lname, " +
-                    "CONTACT_NUMBER = @conNum, " +
-                    "EMAIL_ADDRESS = @email, " +
-                    "ADDRESS = @address, " +
-                    "ROLE = @role, " +
-                    "HIRE_DATE = @hireDate " +
-                    "WHERE STAFF_ID = @ID", conn);
+                                        "SET FIRSTNAME = @fname, " +
+                                        "LASTNAME = @lname, " +
+                                        "CONTACT_NUMBER = @conNum, " +
+                                        "EMAIL_ADDRESS = @email, " +
+                                        "ADDRESS = @address, " +
+                                        "ROLE = @role, " +
+                                        "HIRE_DATE = @hireDate " +
+                                        "WHERE STAFF_ID = @ID", conn);
                 
                 cmd.Parameters.AddWithValue("@ID", txtStaffIDNum);
                 cmd.Parameters.AddWithValue("@fname", txtFirstname.Text);

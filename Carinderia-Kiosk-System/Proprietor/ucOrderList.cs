@@ -278,7 +278,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                     MySqlTransaction transaction = conn.BeginTransaction();
 
-                   // Recorders transaction
+                   //Records transaction
                     cmd = new MySqlCommand("INSERT INTO TRANSACTION " +
                                             "SET ORDER_ID = (SELECT ORDER_ID FROM ORDERS WHERE ORDER_ID = '" + tag + "'), " +
                                             "CUSTOMER_NAME = (SELECT CUSTOMER_NAME FROM ORDERS WHERE ORDER_ID = '" + tag + "'), " +

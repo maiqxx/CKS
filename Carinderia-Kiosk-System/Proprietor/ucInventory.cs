@@ -76,7 +76,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             //Column header names
             dgvInventory.Columns[0].HeaderText = "Stock Code";
-            dgvInventory.Columns[1].HeaderText = "Food Name";
+            dgvInventory.Columns[1].HeaderText = "Product";
             dgvInventory.Columns[2].HeaderText = "Description";
             dgvInventory.Columns[3].HeaderText = "Stock Quantity";
             dgvInventory.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -102,7 +102,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 opf.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif;) | *.jpg; *.jpeg; *.png; *.gif;";
                 if (opf.ShowDialog() == DialogResult.OK)
                 {
-                    txtImagePath.Text = opf.FileName.ToString();
+                    //txtImagePath.Text = opf.FileName.ToString();
                     pbFoodImage.Image = Image.FromFile(opf.FileName);
                 }
             }
@@ -121,7 +121,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 opf.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif;) | *.jpg; *.jpeg; *.png; *.gif;";
                 if (opf.ShowDialog() == DialogResult.OK)
                 {
-                    txtImagePath.Text = opf.FileName.ToString();
+                    //txtImagePath.Text = opf.FileName.ToString();
                     pbFoodImage.Image = Image.FromFile(opf.FileName);
                 }
             }
@@ -140,7 +140,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 opf.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif;) | *.jpg; *.jpeg; *.png; *.gif;";
                 if (opf.ShowDialog() == DialogResult.OK)
                 {
-                    txtImagePath.Text = opf.FileName.ToString();
+                    //txtImagePath.Text = opf.FileName.ToString();
                     pbFoodImage.Image = Image.FromFile(opf.FileName);
                 }
             }
@@ -202,7 +202,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             try
             {
-                if (txtFoodName.Text.Length > 0 && txtImagePath.Text.Length > 0)
+                if (txtFoodName.Text.Length > 0)
                 {
                     conn.Open();
 
@@ -427,7 +427,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             txtUnitPrice.Text = "";
             txtQuantity.Text = "";
             txtUnit.Text = "";
-            txtImagePath.Text = "";
+            //txtImagePath.Text = "";
             pbFoodImage.Image = null;
         }
 

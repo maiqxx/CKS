@@ -104,7 +104,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.lvOrderList.HideSelection = false;
             this.lvOrderList.Location = new System.Drawing.Point(36, 95);
             this.lvOrderList.Name = "lvOrderList";
-            this.lvOrderList.Size = new System.Drawing.Size(529, 417);
+            this.lvOrderList.Size = new System.Drawing.Size(525, 417);
             this.lvOrderList.TabIndex = 7;
             this.lvOrderList.UseCompatibleStateImageBehavior = false;
             this.lvOrderList.View = System.Windows.Forms.View.Details;

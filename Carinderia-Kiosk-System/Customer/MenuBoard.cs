@@ -255,7 +255,7 @@ namespace Carinderia_Kiosk_System.Customer
             }
         }
 
-        //Gets total amoun to be paid by the customer
+        //Gets total amount to be paid by the customer
         void TotalAmount()
         {
             lblTotalPrice.Controls.Clear();

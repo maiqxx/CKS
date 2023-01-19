@@ -39,6 +39,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         //Create Account Button
         private void buttonCreateAccount_Click(object sender, EventArgs e)
         {
+            
             //variables for creating proprietor's account
             var firstName = txtFirstname.Text;
             var lastName = txtLastname.Text;
@@ -127,13 +128,14 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                 try
                 {
+                    
                     conn.Open();
-
+                    
                     //This query checks if the user has already registered or not
-                    string check = "SELECT * FROM PRORIETOR WHERE EMAIL_ADDRESS = '" + emailAddress + "' ";
+                    string check = "SELECT * FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + emailAddress + "' ";
                     MySqlCommand cmd1 = new MySqlCommand(check, conn);
                     MySqlDataReader reader = cmd1.ExecuteReader();
-
+                    reader.Close();
                     if (reader.HasRows)
                     {
                         MessageBox.Show("This email is already registered!");
@@ -142,8 +144,8 @@ namespace Carinderia_Kiosk_System.Proprietor
                     else
                     {
                         //adds new user/proprietor
-                        string addUser = "INSERT INTO PROPRIETOR(FIRSTNAME, LASTNAME, STORE_NAME, LOCATION, CONTACT_NUMBER, EMAIL_ADDRESS, PASSWORD, CREATED_AT, UPDATED_AT) " +
-                                          "VALUES('" + firstName + "', '" + lastName + "', '" + storeName + "', '" + location + "', '" + contactNum + "', '" + emailAddress + "', '" + password + "', '" + updatedAt + "')";
+                        string addUser = "INSERT INTO `proprietor`(`FIRSTNAME`, `LASTNAME`, `STORE_NAME`, `LOCATION`, `CONTACT_NUMBER`, `EMAIL_ADDRESS`, `PASSWORD`)" +
+                                                             " VALUES ('"+ txtFirstname.Text +"','"+txtLastname.Text+"','"+txtStorename.Text+"','"+txtlocation.Text+"','"+mTxtContactNum.Text+"','"+txtEmailAddress.Text+"','"+txtPassword.Text+"')";
                         MySqlCommand cmd2 = new MySqlCommand(addUser, conn);
 
                         var ctr = cmd2.ExecuteNonQuery();
@@ -151,13 +153,14 @@ namespace Carinderia_Kiosk_System.Proprietor
                         LogIn LogIn = new LogIn();
                         this.Hide();
                         LogIn.Show();
+                        reader.Close();
                     }
-
+                   
                     conn.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
             }
         }

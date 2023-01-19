@@ -34,7 +34,7 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void AdminBoard_Load(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
 
             if (!pnlUserControlContainer.Controls.Contains(ucDashboard.Instance))
             {
@@ -179,19 +179,24 @@ namespace Carinderia_Kiosk_System.Proprietor
             startUp.Show();
         }
 
-        //redirect to user;s account setting when clicked
-        private void pbProfile_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            if (!pnlUserControlContainer.Controls.Contains(ucAccount.Instance))
-            {
-                pnlUserControlContainer.Controls.Add(ucAccount.Instance);
-                ucAccount.Instance.Dock = DockStyle.Fill;
-                ucAccount.Instance.BringToFront();
-            }
-            else
-            {
-                ucAccount.Instance.BringToFront();
-            }
+
         }
+
+        //redirect to user;s account setting when clicked
+        //private void pbProfile_Click(object sender, EventArgs e)
+        //{
+        //    if (!pnlUserControlContainer.Controls.Contains(ucAccount.Instance))
+        //    {
+        //        pnlUserControlContainer.Controls.Add(ucAccount.Instance);
+        //        ucAccount.Instance.Dock = DockStyle.Fill;
+        //        ucAccount.Instance.BringToFront();
+        //    }
+        //    else
+        //    {
+        //        ucAccount.Instance.BringToFront();
+        //    }
+        //}
     }
 }

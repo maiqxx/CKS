@@ -55,7 +55,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.pnlUserControlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -217,6 +216,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1264, 45);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pbProfile
             // 
@@ -227,7 +227,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProfile.TabIndex = 1;
             this.pbProfile.TabStop = false;
-            this.pbProfile.Click += new System.EventHandler(this.pbProfile_Click);
             // 
             // pictureBox2
             // 
@@ -241,12 +240,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // pnlUserControlContainer
             // 
-            //this.pnlUserControlContainer.Controls.Add(this.ucAccount1);
-            //this.pnlUserControlContainer.Controls.Add(this.ucStaff1);
-            //this.pnlUserControlContainer.Controls.Add(this.ucInventory1);
-            //this.pnlUserControlContainer.Controls.Add(this.ucCategories1);
-            //this.pnlUserControlContainer.Controls.Add(this.ucOrders1);
-            //this.pnlUserControlContainer.Controls.Add(this.ucDashboard1);
             this.pnlUserControlContainer.Location = new System.Drawing.Point(227, 48);
             this.pnlUserControlContainer.Name = "pnlUserControlContainer";
             this.pnlUserControlContainer.Size = new System.Drawing.Size(1264, 965);
@@ -348,7 +341,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.pnlUserControlContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
