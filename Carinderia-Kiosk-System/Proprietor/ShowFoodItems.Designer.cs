@@ -46,7 +46,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.lblMenu);
             this.panel1.Controls.Add(this.pbLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -110,7 +110,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.filter_icon_green_20_x_20;
+            this.pictureBox1.Image = global::Carinderia_Kiosk_System.Properties.Resources.filter_steelblue_20x20;
             this.pictureBox1.Location = new System.Drawing.Point(1079, 76);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 36);

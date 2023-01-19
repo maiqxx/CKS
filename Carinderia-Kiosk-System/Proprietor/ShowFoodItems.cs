@@ -66,7 +66,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //displays price
                 price = new Label();
                 price.Text = "₱ " + double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
-                price.BackColor = Color.FromArgb(39, 174, 96);
+                price.BackColor = Color.SteelBlue;
                 price.ForeColor = Color.FromArgb(236, 240, 241);
                 price.Font = MediumFont;
                 price.TextAlign = ContentAlignment.MiddleCenter;
@@ -153,7 +153,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //displays price
                 price = new Label();
                 price.Text = "₱ " + double.Parse(dr["PRICE"].ToString()).ToString("#, ##0.00");
-                price.BackColor = Color.FromArgb(39, 174, 96);
+                price.BackColor = Color.SteelBlue;
                 price.ForeColor = Color.FromArgb(236, 240, 241);
                 price.Font = MediumFont;
                 price.TextAlign = ContentAlignment.MiddleCenter;

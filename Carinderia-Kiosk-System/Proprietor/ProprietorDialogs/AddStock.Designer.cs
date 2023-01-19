@@ -45,9 +45,9 @@ namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
             this.txtStockCode = new System.Windows.Forms.TextBox();
             this.lblStockCode = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
-            this.pbFoodImage = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pbFoodImage = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +76,7 @@ namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
             this.groupBox1.Size = new System.Drawing.Size(588, 440);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Stock Information";
+            this.groupBox1.Text = "Add Product";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtUnit
@@ -213,9 +213,9 @@ namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
             this.lblStockCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblStockCode.Location = new System.Drawing.Point(251, 47);
             this.lblStockCode.Name = "lblStockCode";
-            this.lblStockCode.Size = new System.Drawing.Size(110, 19);
+            this.lblStockCode.Size = new System.Drawing.Size(127, 19);
             this.lblStockCode.TabIndex = 26;
-            this.lblStockCode.Text = "Stock Code:";
+            this.lblStockCode.Text = "Product Code:";
             // 
             // btnBrowse
             // 
@@ -229,17 +229,6 @@ namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // pbFoodImage
-            // 
-            this.pbFoodImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pbFoodImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbFoodImage.Location = new System.Drawing.Point(18, 40);
-            this.pbFoodImage.Name = "pbFoodImage";
-            this.pbFoodImage.Size = new System.Drawing.Size(211, 189);
-            this.pbFoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFoodImage.TabIndex = 24;
-            this.pbFoodImage.TabStop = false;
             // 
             // btnAdd
             // 
@@ -273,6 +262,17 @@ namespace Carinderia_Kiosk_System.Proprietor.ProprietorDialogs
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pbFoodImage
+            // 
+            this.pbFoodImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pbFoodImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbFoodImage.Location = new System.Drawing.Point(18, 40);
+            this.pbFoodImage.Name = "pbFoodImage";
+            this.pbFoodImage.Size = new System.Drawing.Size(211, 189);
+            this.pbFoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFoodImage.TabIndex = 24;
+            this.pbFoodImage.TabStop = false;
             // 
             // AddStock
             // 

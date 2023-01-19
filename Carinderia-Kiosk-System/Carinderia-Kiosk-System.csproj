@@ -826,6 +826,7 @@
     <None Include="Resources\feedback white icon 40x40.png" />
     <None Include="Resources\email 20x20.png" />
     <None Include="Resources\feedbacks 100x100.png" />
+    <None Include="Resources\filter steelblue 20x20.png" />
     <Content Include="Resources\gear black 20x20.png" />
     <None Include="Resources\insufficient stocks 40 x 40.png" />
     <None Include="Resources\insufficient stocks white 40 x 40.png" />

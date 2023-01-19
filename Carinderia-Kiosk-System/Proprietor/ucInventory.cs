@@ -166,15 +166,15 @@ namespace Carinderia_Kiosk_System.Proprietor
                 if (dr.Read())
                 {
                     int id = int.Parse(dr[0].ToString()) + 1;
-                    stockID = id.ToString("STK00000");
+                    stockID = id.ToString("PROD0000");
                 }
                 else if (Convert.IsDBNull(dr))
                 {
-                    stockID = ("STK00001");
+                    stockID = ("PROD0001");
                 }
                 else
                 {
-                    stockID = ("STK00001");
+                    stockID = ("PROD0001");
                 }
 
                 conn.Close();
