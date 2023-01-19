@@ -298,6 +298,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                         cmd = new MySqlCommand("DELETE FROM ORDERS WHERE ORDER_ID = '" + tag + "' ", conn);
                         cmd.ExecuteNonQuery();
                         transaction.Commit();
+                        conn.Close();
                     }
                     else
                     {
@@ -332,7 +333,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 MySqlTransaction transaction = conn.BeginTransaction();
                 try
                 {
-                    //Recorders transaction
+                    //Records transaction
                     cmd = new MySqlCommand("INSERT INTO TRANSACTION (ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, STATUS) " +
                                             "(SELECT ORDER_ID, CUSTOMER_NAME, DINE_OPTION, TOTAL_AMOUNT, ORDER_STATUS FROM ORDERS WHERE ORDER_ID = '" + tag + "') ", conn);
 
@@ -345,6 +346,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                         cmd = new MySqlCommand("DELETE FROM ORDERS WHERE ORDER_ID = '" + tag + "' ", conn);
                         cmd.ExecuteNonQuery();
                         transaction.Commit();
+                        conn.Close();
                     }
                     else
                     {
@@ -355,6 +357,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 }
                 catch (Exception ex)
                 {
+                    conn.Close();
                     //transaction.Rollback();
                     MessageBox.Show(ex.Message);
                 }
@@ -372,8 +375,8 @@ namespace Carinderia_Kiosk_System.Proprietor
             conn.Open();
             cmd = new MySqlCommand("UPDATE ORDERS SET ORDER_STATUS = '" + newStat  + "' WHERE ORDER_ID = '" + lblOrderNum.Text + "' ", conn);
             cmd.ExecuteNonQuery();
-            GetOrderList();
             conn.Close();
+            GetOrderList();
             UpdateInventory();
         }
 
@@ -426,7 +429,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                         var foodName = arrayList1[i];
                         var updatedQty = arrayList1[i + 1];
 
-                        cmd = new MySqlCommand("UPDATE INVENTORY SET STOCK_QUANTITY = '" + updatedQty + "' WHERE STOCK_NAME = '" + foodName + "' ", conn);
+                        cmd = new MySqlCommand("UPDATE INVENTORY SET STOCK_QUANTITY = '" + updatedQty + "', INV_VALUE = PRICE * '" + updatedQty + "' WHERE STOCK_NAME = '" + foodName + "' ", conn);
                         dr = cmd.ExecuteReader();
 
                         if (dr.Read())
@@ -437,6 +440,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                         }
                         dr.Close();
                     }
+                     
                     //updated = true;
                 }
 
@@ -445,7 +449,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
             catch (Exception ex)
             {
-                MessageBox.Show("di ma update ang stocks");
+                //MessageBox.Show("di ma update ang stocks");
                MessageBox.Show(ex.Message);
             }
             finally
@@ -672,6 +676,9 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         }
 
-      
+        private void pcReload_Click(object sender, EventArgs e)
+        {
+            GetOrderList();
+        }
     }
 }

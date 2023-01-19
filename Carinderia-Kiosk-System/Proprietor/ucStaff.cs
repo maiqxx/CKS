@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Carinderia_Kiosk_System.Proprietor
 {
@@ -111,46 +112,62 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void btnSave_Click(object sender, EventArgs e)
         {
             var hireDate = DateTime.Parse(dateTimePicker1.Value.ToString("dd/MM/yyyy"));
+            string emailAddress = txtEmail.Text;
+            //Email address regular expression
+            var isEmail = new Regex(@"[a-z A-z 0-9_\-]+[@]+[a-z]+[\.][a-z]{3,4}$");
 
             try
             {
-                conn.Open();
-
-                //saves new staff member
-                string addStaff = "INSERT INTO STAFF " +
-                                        "SET STAFF_ID = @staffID, " +
-                                        "FIRSTNAME = @firstname, " +
-                                        "LASTNAME = @lastname, " +
-                                        "CONTACT_NUMBER = @conNum, " +
-                                        "EMAIL_ADDRESS = @email, " +
-                                        "ADDRESS = @address, " +
-                                        "ROLE = @role, " +
-                                        "HIRE_DATE = @hireDate, " +
-                                        "PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')";
-                MySqlCommand cmd = new MySqlCommand(addStaff, conn);
-
-                cmd.Parameters.AddWithValue("@staffID", txtStaffIDNum.Text);
-                cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
-                cmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
-                cmd.Parameters.AddWithValue("@conNum", txtContactNum.Text);
-                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@address", txtAddress.Text);
-                cmd.Parameters.AddWithValue("@role", txtRole.Text);
-                cmd.Parameters.AddWithValue("@hireDate", hireDate);
-
-                var ctr = cmd.ExecuteNonQuery();
-                if (ctr > 0)
+                //Validating email address
+                if (!isEmail.IsMatch(emailAddress))
                 {
-                    MessageBox.Show("Staff added successfully!");
+                    MessageBox.Show("Email address is invalid.");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add a staff member.");
+                    conn.Open();
+
+                    //saves new staff member
+                    string addStaff = "INSERT INTO STAFF " +
+                                            "SET STAFF_ID = @staffID, " +
+                                            "FIRSTNAME = @firstname, " +
+                                            "LASTNAME = @lastname, " +
+                                            "CONTACT_NUMBER = @conNum, " +
+                                            "EMAIL_ADDRESS = @email, " +
+                                            "ADDRESS = @address, " +
+                                            "ROLE = @role, " +
+                                            "HIRE_DATE = @hireDate, " +
+                                            "PROPRIETOR_ID = (SELECT PROPRIETOR_ID FROM PROPRIETOR WHERE EMAIL_ADDRESS = '" + AdminInfo.EmailAddress + "')";
+                    MySqlCommand cmd = new MySqlCommand(addStaff, conn);
+
+                    cmd.Parameters.AddWithValue("@staffID", txtStaffIDNum.Text);
+                    cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
+                    cmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
+                    cmd.Parameters.AddWithValue("@conNum", txtContactNum.Text);
+                    cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@role", txtRole.Text);
+                    cmd.Parameters.AddWithValue("@hireDate", hireDate);
+
+                    var ctr = cmd.ExecuteNonQuery();
+                    if (ctr > 0)
+                    {
+                        MessageBox.Show("Staff added successfully!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add a staff member.");
+                    }
+                    conn.Close();
+                    PopulateData();
+                    GetStaffID();
+                    //ClearData();
+
                 }
-                conn.Close();
-                PopulateData();
-                GetStaffID();
-                //ClearData();
+
+
+
             }
             catch (Exception ex)
             {

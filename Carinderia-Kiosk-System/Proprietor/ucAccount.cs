@@ -11,7 +11,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using MySql.Data.MySqlClient;
 using System.Data;
-
+using System.Text.RegularExpressions;
 
 namespace Carinderia_Kiosk_System.Proprietor
 {
@@ -150,12 +150,12 @@ namespace Carinderia_Kiosk_System.Proprietor
 
             if (reader.Read())
             {
-                ////gets image from database
-                //byte[] array = (byte[])reader["PROFILE_PIC"];
-                //MemoryStream ms = new MemoryStream(array);
-                //System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
-                //pbProfile.BackgroundImageLayout = ImageLayout.Stretch;
-                //pbProfile.BackgroundImage = bitmap;
+                //gets image from database
+                byte[] array = (byte[])reader["PROFILE_PIC"];
+                MemoryStream ms = new MemoryStream(array);
+                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+                pbProfile.BackgroundImageLayout = ImageLayout.Stretch;
+                pbProfile.BackgroundImage = bitmap;
 
                 txtFirstname.Text = reader["FIRSTNAME"].ToString();
                 txtLastName.Text = reader["LASTNAME"].ToString();

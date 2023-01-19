@@ -37,6 +37,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             InitializeComponent();
             conn = new MySqlConnection();
             conn.ConnectionString = "server=localhost; database=cks_db; uid=root; Convert Zero Datetime=True; pwd=\"\";";
+            GetTransactions();
         }
 
         private void ucTransactionList_Load(object sender, EventArgs e)

@@ -122,7 +122,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                 //Database connection
                 string connectionString = null;
                 MySqlConnection conn;
-                connectionString = "server=localhost; database=cks_db.proprietor; Convert Zero Datetime=True; uid=root; pwd=\"\";";
+                connectionString = "server=localhost; database=cks_db; Convert Zero Datetime=True; uid=root; pwd=\"\";";
                 conn = new MySqlConnection(connectionString);
 
                 try
@@ -143,7 +143,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     {
                         //adds new user/proprietor
                         string addUser = "INSERT INTO PROPRIETOR(FIRSTNAME, LASTNAME, STORE_NAME, LOCATION, CONTACT_NUMBER, EMAIL_ADDRESS, PASSWORD, CREATED_AT, UPDATED_AT) " +
-                        "VALUES('" + firstName + "', '" + lastName + "', '" + storeName + "', '" + location + "', '" + contactNum + "', '" + emailAddress + "', '" + password + "', '" + updatedAt + "')";
+                                          "VALUES('" + firstName + "', '" + lastName + "', '" + storeName + "', '" + location + "', '" + contactNum + "', '" + emailAddress + "', '" + password + "', '" + updatedAt + "')";
                         MySqlCommand cmd2 = new MySqlCommand(addUser, conn);
 
                         var ctr = cmd2.ExecuteNonQuery();

@@ -203,6 +203,13 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             LoadStoreDescription();
             LoadMenuStocks();
+            GetPendingOrders();
+            GetCompletedOrder();
+            GetCancelledOrder();
+            GetFeedbacks();
+            GetTotalStocks();
+            LoadAvailableStocks();
+            Dashboard();
         }
 
         //////Live Orders
@@ -282,10 +289,6 @@ namespace Carinderia_Kiosk_System.Proprietor
                 MessageBox.Show(ex.Message);
             }
         }
-
-
-
-
 
 
         private void lblTime_Click(object sender, EventArgs e)
