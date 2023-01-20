@@ -60,7 +60,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCustName = new System.Windows.Forms.Label();
             this.lblOrderNum = new System.Windows.Forms.Label();
             this.lblOrderNo = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblNoOrders = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flpOrderList.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -85,7 +85,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.flpOrderList.AutoScroll = true;
             this.flpOrderList.BackColor = System.Drawing.Color.AliceBlue;
-            this.flpOrderList.Controls.Add(this.label9);
+            this.flpOrderList.Controls.Add(this.lblNoOrders);
             this.flpOrderList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flpOrderList.Location = new System.Drawing.Point(0, 43);
             this.flpOrderList.Name = "flpOrderList";
@@ -458,15 +458,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblOrderNo.TabIndex = 0;
             this.lblOrderNo.Text = "Order No.: ";
             // 
-            // label9
+            // lblNoOrders
             // 
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(858, 772);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "No orders.";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNoOrders.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoOrders.Location = new System.Drawing.Point(3, 0);
+            this.lblNoOrders.Name = "lblNoOrders";
+            this.lblNoOrders.Size = new System.Drawing.Size(858, 772);
+            this.lblNoOrders.TabIndex = 0;
+            this.lblNoOrders.Text = "No orders.";
+            this.lblNoOrders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucOrderList
             // 
@@ -526,6 +526,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox pcReload;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblNoOrders;
     }
 }

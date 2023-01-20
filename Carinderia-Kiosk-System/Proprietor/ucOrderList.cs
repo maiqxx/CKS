@@ -43,10 +43,23 @@ namespace Carinderia_Kiosk_System.Proprietor
 
         private void ucOrderList_Load(object sender, EventArgs e)
         {
-            GetOrderList();
+            lblNoOrders.Visible = false;
             pnlDetails.Visible = false;
 
+            conn.Open();
+            cmd = new MySqlCommand("SELECT * FROM ORDERS ", conn);
+            dr = cmd.ExecuteReader();
 
+            if (dr.HasRows)
+            {
+                GetOrderList();
+            }
+            else
+            {
+                lblNoOrders.Visible = true;
+            }
+            dr.Close();
+            conn.Close();
         }
 
         //setting fonts
