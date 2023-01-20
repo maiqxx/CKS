@@ -250,6 +250,7 @@
     <Compile Include="Customer\ucOrderListTemplate.Designer.cs">
       <DependentUpon>ucOrderListTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetProducts.cs" />
     <Compile Include="Proprietor\AdminBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +274,12 @@
     </Compile>
     <Compile Include="Proprietor\ProprietorDialogs\AddStock.Designer.cs">
       <DependentUpon>AddStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\SalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proprietor\ProprietorDialogs\SalesReport.Designer.cs">
+      <DependentUpon>SalesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Proprietor\ProprietorDialogs\FailedToAddProductDialog.cs">
       <SubType>Form</SubType>
@@ -496,6 +503,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\MoveToTrasactsDialog.resx">
       <DependentUpon>MoveToTrasactsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proprietor\ProprietorDialogs\SalesReport.resx">
+      <DependentUpon>SalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ProprietorDialogs\UpdatedFoodItemDialog.resx">
       <DependentUpon>UpdatedFoodItemDialog.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Carinderia_Kiosk_System.Proprietor.ProprietorDialogs;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,7 +85,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         //displays daily, weekly, monthly, and yearly income
         public void Dashboard()
         {
-            lblDaily.Text = "₱ " + GetTotal("SELECT IFNULL(SUM(TOTAL_AMOUNT),0) FROM TRANSACTION WHERE DATE = CURDATE()").ToString("#,##0.00");
+            lblDaily.Text = "₱ " + GetTotal("SELECT IFNULL(SUM(TOTAL_AMOUNT),0) FROM TRANSACTION WHERE DATE(DATE) = CURDATE()").ToString("#,##0.00");
 
             lblWeekly.Text = "₱ " + GetTotal("SELECT IFNULL(SUM(TOTAL_AMOUNT),0) FROM TRANSACTION WHERE WEEK(DATE) = WEEK(NOW())").ToString("#,##0.00");
 
@@ -329,6 +330,40 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void lblYearly_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pnlDaily_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlWeekly_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlYearly_Click(object sender, EventArgs e)
+        {
+            SalesReport sales = new SalesReport();
+            sales.ShowDialog();
+        }
+
+        private void lblMonthly_Click(object sender, EventArgs e)
+        {
+            SalesReport sales = new SalesReport();
+            sales.ShowDialog();
+        }
+
+        private void pnlWeekly_Click(object sender, EventArgs e)
+        {
+            SalesReport sales = new SalesReport();
+            sales.ShowDialog();
+        }
+
+        private void lblDaily_Click(object sender, EventArgs e)
+        {
+            SalesReport sales = new SalesReport();
+            sales.ShowDialog();
         }
     }
 }
