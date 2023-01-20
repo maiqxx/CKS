@@ -30,8 +30,8 @@ namespace Carinderia_Kiosk_System.Proprietor
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblInventory = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbSearchIcon = new System.Windows.Forms.PictureBox();
@@ -147,7 +147,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.flpButtons.Controls.Add(this.btnRefresh);
             this.flpButtons.Location = new System.Drawing.Point(31, 338);
             this.flpButtons.Name = "flpButtons";
-            this.flpButtons.Size = new System.Drawing.Size(671, 42);
+            this.flpButtons.Size = new System.Drawing.Size(691, 42);
             this.flpButtons.TabIndex = 24;
             // 
             // btnAdd
@@ -234,9 +234,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnMenuBoard.Location = new System.Drawing.Point(463, 3);
             this.btnMenuBoard.Name = "btnMenuBoard";
             this.btnMenuBoard.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnMenuBoard.Size = new System.Drawing.Size(139, 34);
+            this.btnMenuBoard.Size = new System.Drawing.Size(164, 34);
             this.btnMenuBoard.TabIndex = 26;
-            this.btnMenuBoard.Text = "Menu Board";
+            this.btnMenuBoard.Text = "View Products";
             this.btnMenuBoard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMenuBoard.UseVisualStyleBackColor = false;
             this.btnMenuBoard.Click += new System.EventHandler(this.btnMenuBoard_Click);
@@ -246,7 +246,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnRefresh.BackColor = System.Drawing.SystemColors.Control;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
-            this.btnRefresh.Location = new System.Drawing.Point(608, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(633, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(35, 34);
             this.btnRefresh.TabIndex = 19;
@@ -256,24 +256,24 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // dgvInventory
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(31, 398);
             this.dgvInventory.Name = "dgvInventory";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventory.RowHeadersWidth = 51;
             this.dgvInventory.RowTemplate.Height = 24;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

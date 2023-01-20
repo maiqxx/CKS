@@ -45,6 +45,8 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             GetOrderList();
             pnlDetails.Visible = false;
+
+
         }
 
         //setting fonts
@@ -198,6 +200,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
+        //components
         private Panel order;
         private Label product;
         private Label qty;
@@ -322,9 +325,10 @@ namespace Carinderia_Kiosk_System.Proprietor
         public void RemoveFromOrderlist_OnClick(object sender, EventArgs e)
         {
             String tag = ((PictureBox)sender).Tag.ToString();
-
             string message = "This order will be recorded to transaction list. Please confirm...";
             string title = "Completed Order";
+
+
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
@@ -571,7 +575,7 @@ namespace Carinderia_Kiosk_System.Proprietor
         public void orderListPanel_MouseHover(object sender, EventArgs e)
         {
            // String tag = ((Panel)sender).Tag.ToString();
-           orderListPanel.BackColor = Color.WhiteSmoke;
+          // orderListPanel.BackColor = Color.WhiteSmoke;
         }
 
 

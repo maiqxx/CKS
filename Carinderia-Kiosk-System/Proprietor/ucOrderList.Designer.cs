@@ -37,6 +37,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pcReload = new System.Windows.Forms.PictureBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -59,14 +60,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblCustName = new System.Windows.Forms.Label();
             this.lblOrderNum = new System.Windows.Forms.Label();
             this.lblOrderNo = new System.Windows.Forms.Label();
-            this.pcReload = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.flpOrderList.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcReload)).BeginInit();
             this.pnlDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcReload)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,6 +85,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.flpOrderList.AutoScroll = true;
             this.flpOrderList.BackColor = System.Drawing.Color.AliceBlue;
+            this.flpOrderList.Controls.Add(this.label9);
             this.flpOrderList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flpOrderList.Location = new System.Drawing.Point(0, 43);
             this.flpOrderList.Name = "flpOrderList";
@@ -98,7 +101,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.1924F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
             this.tableLayoutPanel1.Controls.Add(this.label5, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 3, 0);
@@ -119,7 +122,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(606, 0);
+            this.label5.Location = new System.Drawing.Point(605, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 40);
             this.label5.TabIndex = 4;
@@ -145,7 +148,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(473, 0);
+            this.label4.Location = new System.Drawing.Point(472, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 40);
             this.label4.TabIndex = 3;
@@ -160,7 +163,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(69, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(240, 40);
+            this.label2.Size = new System.Drawing.Size(239, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "Customer Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,12 +174,24 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(315, 0);
+            this.label3.Location = new System.Drawing.Point(314, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 40);
             this.label3.TabIndex = 2;
             this.label3.Text = "Total Payment";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pcReload
+            // 
+            this.pcReload.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pcReload.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
+            this.pcReload.Location = new System.Drawing.Point(783, 3);
+            this.pcReload.Name = "pcReload";
+            this.pcReload.Size = new System.Drawing.Size(78, 34);
+            this.pcReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcReload.TabIndex = 5;
+            this.pcReload.TabStop = false;
+            this.pcReload.Click += new System.EventHandler(this.pcReload_Click);
             // 
             // pnlDetails
             // 
@@ -443,17 +458,15 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.lblOrderNo.TabIndex = 0;
             this.lblOrderNo.Text = "Order No.: ";
             // 
-            // pcReload
+            // label9
             // 
-            this.pcReload.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pcReload.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
-            this.pcReload.Location = new System.Drawing.Point(784, 3);
-            this.pcReload.Name = "pcReload";
-            this.pcReload.Size = new System.Drawing.Size(78, 34);
-            this.pcReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pcReload.TabIndex = 5;
-            this.pcReload.TabStop = false;
-            this.pcReload.Click += new System.EventHandler(this.pcReload_Click);
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(858, 772);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "No orders.";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucOrderList
             // 
@@ -466,15 +479,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.Size = new System.Drawing.Size(1213, 815);
             this.Load += new System.EventHandler(this.ucOrderList_Load);
             this.panel1.ResumeLayout(false);
+            this.flpOrderList.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcReload)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcReload)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,5 +526,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox pcReload;
+        private System.Windows.Forms.Label label9;
     }
 }
