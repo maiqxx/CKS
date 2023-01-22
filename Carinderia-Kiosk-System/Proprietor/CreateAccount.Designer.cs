@@ -31,7 +31,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
             this.panelCreateAccount = new System.Windows.Forms.Panel();
             this.groupBoxContactNum = new System.Windows.Forms.GroupBox();
-            this.mTxtContactNum = new System.Windows.Forms.MaskedTextBox();
             this.buttonCreateAccount = new System.Windows.Forms.Button();
             this.groupBoxPassword = new System.Windows.Forms.GroupBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtContactNum = new System.Windows.Forms.TextBox();
             this.panelCreateAccount.SuspendLayout();
             this.groupBoxContactNum.SuspendLayout();
             this.groupBoxPassword.SuspendLayout();
@@ -85,24 +85,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             // groupBoxContactNum
             // 
-            this.groupBoxContactNum.Controls.Add(this.mTxtContactNum);
+            this.groupBoxContactNum.Controls.Add(this.txtContactNum);
             this.groupBoxContactNum.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBoxContactNum.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.groupBoxContactNum.Location = new System.Drawing.Point(167, 387);
             this.groupBoxContactNum.Name = "groupBoxContactNum";
             this.groupBoxContactNum.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBoxContactNum.Size = new System.Drawing.Size(322, 60);
+            this.groupBoxContactNum.Size = new System.Drawing.Size(322, 71);
             this.groupBoxContactNum.TabIndex = 12;
             this.groupBoxContactNum.TabStop = false;
             this.groupBoxContactNum.Text = "Contact Number *";
-            // 
-            // mTxtContactNum
-            // 
-            this.mTxtContactNum.Location = new System.Drawing.Point(13, 26);
-            this.mTxtContactNum.Mask = "(+63)000-000-0000";
-            this.mTxtContactNum.Name = "mTxtContactNum";
-            this.mTxtContactNum.Size = new System.Drawing.Size(300, 28);
-            this.mTxtContactNum.TabIndex = 0;
             // 
             // buttonCreateAccount
             // 
@@ -111,7 +103,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.buttonCreateAccount.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
             this.buttonCreateAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCreateAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCreateAccount.Location = new System.Drawing.Point(167, 600);
+            this.buttonCreateAccount.Location = new System.Drawing.Point(167, 611);
             this.buttonCreateAccount.Name = "buttonCreateAccount";
             this.buttonCreateAccount.Size = new System.Drawing.Size(322, 50);
             this.buttonCreateAccount.TabIndex = 11;
@@ -124,7 +116,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.groupBoxPassword.Controls.Add(this.txtPassword);
             this.groupBoxPassword.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBoxPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.groupBoxPassword.Location = new System.Drawing.Point(167, 519);
+            this.groupBoxPassword.Location = new System.Drawing.Point(167, 530);
             this.groupBoxPassword.Name = "groupBoxPassword";
             this.groupBoxPassword.Padding = new System.Windows.Forms.Padding(10);
             this.groupBoxPassword.Size = new System.Drawing.Size(322, 60);
@@ -148,7 +140,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.groupBoxEmailAdd.Controls.Add(this.txtEmailAddress);
             this.groupBoxEmailAdd.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBoxEmailAdd.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.groupBoxEmailAdd.Location = new System.Drawing.Point(167, 453);
+            this.groupBoxEmailAdd.Location = new System.Drawing.Point(167, 464);
             this.groupBoxEmailAdd.Name = "groupBoxEmailAdd";
             this.groupBoxEmailAdd.Padding = new System.Windows.Forms.Padding(10);
             this.groupBoxEmailAdd.Size = new System.Drawing.Size(322, 60);
@@ -335,6 +327,16 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // txtContactNum
+            // 
+            this.txtContactNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContactNum.CausesValidation = false;
+            this.txtContactNum.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            this.txtContactNum.Location = new System.Drawing.Point(13, 30);
+            this.txtContactNum.Name = "txtContactNum";
+            this.txtContactNum.Size = new System.Drawing.Size(300, 30);
+            this.txtContactNum.TabIndex = 1;
+            // 
             // CreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -393,6 +395,6 @@ namespace Carinderia_Kiosk_System.Proprietor
         private System.Windows.Forms.TextBox txtFirstname;
         private System.Windows.Forms.Label labelGetStarted;
         private System.Windows.Forms.Button buttonSignIn;
-        private System.Windows.Forms.MaskedTextBox mTxtContactNum;
+        private System.Windows.Forms.TextBox txtContactNum;
     }
 }

@@ -67,7 +67,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(122, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 32);
+            this.label1.Size = new System.Drawing.Size(35, 32);
             this.label1.TabIndex = 5;
             this.label1.Text = "-";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -103,7 +103,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.dtpEndDate.CalendarTitleBackColor = System.Drawing.Color.Azure;
             this.dtpEndDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(164, 3);
+            this.dtpEndDate.Location = new System.Drawing.Point(163, 3);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(117, 23);
             this.dtpEndDate.TabIndex = 8;
@@ -117,7 +117,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.btnGo.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGo.Location = new System.Drawing.Point(287, 3);
+            this.btnGo.Location = new System.Drawing.Point(286, 3);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(73, 26);
             this.btnGo.TabIndex = 9;
@@ -131,7 +131,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(739, 0);
+            this.label3.Location = new System.Drawing.Point(738, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(201, 32);
             this.label3.TabIndex = 11;
@@ -142,10 +142,10 @@ namespace Carinderia_Kiosk_System.Proprietor
             // 
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(946, 3);
+            this.txtSearch.Location = new System.Drawing.Point(945, 3);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(160, 26);
+            this.txtSearch.Size = new System.Drawing.Size(161, 26);
             this.txtSearch.TabIndex = 12;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -154,7 +154,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.pbReload.BackColor = System.Drawing.Color.Transparent;
             this.pbReload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbReload.Image = global::Carinderia_Kiosk_System.Properties.Resources.refresh_20_x_20;
-            this.pbReload.Location = new System.Drawing.Point(366, 3);
+            this.pbReload.Location = new System.Drawing.Point(365, 3);
             this.pbReload.Name = "pbReload";
             this.pbReload.Size = new System.Drawing.Size(23, 26);
             this.pbReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -173,7 +173,7 @@ namespace Carinderia_Kiosk_System.Proprietor
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 166F));
             this.tableLayoutPanel1.Controls.Add(this.txtSearch, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.pbReload, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.dtpEndDate, 2, 0);

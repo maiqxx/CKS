@@ -45,10 +45,9 @@ namespace Carinderia_Kiosk_System.Proprietor
             var lastName = txtLastname.Text;
             var storeName = txtStorename.Text;
             var location = txtlocation.Text;
-            var contactNum = mTxtContactNum.Text;
+            var contactNum = txtContactNum.Text;
             var emailAddress = txtEmailAddress.Text;
             var password = txtPassword.Text;
-            var updatedAt = "";
 
             //Required fields
             if (firstName == "")
@@ -128,7 +127,6 @@ namespace Carinderia_Kiosk_System.Proprietor
 
                 try
                 {
-                    
                     conn.Open();
                     
                     //This query checks if the user has already registered or not
@@ -145,7 +143,7 @@ namespace Carinderia_Kiosk_System.Proprietor
                     {
                         //adds new user/proprietor
                         string addUser = "INSERT INTO `proprietor`(`FIRSTNAME`, `LASTNAME`, `STORE_NAME`, `LOCATION`, `CONTACT_NUMBER`, `EMAIL_ADDRESS`, `PASSWORD`)" +
-                                                             " VALUES ('"+ txtFirstname.Text +"','"+txtLastname.Text+"','"+txtStorename.Text+"','"+txtlocation.Text+"','"+mTxtContactNum.Text+"','"+txtEmailAddress.Text+"','"+txtPassword.Text+"')";
+                                                             " VALUES ('"+ txtFirstname.Text +"','"+txtLastname.Text+"','"+txtStorename.Text+"','"+txtlocation.Text+"','"+ txtContactNum.Text+"','"+txtEmailAddress.Text+"','"+txtPassword.Text+"')";
                         MySqlCommand cmd2 = new MySqlCommand(addUser, conn);
 
                         var ctr = cmd2.ExecuteNonQuery();

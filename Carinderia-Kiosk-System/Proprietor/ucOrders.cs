@@ -141,8 +141,6 @@ namespace Carinderia_Kiosk_System.Proprietor
             }
         }
 
-        //Live Orders
-
         //Counts the pending orders
         void GetPendingOrders()
         {
@@ -201,7 +199,5 @@ namespace Carinderia_Kiosk_System.Proprietor
         {
 
         }
-
-
     }
 }

@@ -27,12 +27,6 @@ namespace Carinderia_Kiosk_System
             this.Hide();
         }
 
-        //Staff Button
-        private void btnStaff_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //Customer Button
         private void btnCustomer_Click(object sender, EventArgs e)
         {
