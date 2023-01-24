@@ -390,18 +390,6 @@
     <Compile Include="Proprietor\ucStaff.Designer.cs">
       <DependentUpon>ucStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Staff\StaffDialog\StaffLogInSuccessDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\StaffDialog\StaffLogInSuccessDialog.Designer.cs">
-      <DependentUpon>StaffLogInSuccessDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\StaffLogIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\StaffLogIn.Designer.cs">
-      <DependentUpon>StaffLogIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="StartUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -542,12 +530,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proprietor\ucTransactionList.resx">
       <DependentUpon>ucTransactionList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\StaffDialog\StaffLogInSuccessDialog.resx">
-      <DependentUpon>StaffLogInSuccessDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\StaffLogIn.resx">
-      <DependentUpon>StaffLogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartUp.resx">
       <DependentUpon>StartUp.cs</DependentUpon>
