@@ -75,7 +75,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel4.Controls.Add(this.pbRemoveItem);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Location = new System.Drawing.Point(67, 41);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(523, 87);
             this.panel4.TabIndex = 6;
@@ -171,7 +171,7 @@ namespace Carinderia_Kiosk_System.Customer
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(40, 441);
+            this.panel2.Location = new System.Drawing.Point(65, 438);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(593, 90);
             this.panel2.TabIndex = 9;
